@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos d'Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-relaxed">
+
+    <div data-layout="header" data-active="a-propos"></div>
+
+    <main class="flex flex-col">
+
+        <section class="bg-ezer-green-light">
+            <div class="max-w-[1200px] mx-auto px-4 lg:px-8 py-8 lg:py-12 flex flex-col gap-3">
+                <nav aria-label="Fil d'Ariane" class="text-sm">
+                    <ol class="flex flex-wrap items-center gap-2 text-ezer-muted">
+                        <li><a href="accueil.html" class="text-ezer-green hover:underline">Accueil</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li aria-current="page">À propos</li>
+                    </ol>
+                </nav>
+                <h1 class="font-cooper font-normal text-3xl lg:text-5xl">À propos d'Ezer Home</h1>
+                <p class="text-base max-w-[640px]">Une association togolaise qui accompagne, assiste et forme les personnes qui traversent une période difficile.</p>
+            </div>
+        </section>
+
+        <div class="max-w-[1200px] mx-auto px-4 lg:px-8 py-8 lg:py-14 flex flex-col gap-14 lg:gap-16">
+
+            <!-- MISSION ET VALEURS -->
+            <section class="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
+                <div class="flex-1 basis-[420px] min-w-0 flex flex-col gap-4">
+                    <p class="text-xs font-semibold uppercase tracking-wider text-ezer-green">Notre mission</p>
+                    <h2 class="font-cooper font-normal text-2xl lg:text-4xl">Personne ne devrait traverser seul une période difficile</h2>
+                    <p>[Texte de présentation : l'histoire de l'association, sa création, ce qui a motivé ses fondateurs et ce qu'elle souhaite apporter aux personnes accompagnées.]</p>
+                    <p>Ezer Home réunit cinq services : une écoute gratuite et confidentielle, une assistance matérielle sans compte, des formations, un coaching personnalisé, et la collecte de dons qui rend tout cela possible.</p>
+                </div>
+                <ul class="flex-1 basis-[300px] min-w-0 flex flex-col gap-3 list-none">
+                    <li class="bg-ezer-green-light rounded-ezer p-5 flex flex-col gap-1">
+                        <span class="font-semibold">Bienveillance</span>
+                        <span class="text-[15px] text-ezer-muted">Accueillir chacun avec respect, sans jugement.</span>
+                    </li>
+                    <li class="bg-ezer-green-light rounded-ezer p-5 flex flex-col gap-1">
+                        <span class="font-semibold">Confidentialité</span>
+                        <span class="text-[15px] text-ezer-muted">Protéger ce qui nous est confié.</span>
+                    </li>
+                    <li class="bg-ezer-green-light rounded-ezer p-5 flex flex-col gap-1">
+                        <span class="font-semibold">Dignité</span>
+                        <span class="text-[15px] text-ezer-muted">Aider sans jamais rabaisser.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- NOS STATUTS -->
+            <section aria-labelledby="ap-statuts" class="border border-ezer-green-border rounded-ezer p-5 lg:p-8 flex flex-col gap-5">
+                <h2 id="ap-statuts" class="font-cooper font-normal text-2xl lg:text-3xl">Nos statuts</h2>
+                <dl class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div class="flex flex-col gap-0.5"><dt class="text-sm text-ezer-muted">Forme juridique</dt><dd class="font-semibold">Association à but non lucratif</dd></div>
+                    <div class="flex flex-col gap-0.5"><dt class="text-sm text-ezer-muted">Récépissé de déclaration</dt><dd class="font-semibold">N° [NUMÉRO] du [date]</dd></div>
+                    <div class="flex flex-col gap-0.5"><dt class="text-sm text-ezer-muted">Date de création</dt><dd class="font-semibold">[date]</dd></div>
+                    <div class="flex flex-col gap-0.5"><dt class="text-sm text-ezer-muted">Siège social</dt><dd class="font-semibold">[Quartier, rue], Lomé, Togo</dd></div>
+                    <div class="flex flex-col gap-0.5"><dt class="text-sm text-ezer-muted">Objet</dt><dd class="font-semibold">Accompagnement, assistance et formation</dd></div>
+                    <div class="flex flex-col gap-0.5"><dt class="text-sm text-ezer-muted">Président(e)</dt><dd class="font-semibold">[NOM Prénoms]</dd></div>
+                </dl>
+                <div class="border-t border-ezer-green-borderLight pt-5 flex flex-wrap gap-3">
+                    <a href="#" class="inline-flex items-center gap-2 min-h-[52px] px-6 rounded-ezer bg-ezer-green text-white font-semibold hover:bg-ezer-green-dark transition-colors">
+                        <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"></path><path d="M14 3v5h5"></path></svg>
+                        Lire les statuts (PDF, [poids])
+                    </a>
+                    <a href="#" class="inline-flex items-center gap-2 min-h-[52px] px-6 rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold hover:bg-ezer-green-light transition-colors">
+                        <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"></path><path d="M14 3v5h5"></path></svg>
+                        Récépissé de déclaration (PDF)
+                    </a>
+                </div>
+            </section>
+
+            <!-- LE BUREAU -->
+            <section aria-labelledby="ap-bureau" class="flex flex-col gap-5">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <h2 id="ap-bureau" class="font-cooper font-normal text-2xl lg:text-3xl">Le bureau</h2>
+                    <a href="equipe.html" class="font-semibold text-ezer-green hover:underline">Voir toute l'équipe</a>
+                </div>
+                <ul class="grid grid-cols-2 xl:grid-cols-4 gap-4 list-none">
+                    <li class="flex flex-col gap-3 bg-ezer-green-light rounded-ezer p-5">
+                        <span aria-hidden="true" class="w-14 h-14 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+                        </span>
+                        <span class="font-semibold">[NOM Prénoms]</span>
+                        <span class="text-[15px] text-ezer-muted">Président(e)</span>
+                    </li>
+                    <li class="flex flex-col gap-3 bg-ezer-green-light rounded-ezer p-5">
+                        <span aria-hidden="true" class="w-14 h-14 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+                        </span>
+                        <span class="font-semibold">[NOM Prénoms]</span>
+                        <span class="text-[15px] text-ezer-muted">Vice-président(e)</span>
+                    </li>
+                    <li class="flex flex-col gap-3 bg-ezer-green-light rounded-ezer p-5">
+                        <span aria-hidden="true" class="w-14 h-14 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+                        </span>
+                        <span class="font-semibold">[NOM Prénoms]</span>
+                        <span class="text-[15px] text-ezer-muted">Secrétaire général(e)</span>
+                    </li>
+                    <li class="flex flex-col gap-3 bg-ezer-green-light rounded-ezer p-5">
+                        <span aria-hidden="true" class="w-14 h-14 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+                        </span>
+                        <span class="font-semibold">[NOM Prénoms]</span>
+                        <span class="text-[15px] text-ezer-muted">Trésorier(ère)</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- CHARTE -->
+            <section aria-labelledby="ap-charte" class="bg-ezer-green-light rounded-ezer p-5 lg:p-8 flex flex-col gap-4">
+                <h2 id="ap-charte" class="font-cooper font-normal text-2xl lg:text-3xl">Notre charte d'écoute</h2>
+                <p>Toute personne accompagnée la signe, et toute l'équipe s'engage à la respecter. Elle est publique : chacun peut la lire.</p>
+                <a href="../espace/charte.html" class="self-start inline-flex items-center justify-center min-h-[52px] px-6 rounded-ezer border-2 border-ezer-green bg-white text-ezer-green font-semibold hover:bg-ezer-green-pale transition-colors">Lire la charte complète</a>
+                <ul class="flex flex-col gap-3 list-none">
+                    <li class="bg-white rounded-ezer p-4 flex items-start gap-2.5">
+                        <svg aria-hidden="true" class="shrink-0 mt-0.5 w-[18px] h-[18px] text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+                        <span>Ce qui est partagé reste confidentiel, sauf danger grave pour la personne ou pour autrui.</span>
+                    </li>
+                    <li class="bg-white rounded-ezer p-4 flex items-start gap-2.5">
+                        <svg aria-hidden="true" class="shrink-0 mt-0.5 w-[18px] h-[18px] text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+                        <span>L'écoute se fait sans jugement, et sans décider à la place de la personne.</span>
+                    </li>
+                    <li class="bg-white rounded-ezer p-4 flex items-start gap-2.5">
+                        <svg aria-hidden="true" class="shrink-0 mt-0.5 w-[18px] h-[18px] text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+                        <span>Les échanges se font dans le respect mutuel, aux horaires convenus.</span>
+                    </li>
+                    <li class="bg-white rounded-ezer p-4 flex items-start gap-2.5">
+                        <svg aria-hidden="true" class="shrink-0 mt-0.5 w-[18px] h-[18px] text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+                        <span>L'écoute ne remplace ni un suivi médical, ni un service d'urgence.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- POUR ALLER PLUS LOIN -->
+            <section aria-labelledby="ap-plus" class="flex flex-col gap-5">
+                <h2 id="ap-plus" class="font-cooper font-normal text-2xl lg:text-3xl">Pour aller plus loin</h2>
+                <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 list-none">
+                    <li>
+                        <a href="partenaires.html" class="flex flex-col gap-1 h-full p-6 border border-ezer-green-border rounded-ezer bg-white hover:border-ezer-green transition-colors">
+                            <span class="font-semibold text-lg">Nos partenaires</span>
+                            <span class="text-[15px] text-ezer-muted">Ceux qui nous soutiennent.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="usage-dons.html" class="flex flex-col gap-1 h-full p-6 border border-ezer-green-border rounded-ezer bg-white hover:border-ezer-green transition-colors">
+                            <span class="font-semibold text-lg">À quoi servent les dons</span>
+                            <span class="text-[15px] text-ezer-muted">Comment nous utilisons chaque franc reçu.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact-particulier.html" class="flex flex-col gap-1 h-full p-6 border border-ezer-green-border rounded-ezer bg-white hover:border-ezer-green transition-colors">
+                            <span class="font-semibold text-lg">Nous contacter</span>
+                            <span class="text-[15px] text-ezer-muted">Une question, un projet de partenariat ?</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <div data-layout="footer"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

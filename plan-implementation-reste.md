@@ -10,6 +10,7 @@ Ce plan intègre de manière exhaustive **l'intégralité des 144 archives et va
 
 ### 0.1 Socle technique mis en place
 
+- [x] `assets/js/theme.js` — **thème Tailwind partagé** (`ezerTheme()`), remplace le bloc de configuration inline de chaque page
 - [x] `assets/js/layout.js` — **en-tête et pied de page partagés**, injectés via `<div data-layout="header" data-active="...">` et `<div data-layout="footer" data-sobre="1">`. Contenu conforme à `EnTete.dc.html` / `PiedDePage.dc.html` (bandeau coordonnées, nav 7 entrées avec état actif, bouton « Faire un don », WhatsApp, menu mobile burger ; logo, adresse, 3 groupes de liens). Option `data-sobre="1"` pour masquer les liens commerciaux (espace, e-mails).
 - [x] `assets/js/main.js` — sélecteur d'états rendu générique (`data-state-target` / `data-state-pane` / `data-state-switcher` avec `data-active-class` et `data-idle-class`).
 - [x] Les variantes mobile (390px) et ordinateur (1440px) des maquettes sont fusionnées en **une seule page responsive** (breakpoint `lg`). Les états (erreur / envoi / succès) sont accessibles via un sélecteur en haut de page plutôt que des fichiers séparés.
@@ -25,8 +26,28 @@ Ce plan intègre de manière exhaustive **l'intégralité des 144 archives et va
 | Assistance | `pages/assistance/demande.html` | **[x] FAIT** | Aucun. 6 champs, 6 radios type d'aide, consentement, 4 états avec validation et liens d'ancrage. |
 | Dons | `pages/dons/don.html` | **[x] FAIT** | Aucun. 4 étapes, récapitulatif dynamique, encart sécurité, instructions de paiement, 4 états. |
 | Connexion | `pages/auth/connexion.html` | **[x] FAIT** | Aucun. Libellés conformes, mdp oublié, afficher/masquer, connexion par code, état erreur. |
+| Détail formation | `pages/site/formation-detail.html` | **[x] FAIT** | Aucun. |
+| Coaching liste + détail | `pages/site/coaching.html`, `coaching-detail.html` | **[x] FAIT** | Aucun. |
+| Tarifs | `pages/site/tarifs.html` | **[x] FAIT** | Aucun. |
+| À propos | `pages/site/a-propos.html` | **[x] FAIT** | Aucun. |
+| Notre équipe | `pages/site/equipe.html` | **[x] FAIT** | Aucun. |
+| À quoi servent les dons | `pages/site/usage-dons.html` | **[x] FAIT** | Aucun. |
+| Partenaires | `pages/site/partenaires.html` | **[x] FAIT** | Aucun. |
+| Contact particulier / institutionnel | `pages/site/contact-particulier.html`, `contact-institutionnel.html` | **[x] FAIT** | Aucun. Un seul composant, deux variantes. |
+| Pages légales | `pages/site/legal.html` | **[x] FAIT** | Aucun. 3 documents + sommaire. |
+| Hors ligne / 404 | `pages/site/hors-ligne.html`, `404.html` | **[x] FAIT** | Aucun. |
+| Menu mobile ouvert | `pages/site/menu-mobile.html` | **[x] FAIT** | Aucun. |
 
-**Note :** `formation-detail.html` est référencé par `formations.html` mais pas encore créé (prochaine étape).
+**Bilan : 20 pages réalisées.** Le module « Site public » est complet (17/17), ainsi que l'assistance, les dons et l'écran de connexion.
+
+### 0.3 Liens locaux pointant vers des pages non encore créées (attendu)
+
+`pages/auth/inscription.html`, `otp.html`, `mdp-oublie.html`, `pages/espace/charte.html`, `pages/commande/recapitulatif.html` — ces cibles sont prévues au plan et seront traitées ensuite.
+
+### 0.4 Placeholders à compléter côté contenu
+
+Restent des valeurs entre crochets à remplacer par les données réelles (elles sont présentes dans les maquettes) :
+`[X] %` (répartition des dons), `[année]`, `[date]`, `[NUMÉRO]`, `[Quartier, rue]`, `[NOM Prénoms]`, `[poids]`, `[Partenaire 1..8]`, `[durée de conservation]`, `[paiements]`, et les 8 placesholders `[numéro de téléphone]`, `[contact@ezerhome.tg]`, `[00 00 00 00]`.
 
 ---
 
@@ -35,24 +56,24 @@ Ce plan intègre de manière exhaustive **l'intégralité des 144 archives et va
 
 ---
 
-## 2. Site public (`pages/site/`)
-- [x] **Accueil** (`accueil.html`) — mobile + ordinateur
-- [ ] **Menu mobile ouvert** (`menu-mobile.html`) — la variante « menu ouvert » existe dans l'en-tête partagé ; il reste une page dédiée à plannedirectement
-- [x] **Écoute** (`ecoute.html`) — mobile + ordinateur
-- [x] **Formations : liste des offres** (`formations.html`) — mobile + ordinateur
-- [ ] **Formation : détail d'une offre** (`formation-detail.html`) — **prochaine étape** (déjà référencé par `formations.html`)
-- [ ] **Coaching : liste des offres** (`coaching.html`) — mobile & ordinateur
-- [ ] **Coaching : détail d'une offre** (`coaching-detail.html`) — mobile & ordinateur
-- [ ] **Tarifs** (`tarifs.html`) — mobile & ordinateur
-- [ ] **À propos** (`a-propos.html`) — mobile & ordinateur
-- [ ] **Notre équipe** (`equipe.html`) — mobile & ordinateur
-- [ ] **À quoi servent les dons** (`usage-dons.html`) — mobile & ordinateur
-- [ ] **Partenaires** (`partenaires.html`) — mobile & ordinateur
-- [ ] **Contact : particulier** (`contact-particulier.html`) — mobile & ordinateur
-- [ ] **Contact : donateur institutionnel** (`contact-institutionnel.html`) — mobile & ordinateur
-- [ ] **Pages légales** (Mentions légales, Confidentialité, CGU) (`legal.html`) — mobile & ordinateur
-- [ ] **Hors ligne** (`hors-ligne.html`) — mobile & ordinateur
-- [ ] **Page introuvable (404)** (`404.html`) — mobile & ordinateur
+## 2. Site public (`pages/site/`) — **MODULE COMPLET (17/17)**
+- [x] **Accueil** (`accueil.html`)
+- [x] **Menu mobile ouvert** (`menu-mobile.html`) — variante de l'en-tête partagé (`data-menu="ouvert"`)
+- [x] **Écoute** (`ecoute.html`)
+- [x] **Formations : liste des offres** (`formations.html`)
+- [x] **Formation : détail d'une offre** (`formation-detail.html`) — aside d'inscription desktop + barre d'inscription mobile collante
+- [x] **Coaching : liste des offres** (`coaching.html`) — 4 formules, filtre « encore disponibles »
+- [x] **Coaching : détail d'une offre** (`coaching-detail.html`)
+- [x] **Tarifs** (`tarifs.html`) — toujours gratuit / tableau des formations (desktop) + liste (mobile) / formules de coaching / comment payer
+- [x] **À propos** (`a-propos.html`)
+- [x] **Notre équipe** (`equipe.html`) — 3 instances, 11 membres
+- [x] **À quoi servent les dons** (`usage-dons.html`)
+- [x] **Partenaires** (`partenaires.html`) — 8 partenaires
+- [x] **Contact : particulier** (`contact-particulier.html`) — sélecteur particulier / organisation
+- [x] **Contact : donateur institutionnel** (`contact-institutionnel.html`) — même composant, variante organisationnel
+- [x] **Pages légales** (`legal.html`) — 3 documents (mentions, confidentialité, CGU) avec sommaire sticky desktop et accordéon mobile
+- [x] **Hors ligne** (`hors-ligne.html`) — page autonome sans en-tête ni pied de page
+- [x] **Page introuvable (404)** (`404.html`)
 
 ---
 

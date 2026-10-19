@@ -6,32 +6,9 @@
     <title>Accueil — Ezer Home</title>
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <!-- Tailwind CDN en fallback de développement immédiat -->
+    <script src="../../assets/js/theme.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ezer: {
-                            green: { DEFAULT: '#187d50', dark: '#12603d', light: '#e9f7f0', pale: '#f6faf8', border: '#c8dccf', borderLight: '#d3e6db' },
-                            dark: '#0e1c03',
-                            muted: '#5b6656',
-                            borderMuted: '#6f8577',
-                            red: { DEFAULT: '#c1272d' },
-                            brown: { DEFAULT: '#a67c52' },
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'system-ui', 'sans-serif'],
-                        cooper: ['"Cooper Black"', 'Georgia', 'serif'],
-                    },
-                    borderRadius: {
-                        'ezer': '12px',
-                    }
-                }
-            }
-        }
-    </script>
+    <script>tailwind.config = ezerTheme();</script>
 </head>
 <body class="bg-white text-ezer-dark font-sans text-base leading-normal">
 

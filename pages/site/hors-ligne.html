@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vous êtes hors ligne — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-relaxed">
+
+    <main class="min-h-screen flex items-center justify-center px-4 py-8">
+        <div class="w-full max-w-[440px] flex flex-col items-center gap-5 text-center">
+
+            <img src="../../assets/images/Logo Ezer-01.png" alt="Ezer Home" class="h-14 lg:h-16 w-auto object-contain">
+
+            <span aria-hidden="true" class="w-[72px] h-[72px] rounded-full bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5a16 16 0 0 1 20 0"></path><path d="M5.5 12a11 11 0 0 1 13 0"></path><path d="M9 15.5a6 6 0 0 1 6 0"></path><path d="M3 3l18 18"></path></svg>
+            </span>
+
+            <div class="flex flex-col gap-2">
+                <h1 class="font-cooper font-normal text-3xl">Vous êtes hors ligne</h1>
+                <p>La connexion semble interrompue. Ce n'est pas grave : vous pouvez nous joindre directement.</p>
+            </div>
+
+            <div class="w-full flex flex-col gap-2.5">
+                <a href="https://wa.me/22800000000" class="w-full inline-flex items-center justify-center gap-2 min-h-[52px] rounded-ezer bg-ezer-green text-white font-semibold hover:bg-ezer-green-dark transition-colors">
+                    <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1 1 8 19.6z"></path><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2z"></path></svg>
+                    Écrire sur WhatsApp
+                </a>
+                <a href="tel:+22800000000" class="w-full inline-flex items-center justify-center gap-2 min-h-[52px] rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold hover:bg-ezer-green-light transition-colors">
+                    <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>
+                    Appeler le +228 [00 00 00 00]
+                </a>
+                <button type="button" onclick="location.reload()" class="min-h-[48px] py-2 border-0 bg-transparent text-ezer-green font-semibold underline">Réessayer</button>
+            </div>
+
+            <p class="text-sm text-ezer-muted">Les pages que vous avez déjà consultées restent disponibles.</p>
+        </div>
+    </main>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

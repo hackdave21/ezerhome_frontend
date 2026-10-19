@@ -5,31 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plan du prototype — Ezer Home</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
+<script src="./assets/js/theme.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ezer: {
-                            green: { DEFAULT: '#187d50', dark: '#12603d', light: '#e9f7f0', pale: '#f6faf8', border: '#c8dccf', borderLight: '#d3e6db' },
-                            dark: '#0e1c03',
-                            muted: '#5b6656',
-                            borderMuted: '#6f8577',
-                            red: { DEFAULT: '#c1272d', light: '#fdf2f2', border: '#f8b4b4' },
-                            brown: { DEFAULT: '#a67c52', light: '#faf6f2' }
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'system-ui, sans-serif'],
-                        cooper: ['"Cooper Black"', 'Georgia', 'serif'],
-                    },
-                    borderRadius: { 'ezer': '12px' },
-                    boxShadow: { 'ezer-nav': 'inset 0 -3px 0 #187d50' }
-                }
-            }
-        }
-    </script>
+    <script>tailwind.config = ezerTheme();</script>
 </head>
 <body class="bg-white text-ezer-dark font-sans text-base leading-relaxed">
 
@@ -38,7 +16,7 @@
         <div class="flex flex-col gap-1.5 mb-8">
             <p class="text-xs font-semibold uppercase tracking-widest text-ezer-green">Ezer Home · Prototype</p>
             <h1 class="font-cooper font-normal text-4xl lg:text-5xl">Plan du prototype</h1>
-            <p class="text-ezer-muted max-w-[860px]">Point d'entrée de la navigation : chaque écran est accessible ici. Les maquettes mobiles et ordinateurs ont été fusionnées en une page responsive unique ; les états (erreur, chargement, succès) sont accessibles via le sélecteur en haut de chaque page.</p>
+            <p class="text-ezer-muted max-w-[860px]">Point d'entrée de la navigation : chaque écran est accessible ici. Les maquettes mobiles et ordinateurs ont été fusionnées en une page responsive unique ; les états (erreur, chargement, succès) sont accessibles via le sélecteur en haut de chaque page. <strong class="text-ezer-dark">20 pages réalisées</strong> : le site public est complet, ainsi que l'assistance, les dons et l'écran de connexion.</p>
         </div>
 
         <div id="filtres" class="flex flex-wrap gap-2 mb-6" role="group" aria-label="Filtrer les écrans">

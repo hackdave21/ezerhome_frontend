@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos tarifs — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-relaxed">
+
+    <div data-layout="header" data-active="tarifs"></div>
+
+    <main class="flex flex-col">
+
+        <section class="bg-ezer-green-light">
+            <div class="max-w-[1200px] mx-auto px-4 lg:px-8 py-8 lg:py-12 flex flex-col gap-3">
+                <nav aria-label="Fil d'Ariane" class="text-sm">
+                    <ol class="flex flex-wrap items-center gap-2 text-ezer-muted">
+                        <li><a href="accueil.html" class="text-ezer-green hover:underline">Accueil</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li aria-current="page">Tarifs</li>
+                    </ol>
+                </nav>
+                <h1 class="font-cooper font-normal text-3xl lg:text-5xl">Nos tarifs</h1>
+                <p class="text-base max-w-[640px]">Des prix accessibles, et plusieurs services toujours gratuits. Tous les montants sont en francs CFA.</p>
+                <nav aria-label="Sections de la page" class="flex flex-wrap gap-2 pt-2">
+                    <a href="#tf-gratuit" class="min-h-[44px] inline-flex items-center px-4 rounded-ezer border border-ezer-green-border bg-white text-ezer-green font-semibold text-[15px] hover:bg-ezer-green-light transition-colors">Gratuit</a>
+                    <a href="#tf-formations" class="min-h-[44px] inline-flex items-center px-4 rounded-ezer border border-ezer-green-border bg-white text-ezer-green font-semibold text-[15px] hover:bg-ezer-green-light transition-colors">Formations</a>
+                    <a href="#tf-coaching" class="min-h-[44px] inline-flex items-center px-4 rounded-ezer border border-ezer-green-border bg-white text-ezer-green font-semibold text-[15px] hover:bg-ezer-green-light transition-colors">Coaching</a>
+                    <a href="#tf-paiement" class="min-h-[44px] inline-flex items-center px-4 rounded-ezer border border-ezer-green-border bg-white text-ezer-green font-semibold text-[15px] hover:bg-ezer-green-light transition-colors">Paiement</a>
+                </nav>
+            </div>
+        </section>
+
+        <div class="max-w-[1200px] mx-auto px-4 lg:px-8 py-8 lg:py-12 flex flex-col gap-12 lg:gap-14">
+
+            <!-- TOUJOURS GRATUIT -->
+            <section id="tf-gratuit" class="flex flex-col gap-5 scroll-mt-36">
+                <h2 class="font-cooper font-normal text-2xl lg:text-3xl">Toujours gratuit</h2>
+                <ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 list-none">
+                    <li class="flex flex-col gap-2 p-5 border border-ezer-green-border rounded-ezer bg-white">
+                        <span class="self-start text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-ezer-green-light border border-ezer-green text-ezer-green">Gratuit</span>
+                        <a href="ecoute.html" class="font-semibold text-ezer-green hover:underline">Écoute et accompagnement</a>
+                        <p class="text-[15px] text-ezer-muted">Avec un compte, pour la confidentialité.</p>
+                    </li>
+                    <li class="flex flex-col gap-2 p-5 border border-ezer-green-border rounded-ezer bg-white">
+                        <span class="self-start text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-ezer-green-light border border-ezer-green text-ezer-green">Gratuit</span>
+                        <a href="../assistance/demande.html" class="font-semibold text-ezer-green hover:underline">Assistance matérielle</a>
+                        <p class="text-[15px] text-ezer-muted">Sans compte.</p>
+                    </li>
+                    <li class="flex flex-col gap-2 p-5 border border-ezer-green-border rounded-ezer bg-white">
+                        <span class="self-start text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-ezer-green-light border border-ezer-green text-ezer-green">Gratuit</span>
+                        <a href="coaching-detail.html" class="font-semibold text-ezer-green hover:underline">Séance découverte de coaching</a>
+                        <p class="text-[15px] text-ezer-muted">30 minutes, sans engagement.</p>
+                    </li>
+                    <li class="flex flex-col gap-2 p-5 border border-ezer-green-border rounded-ezer bg-white">
+                        <span class="self-start text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-ezer-green-light border border-ezer-green text-ezer-green">Gratuit</span>
+                        <a href="formations.html" class="font-semibold text-ezer-green hover:underline">Accompagner un proche en difficulté</a>
+                        <p class="text-[15px] text-ezer-muted">Formation de 2 demi-journées.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- FORMATIONS -->
+            <section id="tf-formations" class="flex flex-col gap-5 scroll-mt-36">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <h2 class="font-cooper font-normal text-2xl lg:text-3xl">Formations</h2>
+                    <a href="formations.html" class="font-semibold text-ezer-green hover:underline">Voir les formations</a>
+                </div>
+
+                <!-- Tableau (ordinateur) -->
+                <table class="hidden md:table w-full text-[15px]">
+                    <caption class="sr-only">Tarifs des formations</caption>
+                    <thead>
+                        <tr class="text-left text-ezer-muted border-b border-ezer-green-border">
+                            <th scope="col" class="py-3 pr-3 font-semibold">Formation</th>
+                            <th scope="col" class="py-3 pr-3 font-semibold">Durée</th>
+                            <th scope="col" class="py-3 pr-3 font-semibold">Places</th>
+                            <th scope="col" class="py-3 pr-3 font-semibold">Type</th>
+                            <th scope="col" class="py-3 text-right font-semibold">Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-ezer-green-borderLight">
+                            <td class="py-3 pr-3 font-semibold">Écoute active et relation d'aide</td>
+                            <td class="py-3 pr-3">3 jours (18 h)</td>
+                            <td class="py-3 pr-3">12 places</td>
+                            <td class="py-3 pr-3"><span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-white border border-ezer-dark">Tarifé</span></td>
+                            <td class="py-3 text-right font-semibold">15 000 FCFA</td>
+                        </tr>
+                        <tr class="border-b border-ezer-green-borderLight">
+                            <td class="py-3 pr-3 font-semibold">Gérer son stress au quotidien</td>
+                            <td class="py-3 pr-3">1 journée (6 h)</td>
+                            <td class="py-3 pr-3">20 places</td>
+                            <td class="py-3 pr-3"><span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-white border border-ezer-dark">Tarifé</span></td>
+                            <td class="py-3 text-right font-semibold">5 000 FCFA</td>
+                        </tr>
+                        <tr class="border-b border-ezer-green-borderLight">
+                            <td class="py-3 pr-3 font-semibold">Prendre la parole en public</td>
+                            <td class="py-3 pr-3">2 jours (12 h)</td>
+                            <td class="py-3 pr-3">10 places</td>
+                            <td class="py-3 pr-3"><span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-white border border-ezer-dark">Tarifé</span></td>
+                            <td class="py-3 text-right font-semibold">10 000 FCFA</td>
+                        </tr>
+                        <tr class="border-b border-ezer-green-borderLight">
+                            <td class="py-3 pr-3 font-semibold">Accompagner un proche en difficulté</td>
+                            <td class="py-3 pr-3">2 demi-journées (6 h)</td>
+                            <td class="py-3 pr-3">25 places</td>
+                            <td class="py-3 pr-3"><span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-ezer-green-light border border-ezer-green text-ezer-green">Gratuit</span></td>
+                            <td class="py-3 text-right font-semibold">Gratuit</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Liste (mobile) -->
+                <ul class="md:hidden flex flex-col list-none">
+                    <li class="flex items-center justify-between gap-4 py-4 border-b border-ezer-green-border">
+                        <div class="flex flex-col">
+                            <span class="font-semibold">Écoute active et relation d'aide</span>
+                            <span class="text-sm text-ezer-muted">3 jours (18 h)</span>
+                        </div>
+                        <div class="flex flex-col items-end gap-1">
+                            <span class="text-lg font-semibold">15 000 FCFA</span>
+                            <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-white border border-ezer-dark">Tarifé</span>
+                        </div>
+                    </li>
+                    <li class="flex items-center justify-between gap-4 py-4 border-b border-ezer-green-border">
+                        <div class="flex flex-col">
+                            <span class="font-semibold">Gérer son stress au quotidien</span>
+                            <span class="text-sm text-ezer-muted">1 journée (6 h)</span>
+                        </div>
+                        <div class="flex flex-col items-end gap-1">
+                            <span class="text-lg font-semibold">5 000 FCFA</span>
+                            <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-white border border-ezer-dark">Tarifé</span>
+                        </div>
+                    </li>
+                    <li class="flex items-center justify-between gap-4 py-4 border-b border-ezer-green-border">
+                        <div class="flex flex-col">
+                            <span class="font-semibold">Prendre la parole en public</span>
+                            <span class="text-sm text-ezer-muted">2 jours (12 h)</span>
+                        </div>
+                        <div class="flex flex-col items-end gap-1">
+                            <span class="text-lg font-semibold">10 000 FCFA</span>
+                            <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-white border border-ezer-dark">Tarifé</span>
+                        </div>
+                    </li>
+                    <li class="flex items-center justify-between gap-4 py-4 border-b border-ezer-green-border">
+                        <div class="flex flex-col">
+                            <span class="font-semibold">Accompagner un proche en difficulté</span>
+                            <span class="text-sm text-ezer-muted">2 demi-journées (6 h)</span>
+                        </div>
+                        <div class="flex flex-col items-end gap-1">
+                            <span class="text-lg font-semibold">Gratuit</span>
+                            <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-ezer-green-light border border-ezer-green text-ezer-green">Gratuit</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- FORMULES DE COACHING -->
+            <section id="tf-coaching" class="flex flex-col gap-5 scroll-mt-36">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <h2 class="font-cooper font-normal text-2xl lg:text-3xl">Formules de coaching</h2>
+                    <a href="coaching.html" class="font-semibold text-ezer-green hover:underline">Voir le coaching</a>
+                </div>
+                <ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 list-none">
+                    <li class="flex flex-col gap-2 p-5 border-2 border-ezer-green rounded-ezer bg-white">
+                        <span class="self-start text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-ezer-green-light border border-ezer-green text-ezer-green">Gratuit</span>
+                        <h3 class="text-lg font-semibold">Séance découverte</h3>
+                        <p class="text-[15px] text-ezer-muted">Pour faire connaissance, sans engagement</p>
+                        <p class="font-cooper text-2xl">Gratuit</p>
+                        <dl class="flex flex-col divide-y divide-ezer-green-borderLight text-sm">
+                            <div class="flex justify-between gap-2 py-2"><dt class="text-ezer-muted">Séances</dt><dd class="font-semibold">1</dd></div>
+                            <div class="flex justify-between gap-2 py-2"><dt class="text-ezer-muted">Durée d'une séance</dt><dd class="font-semibold">30 min</dd></div>
+                            <div class="flex justify-between gap-2 py-2"><dt class="text-ezer-muted">Sur</dt><dd class="font-semibold">—</dd></div>
+                        </dl>
+                        <a href="coaching-detail.html" class="mt-auto inline-flex items-center justify-center min-h-[48px] rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold hover:bg-ezer-green-light transition-colors">Voir le détail</a>
+                    </li>
+                    <li class="flex flex-col gap-2 p-5 border border-ezer-green-border rounded-ezer bg-white">
+                        <span class="self-start text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-white border border-ezer-dark">Tarifé</span>
+                        <h3 class="text-lg font-semibold">Confiance en soi</h3>
+                        <p class="text-[15px] text-ezer-muted">soit 5 000 FCFA la séance</p>
+                        <p class="font-cooper text-2xl">20 000 FCFA</p>
+                        <dl class="flex flex-col divide-y divide-ezer-green-borderLight text-sm">
+                            <div class="flex justify-between gap-2 py-2"><dt class="text-ezer-muted">Séances</dt><dd class="font-semibold">4</dd></div>
+                            <div class="flex justify-between gap-2 py-2"><dt class="text-ezer-muted">Durée d'une séance</dt><dd class="font-semibold">1 h</dd></div>
+                            <div class="flex justify-between gap-2 py-2"><dt class="text-ezer-muted">Sur</dt><dd class="font-semibold">2 mois</dd></div>
+                        </dl>
+                        <a href="coaching-detail.html" class="mt-auto inline-flex items-center justify-center min-h-[48px] rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold hover:bg-ezer-green-light transition-colors">Voir le détail</a>
+                    </li>
+                    <li class="flex flex-col gap-2 p-5 border border-ezer-green-border rounded-ezer bg-white">
+                        <span class="self-start text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-white border border-ezer-dark">Tarifé</span>
+                        <h3 class="text-lg font-semibold">Accompagnement parental</h3>
+                        <p class="text-[15px] text-ezer-muted">soit 5 000 FCFA la séance</p>
+                        <p class="font-cooper text-2xl">25 000 FCFA</p>
+                        <dl class="flex flex-col divide-y divide-ezer-green-borderLight text-sm">
+                            <div class="flex justify-between gap-2 py-2"><dt class="text-ezer-muted">Séances</dt><dd class="font-semibold">5</dd></div>
+                            <div class="flex justify-between gap-2 py-2"><dt class="text-ezer-muted">Durée d'une séance</dt><dd class="font-semibold">1 h</dd></div>
+                            <div class="flex justify-between gap-2 py-2"><dt class="text-ezer-muted">Sur</dt><dd class="font-semibold">2 à 3 mois</dd></div>
+                        </dl>
+                        <a href="coaching-detail.html" class="mt-auto inline-flex items-center justify-center min-h-[48px] rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold hover:bg-ezer-green-light transition-colors">Voir le détail</a>
+                    </li>
+                    <li class="flex flex-col gap-2 p-5 border border-ezer-green-border rounded-ezer bg-white">
+                        <span class="self-start text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-white border border-ezer-dark">Tarifé</span>
+                        <h3 class="text-lg font-semibold">Projet professionnel</h3>
+                        <p class="text-[15px] text-ezer-muted">soit 5 000 FCFA la séance</p>
+                        <p class="font-cooper text-2xl">30 000 FCFA</p>
+                        <dl class="flex flex-col divide-y divide-ezer-green-borderLight text-sm">
+                            <div class="flex justify-between gap-2 py-2"><dt class="text-ezer-muted">Séances</dt><dd class="font-semibold">6</dd></div>
+                            <div class="flex justify-between gap-2 py-2"><dt class="text-ezer-muted">Durée d'une séance</dt><dd class="font-semibold">1 h</dd></div>
+                            <div class="flex justify-between gap-2 py-2"><dt class="text-ezer-muted">Sur</dt><dd class="font-semibold">3 mois</dd></div>
+                        </dl>
+                        <a href="coaching-detail.html" class="mt-auto inline-flex items-center justify-center min-h-[48px] rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold hover:bg-ezer-green-light transition-colors">Voir le détail</a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- COMMENT PAYER -->
+            <section id="tf-paiement" class="flex flex-col lg:flex-row items-start gap-8 lg:gap-12 scroll-mt-36">
+                <div class="flex-1 basis-[420px] min-w-0 flex flex-col gap-4">
+                    <h2 class="font-cooper font-normal text-2xl lg:text-3xl">Comment payer</h2>
+                    <ol class="flex flex-col gap-3.5 list-none">
+                        <li class="flex items-start gap-3">
+                            <span aria-hidden="true" class="shrink-0 w-7 h-7 rounded-full border-2 border-ezer-brown inline-flex items-center justify-center text-sm font-semibold">1</span>
+                            <span class="pt-0.5">Inscrivez-vous à une formation ou à une formule de coaching depuis votre compte.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span aria-hidden="true" class="shrink-0 w-7 h-7 rounded-full border-2 border-ezer-brown inline-flex items-center justify-center text-sm font-semibold">2</span>
+                            <span class="pt-0.5">Réglez par <strong class="font-semibold">Mixx By Yas</strong> ou <strong class="font-semibold">Moov Money</strong>, ou en espèces au siège.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span aria-hidden="true" class="shrink-0 w-7 h-7 rounded-full border-2 border-ezer-brown inline-flex items-center justify-center text-sm font-semibold">3</span>
+                            <span class="pt-0.5">Le bureau vérifie le paiement et vous confirme votre place par SMS ou WhatsApp.</span>
+                        </li>
+                    </ol>
+                </div>
+                <aside class="flex-1 basis-[300px] min-w-0 bg-ezer-green-light rounded-ezer p-6 flex flex-col gap-2.5">
+                    <h3 class="text-lg font-semibold">Une difficulté pour payer ?</h3>
+                    <p>Parlez-en au bureau, en toute discrétion. [Conditions de tarif réduit ou de paiement en plusieurs fois, à définir.]</p>
+                    <a href="https://wa.me/22800000000" class="self-start font-semibold text-ezer-green hover:underline">Nous écrire sur WhatsApp</a>
+                </aside>
+            </section>
+        </div>
+    </main>
+
+    <div data-layout="footer"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
