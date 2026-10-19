@@ -1,0 +1,23 @@
+{
+  "name": "ezerhome_frontend",
+  "version": "1.0.0",
+  "description": "Intégration Tailwind CSS fidèle des maquettes Ezer Home",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --minify",
+    "watch:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --watch",
+    "dev": "vite",
+    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --minify && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["ezerhome", "tailwind", "frontend"],
+  "author": "Ezer Home",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "autoprefixer": "^10.6.1",
+    "postcss": "^8.5.31",
+    "tailwindcss": "^3.4.17",
+    "vite": "^8.3.4"
+  }
+}

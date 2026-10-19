@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan du prototype — Ezer Home</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ezer: {
+                            green: { DEFAULT: '#187d50', dark: '#12603d', light: '#e9f7f0', pale: '#f6faf8', border: '#c8dccf', borderLight: '#d3e6db' },
+                            dark: '#0e1c03',
+                            muted: '#5b6656',
+                            borderMuted: '#6f8577',
+                            red: { DEFAULT: '#c1272d', light: '#fdf2f2', border: '#f8b4b4' },
+                            brown: { DEFAULT: '#a67c52', light: '#faf6f2' }
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'system-ui, sans-serif'],
+                        cooper: ['"Cooper Black"', 'Georgia', 'serif'],
+                    },
+                    borderRadius: { 'ezer': '12px' },
+                    boxShadow: { 'ezer-nav': 'inset 0 -3px 0 #187d50' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-relaxed">
+
+    <div class="max-w-[1400px] mx-auto px-4 lg:px-8 py-8 lg:py-12">
+
+        <div class="flex flex-col gap-1.5 mb-8">
+            <p class="text-xs font-semibold uppercase tracking-widest text-ezer-green">Ezer Home · Prototype</p>
+            <h1 class="font-cooper font-normal text-4xl lg:text-5xl">Plan du prototype</h1>
+            <p class="text-ezer-muted max-w-[860px]">Point d'entrée de la navigation : chaque écran est accessible ici. Les maquettes mobiles et ordinateurs ont été fusionnées en une page responsive unique ; les états (erreur, chargement, succès) sont accessibles via le sélecteur en haut de chaque page.</p>
+        </div>
+
+        <div id="filtres" class="flex flex-wrap gap-2 mb-6" role="group" aria-label="Filtrer les écrans">
+            <button type="button" data-filtre="tous" aria-pressed="true" class="min-h-[44px] px-4 rounded-ezer border-2 border-ezer-green bg-ezer-green text-white font-semibold text-[15px]">Tous</button>
+            <button type="button" data-filtre="faits" aria-pressed="false" class="min-h-[44px] px-4 rounded-ezer border border-ezer-borderMuted bg-white text-ezer-dark font-semibold text-[15px]">Réalisés</button>
+            <button type="button" data-filtre="a-venir" aria-pressed="false" class="min-h-[44px] px-4 rounded-ezer border border-ezer-borderMuted bg-white text-ezer-dark font-semibold text-[15px]">À venir</button>
+        </div>
+
+        <div id="plan" class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 items-start"></div>
+
+    </div>
+
+    <script>
+        (function () {
+            var P = 'pages/';
+            var groupes = [
+                { titre: 'Site public', ecrans: [
+                    ['Accueil', P + 'site/accueil.html', 'fait'],
+                    ['Menu mobile ouvert', P + 'site/menu-mobile.html'],
+                    ['Écoute', P + 'site/ecoute.html', 'fait'],
+                    ['Formations : liste des offres', P + 'site/formations.html', 'fait'],
+                    ['Formation : détail d\'une offre', P + 'site/formation-detail.html'],
+                    ['Coaching : liste des offres', P + 'site/coaching.html'],
+                    ['Coaching : détail d\'une offre', P + 'site/coaching-detail.html'],
+                    ['Tarifs', P + 'site/tarifs.html'],
+                    ['À propos', P + 'site/a-propos.html'],
+                    ['Notre équipe', P + 'site/equipe.html'],
+                    ['À quoi servent les dons', P + 'site/usage-dons.html'],
+                    ['Partenaires', P + 'site/partenaires.html'],
+                    ['Contact : particulier', P + 'site/contact-particulier.html'],
+                    ['Contact : donateur institutionnel', P + 'site/contact-institutionnel.html'],
+                    ['Pages légales', P + 'site/legal.html'],
+                    ['Hors ligne', P + 'site/hors-ligne.html'],
+                    ['Page introuvable (404)', P + 'site/404.html']
+                ]},
+                { titre: 'Assistance et dons', ecrans: [
+                    ['Assistance : formulaire', P + 'assistance/demande.html', 'fait', '4 états'],
+                    ['Assistance : erreur', P + 'assistance/demande.html#etat-form', 'fait', 'état 2'],
+                    ['Assistance : envoi', P + 'assistance/demande.html#etat-form', 'fait', 'état 3'],
+                    ['Assistance : succès', P + 'assistance/demande.html#etat-succes', 'fait', 'état 4'],
+                    ['Dons : formulaire', P + 'dons/don.html', 'fait', '4 états'],
+                    ['Dons : erreur', P + 'dons/don.html#etat-form', 'fait', 'état 2'],
+                    ['Dons : envoi', P + 'dons/don.html#etat-form', 'fait', 'état 3'],
+                    ['Dons : instructions de paiement', P + 'dons/don.html#etat-succes', 'fait', 'état 4']
+                ]},
+                { titre: 'Compte', ecrans: [
+                    ['Inscription', P + 'auth/inscription.html'],
+                    ['Code OTP', P + 'auth/otp.html'],
+                    ['Code OTP en erreur', P + 'auth/otp-erreur.html'],
+                    ['Lien magique envoyé', P + 'auth/lien-magique.html'],
+                    ['Connexion', P + 'auth/connexion.html', 'fait', '2 états'],
+                    ['Connexion en erreur', P + 'auth/connexion.html', 'fait', 'état 2'],
+                    ['Mot de passe oublié', P + 'auth/mdp-oublie.html'],
+                    ['Nouveau mot de passe', P + 'auth/nouveau-mdp.html'],
+                    ['Double authentification : code', P + 'auth/2fa-code.html'],
+                    ['Double authentification : activation', P + 'auth/2fa-activation.html'],
+                    ['Double authentification : codes de secours', P + 'auth/2fa-secours.html'],
+                    ['Compte désactivé', P + 'auth/compte-desactive.html']
+                ]},
+                { titre: 'Espace personnel', ecrans: [
+                    ['Écoute : suivi de la demande', P + 'espace/suivi-ecoute.html'],
+                    ['Écoute : demande d\'accompagnement', P + 'espace/demande-ecoute.html'],
+                    ['Charte éthique (signature bloquante)', P + 'espace/charte.html'],
+                    ['Messagerie sécurisée', P + 'espace/messagerie.html'],
+                    ['Messagerie : chargement', P + 'espace/messagerie-chargement.html'],
+                    ['Formations suivies', P + 'espace/formations.html'],
+                    ['Formations : état vide', P + 'espace/formations-vide.html'],
+                    ['Coaching suivi', P + 'espace/coaching.html'],
+                    ['Profil et confidentialité', P + 'espace/profil.html']
+                ]},
+                { titre: 'Inscription payante', ecrans: [
+                    ['Récapitulatif', P + 'commande/recapitulatif.html'],
+                    ['Choix du moyen de paiement', P + 'commande/paiement.html'],
+                    ['En attente du bureau', P + 'commande/attente.html'],
+                    ['Accès débloqué', P + 'commande/debloque.html'],
+                    ['Paiement échoué', P + 'commande/echec.html'],
+                    ['Réservation expirée', P + 'commande/expiree.html']
+                ]},
+                { titre: 'Thérapeutes et coachs', ecrans: [
+                    ['Candidature intervenant', P + 'intervenant/candidature.html'],
+                    ['Candidature envoyée', P + 'intervenant/candidature-attente.html'],
+                    ['Tableau de bord intervenant', P + 'intervenant/dashboard.html'],
+                    ['Fiche consultant', P + 'intervenant/fiche-consultant.html'],
+                    ['Programmer une réunion', P + 'intervenant/programmer-reunion.html'],
+                    ['Agenda', P + 'intervenant/agenda.html'],
+                    ['Agenda vide', P + 'intervenant/agenda-vide.html'],
+                    ['Notes de réunion', P + 'intervenant/notes.html'],
+                    ['Terminer la note', P + 'intervenant/notes-confirmation.html'],
+                    ['Note verrouillée', P + 'intervenant/notes-verrouillee.html'],
+                    ['Messagerie', P + 'intervenant/messagerie.html'],
+                    ['Mes offres', P + 'intervenant/offres.html'],
+                    ['Liste des inscrits', P + 'intervenant/inscrits.html']
+                ]},
+                { titre: 'Comité d\'assistance', ecrans: [
+                    ['Liste des demandes', P + 'comite/demandes.html'],
+                    ['Fiche d\'une demande', P + 'comite/fiche-demande.html'],
+                    ['Changement de statut', P + 'comite/changement-statut.html'],
+                    ['Photos d\'actions', P + 'comite/photos.html'],
+                    ['Aucun résultat / erreur de chargement', P + 'comite/erreur-vide.html']
+                ]},
+                { titre: 'Administration', ecrans: [
+                    ['Tableau de bord', P + 'admin/dashboard.html'],
+                    ['Demandes d\'écoute et affectation', P + 'admin/affectation-ecoute.html'],
+                    ['Candidatures intervenants', P + 'admin/candidatures.html'],
+                    ['Utilisateurs', P + 'admin/utilisateurs.html'],
+                    ['Suivi des réunions', P + 'admin/reunions.html'],
+                    ['Lecture d\'une note clôturée', P + 'admin/note-cloturee.html'],
+                    ['Paiements et rapprochement', P + 'admin/paiements.html'],
+                    ['Paiements : chargement', P + 'admin/paiements-chargement.html'],
+                    ['Dons et reçus', P + 'admin/dons.html'],
+                    ['Médiathèque', P + 'admin/mediatheque.html'],
+                    ['Médiathèque vide', P + 'admin/mediatheque-vide.html'],
+                    ['Médiathèque : suppression bloquée', P + 'admin/mediatheque-bloquee.html'],
+                    ['Organigramme', P + 'admin/organigramme.html'],
+                    ['Partenaires', P + 'admin/partenaires.html'],
+                    ['CMS : pages et contenus', P + 'admin/cms-pages.html'],
+                    ['CMS : charte versionnée', P + 'admin/cms-charte.html'],
+                    ['Modèles de notifications', P + 'admin/notifications.html'],
+                    ['Paramètres', P + 'admin/parametres.html'],
+                    ['Journal d\'audit', P + 'admin/audit.html'],
+                    ['Journal d\'audit : erreur', P + 'admin/audit-erreur.html']
+                ]},
+                { titre: 'Messages et système', ecrans: [
+                    ['E-mail : vérification de compte', P + 'emails/verification-compte.html'],
+                    ['E-mail : vérification (téléphone)', P + 'emails/verification-telephone.html'],
+                    ['E-mail : réunion programmée', P + 'emails/reunion-programmee.html'],
+                    ['E-mail : réunion modifiée', P + 'emails/reunion-modifiee.html'],
+                    ['E-mail : réunion annulée', P + 'emails/reunion-annulee.html'],
+                    ['E-mail : rappel de réunion', P + 'emails/rappel-reunion.html'],
+                    ['E-mail : rappel (téléphone)', P + 'emails/rappel-telephone.html'],
+                    ['E-mail : statut d\'assistance', P + 'emails/statut-assistance.html'],
+                    ['E-mail : reçu de don', P + 'emails/recu-don.html'],
+                    ['E-mail : préavis de désactivation', P + 'emails/preavis-desactivation.html'],
+                    ['SMS et WhatsApp', P + 'messages/formats-courts.html'],
+                    ['Composants et états de référence', P + 'composants/composants.html']
+                ]}
+            ];
+
+            var plan = document.getElementById('plan');
+
+            function rendre(filtre) {
+                plan.innerHTML = '';
+                groupes.forEach(function (g) {
+                    var lignes = g.ecrans.filter(function (e) {
+                        if (filtre === 'faits') return e[2] === 'fait';
+                        if (filtre === 'a-venir') return e[2] !== 'fait';
+                        return true;
+                    });
+                    if (!lignes.length) return;
+
+                    var section = document.createElement('section');
+                    section.className = 'border border-ezer-green-border rounded-ezer overflow-hidden bg-white';
+
+                    var titre = document.createElement('h2');
+                    titre.className = 'bg-ezer-green-light px-4 py-3 text-lg font-semibold';
+                    titre.textContent = g.titre + ' (' + lignes.length + ')';
+                    section.appendChild(titre);
+
+                    var table = document.createElement('table');
+                    table.className = 'w-full text-sm';
+
+                    lignes.forEach(function (e) {
+                        var nom = e[0], href = e[1], fait = e[2] === 'fait', note = e[3];
+                        var tr = document.createElement('tr');
+                        tr.className = 'border-t border-ezer-green-borderLight' + (fait ? '' : ' opacity-60');
+
+                        var tdNom = document.createElement('td');
+                        tdNom.className = 'p-3 lg:px-4';
+                        tdNom.textContent = nom;
+                        if (note) {
+                            var badge = document.createElement('span');
+                            badge.className = 'ml-2 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-ezer-green-light border border-ezer-green text-ezer-green';
+                            badge.textContent = note;
+                            tdNom.appendChild(badge);
+                        }
+                        tr.appendChild(tdNom);
+
+                        var tdAction = document.createElement('td');
+                        tdAction.className = 'p-3 lg:px-4 text-right whitespace-nowrap';
+                        if (fait) {
+                            var a = document.createElement('a');
+                            a.href = href;
+                            a.className = 'inline-flex items-center justify-center min-h-[44px] px-4 rounded-ezer bg-ezer-green text-white font-semibold hover:bg-ezer-green-dark transition-colors';
+                            a.textContent = 'Ouvrir';
+                            tdAction.appendChild(a);
+                        } else {
+                            var span = document.createElement('span');
+                            span.className = 'text-ezer-muted font-semibold';
+                            span.textContent = 'À venir';
+                            tdAction.appendChild(span);
+                        }
+                        tr.appendChild(tdAction);
+
+                        table.appendChild(tr);
+                    });
+
+                    section.appendChild(table);
+                    plan.appendChild(section);
+                });
+            }
+
+            document.querySelectorAll('[data-filtre]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var f = btn.getAttribute('data-filtre');
+                    document.querySelectorAll('[data-filtre]').forEach(function (b) {
+                        var on = b === btn;
+                        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+                        b.classList.toggle('bg-ezer-green', on);
+                        b.classList.toggle('text-white', on);
+                        b.classList.toggle('border-ezer-green', on);
+                        b.classList.toggle('border-2', on);
+                        b.classList.toggle('bg-white', !on);
+                        b.classList.toggle('text-ezer-dark', !on);
+                        b.classList.toggle('border-ezer-borderMuted', !on);
+                    });
+                    rendre(f);
+                });
+            });
+
+            rendre('tous');
+        })();
+    </script>
+</body>
+</html>

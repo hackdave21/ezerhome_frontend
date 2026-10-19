@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ezer: {
+                            green: { DEFAULT: '#187d50', dark: '#12603d', light: '#e9f7f0', pale: '#f6faf8', border: '#c8dccf', borderLight: '#d3e6db' },
+                            dark: '#0e1c03',
+                            muted: '#5b6656',
+                            borderMuted: '#6f8577',
+                            red: { DEFAULT: '#c1272d', light: '#fdf2f2', border: '#f8b4b4' },
+                            brown: { DEFAULT: '#a67c52', light: '#faf6f2' }
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'system-ui, sans-serif'],
+                        cooper: ['"Cooper Black"', 'Georgia', 'serif'],
+                    },
+                    borderRadius: { 'ezer': '12px' },
+                    boxShadow: { 'ezer-nav': 'inset 0 -3px 0 #187d50' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white lg:bg-ezer-green-light text-ezer-dark font-sans text-base leading-normal min-h-screen flex flex-col">
+
+    <div data-layout="header"></div>
+
+    <main class="flex-1">
+        <div class="px-4 py-7 lg:px-8 lg:py-16 lg:pb-22">
+            <div class="max-w-[520px] mx-auto lg:p-10 lg:border lg:border-ezer-green-border rounded-ezer bg-white flex flex-col gap-6">
+
+                <!-- SÉLECTEUR D'ÉTATS -->
+                <div data-state-switcher="connexion" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+                    <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+                    <button type="button" data-etat-btn="connexion" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Connexion</button>
+                    <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Connexion en erreur</button>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <h1 class="font-cooper font-normal text-3xl">Se connecter</h1>
+                    <p class="text-ezer-muted">Heureux de vous revoir.</p>
+                </div>
+
+                <!-- ALERTE -->
+                <div id="cx-alerte" hidden role="alert" class="flex items-start gap-2.5 border-2 border-ezer-dark rounded-ezer p-3.5 px-4 text-[15px]">
+                    <svg aria-hidden="true" class="shrink-0 mt-0.5 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg>
+                    <span><strong class="font-semibold">Identifiant ou mot de passe incorrect.</strong> Vérifiez votre saisie, ou recevez un code de connexion.</span>
+                </div>
+
+                <form id="cx-form" novalidate aria-label="Connexion" class="flex flex-col gap-5">
+                    <div class="flex flex-col gap-1.5">
+                        <label for="cx-id" class="text-[15px] font-semibold">Téléphone ou e-mail</label>
+                        <input id="cx-id" type="text" autocomplete="username" class="w-full h-[52px] px-4 border border-ezer-borderMuted rounded-ezer bg-white focus:border-ezer-green focus:outline-none">
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <div class="flex flex-wrap items-baseline justify-between gap-1">
+                            <label for="cx-mdp" class="text-[15px] font-semibold">Mot de passe</label>
+                            <a href="mdp-oublie.html" class="text-sm font-semibold py-1 text-ezer-green hover:underline">Mot de passe oublié ?</a>
+                        </div>
+                        <div id="cx-mdp-bloc" class="flex items-center border border-ezer-borderMuted rounded-ezer bg-white pr-1">
+                            <input id="cx-mdp" type="password" autocomplete="current-password" class="flex-1 min-w-0 h-[52px] px-4 border-0 rounded-ezer bg-white focus:outline-none">
+                            <button type="button" id="cx-toggle" aria-pressed="false" class="shrink-0 min-h-[44px] px-3 border-0 bg-transparent text-ezer-green font-semibold text-sm">Afficher</button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full min-h-[56px] rounded-ezer border-0 bg-ezer-green text-white text-[17px] font-semibold hover:bg-ezer-green-dark transition-colors">Se connecter</button>
+                </form>
+
+                <div aria-hidden="true" class="flex items-center gap-3 text-sm text-ezer-muted">
+                    <span class="flex-1 h-px bg-ezer-green-border"></span>ou<span class="flex-1 h-px bg-ezer-green-border"></span>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <a href="otp.html" class="flex items-center justify-center gap-2 min-h-[56px] rounded-ezer border-2 border-ezer-green bg-white text-ezer-green text-[17px] font-semibold hover:bg-ezer-green-light transition-colors">Recevoir un code de connexion</a>
+                    <p class="-mt-2 text-center text-sm text-ezer-muted">Sans mot de passe : par SMS ou par e-mail.</p>
+                </div>
+
+                <p class="pt-5 border-t border-ezer-green-borderLight text-center">Pas encore de compte ? <a href="inscription.html" class="font-semibold text-ezer-green hover:underline">Créer un compte</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-ezer-green-borderLight bg-white px-4 py-5 text-sm text-ezer-muted">
+        <div class="max-w-[1200px] mx-auto flex flex-wrap justify-between gap-2 lg:gap-6">
+            <span>© 2026 Ezer Home</span>
+            <nav aria-label="Liens utiles" class="flex flex-wrap gap-1 lg:gap-4">
+                <a href="../site/legal.html#confidentialite" class="py-1.5 text-ezer-green hover:underline">Confidentialité</a>
+                <a href="../site/legal.html#cgu" class="py-1.5 text-ezer-green hover:underline">CGU</a>
+                <a href="../site/contact-particulier.html" class="py-1.5 text-ezer-green hover:underline">Contact</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var form = document.getElementById('cx-form');
+
+            function majMdp() {
+                var champ = document.getElementById('cx-mdp');
+                var btn = document.getElementById('cx-toggle');
+                var visible = champ.type === 'text';
+                btn.textContent = visible ? 'Masquer' : 'Afficher';
+                btn.setAttribute('aria-pressed', visible ? 'true' : 'false');
+            }
+
+            document.getElementById('cx-toggle').addEventListener('click', function () {
+                var champ = document.getElementById('cx-mdp');
+                champ.type = champ.type === 'text' ? 'password' : 'text';
+                majMdp();
+            });
+
+            function setEtat(erreur) {
+                document.getElementById('cx-alerte').hidden = !erreur;
+                document.getElementById('cx-id').value = erreur ? '90 12 34 56' : '';
+                document.getElementById('cx-mdp').value = erreur ? 'motdepasse' : '';
+                ['cx-id', 'cx-mdp-bloc'].forEach(function (id) {
+                    var el = document.getElementById(id);
+                    el.classList.toggle('border-2', erreur);
+                    el.classList.toggle('border-ezer-red', erreur);
+                });
+
+                document.querySelectorAll('[data-etat-btn]').forEach(function (b) {
+                    var on = (b.getAttribute('data-etat-btn') === 'erreur') === erreur;
+                    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+                    b.classList.toggle('bg-ezer-dark', on);
+                    b.classList.toggle('text-white', on);
+                    b.classList.toggle('bg-white', !on);
+                    b.classList.toggle('text-ezer-dark', !on);
+                    b.classList.toggle('border', !on);
+                    b.classList.toggle('border-ezer-borderMuted', !on);
+                });
+            }
+
+            document.querySelectorAll('[data-etat-btn]').forEach(function (b) {
+                b.addEventListener('click', function () {
+                    setEtat(b.getAttribute('data-etat-btn') === 'erreur');
+                });
+            });
+
+            form.addEventListener('submit', function (ev) {
+                ev.preventDefault();
+                setEtat(true);
+            });
+
+            majMdp();
+            setEtat(false);
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faire un don — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ezer: {
+                            green: { DEFAULT: '#187d50', dark: '#12603d', light: '#e9f7f0', pale: '#f6faf8', border: '#c8dccf', borderLight: '#d3e6db' },
+                            dark: '#0e1c03',
+                            muted: '#5b6656',
+                            borderMuted: '#6f8577',
+                            red: { DEFAULT: '#c1272d', light: '#fdf2f2', border: '#f8b4b4' },
+                            brown: { DEFAULT: '#a67c52', light: '#faf6f2' }
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'system-ui, sans-serif'],
+                        cooper: ['"Cooper Black"', 'Georgia', 'serif'],
+                    },
+                    borderRadius: { 'ezer': '12px' },
+                    boxShadow: { 'ezer-nav': 'inset 0 -3px 0 #187d50' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="header" data-active="dons"></div>
+
+    <main class="flex flex-col">
+
+        <!-- BANDEAU DE PAGE -->
+        <section class="bg-ezer-green-light">
+            <div class="max-w-[1200px] mx-auto px-4 lg:px-8 py-8 lg:py-12 flex flex-col gap-3">
+                <nav aria-label="Fil d'Ariane" class="text-sm">
+                    <ol class="flex flex-wrap items-center gap-2 text-ezer-muted">
+                        <li><a href="../site/accueil.html" class="text-ezer-green hover:underline">Accueil</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li aria-current="page">Faire un don</li>
+                    </ol>
+                </nav>
+                <h1 class="font-cooper font-normal text-3xl lg:text-5xl">Soutenir Ezer Home</h1>
+                <p class="text-base max-w-[640px]">Votre don finance l'aide matérielle et l'écoute gratuite proposées par l'association. Sans compte, en quelques étapes.</p>
+            </div>
+        </section>
+
+        <div class="max-w-[1200px] mx-auto px-4 lg:px-8 py-8 lg:py-14 flex flex-col gap-6">
+
+            <!-- SÉLECTEUR D'ÉTATS -->
+            <div data-state-switcher="don" class="bg-ezer-green-light p-4 rounded-ezer border border-ezer-green-border flex flex-wrap items-center justify-between gap-3">
+                <span class="text-sm font-semibold">Mode de démonstration :</span>
+                <div class="flex flex-wrap gap-2">
+                    <button type="button" data-etat-btn="formulaire" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Formulaire</button>
+                    <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Erreurs de champ</button>
+                    <button type="button" data-etat-btn="envoi" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. Envoi en cours</button>
+                    <button type="button" data-etat-btn="succes" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">4. Instructions de paiement</button>
+                </div>
+            </div>
+
+            <!-- ÉTAT : FORMULAIRE (et erreurs / envoi) -->
+            <section id="etat-form" data-etat-pane class="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
+
+                <div class="flex-1 basis-[560px] min-w-0 w-full lg:p-10 border border-ezer-green-border rounded-ezer bg-white">
+                    <form id="don-form" novalidate aria-label="Formulaire de don" class="flex flex-col gap-8">
+
+                        <!-- ALERTE ERREURS -->
+                        <div id="don-alerte" hidden role="alert" class="border-2 border-ezer-dark rounded-ezer p-4 lg:px-5 flex flex-col gap-2">
+                            <p class="flex items-center gap-2 font-semibold">
+                                <svg aria-hidden="true" class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg>
+                                <span id="don-alerte-titre">Un point est à corriger</span>
+                            </p>
+                            <ul id="don-alerte-liste" class="pl-7 flex flex-col gap-1 text-[15px] list-disc"></ul>
+                        </div>
+
+                        <fieldset id="don-form-body" class="border-0 p-0 m-0 min-w-0 flex flex-col gap-8">
+
+                            <!-- 1. MONTANT -->
+                            <fieldset id="dn-montant" aria-describedby="dn-montant-err" class="border-0 p-0 m-0 min-w-0 flex flex-col gap-2.5">
+                                <legend class="p-0 mb-2.5 text-xl font-semibold">1. Choisissez un montant</legend>
+                                <div class="grid grid-cols-1 lg:grid-cols-3 gap-2.5">
+                                    <label class="flex items-start gap-3 p-4 border border-ezer-borderMuted rounded-ezer bg-white cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                                        <input type="radio" name="dn-montant" value="2000" class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
+                                        <span class="flex flex-col gap-0.5">
+                                            <span class="text-xl font-semibold">2 000 FCFA</span>
+                                            <span class="text-sm text-ezer-muted">Un repas complet pour une personne accompagnée</span>
+                                        </span>
+                                    </label>
+                                    <label class="flex items-start gap-3 p-4 border border-ezer-borderMuted rounded-ezer bg-white cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                                        <input type="radio" name="dn-montant" value="5000" class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
+                                        <span class="flex flex-col gap-0.5">
+                                            <span class="text-xl font-semibold">5 000 FCFA</span>
+                                            <span class="text-sm text-ezer-muted">Un kit de fournitures scolaires pour un enfant</span>
+                                        </span>
+                                    </label>
+                                    <label class="flex items-start gap-3 p-4 border border-ezer-borderMuted rounded-ezer bg-white cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                                        <input type="radio" name="dn-montant" value="10000" class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
+                                        <span class="flex flex-col gap-0.5">
+                                            <span class="text-xl font-semibold">10 000 FCFA</span>
+                                            <span class="text-sm text-ezer-muted">Un panier alimentaire de base pour une famille</span>
+                                        </span>
+                                    </label>
+                                    <div class="lg:col-span-3 flex flex-col gap-2.5 p-4 border border-ezer-borderMuted rounded-ezer bg-white has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                                        <label class="flex items-center gap-3 font-semibold cursor-pointer">
+                                            <input type="radio" name="dn-montant" value="autre" class="w-5 h-5 shrink-0 accent-ezer-green">
+                                            Autre montant
+                                        </label>
+                                        <div class="flex items-stretch border border-ezer-borderMuted rounded-ezer overflow-hidden bg-white max-w-[320px]">
+                                            <input id="dn-autre" type="text" inputmode="numeric" aria-label="Autre montant, en francs CFA" placeholder="Ex. 3 000" class="flex-1 min-w-0 h-[52px] px-4 border-0 bg-white focus:outline-none">
+                                            <span aria-hidden="true" class="inline-flex items-center px-3.5 bg-ezer-green-light font-semibold border-l border-ezer-borderMuted">FCFA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p id="dn-montant-err" hidden class="flex items-start gap-1.5 text-sm font-semibold text-ezer-red"></p>
+                                <p class="text-[13px] text-ezer-muted">Exemples donnés à titre indicatif : chaque don rejoint l'ensemble des actions de l'association.</p>
+                            </fieldset>
+
+                            <!-- 2. FRÉQUENCE -->
+                            <fieldset id="dn-freq" aria-describedby="dn-freq-err" class="border-0 p-0 m-0 min-w-0 flex flex-col gap-2.5">
+                                <legend class="p-0 mb-2.5 text-xl font-semibold">2. À quelle fréquence ?</legend>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                                    <label class="flex items-start gap-2.5 p-4 border border-ezer-borderMuted rounded-ezer bg-white cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                                        <input type="radio" name="dn-freq" value="ponctuel" class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
+                                        <span class="flex flex-col gap-0.5">
+                                            <span class="font-semibold">Une fois</span>
+                                            <span class="text-sm text-ezer-muted">Un seul don, aujourd'hui.</span>
+                                        </span>
+                                    </label>
+                                    <label class="flex items-start gap-2.5 p-4 border border-ezer-borderMuted rounded-ezer bg-white cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                                        <input type="radio" name="dn-freq" value="mensuel" class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
+                                        <span class="flex flex-col gap-0.5">
+                                            <span class="font-semibold">Chaque mois</span>
+                                            <span class="text-sm text-ezer-muted">Un rappel mensuel, sans engagement.</span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <p id="dn-freq-err" hidden class="flex items-start gap-1.5 text-sm font-semibold text-ezer-red"></p>
+                            </fieldset>
+
+                            <!-- 3. MOYEN DE PAIEMENT -->
+                            <fieldset id="dn-moyen" aria-describedby="dn-moyen-err" class="border-0 p-0 m-0 min-w-0 flex flex-col gap-2.5">
+                                <legend class="p-0 mb-2.5 text-xl font-semibold">3. Moyen de paiement</legend>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                                    <label class="flex items-center gap-2.5 min-h-16 px-3.5 py-3 border border-ezer-borderMuted rounded-ezer bg-white cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                                        <input type="radio" name="dn-moyen" value="mixx" class="w-5 h-5 shrink-0 accent-ezer-green">
+                                        <span class="flex flex-col">
+                                            <span class="font-semibold">Mixx By Yas</span>
+                                            <span class="text-[13px] text-ezer-muted">Paiement mobile</span>
+                                        </span>
+                                    </label>
+                                    <label class="flex items-center gap-2.5 min-h-16 px-3.5 py-3 border border-ezer-borderMuted rounded-ezer bg-white cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                                        <input type="radio" name="dn-moyen" value="moov" class="w-5 h-5 shrink-0 accent-ezer-green">
+                                        <span class="flex flex-col">
+                                            <span class="font-semibold">Moov Money</span>
+                                            <span class="text-[13px] text-ezer-muted">Paiement mobile</span>
+                                        </span>
+                                    </label>
+                                    <label class="sm:col-span-2 lg:col-span-1 flex items-center gap-2.5 min-h-16 px-3.5 py-3 border border-ezer-borderMuted rounded-ezer bg-white cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                                        <input type="radio" name="dn-moyen" value="autre" class="w-5 h-5 shrink-0 accent-ezer-green">
+                                        <span class="flex flex-col">
+                                            <span class="font-semibold">Autre moyen</span>
+                                            <span class="text-[13px] text-ezer-muted">Virement bancaire ou espèces au siège</span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <p id="dn-moyen-err" hidden class="flex items-start gap-1.5 text-sm font-semibold text-ezer-red"></p>
+                            </fieldset>
+
+                            <!-- 4. COORDONNÉES -->
+                            <div class="flex flex-col gap-4">
+                                <h2 class="text-xl font-semibold">4. Vos coordonnées <span class="font-normal text-ezer-muted">(facultatif)</span></h2>
+
+                                <label class="flex items-start gap-3 p-3.5 px-4 rounded-ezer bg-ezer-green-light cursor-pointer">
+                                    <input id="dn-anonyme" type="checkbox" class="w-6 h-6 shrink-0 accent-ezer-green">
+                                    <span class="flex flex-col gap-0.5">
+                                        <span class="font-semibold">Faire un don anonyme</span>
+                                        <span class="text-sm text-ezer-muted">Votre nom ne sera ni demandé, ni publié, ni communiqué.</span>
+                                    </span>
+                                </label>
+
+                                <div id="dn-nom-bloc" class="flex flex-col gap-1.5">
+                                    <label for="dn-nom" class="text-[15px] font-semibold">Votre nom <span class="font-normal text-ezer-muted">(facultatif)</span></label>
+                                    <input id="dn-nom" type="text" autocomplete="name" class="w-full h-[52px] px-4 border border-ezer-borderMuted rounded-ezer bg-white focus:border-ezer-green focus:outline-none">
+                                </div>
+
+                                <div class="flex flex-col gap-1.5">
+                                    <label for="dn-contact" class="text-[15px] font-semibold">Téléphone ou e-mail <span class="font-normal text-ezer-muted">(facultatif)</span></label>
+                                    <span id="dn-contact-aide" class="text-sm text-ezer-muted">Pour confirmer la réception de votre don.</span>
+                                    <input id="dn-contact" type="text" autocomplete="tel" class="w-full h-[52px] px-4 border border-ezer-borderMuted rounded-ezer bg-white focus:border-ezer-green focus:outline-none">
+                                    <p id="dn-contact-err" hidden class="flex items-start gap-1.5 text-sm font-semibold text-ezer-red"></p>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- VALIDATION -->
+                        <div class="flex flex-col gap-3.5 border-t border-ezer-green-borderLight pt-6">
+                            <p id="don-recap" hidden>Vous donnez <strong class="font-semibold" id="don-recap-montant"></strong>, <span id="don-recap-freq"></span>, avec <strong class="font-semibold" id="don-recap-moyen"></strong>.</p>
+                            <button id="don-submit" type="submit" class="self-start inline-flex items-center justify-center gap-2.5 min-h-[52px] px-7 rounded-ezer bg-ezer-green text-white font-semibold hover:bg-ezer-green-dark transition-colors">
+                                <span id="don-submit-label">Continuer vers le paiement</span>
+                            </button>
+                            <p id="don-status" role="status" hidden class="text-sm text-ezer-muted">Merci de patienter, ne fermez pas la page.</p>
+                            <p class="flex items-start gap-2.5 p-3.5 px-4 rounded-ezer border border-ezer-green-border text-sm">
+                                <svg aria-hidden="true" class="w-5 h-5 shrink-0 mt-0.5 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+                                <span><strong class="font-semibold">Aucun paiement n'est prélevé sur ce site.</strong> Vous validez le transfert sur votre téléphone, avec votre code secret. Ezer Home ne vous demandera jamais ce code.</span>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- À QUOI SERVENT LES DONS -->
+                <aside aria-labelledby="dn-usage" class="flex-1 basis-[300px] min-w-0 flex flex-col gap-4 bg-ezer-green-light rounded-ezer p-6">
+                    <h2 id="dn-usage" class="text-xl font-semibold">À quoi servent vos dons</h2>
+                    <ul class="flex flex-col gap-3.5 text-[15px] list-none">
+                        <li class="flex items-start gap-3">
+                            <svg aria-hidden="true" class="w-5 h-5 shrink-0 mt-0.5 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="M3 8l9 5 9-5M12 13v8"></path></svg>
+                            <span><strong class="font-semibold">L'aide matérielle :</strong> vivres, habillement, fournitures et frais de scolarité.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg aria-hidden="true" class="w-5 h-5 shrink-0 mt-0.5 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.8A8 8 0 1 1 21 12z"></path></svg>
+                            <span><strong class="font-semibold">L'écoute gratuite :</strong> pour qu'elle reste accessible à toutes et à tous.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg aria-hidden="true" class="w-5 h-5 shrink-0 mt-0.5 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V10l8-6 8 6v11z"></path><path d="M10 21v-6h4v6"></path></svg>
+                            <span><strong class="font-semibold">Le fonctionnement :</strong> local, déplacements, communication.</span>
+                        </li>
+                    </ul>
+                    <p class="text-sm text-ezer-muted">Le bureau enregistre et vérifie chaque don reçu.</p>
+                    <a href="../site/usage-dons.html" class="self-start font-semibold py-2.5 text-ezer-green hover:underline">En savoir plus</a>
+                </aside>
+            </section>
+
+            <!-- ÉTAT : INSTRUCTIONS DE PAIEMENT -->
+            <section id="etat-succes" data-etat-pane hidden role="status" class="w-full max-w-[760px] mx-auto p-6 lg:p-10 border border-ezer-green-border rounded-ezer flex flex-col gap-7">
+                <div class="flex flex-col gap-2.5">
+                    <span aria-hidden="true" class="w-16 h-16 rounded-full bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-9.2-9A4.8 4.8 0 0 1 12 6.5 4.8 4.8 0 0 1 21.2 11C19.5 15.4 12 20 12 20z"></path></svg>
+                    </span>
+                    <h2 class="font-cooper font-normal text-3xl">Merci ! Il reste une étape : le paiement</h2>
+                    <p>Votre don n'est pas encore payé. Suivez les étapes ci-dessous depuis votre téléphone.</p>
+                </div>
+
+                <div class="bg-ezer-green-light rounded-ezer p-6 flex flex-col gap-4">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex flex-col">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-ezer-green">Référence du don</span>
+                            <span class="font-cooper text-2xl lg:text-3xl">DON-2026-00117</span>
+                        </div>
+                        <span class="inline-flex items-center gap-1.5 text-[13px] font-semibold px-3 py-1 rounded-full bg-white border border-ezer-dark">
+                            <svg aria-hidden="true" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+                            En attente de confirmation
+                        </span>
+                    </div>
+                    <dl class="grid grid-cols-1 sm:grid-cols-3 gap-3 border-t border-ezer-green-border pt-4">
+                        <div>
+                            <dt class="text-[13px] text-ezer-muted">Montant</dt>
+                            <dd class="font-semibold" data-recap="montant">—</dd>
+                        </div>
+                        <div>
+                            <dt class="text-[13px] text-ezer-muted">Fréquence</dt>
+                            <dd class="font-semibold" data-recap="freq">—</dd>
+                        </div>
+                        <div>
+                            <dt class="text-[13px] text-ezer-muted">Moyen</dt>
+                            <dd class="font-semibold" data-recap="moyen">—</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="flex flex-col gap-3.5">
+                    <h3 class="text-xl font-semibold">Comment payer avec <span data-recap="moyen-court">votre moyen</span></h3>
+                    <ol id="don-etapes" class="flex flex-col gap-4 list-none"></ol>
+                    <div class="flex flex-wrap items-center justify-between gap-3 border-2 border-ezer-green rounded-ezer p-4 px-5">
+                        <div class="flex flex-col">
+                            <span class="text-[13px] text-ezer-muted" id="don-benef-titre">Numéro Mixx By Yas d'Ezer Home</span>
+                            <span class="text-[22px] font-semibold tracking-wide" id="don-benef-valeur">+228 [XX XX XX XX]</span>
+                            <span class="text-[13px] text-ezer-muted" id="don-benef-nom">Nom affiché : [titulaire du compte]</span>
+                        </div>
+                        <button type="button" id="don-copier" class="min-h-[44px] px-4.5 py-2.5 border-2 border-ezer-green rounded-ezer bg-white text-ezer-green font-semibold text-[15px]">Copier</button>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 p-4 px-5 rounded-ezer border border-ezer-green-border">
+                    <svg aria-hidden="true" class="w-5 h-5 shrink-0 mt-0.5 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
+                    <div class="flex flex-col gap-1.5 text-[15px]">
+                        <span><strong class="font-semibold">Confirmation manuelle.</strong> Le bureau vérifie chaque paiement reçu, sous [48 heures]. <span id="don-confirm-msg"></span></span>
+                        <span id="don-rappel" hidden>Chaque mois, nous vous enverrons un rappel avec ces mêmes instructions. Vous pourrez l'arrêter à tout moment.</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                    <a href="../site/accueil.html" class="flex-1 basis-[220px] inline-flex items-center justify-center min-h-[52px] px-6 rounded-ezer bg-ezer-green text-white font-semibold hover:bg-ezer-green-dark transition-colors">Retour à l'accueil</a>
+                    <a href="../site/usage-dons.html" class="flex-1 basis-[220px] inline-flex items-center justify-center min-h-[52px] px-5 rounded-ezer bg-white text-ezer-green border-2 border-ezer-green font-semibold hover:bg-ezer-green-light transition-colors">À quoi servent les dons ?</a>
+                </div>
+                <p class="text-sm text-ezer-muted">Un souci avec le paiement ? <a href="https://wa.me/22800000000" class="font-semibold text-ezer-green hover:underline">Écrivez-nous sur WhatsApp</a> en citant votre référence.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <div data-layout="footer"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var REFERENCE = 'DON-2026-00117';
+            var MOYENS = { mixx: 'Mixx By Yas', moov: 'Moov Money', autre: 'Virement ou espèces' };
+            var form = document.getElementById('don-form');
+
+            function v(name) {
+                var el = form.querySelector('[name="' + name + '"]:checked');
+                return el ? el.value : '';
+            }
+            function texte(id) { return (document.getElementById(id) || {}).value || ''; }
+
+            function montantNum() {
+                if (v('dn-montant') === 'autre') return parseInt(texte('dn-autre').replace(/\D/g, ''), 10) || 0;
+                return Number(v('dn-montant')) || 0;
+            }
+            function espace(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+
+            function contactOk(c) {
+                c = c.trim();
+                if (!c) return true;
+                if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c)) return true;
+                return c.replace(/\D/g, '').replace(/^228/, '').length === 8;
+            }
+
+            function validate() {
+                var e = {};
+                if (!v('dn-montant')) e.montant = 'Choisissez un montant ou saisissez-en un.';
+                else if (v('dn-montant') === 'autre' && !montantNum()) e.montant = 'Saisissez le montant de votre don.';
+                else if (montantNum() < 500) e.montant = 'Le montant minimum est de 500 FCFA.';
+                if (!v('dn-freq')) e.freq = 'Choisissez si vous donnez une fois ou chaque mois.';
+                if (!v('dn-moyen')) e.moyen = 'Choisissez un moyen de paiement.';
+                if (!contactOk(texte('dn-contact'))) e.contact = 'Indiquez un numéro à 8 chiffres ou une adresse e-mail complète.';
+                return e;
+            }
+
+            var LIBELLES = {
+                montant: 'Montant', freq: 'Fréquence', moyen: 'Moyen de paiement', contact: 'Contact'
+            };
+
+            function afficherErreurs(err) {
+                var cles = ['montant', 'freq', 'moyen', 'contact'];
+                cles.forEach(function (k) {
+                    var el = document.getElementById('dn-' + k + '-err');
+                    if (!el) return;
+                    el.textContent = err[k] || '';
+                    el.hidden = !err[k];
+                    var champ = document.getElementById(k === 'freq' ? 'dn-freq' : k === 'moyen' ? 'dn-moyen' : k === 'contact' ? 'dn-contact' : 'dn-montant');
+                    if (champ && champ.tagName === 'INPUT') {
+                        champ.classList.toggle('border-2', !!err[k]);
+                        champ.classList.toggle('border-ezer-red', !!err[k]);
+                    }
+                });
+
+                var liste = document.getElementById('don-alerte-liste');
+                liste.innerHTML = '';
+                var present = cles.filter(function (k) { return err[k]; });
+                present.forEach(function (k) {
+                    var li = document.createElement('li');
+                    var a = document.createElement('a');
+                    a.href = '#dn-' + k;
+                    a.className = 'text-ezer-dark underline';
+                    a.textContent = LIBELLES[k] + ' : ' + err[k];
+                    li.appendChild(a);
+                    liste.appendChild(li);
+                });
+                document.getElementById('don-alerte-titre').textContent =
+                    present.length === 1 ? 'Un point est à corriger' : present.length + ' points sont à corriger';
+                document.getElementById('don-alerte').hidden = present.length === 0;
+            }
+
+            function recap() {
+                var m = montantNum();
+                var freq = v('dn-freq');
+                var moyen = v('dn-moyen');
+                return {
+                    montant: m ? espace(m) + ' FCFA' : '',
+                    freqLong: freq === 'mensuel' ? 'chaque mois' : 'une fois',
+                    freqCourt: freq === 'mensuel' ? 'Chaque mois' : 'Une fois',
+                    moyen: MOYENS[moyen] || ''
+                };
+            }
+
+            function majRecap() {
+                var r = recap();
+                var box = document.getElementById('don-recap');
+                var ok = r.montant && r.freqLong && r.moyen;
+                box.hidden = !ok;
+                if (ok) {
+                    document.getElementById('don-recap-montant').textContent = r.montant;
+                    document.getElementById('don-recap-freq').textContent = r.freqLong;
+                    document.getElementById('don-recap-moyen').textContent = r.moyen;
+                }
+                document.querySelectorAll('[data-recap="montant"]').forEach(function (el) { el.textContent = r.montant || '—'; });
+                document.querySelectorAll('[data-recap="freq"]').forEach(function (el) { el.textContent = r.freqCourt; });
+                document.querySelectorAll('[data-recap="moyen"], [data-recap="moyen-court"]').forEach(function (el) { el.textContent = r.moyen || 'votre moyen'; });
+                return r;
+            }
+
+            function majContact() {
+                var anonyme = document.getElementById('dn-anonyme').checked;
+                document.getElementById('dn-nom-bloc').hidden = anonyme;
+                document.getElementById('dn-contact-aide').textContent = anonyme
+                    ? 'Uniquement pour confirmer la réception de votre don. Il ne sera jamais publié.'
+                    : 'Pour confirmer la réception de votre don.';
+            }
+
+            function majEtapes() {
+                var r = majRecap();
+                var moyen = v('dn-moyen');
+                var mobile = moyen === 'mixx' || moyen === 'moov';
+                var textes = mobile ? [
+                    'Sur votre téléphone, composez [code USSD ' + r.moyen + '] ou ouvrez l\'application ' + r.moyen + '.',
+                    'Choisissez « Envoyer de l\'argent » et saisissez le numéro d\'Ezer Home indiqué ci-dessous.',
+                    'Saisissez le montant : ' + r.montant + '.',
+                    'Si votre application le permet, indiquez la référence ' + REFERENCE + ' dans le motif.',
+                    'Validez avec votre code secret. Ne le communiquez jamais, même à Ezer Home.'
+                ] : [
+                    'Virement : utilisez les coordonnées bancaires ci-dessous et indiquez la référence ' + REFERENCE + ' en motif.',
+                    'Espèces : remettez votre don au siège, [Quartier, rue], Lomé, [jours et horaires], en citant la référence.',
+                    'Un reçu vous est remis ou envoyé après vérification.'
+                ];
+
+                var ol = document.getElementById('don-etapes');
+                ol.innerHTML = '';
+                textes.forEach(function (t, i) {
+                    var li = document.createElement('li');
+                    li.className = 'flex items-start gap-3';
+                    li.innerHTML = '<span aria-hidden="true" class="shrink-0 w-7 h-7 rounded-full border-2 border-ezer-brown inline-flex items-center justify-center text-sm font-semibold">' + (i + 1) + '</span><span class="pt-0.5">' + t + '</span>';
+                    ol.appendChild(li);
+                });
+
+                document.getElementById('don-benef-titre').textContent = mobile ? 'Numéro ' + r.moyen + ' d\'Ezer Home' : 'Coordonnées bancaires';
+                document.getElementById('don-benef-valeur').textContent = mobile ? '+228 [XX XX XX XX]' : '[IBAN / RIB]';
+                document.getElementById('don-benef-nom').textContent = mobile ? 'Nom affiché : [titulaire du compte]' : '[Banque] · Titulaire : Ezer Home';
+
+                var c = texte('dn-contact').trim();
+                var isMail = c.indexOf('@') !== -1;
+                var dg = c.replace(/\D/g, '').replace(/^228/, '');
+                var masque = isMail ? c : (dg.length === 8 ? '+228 ' + dg.slice(0, 2) + ' •• •• ' + dg.slice(6) : c);
+                document.getElementById('don-confirm-msg').textContent = c
+                    ? (isMail ? 'Vous recevrez une confirmation par e-mail à ' + masque + '.' : 'Vous recevrez une confirmation par SMS ou WhatsApp au ' + masque + '.')
+                    : 'Vous n\'avez pas laissé de contact : conservez votre référence si vous souhaitez nous joindre.';
+                document.getElementById('don-rappel').hidden = !(v('dn-freq') === 'mensuel' && c);
+            }
+
+            var etat = 'formulaire';
+
+            function setEtat(nouveau, options) {
+                options = options || {};
+                etat = nouveau;
+                var envoi = nouveau === 'envoi';
+                var succes = nouveau === 'succes';
+
+                document.querySelectorAll('[data-etat-pane]').forEach(function (p) { p.hidden = true; });
+                document.getElementById(succes ? 'etat-succes' : 'etat-form').hidden = false;
+
+                document.querySelectorAll('[data-etat-btn]').forEach(function (b) {
+                    var on = b.getAttribute('data-etat-btn') === nouveau;
+                    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+                    b.classList.toggle('bg-ezer-dark', on);
+                    b.classList.toggle('text-white', on);
+                    b.classList.remove('border-2', 'border-ezer-borderMuted');
+                    b.classList.toggle('bg-white', !on);
+                    b.classList.toggle('text-ezer-dark', !on);
+                    b.classList.toggle('border', !on);
+                });
+
+                var body = document.getElementById('don-form-body');
+                body.toggleAttribute('disabled', envoi);
+                document.getElementById('don-submit').toggleAttribute('disabled', envoi);
+                document.getElementById('don-submit').classList.toggle('bg-ezer-muted', envoi);
+                document.getElementById('don-submit').classList.toggle('bg-ezer-green', !envoi);
+                document.getElementById('don-status').hidden = !envoi;
+                document.getElementById('don-submit-label').textContent = envoi ? 'Préparation de votre don…' : 'Continuer vers le paiement';
+                document.getElementById('don-alerte').hidden = true;
+
+                if (nouveau === 'erreur' && options.erreurs) afficherErreurs(options.erreurs);
+                if (succes || nouveau === 'envoi') majEtapes();
+            }
+
+            form.addEventListener('submit', function (ev) {
+                ev.preventDefault();
+                var err = validate();
+                if (Object.keys(err).length) { setEtat('erreur', { erreurs: err }); return; }
+                afficherErreurs({});
+                setEtat('envoi');
+                setTimeout(function () { setEtat('succes'); }, 1800);
+            });
+
+            form.addEventListener('change', function (ev) {
+                if (ev.target.name === 'dn-anonyme') majContact();
+                majRecap();
+                if (etat === 'erreur') afficherErreurs(validate());
+            });
+            form.addEventListener('input', function () { majRecap(); });
+
+            document.querySelectorAll('[data-etat-btn]').forEach(function (b) {
+                b.addEventListener('click', function () {
+                    var cible = b.getAttribute('data-etat-btn');
+                    if (cible === 'erreur') {
+                        form.querySelector('[name="dn-montant"][value="autre"]').checked = true;
+                        document.getElementById('dn-autre').value = '200';
+                        form.querySelectorAll('[name="dn-freq"], [name="dn-moyen"]').forEach(function (r) { r.checked = false; });
+                        document.getElementById('dn-anonyme').checked = true;
+                        document.getElementById('dn-contact').value = '90 12';
+                        majContact();
+                        majRecap();
+                        setEtat('erreur', { erreurs: validate() });
+                        return;
+                    }
+                    if (cible === 'envoi' || cible === 'succes') {
+                        form.querySelector('[name="dn-montant"][value="5000"]').checked = true;
+                        form.querySelector('[name="dn-freq"][value="ponctuel"]').checked = true;
+                        form.querySelector('[name="dn-moyen"][value="mixx"]').checked = true;
+                        document.getElementById('dn-anonyme').checked = false;
+                        document.getElementById('dn-nom').value = 'Kossi Agbéko';
+                        document.getElementById('dn-contact').value = '90 12 34 56';
+                        majContact();
+                        afficherErreurs({});
+                        majRecap();
+                        setEtat(cible);
+                        return;
+                    }
+                    setEtat('formulaire');
+                });
+            });
+
+            document.getElementById('don-copier').addEventListener('click', function () {
+                var btn = this;
+                var texteACopier = document.getElementById('don-benef-valeur').textContent;
+                try { if (navigator.clipboard) navigator.clipboard.writeText(texteACopier); } catch (e) {}
+                btn.textContent = 'Copié';
+                setTimeout(function () { btn.textContent = 'Copier'; }, 1800);
+            });
+
+            majContact();
+            majRecap();
+            setEtat('formulaire');
+        })();
+    </script>
+</body>
+</html>
