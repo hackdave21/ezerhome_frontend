@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil et confidentialité — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-relaxed">
+
+    <div data-layout="header" data-don="0"></div>
+    <div data-layout="espace-tabs" data-onglet="profil"></div>
+
+    <main class="max-w-[1200px] mx-auto px-4 lg:px-8 pb-12 lg:pb-18 py-6 lg:py-10">
+        <div class="max-w-[820px] flex flex-col gap-7">
+
+            <h1 class="font-cooper font-normal text-2xl lg:text-3xl">Profil et confidentialité</h1>
+
+            <!-- MES INFORMATIONS -->
+            <section aria-labelledby="pr-infos" class="flex flex-col gap-4">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <h2 id="pr-infos" class="text-xl font-semibold">Mes informations</h2>
+                    <a href="#" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Modifier</a>
+                </div>
+                <dl class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex flex-col gap-0.5"><dt class="text-sm text-ezer-muted">Nom ou pseudonyme</dt><dd class="font-semibold">Afi</dd></div>
+                    <div class="flex flex-col gap-0.5"><dt class="text-sm text-ezer-muted">Téléphone</dt><dd class="font-semibold">+228 90 •• •• 56</dd></div>
+                    <div class="flex flex-col gap-0.5"><dt class="text-sm text-ezer-muted">E-mail</dt><dd class="font-semibold">Non renseigné</dd></div>
+                    <div class="flex flex-col gap-0.5"><dt class="text-sm text-ezer-muted">Contact préféré</dt><dd class="font-semibold">WhatsApp</dd></div>
+                </dl>
+            </section>
+
+            <!-- CHARTE -->
+            <section aria-labelledby="pr-charte" class="flex flex-col gap-1.5">
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <h2 id="pr-charte" class="text-xl font-semibold">Charte d'écoute</h2>
+                    <a href="charte.html" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Relire la charte</a>
+                </div>
+                <p class="text-[15px] text-ezer-muted">Signée le [date] · version 1.2</p>
+            </section>
+
+            <!-- SÉCURITÉ -->
+            <section aria-labelledby="pr-securite" class="flex flex-col gap-4">
+                <h2 id="pr-securite" class="text-xl font-semibold">Sécurité</h2>
+                <ul class="flex flex-col list-none">
+                    <li class="flex flex-wrap items-center justify-between gap-3 py-4 border-b border-ezer-green-borderLight">
+                        <div class="flex flex-col">
+                            <span class="font-semibold">Mot de passe</span>
+                            <span class="text-sm text-ezer-muted">Modifié le [date]</span>
+                        </div>
+                        <a href="../auth/nouveau-mdp.html" class="font-semibold text-ezer-green hover:underline">Modifier</a>
+                    </li>
+                    <li class="flex flex-wrap items-center justify-between gap-3 py-4 border-b border-ezer-green-borderLight">
+                        <div class="flex flex-wrap items-center gap-2.5">
+                            <span class="font-semibold">Double authentification</span>
+                            <span class="text-[13px] font-semibold px-2 py-0.5 rounded-full bg-ezer-green-light border border-ezer-green text-ezer-green">Activée</span>
+                        </div>
+                        <a href="../auth/2fa-secours.html" class="font-semibold text-ezer-green hover:underline">Gérer</a>
+                    </li>
+                    <li class="flex flex-col gap-2.5 py-4 border-b border-ezer-green-borderLight">
+                        <div class="flex flex-col">
+                            <span class="font-semibold">Appareils connectés</span>
+                            <span class="text-sm text-ezer-muted">2 appareils : ce téléphone, et un ordinateur (dernière connexion le [date]).</span>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-3">
+                            <button id="deconnecter" type="button" class="inline-flex items-center justify-center min-h-[48px] px-5 rounded-ezer border-2 border-ezer-green bg-white text-ezer-green font-semibold hover:bg-ezer-green-light transition-colors">Déconnecter tous les autres appareils</button>
+                            <span class="text-sm text-ezer-muted">Utile si vous avez perdu un téléphone ou utilisé un appareil partagé.</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- MES DONNÉES -->
+            <section aria-labelledby="pr-donnees" class="flex flex-col gap-3">
+                <h2 id="pr-donnees" class="text-xl font-semibold">Mes données</h2>
+                <p>Recevez une copie de toutes les informations que nous détenons sur vous : profil, demandes, messages, inscriptions. Le fichier est prêt sous [48 heures] et reste téléchargeable 7 jours.</p>
+                <div>
+                    <button type="button" class="inline-flex items-center justify-center min-h-[48px] px-5 rounded-ezer border-2 border-ezer-green bg-white text-ezer-green font-semibold hover:bg-ezer-green-light transition-colors">Demander l'export de mes données</button>
+                </div>
+            </section>
+
+            <!-- SUPPRIMER -->
+            <section aria-labelledby="pr-supprimer" class="flex flex-col gap-3">
+                <h2 id="pr-supprimer" class="text-xl font-semibold">Supprimer mon compte</h2>
+                <p>Votre compte, vos demandes et vos messages seront supprimés définitivement après un délai de [30 jours], pendant lequel vous pourrez changer d'avis. Les données de paiement sont conservées [durée légale].</p>
+                <div class="flex flex-col gap-1.5 items-start">
+                    <button type="button" class="inline-flex items-center justify-center min-h-[48px] px-5 rounded-ezer border-2 border-ezer-dark bg-white text-ezer-dark font-semibold hover:bg-gray-100 transition-colors">Demander la suppression</button>
+                    <span class="text-sm text-ezer-muted">Une confirmation par code vous sera demandée.</span>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div data-layout="footer-mini"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/espace.js"></script>
+    <script>
+        (function () {
+            var btn = document.getElementById('deconnecter');
+            btn.addEventListener('click', function () {
+                btn.textContent = 'Autres appareils déconnectés';
+                btn.classList.remove('hover:bg-ezer-green-light');
+                btn.classList.add('bg-ezer-green-light');
+                btn.disabled = true;
+            });
+        })();
+    </script>
+</body>
+</html>

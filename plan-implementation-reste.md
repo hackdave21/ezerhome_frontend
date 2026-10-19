@@ -38,11 +38,16 @@ Ce plan intègre de manière exhaustive **l'intégralité des 144 archives et va
 | Hors ligne / 404 | `pages/site/hors-ligne.html`, `404.html` | **[x] FAIT** | Aucun. |
 | Menu mobile ouvert | `pages/site/menu-mobile.html` | **[x] FAIT** | Aucun. |
 
-**Bilan : 36 pages réalisées.** Modules terminés : **Site public (17/17)**, **Assistance & dons (8/8)**, **Compte (12/12)**, **Tunnel de commande (6/6)**.
+**Bilan : 43 pages réalisées.** Modules terminés : **Site public (17/17)**, **Assistance & dons (8/8)**, **Compte (12/12)**, **Tunnel de commande (6/6)**, **Espace personnel (9/9)**. **Aucun lien local non résolu.**
 
-### 0.3 Liens locaux pointant vers des pages non encore créées (attendu)
+### 0.3 Reste à réaliser
 
-`pages/espace/charte.html`, `pages/espace/formations.html`, `pages/espace/profil.html` — ces cibles sont prévues au plan et seront traitées ensuite (module Espace personnel).
+| Module | Écrans restants |
+|---|---|
+| Thérapeutes, coachs & intervenants | 13 |
+| Comité d'assistance | 5 |
+| Administration | 20 |
+| E-mails, SMS & composants | 12 |
 
 ### 0.4 Placeholders à compléter côté contenu
 
@@ -111,16 +116,16 @@ Restent des valeurs entre crochets à remplacer par les données réelles (elles
 
 ---
 
-## 5. Espace Personnel Bénéficiaire (`pages/espace/`)
-- [ ] Écoute : demande d'accompagnement (`espace/demande-ecoute.html`)
-- [ ] Écoute : suivi de la demande (`espace/suivi-ecoute.html`) — mobile & ordinateur
-- [ ] Charte éthique : signature bloquante (`espace/charte.html`) — mobile & ordinateur
-- [ ] Messagerie sécurisée (`espace/messagerie.html`) — mobile & ordinateur
-- [ ] Messagerie : état chargement (`espace/messagerie-chargement.html`)
-- [ ] Formformations suivies (`espace/formations.html`) — mobile & ordinateur
-- [ ] Formations : état vide (`espace/formations-vide.html`)
-- [ ] Coaching suivi (`espace/coaching.html`)
-- [ ] Profil et confidentialité (`espace/profil.html`) — mobile & ordinateur
+## 5. Espace Personnel Bénéficiaire (`pages/espace/`) — **MODULE COMPLET (9/9 écrans)**
+- [x] Coque commune factorisée dans **`assets/js/espace.js`** : bandeau « Bonjour, Afi », onglets (Écoute / Formations / Coaching / Profil et confidentialité), et blocs d'état **chargement / vide / erreur** paramétrables par attributs HTML.
+- [x] Écoute : suivi de la demande (`espace/suivi-ecoute.html`) — frise 5 étapes, prochaines rencontres, messagerie + **4 états**
+- [x] Écoute : demande d'accompagnement (`espace/demande-ecoute.html`) — niveau d'urgence, bandeau danger, canal de contact
+- [x] Charte éthique : signature bloquante (`espace/charte.html`) — 8 articles, zone de lecture scrollable, bouton bloqué tant que la case n'est pas cochée
+- [x] Messagerie sécurisée (`espace/messagerie.html`) — fil de 7 messages, séparateurs, non-lus + **4 états** (dont chargement)
+- [x] Formations suivies (`espace/formations.html`) — cartes, jauges, contenus débloqués, calendrier + **4 états** (dont vide)
+- [x] Coaching suivi (`espace/coaching.html`) — jauge segmentée, prochaine séance, contenus, calendrier + **4 états**
+- [x] Profil et confidentialité (`espace/profil.html`) — informations, charte, sécurité (mdp, 2FA, appareils), export des données, suppression
+- Parcours cohérent et testé : **charte signée → demande → suivi**
 
 ---
 

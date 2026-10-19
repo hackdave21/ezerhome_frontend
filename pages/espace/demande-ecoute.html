@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demander un accompagnement — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-relaxed">
+
+    <div data-layout="header" data-don="0"></div>
+    <div data-layout="espace-tabs" data-onglet="ecoute"></div>
+
+    <main class="max-w-[1200px] mx-auto px-4 lg:px-8 pb-12 lg:pb-18 py-6 lg:py-10 flex flex-col gap-6 max-w-[760px]">
+
+        <p class="flex items-center gap-2 text-sm font-semibold text-ezer-green">
+            <svg aria-hidden="true" class="shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+            Charte signée le [date]
+        </p>
+
+        <div class="flex flex-col gap-2">
+            <h1 class="font-cooper font-normal text-2xl lg:text-3xl">Demander un accompagnement</h1>
+            <p>Seule la personne qui coordonne l'écoute lira votre demande, pour vous attribuer quelqu'un.</p>
+        </div>
+
+        <form aria-label="Demande d'accompagnement" class="flex flex-col gap-6" onsubmit="event.preventDefault()">
+
+            <div class="flex flex-col gap-1.5">
+                <label for="de-texte" class="text-[15px] font-semibold">Ce qui vous amène</label>
+                <span id="de-aide" class="text-sm text-ezer-muted">Quelques mots suffisent. Vous pourrez en dire plus lors du premier échange.</span>
+                <textarea id="de-texte" rows="5" aria-describedby="de-aide" class="w-full p-3 px-4 border border-ezer-borderMuted rounded-ezer bg-white focus:border-ezer-green focus:outline-none resize-y"></textarea>
+            </div>
+
+            <fieldset class="flex flex-col gap-2.5">
+                <legend class="text-[15px] font-semibold mb-2">Niveau d'urgence <span class="font-normal text-ezer-muted">(facultatif)</span></legend>
+                <label class="flex items-center gap-2.5 min-h-[52px] px-3.5 border border-ezer-borderMuted rounded-ezer bg-white text-[15px] font-semibold cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                    <input type="radio" name="de-urgence" value="attendre" class="w-5 h-5 shrink-0 accent-ezer-green">Je peux attendre quelques jours
+                </label>
+                <label class="flex items-center gap-2.5 min-h-[52px] px-3.5 border border-ezer-borderMuted rounded-ezer bg-white text-[15px] font-semibold cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                    <input type="radio" name="de-urgence" value="rapide" class="w-5 h-5 shrink-0 accent-ezer-green">J'aimerais être contacté(e) rapidement
+                </label>
+                <label class="flex items-center gap-2.5 min-h-[52px] px-3.5 border border-ezer-borderMuted rounded-ezer bg-white text-[15px] font-semibold cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                    <input type="radio" name="de-urgence" value="urgent" class="w-5 h-5 shrink-0 accent-ezer-green">C'est urgent pour moi
+                </label>
+
+                <p class="mt-1 flex items-start gap-2.5 border-2 border-ezer-dark rounded-ezer p-4 px-5 text-[15px]">
+                    <svg aria-hidden="true" class="shrink-0 mt-0.5 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg>
+                    <span><strong class="font-semibold">En danger immédiat ?</strong> N'attendez pas de réponse : appelez [numéros d'urgence au Togo].</span>
+                </p>
+            </fieldset>
+
+            <fieldset class="flex flex-col gap-2.5">
+                <legend class="text-[15px] font-semibold mb-2">Comment préférez-vous être contacté(e) ?</legend>
+                <div class="grid grid-cols-2 gap-2">
+                    <label class="flex items-center gap-2.5 min-h-[52px] px-3.5 border border-ezer-borderMuted rounded-ezer bg-white text-[15px] font-semibold cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                        <input type="radio" name="de-canal" value="appel" class="w-5 h-5 shrink-0 accent-ezer-green">Appel
+                    </label>
+                    <label class="flex items-center gap-2.5 min-h-[52px] px-3.5 border border-ezer-borderMuted rounded-ezer bg-white text-[15px] font-semibold cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                        <input type="radio" name="de-canal" value="whatsapp" checked class="w-5 h-5 shrink-0 accent-ezer-green">WhatsApp
+                    </label>
+                    <label class="flex items-center gap-2.5 min-h-[52px] px-3.5 border border-ezer-borderMuted rounded-ezer bg-white text-[15px] font-semibold cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                        <input type="radio" name="de-canal" value="messagerie" class="w-5 h-5 shrink-0 accent-ezer-green">Messagerie du site
+                    </label>
+                    <label class="flex items-center gap-2.5 min-h-[52px] px-3.5 border border-ezer-borderMuted rounded-ezer bg-white text-[15px] font-semibold cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                        <input type="radio" name="de-canal" value="siege" class="w-5 h-5 shrink-0 accent-ezer-green">Au siège
+                    </label>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center min-h-[56px] px-7 rounded-ezer bg-ezer-green text-white text-[17px] font-semibold hover:bg-ezer-green-dark transition-colors">Envoyer ma demande</button>
+        </form>
+
+    </main>
+
+    <div data-layout="footer-mini"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/espace.js"></script>
+</body>
+</html>

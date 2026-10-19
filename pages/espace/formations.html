@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes formations — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-relaxed">
+
+    <div data-layout="header"></div>
+    <div data-layout="espace-tabs" data-onglet="formations"></div>
+
+    <main class="max-w-[1200px] mx-auto px-4 lg:px-8 pb-12 lg:pb-18 py-6 lg:py-10">
+
+        <div data-etat-switcher="formations" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2 mb-6">
+            <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+            <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Formations suivies</button>
+            <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+            <button type="button" data-etat-btn="vide" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. État vide</button>
+            <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">4. Erreur</button>
+        </div>
+
+        <div data-etat="formations" data-etat-panes
+            data-chargement-titre="Chargement de vos formations…"
+            data-vide-titre="Mes formations"
+            data-vide-texte="Vous n'êtes inscrit(e) à aucune formation. Les formations auxquelles vous vous inscrivez apparaîtront ici, avec vos leçons et vos attestations."
+            data-vide-cta="Voir les formations"
+            data-vide-href="../site/formations.html"
+            data-erreur-titre="Impossible d'afficher vos formations pour le moment."
+            data-erreur-code="EZ-FOR-503">
+
+            <div data-etat-pane="normal" class="flex flex-col gap-10 lg:gap-12">
+
+                <!-- MES FORMATIONS -->
+                <section aria-labelledby="es-formations" class="flex flex-col gap-5">
+                    <h2 id="es-formations" class="font-cooper font-normal text-2xl lg:text-3xl">Mes formations</h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+                        <article class="flex flex-col gap-3 p-5 lg:p-6 border-2 border-ezer-green rounded-ezer">
+                            <span class="self-start text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-ezer-green-light border border-ezer-green text-ezer-green">Inscription confirmée</span>
+                            <h3 class="text-xl font-semibold">Écoute active et relation d'aide</h3>
+                            <p class="text-[15px] text-ezer-muted">Du [date] au [date] · Siège, Lomé</p>
+                            <div class="mt-auto pt-3 flex flex-col gap-1.5">
+                                <div role="progressbar" aria-label="Leçons suivies" aria-valuemin="0" aria-valuemax="5" aria-valuenow="2" class="h-1.5 rounded-full bg-ezer-green-borderLight overflow-hidden">
+                                    <div class="h-full bg-ezer-green" style="width:40%"></div>
+                                </div>
+                                <span class="text-sm text-ezer-muted">2 leçons sur 5 consultées</span>
+                            </div>
+                        </article>
+
+                        <article class="flex flex-col gap-3 p-5 lg:p-6 border border-ezer-green-border rounded-ezer">
+                            <span class="self-start text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-white border border-ezer-dark">En attente de paiement</span>
+                            <h3 class="text-xl font-semibold">Gérer son stress au quotidien</h3>
+                            <p class="text-[15px] text-ezer-muted">Le [date] · Siège, Lomé</p>
+                            <p class="text-[15px] text-ezer-muted">Le bureau confirmera votre place après réception du paiement.</p>
+                            <a href="#" class="mt-auto pt-2 self-start font-semibold text-ezer-green hover:underline">Voir les instructions de paiement</a>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- CONTENUS DÉBLOQUÉS -->
+                <section aria-labelledby="es-contenus" class="flex flex-col gap-4">
+                    <h2 id="es-contenus" class="font-cooper font-normal text-2xl lg:text-3xl">Contenus débloqués</h2>
+                    <p class="text-ezer-muted">Écoute active et relation d'aide</p>
+                    <ul class="flex flex-col list-none">
+                        <li class="flex items-center gap-4 py-4 border-b border-ezer-green-borderLight">
+                            <span aria-hidden="true" class="shrink-0 w-10 h-10 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h14v14H6a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h14"></path></svg>
+                            </span>
+                            <div class="flex-1 flex flex-col">
+                                <span class="font-semibold">Leçon 1 · Les bases de l'écoute</span>
+                                <span class="text-sm text-ezer-muted">Lecture · 10 min · consultée</span>
+                            </div>
+                            <a href="#" class="font-semibold text-ezer-green hover:underline">Relire</a>
+                        </li>
+                        <li class="flex items-center gap-4 py-4 border-b border-ezer-green-borderLight">
+                            <span aria-hidden="true" class="shrink-0 w-10 h-10 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h14v14H6a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h14"></path></svg>
+                            </span>
+                            <div class="flex-1 flex flex-col">
+                                <span class="font-semibold">Leçon 2 · Les silences et les questions</span>
+                                <span class="text-sm text-ezer-muted">Lecture · 12 min · consultée</span>
+                            </div>
+                            <a href="#" class="font-semibold text-ezer-green hover:underline">Relire</a>
+                        </li>
+                        <li class="flex items-center gap-4 py-4 border-b border-ezer-green-borderLight">
+                            <span aria-hidden="true" class="shrink-0 w-10 h-10 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"></path><path d="M14 3v5h5"></path></svg>
+                            </span>
+                            <div class="flex-1 flex flex-col">
+                                <span class="font-semibold">Support du jour 1</span>
+                                <span class="text-sm text-ezer-muted">PDF · 340 Ko</span>
+                            </div>
+                            <a href="#" class="font-semibold text-ezer-green hover:underline">Télécharger</a>
+                        </li>
+                        <li class="flex items-center gap-4 py-4 border-b border-ezer-green-borderLight">
+                            <span aria-hidden="true" class="shrink-0 w-10 h-10 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"></path><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"></path></svg>
+                            </span>
+                            <div class="flex-1 flex flex-col">
+                                <span class="font-semibold">Fiche « Reformuler sans juger »</span>
+                                <span class="text-sm text-ezer-muted">Lien externe</span>
+                            </div>
+                            <a href="#" class="font-semibold text-ezer-green hover:underline">Ouvrir</a>
+                        </li>
+                        <li class="flex items-center gap-4 py-4 border-b border-ezer-green-borderLight opacity-60">
+                            <span aria-hidden="true" class="shrink-0 w-10 h-10 rounded-ezer bg-ezer-green-borderLight text-ezer-muted inline-flex items-center justify-center">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+                            </span>
+                            <div class="flex-1 flex flex-col">
+                                <span class="font-semibold">Leçon 3 · Accueillir les émotions</span>
+                                <span class="text-sm text-ezer-muted">Disponible après la séance du [date]</span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- CALENDRIER -->
+                <section aria-labelledby="es-calendrier" class="flex flex-col gap-4">
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <h2 id="es-calendrier" class="font-cooper font-normal text-2xl lg:text-3xl">Calendrier des séances</h2>
+                        <a href="#" class="font-semibold text-ezer-green hover:underline">Ajouter à mon agenda</a>
+                    </div>
+                    <ul class="flex flex-col gap-3 list-none">
+                        <li class="flex items-center gap-4 p-4 border border-ezer-green-border rounded-ezer">
+                            <span aria-hidden="true" class="shrink-0 w-14 h-14 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex flex-col items-center justify-center leading-none">
+                                <span class="text-xl font-semibold">[12]</span><span class="text-[11px] uppercase tracking-wide">[nov.]</span>
+                            </span>
+                            <div class="flex flex-col">
+                                <span class="font-semibold">Jour 1 · Les bases de l'écoute active</span>
+                                <span class="text-sm text-ezer-muted">9 h – 16 h · Siège, Lomé</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 p-4 border border-ezer-green-border rounded-ezer">
+                            <span aria-hidden="true" class="shrink-0 w-14 h-14 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex flex-col items-center justify-center leading-none">
+                                <span class="text-xl font-semibold">[13]</span><span class="text-[11px] uppercase tracking-wide">[nov.]</span>
+                            </span>
+                            <div class="flex flex-col">
+                                <span class="font-semibold">Jour 2 · Émotions et reformulation</span>
+                                <span class="text-sm text-ezer-muted">9 h – 16 h · Siège, Lomé</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 p-4 border border-ezer-green-border rounded-ezer">
+                            <span aria-hidden="true" class="shrink-0 w-14 h-14 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex flex-col items-center justify-center leading-none">
+                                <span class="text-xl font-semibold">[14]</span><span class="text-[11px] uppercase tracking-wide">[nov.]</span>
+                            </span>
+                            <div class="flex flex-col">
+                                <span class="font-semibold">Jour 3 · Cadre, limites et orientation</span>
+                                <span class="text-sm text-ezer-muted">9 h – 16 h · Siège, Lomé</span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="footer-mini"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/espace.js"></script>
+</body>
+</html>

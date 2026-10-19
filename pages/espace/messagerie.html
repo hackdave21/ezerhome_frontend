@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messagerie — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-relaxed">
+
+    <div data-layout="header" data-don="0"></div>
+    <div data-layout="espace-tabs" data-onglet="ecoute"></div>
+
+    <main class="max-w-[1200px] mx-auto px-4 lg:px-8 pb-12 lg:pb-18 py-6 lg:py-10 flex flex-col gap-4">
+
+        <div data-etat-switcher="messages" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+            <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+            <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Messagerie</button>
+            <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+            <button type="button" data-etat-btn="vide" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. Aucun message</button>
+            <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">4. Erreur</button>
+        </div>
+
+        <a href="suivi-ecoute.html" class="self-start inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">
+            <svg aria-hidden="true" class="w-5 h-5 mr-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg>
+            Retour au suivi
+        </a>
+
+        <div data-etat="messages" data-etat-panes
+            data-chargement-titre="Chargement de vos messages…"
+            data-vide-titre="Messagerie"
+            data-vide-texte="Aucun message pour le moment. Votre intervenant(e) vous écrira ici. Vous pourrez répondre dès le début de l'accompagnement."
+            data-erreur-titre="Impossible d'afficher vos messages pour le moment."
+            data-erreur-code="EZ-MES-503">
+
+            <div data-etat-pane="normal" class="border border-ezer-green-border rounded-ezer overflow-hidden flex flex-col">
+
+                <header class="flex items-center gap-3 p-4 lg:px-5 border-b border-ezer-green-borderLight">
+                    <span aria-hidden="true" class="shrink-0 w-11 h-11 rounded-full bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+                    </span>
+                    <div class="flex flex-col">
+                        <h1 class="text-lg font-semibold">Mawuli, écoutant</h1>
+                        <span class="flex items-center gap-1.5 text-sm text-ezer-muted">
+                            <svg aria-hidden="true" class="w-4 h-4 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+                            Échanges chiffrés et confidentiels
+                        </span>
+                    </div>
+                </header>
+
+                <ol aria-label="Fil de messages" class="flex flex-col gap-4 p-4 lg:px-5 bg-ezer-green-pale">
+                    <li class="text-center"><span class="inline-block text-[13px] px-3 py-0.5 rounded-full bg-white border border-ezer-green-borderLight text-ezer-muted">Lundi [date]</span></li>
+
+                    <li class="flex flex-col gap-1 max-w-[85%] lg:max-w-[70%]">
+                        <span class="bg-white border border-ezer-green-borderLight rounded-ezer rounded-tl-sm px-4 py-2.5">Bonjour Afi, je suis Mawuli et je vais vous accompagner. Comment allez-vous aujourd'hui ?</span>
+                        <span class="text-[13px] text-ezer-muted">Mawuli · 09:12</span>
+                    </li>
+
+                    <li class="flex flex-col gap-1 max-w-[85%] lg:max-w-[70%] self-end items-end">
+                        <span class="bg-ezer-green text-white rounded-ezer rounded-tr-sm px-4 py-2.5">Bonjour, merci. Un peu fatiguée, mais ça va.</span>
+                        <span class="text-[13px] text-ezer-muted">Vous · 10:40 · Lu</span>
+                    </li>
+
+                    <li class="flex flex-col gap-1 max-w-[85%] lg:max-w-[70%]">
+                        <span class="bg-white border border-ezer-green-borderLight rounded-ezer rounded-tl-sm px-4 py-2.5">Je vous propose un premier échange jeudi à 15 h, par appel vidéo. Cela vous convient-il ?</span>
+                        <span class="text-[13px] text-ezer-muted">Mawuli · 11:05</span>
+                    </li>
+
+                    <li class="flex flex-col gap-1 max-w-[85%] lg:max-w-[70%] self-end items-end">
+                        <span class="bg-ezer-green text-white rounded-ezer rounded-tr-sm px-4 py-2.5">Oui, c'est parfait.</span>
+                        <span class="text-[13px] text-ezer-muted">Vous · 11:20 · Lu</span>
+                    </li>
+
+                    <li class="text-center"><span class="inline-block text-[13px] px-3 py-0.5 rounded-full bg-ezer-red text-white font-semibold">Nouveaux messages</span></li>
+
+                    <li class="flex flex-col gap-1 max-w-[85%] lg:max-w-[70%]">
+                        <span class="bg-white border-2 border-ezer-green rounded-ezer rounded-tl-sm px-4 py-2.5">C'est noté. Le lien sera disponible dans votre espace.</span>
+                        <span class="flex items-center gap-1.5 text-[13px] text-ezer-muted">
+                            <span class="w-2 h-2 rounded-full bg-ezer-red" aria-hidden="true"></span>
+                            Mawuli · 14:02 · <span class="sr-only">non lu</span>
+                        </span>
+                    </li>
+
+                    <li class="flex flex-col gap-1 max-w-[85%] lg:max-w-[70%]">
+                        <span class="bg-white border-2 border-ezer-green rounded-ezer rounded-tl-sm px-4 py-2.5">Prenez soin de vous d'ici là.</span>
+                        <span class="flex items-center gap-1.5 text-[13px] text-ezer-muted">
+                            <span class="w-2 h-2 rounded-full bg-ezer-red" aria-hidden="true"></span>
+                            Mawuli · 14:03 · <span class="sr-only">non lu</span>
+                        </span>
+                    </li>
+                </ol>
+
+                <form aria-label="Écrire un message" class="flex items-end gap-3 p-4 lg:px-5 border-t border-ezer-green-borderLight" onsubmit="event.preventDefault()">
+                    <label for="msg" class="sr-only">Votre message</label>
+                    <textarea id="msg" rows="2" placeholder="Écrire à Mawuli…" class="flex-1 min-w-0 p-3 px-4 border border-ezer-borderMuted rounded-ezer bg-white focus:border-ezer-green focus:outline-none resize-y"></textarea>
+                    <button type="submit" aria-label="Envoyer le message" class="shrink-0 w-[52px] h-[52px] rounded-ezer bg-ezer-green text-white inline-flex items-center justify-center hover:bg-ezer-green-dark transition-colors">
+                        <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3 3 10.5l7 3 3 7z"></path></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <p class="text-sm text-ezer-muted">Mawuli répond en général sous 48 heures. La messagerie n'est pas un service d'urgence : en cas de danger, appelez [numéros d'urgence au Togo].</p>
+
+    </main>
+
+    <div data-layout="footer-mini"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/espace.js"></script>
+</body>
+</html>

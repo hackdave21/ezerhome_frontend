@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon coaching — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-relaxed">
+
+    <div data-layout="header"></div>
+    <div data-layout="espace-tabs" data-onglet="coaching"></div>
+
+    <main class="max-w-[1200px] mx-auto px-4 lg:px-8 pb-12 lg:pb-18 py-6 lg:py-10">
+
+        <div data-etat-switcher="coaching" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2 mb-6">
+            <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+            <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Coaching en cours</button>
+            <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+            <button type="button" data-etat-btn="vide" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. État vide</button>
+            <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">4. Erreur</button>
+        </div>
+
+        <div data-etat="coaching" data-etat-panes
+            data-chargement-titre="Chargement de votre coaching…"
+            data-vide-titre="Mon coaching"
+            data-vide-texte="Aucun accompagnement en cours. Un coaching suivi se déroule sur plusieurs séances avec le même coach."
+            data-vide-cta="Découvrir le coaching"
+            data-vide-href="../site/coaching.html"
+            data-erreur-titre="Impossible d'afficher votre coaching pour le moment."
+            data-erreur-code="EZ-COA-503">
+
+            <div data-etat-pane="normal" class="flex flex-col gap-10 lg:gap-12">
+
+                <section aria-labelledby="co-titre" class="flex flex-col gap-5">
+                    <h2 id="co-titre" class="font-cooper font-normal text-2xl lg:text-3xl">Mon coaching</h2>
+                    <article class="flex flex-col gap-3 p-5 lg:p-6 border border-ezer-green-border rounded-ezer max-w-[560px]">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <h3 class="text-xl font-semibold">Confiance en soi</h3>
+                            <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-ezer-green-light border border-ezer-green text-ezer-green">En cours</span>
+                        </div>
+                        <p class="text-[15px] text-ezer-muted">Avec [Prénom Nom], coach</p>
+                        <div aria-hidden="true" class="grid grid-cols-4 gap-1.5">
+                            <span class="h-2 rounded-full bg-ezer-green"></span>
+                            <span class="h-2 rounded-full border border-ezer-borderMuted"></span>
+                            <span class="h-2 rounded-full border border-ezer-borderMuted"></span>
+                            <span class="h-2 rounded-full border border-ezer-borderMuted"></span>
+                        </div>
+                        <span class="text-sm text-ezer-muted">1 séance sur 4 effectuée</span>
+                    </article>
+                </section>
+
+                <section aria-labelledby="co-prochaine" class="flex flex-col gap-4">
+                    <h2 id="co-prochaine" class="text-xl font-semibold">Prochaine séance</h2>
+                    <article class="flex flex-col gap-3 p-5 lg:p-6 border-2 border-ezer-green rounded-ezer max-w-[560px]">
+                        <h3 class="text-lg font-semibold">Séance 2 · Lundi [date] · 18 h 00 – 19 h 00</h3>
+                        <p class="text-[15px] text-ezer-muted">Par appel vidéo</p>
+                        <a href="#" class="self-start inline-flex items-center justify-center min-h-[52px] px-6 rounded-ezer bg-ezer-green text-white font-semibold hover:bg-ezer-green-dark transition-colors">Rejoindre la séance</a>
+                        <p class="text-[13px] text-ezer-muted">Le lien s'active 10 minutes avant.</p>
+                        <a href="#" class="font-semibold text-ezer-green hover:underline">Demander à déplacer la séance</a>
+                    </article>
+                </section>
+
+                <section aria-labelledby="co-partages" class="flex flex-col gap-4">
+                    <h2 id="co-partages" class="font-cooper font-normal text-2xl lg:text-3xl">Partagé par votre coach</h2>
+                    <ul class="flex flex-col list-none">
+                        <li class="flex items-center gap-4 py-4 border-b border-ezer-green-borderLight">
+                            <span aria-hidden="true" class="shrink-0 w-10 h-10 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"></path><path d="M14 3v5h5"></path></svg>
+                            </span>
+                            <div class="flex-1 flex flex-col">
+                                <span class="font-semibold">Bilan de la séance 1</span>
+                                <span class="text-sm text-ezer-muted">PDF · 120 Ko · ajouté le [date]</span>
+                            </div>
+                            <a href="#" class="font-semibold text-ezer-green hover:underline">Télécharger</a>
+                        </li>
+                        <li class="flex items-center gap-4 py-4 border-b border-ezer-green-borderLight">
+                            <span aria-hidden="true" class="shrink-0 w-10 h-10 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5a2 2 0 0 1 2-2h14v14H6a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h14"></path></svg>
+                            </span>
+                            <div class="flex-1 flex flex-col">
+                                <span class="font-semibold">Exercice : mes trois réussites de la semaine</span>
+                                <span class="text-sm text-ezer-muted">À faire avant la séance 2</span>
+                            </div>
+                            <a href="#" class="font-semibold text-ezer-green hover:underline">Ouvrir</a>
+                        </li>
+                        <li class="flex items-center gap-4 py-4 border-b border-ezer-green-borderLight">
+                            <span aria-hidden="true" class="shrink-0 w-10 h-10 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"></path><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"></path></svg>
+                            </span>
+                            <div class="flex-1 flex flex-col">
+                                <span class="font-semibold">Lecture conseillée</span>
+                                <span class="text-sm text-ezer-muted">Lien externe</span>
+                            </div>
+                            <a href="#" class="font-semibold text-ezer-green hover:underline">Ouvrir</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="co-calendrier" class="flex flex-col gap-4">
+                    <h2 id="co-calendrier" class="font-cooper font-normal text-2xl lg:text-3xl">Calendrier des séances</h2>
+                    <ul class="flex flex-col gap-3 list-none">
+                        <li class="flex items-center gap-4 p-4 border border-ezer-green-border rounded-ezer">
+                            <span aria-hidden="true" class="shrink-0 w-14 h-14 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex flex-col items-center justify-center leading-none">
+                                <span class="text-xl font-semibold">[03]</span><span class="text-[11px] uppercase tracking-wide">[nov.]</span>
+                            </span>
+                            <div class="flex-1 flex flex-col gap-0.5">
+                                <span class="font-semibold">Séance 1 · Faire connaissance</span>
+                                <span class="text-sm text-ezer-muted">18 h – 19 h · appel vidéo</span>
+                            </div>
+                            <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-ezer-green-light border border-ezer-green text-ezer-green">Effectuée</span>
+                        </li>
+                        <li class="flex items-center gap-4 p-4 border border-ezer-green-border rounded-ezer">
+                            <span aria-hidden="true" class="shrink-0 w-14 h-14 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex flex-col items-center justify-center leading-none">
+                                <span class="text-xl font-semibold">[17]</span><span class="text-[11px] uppercase tracking-wide">[nov.]</span>
+                            </span>
+                            <div class="flex-1 flex flex-col gap-0.5">
+                                <span class="font-semibold">Séance 2 · Avancer pas à pas</span>
+                                <span class="text-sm text-ezer-muted">18 h – 19 h · appel vidéo</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 p-4 border border-ezer-green-border rounded-ezer">
+                            <span aria-hidden="true" class="shrink-0 w-14 h-14 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex flex-col items-center justify-center leading-none">
+                                <span class="text-xl font-semibold">[01]</span><span class="text-[11px] uppercase tracking-wide">[déc.]</span>
+                            </span>
+                            <div class="flex-1 flex flex-col gap-0.5">
+                                <span class="font-semibold">Séance 3 · Avancer pas à pas</span>
+                                <span class="text-sm text-ezer-muted">Horaire à confirmer</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 p-4 border border-ezer-green-border rounded-ezer">
+                            <span aria-hidden="true" class="shrink-0 w-14 h-14 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex flex-col items-center justify-center leading-none">
+                                <span class="text-xl font-semibold">[15]</span><span class="text-[11px] uppercase tracking-wide">[déc.]</span>
+                            </span>
+                            <div class="flex-1 flex flex-col gap-0.5">
+                                <span class="font-semibold">Séance 4 · Bilan et suite</span>
+                                <span class="text-sm text-ezer-muted">Horaire à confirmer</span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="footer-mini"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/espace.js"></script>
+</body>
+</html>

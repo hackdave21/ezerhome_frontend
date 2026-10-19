@@ -16,7 +16,7 @@
         <div class="flex flex-col gap-1.5 mb-8">
             <p class="text-xs font-semibold uppercase tracking-widest text-ezer-green">Ezer Home · Prototype</p>
             <h1 class="font-cooper font-normal text-4xl lg:text-5xl">Plan du prototype</h1>
-            <p class="text-ezer-muted max-w-[860px]">Point d'entrée de la navigation : chaque écran est accessible ici. Les maquettes mobiles et ordinateurs ont été fusionnées en une page responsive unique ; les états (erreur, chargement, succès) sont accessibles via le sélecteur en haut de chaque page. <strong class="text-ezer-dark">36 pages réalisées</strong> : site public, assistance, dons et compte sont complets, ainsi que le tunnel de commande.</p>
+            <p class="text-ezer-muted max-w-[860px]">Point d'entrée de la navigation : chaque écran est accessible ici. Les maquettes mobiles et ordinateurs ont été fusionnées en une page responsive unique ; les états (erreur, chargement, succès) sont accessibles via le sélecteur en haut de chaque page. <strong class="text-ezer-dark">43 pages réalisées</strong> : site public, assistance, dons, compte, commande et espace personnel sont complets.</p>
         </div>
 
         <div id="filtres" class="flex flex-wrap gap-2 mb-6" role="group" aria-label="Filtrer les écrans">
@@ -77,15 +77,15 @@
                     ['Compte désactivé', P + 'auth/compte-desactive.html', 'fait']
                 ]},
                 { titre: 'Espace personnel', ecrans: [
-                    ['Écoute : suivi de la demande', P + 'espace/suivi-ecoute.html'],
+                    ['Écoute : suivi de la demande', P + 'espace/suivi-ecoute.html', 'fait', '4 états'],
                     ['Écoute : demande d\'accompagnement', P + 'espace/demande-ecoute.html'],
-                    ['Charte éthique (signature bloquante)', P + 'espace/charte.html'],
-                    ['Messagerie sécurisée', P + 'espace/messagerie.html'],
-                    ['Messagerie : chargement', P + 'espace/messagerie-chargement.html'],
-                    ['Formations suivies', P + 'espace/formations.html'],
-                    ['Formations : état vide', P + 'espace/formations-vide.html'],
-                    ['Coaching suivi', P + 'espace/coaching.html'],
-                    ['Profil et confidentialité', P + 'espace/profil.html']
+                    ['Charte éthique (signature bloquante)', P + 'espace/charte.html', 'fait'],
+                    ['Messagerie sécurisée', P + 'espace/messagerie.html', 'fait', '4 états'],
+                    ['Messagerie : chargement', P + 'espace/messagerie.html', 'fait', 'état 2'],
+                    ['Formations suivies', P + 'espace/formations.html', 'fait', '4 états'],
+                    ['Formations : état vide', P + 'espace/formations.html', 'fait', 'état 3'],
+                    ['Coaching suivi', P + 'espace/coaching.html', 'fait', '4 états'],
+                    ['Profil et confidentialité', P + 'espace/profil.html', 'fait']
                 ]},
                 { titre: 'Inscription payante', ecrans: [
                     ['Récapitulatif', P + 'commande/recapitulatif.html', 'fait'],
