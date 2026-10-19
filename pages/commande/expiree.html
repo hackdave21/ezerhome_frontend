@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation expirée — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white lg:bg-ezer-green-light text-ezer-dark font-sans text-base leading-normal min-h-screen flex flex-col">
+
+    <div data-layout="header" data-active="formation"></div>
+
+    <main class="flex-1">
+        <div class="px-4 py-7 lg:px-8 lg:py-14 lg:pb-20">
+            <div class="max-w-[600px] mx-auto lg:p-10 lg:border lg:border-ezer-green-border rounded-ezer bg-white flex flex-col gap-6">
+
+                <span aria-hidden="true" class="w-16 h-16 rounded-full border-2 border-ezer-dark inline-flex items-center justify-center">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12"></path><path d="M6 21h12"></path><path d="M7 3v4l5 9 5-9V3"></path><path d="M8 15h8"></path></svg>
+                </span>
+
+                <div class="flex flex-col gap-2">
+                    <h1 class="font-cooper font-normal text-3xl">Votre réservation a expiré</h1>
+                    <p>Aucun paiement n'a été reçu dans les 48 heures : la place a été libérée pour d'autres personnes. Vous pouvez réserver à nouveau.</p>
+                </div>
+
+                <div class="bg-ezer-green-light rounded-ezer p-5 flex flex-col gap-1">
+                    <span class="font-semibold">Écoute active et relation d'aide</span>
+                    <span class="text-sm">4 places encore disponibles</span>
+                </div>
+
+                <div class="flex flex-col gap-3 items-start">
+                    <a href="recapitulatif.html" class="w-full sm:w-auto inline-flex items-center justify-center min-h-[56px] px-7 rounded-ezer bg-ezer-green text-white text-[17px] font-semibold hover:bg-ezer-green-dark transition-colors">Réserver à nouveau</a>
+                    <p class="text-[15px]">Vous avez déjà payé ? <a href="https://wa.me/22800000000" class="font-semibold text-ezer-green hover:underline">Contactez le bureau</a> avec la référence <strong class="font-semibold">CMD-2026-00087</strong> : votre paiement ne sera pas perdu.</p>
+                    <a href="../site/formations.html" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Voir les autres formations</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="footer-mini"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

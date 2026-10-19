@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En attente de confirmation — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white lg:bg-ezer-green-light text-ezer-dark font-sans text-base leading-normal min-h-screen flex flex-col">
+
+    <div data-layout="header" data-active="formation"></div>
+
+    <main class="flex-1">
+        <div class="px-4 py-7 lg:px-8 lg:py-14 lg:pb-20">
+            <div class="max-w-[600px] mx-auto lg:p-10 lg:border lg:border-ezer-green-border rounded-ezer bg-white flex flex-col gap-6">
+
+                <div class="flex flex-col gap-3">
+                    <p class="text-sm text-ezer-muted">Étape <strong class="text-ezer-dark">3</strong> sur 3 · <strong class="text-ezer-dark">Confirmation</strong></p>
+                    <ol class="flex gap-2 list-none">
+                        <li class="flex-1 flex flex-col gap-1.5"><span class="h-1.5 rounded-full bg-ezer-green"></span><span class="text-[13px] font-semibold">Récapitulatif</span></li>
+                        <li class="flex-1 flex flex-col gap-1.5"><span class="h-1.5 rounded-full bg-ezer-green"></span><span class="text-[13px] font-semibold">Paiement</span></li>
+                        <li class="flex-1 flex flex-col gap-1.5" aria-current="step"><span class="h-1.5 rounded-full bg-ezer-green"></span><span class="text-[13px] font-semibold">Confirmation</span></li>
+                    </ol>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <span class="self-start inline-flex items-center gap-1.5 text-[13px] font-semibold px-2.5 py-1 rounded-full border border-ezer-dark bg-white">
+                        <svg aria-hidden="true" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+                        En attente de confirmation du bureau
+                    </span>
+                    <h1 class="font-cooper font-normal text-3xl">Votre place est réservée</h1>
+                    <p>Il reste à payer. Dès que le bureau aura vérifié votre paiement, votre accès sera débloqué et vous recevrez un SMS.</p>
+                </div>
+
+                <div class="bg-ezer-green-light rounded-ezer p-5 flex flex-col gap-4">
+                    <div class="flex flex-col">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-ezer-green">Référence de commande</span>
+                        <span class="font-cooper text-2xl lg:text-3xl">CMD-2026-00087</span>
+                    </div>
+                    <dl class="grid grid-cols-2 gap-3 pt-4 border-t border-ezer-green-border">
+                        <div class="flex flex-col gap-0.5"><dt class="text-[13px] text-ezer-muted">Montant</dt><dd class="font-semibold">15 000 FCFA</dd></div>
+                        <div class="flex flex-col gap-0.5"><dt class="text-[13px] text-ezer-muted">Moyen</dt><dd class="font-semibold" id="moyen-affiche">Mixx By Yas</dd></div>
+                        <div class="col-span-2 flex flex-col gap-0.5"><dt class="text-[13px] text-ezer-muted">Place réservée jusqu'au</dt><dd class="font-semibold">[date] à [heure] (48 h)</dd></div>
+                    </dl>
+                </div>
+
+                <section class="flex flex-col gap-3.5">
+                    <h2 class="text-xl font-semibold">Comment payer avec <span id="moyen-titre">Mixx By Yas</span></h2>
+                    <ol class="flex flex-col gap-4 list-none">
+                        <li class="flex items-start gap-3">
+                            <span aria-hidden="true" class="shrink-0 w-7 h-7 rounded-full border-2 border-ezer-brown inline-flex items-center justify-center text-sm font-semibold">1</span>
+                            <span class="pt-0.5">Composez [code USSD Mixx By Yas] ou ouvrez l'application.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span aria-hidden="true" class="shrink-0 w-7 h-7 rounded-full border-2 border-ezer-brown inline-flex items-center justify-center text-sm font-semibold">2</span>
+                            <span class="pt-0.5">Choisissez « Envoyer de l'argent » vers le numéro ci-dessous.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span aria-hidden="true" class="shrink-0 w-7 h-7 rounded-full border-2 border-ezer-brown inline-flex items-center justify-center text-sm font-semibold">3</span>
+                            <span class="pt-0.5">Saisissez le montant exact : 15 000 FCFA.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span aria-hidden="true" class="shrink-0 w-7 h-7 rounded-full border-2 border-ezer-brown inline-flex items-center justify-center text-sm font-semibold">4</span>
+                            <span class="pt-0.5">Indiquez la référence CMD-2026-00087 dans le message, puis validez avec votre code secret.</span>
+                        </li>
+                    </ol>
+                    <div class="flex flex-wrap items-center justify-between gap-3 border-2 border-ezer-green rounded-ezer p-4 px-5">
+                        <div class="flex flex-col">
+                            <span class="text-[13px] text-ezer-muted" id="benef-titre">Numéro Mixx By Yas d'Ezer Home</span>
+                            <span class="text-[22px] font-semibold tracking-wide" id="benef-valeur">+228 [XX XX XX XX]</span>
+                            <span class="text-[13px] text-ezer-muted">Nom affiché : [titulaire du compte]</span>
+                        </div>
+                        <button type="button" id="copier" class="min-h-[44px] px-4 border-2 border-ezer-green rounded-ezer bg-white text-ezer-green font-semibold">Copier</button>
+                    </div>
+                </section>
+
+                <section class="flex flex-col gap-4">
+                    <h2 class="text-lg font-semibold">Où en est ma commande ?</h2>
+                    <ol id="timeline" class="flex flex-col list-none"></ol>
+                </section>
+
+                <div class="flex flex-col gap-2.5">
+                    <button id="signaler" type="button" class="w-full min-h-[56px] rounded-ezer border-0 bg-ezer-green text-white text-[17px] font-semibold hover:bg-ezer-green-dark transition-colors">J'ai effectué le paiement</button>
+                    <p id="confirmation" hidden role="status" class="text-center text-sm text-ezer-muted">Merci, le bureau a été prévenu. Vous recevrez un SMS après vérification.</p>
+                    <div class="flex flex-wrap gap-x-6 gap-y-1">
+                        <a href="paiement.html" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Changer de moyen de paiement</a>
+                        <a href="#annuler" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Annuler la commande</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="footer-mini"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var ETAPES = [
+                { t: 'Commande créée', e: 'terminé' },
+                { t: 'Paiement à effectuer', e: 'en cours' },
+                { t: 'Vérification par le bureau', e: 'à venir' },
+                { t: 'Accès débloqué', e: 'à venir' }
+            ];
+
+            var timeline = document.getElementById('timeline');
+            var signaler = document.getElementById('signaler');
+            var confirmation = document.getElementById('confirmation');
+
+            function rendreTimeline(actuel) {
+                timeline.innerHTML = '';
+                ETAPES.forEach(function (e, i) {
+                    var termine = i < actuel;
+                    var courant = i === actuel;
+                    var li = document.createElement('li');
+                    li.className = 'flex items-start gap-3';
+                    li.innerHTML =
+                        '<span aria-hidden="true" class="shrink-0 w-[22px] h-[22px] rounded-full inline-flex items-center justify-center ' +
+                        (termine ? 'bg-ezer-green text-white' : (courant ? 'border-[3px] border-ezer-green' : 'border-2 border-ezer-borderMuted')) + '">' +
+                        (termine ? '<svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>' : '') +
+                        '</span>' +
+                        (i < ETAPES.length - 1 ? '<span class="shrink-0 w-0.5 flex-1 min-h-6 ' + (termine ? 'bg-ezer-green' : 'bg-transparent') + '"></span>' : '<span class="shrink-0 w-0.5"></span>') +
+                        '<span class="' + (courant ? 'font-semibold' : (termine ? '' : 'text-ezer-muted')) + '">' + e.t + '</span>';
+                    li.setAttribute('aria-label', e.t + ' : ' + (termine ? 'terminé' : (courant ? 'en cours' : 'à venir')));
+                    timeline.appendChild(li);
+                });
+            }
+
+            var signale = false;
+            signaler.addEventListener('click', function () {
+                signale = true;
+                signaler.textContent = 'Paiement signalé au bureau';
+                signaler.classList.remove('hover:bg-ezer-green-dark');
+                signaler.classList.add('bg-ezer-muted');
+                confirmation.hidden = false;
+                rendreTimeline(2);
+            });
+
+            rendreTimeline(1);
+
+            document.getElementById('copier').addEventListener('click', function () {
+                var btn = this;
+                try { if (navigator.clipboard) navigator.clipboard.writeText(document.getElementById('benef-valeur').textContent); } catch (e) {}
+                btn.textContent = 'Copié';
+                setTimeout(function () { btn.textContent = 'Copier'; }, 1800);
+            });
+        })();
+    </script>
+</body>
+</html>

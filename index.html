@@ -16,7 +16,7 @@
         <div class="flex flex-col gap-1.5 mb-8">
             <p class="text-xs font-semibold uppercase tracking-widest text-ezer-green">Ezer Home · Prototype</p>
             <h1 class="font-cooper font-normal text-4xl lg:text-5xl">Plan du prototype</h1>
-            <p class="text-ezer-muted max-w-[860px]">Point d'entrée de la navigation : chaque écran est accessible ici. Les maquettes mobiles et ordinateurs ont été fusionnées en une page responsive unique ; les états (erreur, chargement, succès) sont accessibles via le sélecteur en haut de chaque page. <strong class="text-ezer-dark">20 pages réalisées</strong> : le site public est complet, ainsi que l'assistance, les dons et l'écran de connexion.</p>
+            <p class="text-ezer-muted max-w-[860px]">Point d'entrée de la navigation : chaque écran est accessible ici. Les maquettes mobiles et ordinateurs ont été fusionnées en une page responsive unique ; les états (erreur, chargement, succès) sont accessibles via le sélecteur en haut de chaque page. <strong class="text-ezer-dark">36 pages réalisées</strong> : site public, assistance, dons et compte sont complets, ainsi que le tunnel de commande.</p>
         </div>
 
         <div id="filtres" class="flex flex-wrap gap-2 mb-6" role="group" aria-label="Filtrer les écrans">
@@ -63,18 +63,18 @@
                     ['Dons : instructions de paiement', P + 'dons/don.html#etat-succes', 'fait', 'état 4']
                 ]},
                 { titre: 'Compte', ecrans: [
-                    ['Inscription', P + 'auth/inscription.html'],
-                    ['Code OTP', P + 'auth/otp.html'],
-                    ['Code OTP en erreur', P + 'auth/otp-erreur.html'],
-                    ['Lien magique envoyé', P + 'auth/lien-magique.html'],
+                    ['Inscription', P + 'auth/inscription.html', 'fait'],
+                    ['Code OTP', P + 'auth/otp.html', 'fait', '2 états'],
+                    ['Code OTP en erreur', P + 'auth/otp.html', 'fait', 'état 2'],
+                    ['Lien magique envoyé', P + 'auth/lien-magique.html', 'fait'],
                     ['Connexion', P + 'auth/connexion.html', 'fait', '2 états'],
                     ['Connexion en erreur', P + 'auth/connexion.html', 'fait', 'état 2'],
-                    ['Mot de passe oublié', P + 'auth/mdp-oublie.html'],
-                    ['Nouveau mot de passe', P + 'auth/nouveau-mdp.html'],
-                    ['Double authentification : code', P + 'auth/2fa-code.html'],
-                    ['Double authentification : activation', P + 'auth/2fa-activation.html'],
-                    ['Double authentification : codes de secours', P + 'auth/2fa-secours.html'],
-                    ['Compte désactivé', P + 'auth/compte-desactive.html']
+                    ['Mot de passe oublié', P + 'auth/mdp-oublie.html', 'fait'],
+                    ['Nouveau mot de passe', P + 'auth/nouveau-mdp.html', 'fait'],
+                    ['Double authentification : code', P + 'auth/2fa-code.html', 'fait'],
+                    ['Double authentification : activation', P + 'auth/2fa-activation.html', 'fait'],
+                    ['Double authentification : codes de secours', P + 'auth/2fa-secours.html', 'fait'],
+                    ['Compte désactivé', P + 'auth/compte-desactive.html', 'fait']
                 ]},
                 { titre: 'Espace personnel', ecrans: [
                     ['Écoute : suivi de la demande', P + 'espace/suivi-ecoute.html'],
@@ -88,12 +88,12 @@
                     ['Profil et confidentialité', P + 'espace/profil.html']
                 ]},
                 { titre: 'Inscription payante', ecrans: [
-                    ['Récapitulatif', P + 'commande/recapitulatif.html'],
-                    ['Choix du moyen de paiement', P + 'commande/paiement.html'],
-                    ['En attente du bureau', P + 'commande/attente.html'],
-                    ['Accès débloqué', P + 'commande/debloque.html'],
-                    ['Paiement échoué', P + 'commande/echec.html'],
-                    ['Réservation expirée', P + 'commande/expiree.html']
+                    ['Récapitulatif', P + 'commande/recapitulatif.html', 'fait'],
+                    ['Choix du moyen de paiement', P + 'commande/paiement.html', 'fait'],
+                    ['En attente du bureau', P + 'commande/attente.html', 'fait'],
+                    ['Accès débloqué', P + 'commande/debloque.html', 'fait'],
+                    ['Paiement échoué', P + 'commande/echec.html', 'fait'],
+                    ['Réservation expirée', P + 'commande/expiree.html', 'fait']
                 ]},
                 { titre: 'Thérapeutes et coachs', ecrans: [
                     ['Candidature intervenant', P + 'intervenant/candidature.html'],

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saisissez le code reçu — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white lg:bg-ezer-green-light text-ezer-dark font-sans text-base leading-normal min-h-screen flex flex-col">
+
+    <div data-layout="header"></div>
+
+    <main class="flex-1">
+        <div class="px-4 py-7 lg:px-8 lg:py-16 lg:pb-22">
+            <div class="max-w-[520px] mx-auto lg:p-10 lg:border lg:border-ezer-green-border rounded-ezer bg-white flex flex-col gap-6">
+
+                <div data-etat-switcher="otp" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+                    <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+                    <button type="button" data-etat-btn="valide" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Code à saisir</button>
+                    <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Code erroné</button>
+                </div>
+
+                <span aria-hidden="true" class="w-16 h-16 rounded-full bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M10 18h4"></path></svg>
+                </span>
+
+                <div class="flex flex-col gap-2">
+                    <h1 class="font-cooper font-normal text-3xl">Saisissez le code reçu</h1>
+                    <p>Nous venons d'envoyer un code à 6 chiffres par SMS au <strong class="font-semibold">+228 90 •• •• 56</strong>.</p>
+                </div>
+
+                <form aria-label="Vérification du code" class="flex flex-col gap-4" onsubmit="event.preventDefault()">
+                    <div class="flex flex-col gap-2">
+                        <label for="otp" class="text-[15px] font-semibold">Code de vérification</label>
+                        <input id="otp" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="––––––" aria-describedby="otp-err otp-aide" class="w-full h-[68px] px-4 text-center text-3xl font-semibold tracking-[0.5em] border border-ezer-borderMuted rounded-ezer bg-white focus:border-ezer-green focus:outline-none">
+                        <p id="otp-err" hidden role="alert" class="flex items-start gap-1.5 text-sm font-semibold text-ezer-red">
+                            <svg aria-hidden="true" class="shrink-0 mt-0.5 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg>
+                            Ce code ne correspond pas. Vérifiez-le et réessayez : il vous reste 2 essais.
+                        </p>
+                        <span id="otp-aide" class="text-sm text-ezer-muted">Le code est valable 10 minutes.</span>
+                    </div>
+                    <button type="submit" class="w-full min-h-[56px] rounded-ezer border-0 bg-ezer-green text-white text-[17px] font-semibold hover:bg-ezer-green-dark transition-colors">Valider</button>
+                </form>
+
+                <div class="flex flex-col gap-1.5 p-4 rounded-ezer bg-ezer-green-light text-[15px]">
+                    <span>Vous n'avez rien reçu ?</span>
+                    <span class="text-ezer-muted">Vous pourrez demander un nouveau code dans <strong class="font-semibold text-ezer-dark" id="chrono">0:45</strong>.</span>
+                    <span class="flex flex-wrap gap-x-4 gap-y-1">
+                        <button type="button" disabled class="min-h-[44px] p-0 border-0 bg-transparent text-ezer-muted font-semibold cursor-not-allowed">Renvoyer le code</button>
+                        <a href="inscription.html" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Modifier le numéro</a>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="footer-mini"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var champ = document.getElementById('otp');
+            var err = document.getElementById('otp-err');
+
+            function setEtat(erreur) {
+                err.hidden = !erreur;
+                champ.value = erreur ? '482193' : '';
+                champ.classList.toggle('border-2', erreur);
+                champ.classList.toggle('border-ezer-red', erreur);
+                champ.classList.toggle('border-ezer-borderMuted', !erreur);
+                champ.setAttribute('aria-invalid', erreur ? 'true' : 'false');
+
+                document.querySelectorAll('[data-etat-btn]').forEach(function (b) {
+                    var on = (b.getAttribute('data-etat-btn') === 'erreur') === erreur;
+                    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+                    b.classList.toggle('bg-ezer-dark', on);
+                    b.classList.toggle('text-white', on);
+                    b.classList.toggle('bg-white', !on);
+                    b.classList.toggle('text-ezer-dark', !on);
+                    b.classList.toggle('border', !on);
+                    b.classList.toggle('border-ezer-borderMuted', !on);
+                });
+            }
+
+            document.querySelectorAll('[data-etat-btn]').forEach(function (b) {
+                b.addEventListener('click', function () { setEtat(b.getAttribute('data-etat-btn') === 'erreur'); });
+            });
+
+            var restant = 45;
+            setInterval(function () {
+                restant = Math.max(0, restant - 1);
+                var m = Math.floor(restant / 60), s = restant % 60;
+                document.getElementById('chrono').textContent = m + ':' + (s < 10 ? '0' : '') + s;
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>

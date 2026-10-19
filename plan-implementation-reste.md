@@ -11,7 +11,7 @@ Ce plan intègre de manière exhaustive **l'intégralité des 144 archives et va
 ### 0.1 Socle technique mis en place
 
 - [x] `assets/js/theme.js` — **thème Tailwind partagé** (`ezerTheme()`), remplace le bloc de configuration inline de chaque page
-- [x] `assets/js/layout.js` — **en-tête et pied de page partagés**, injectés via `<div data-layout="header" data-active="...">` et `<div data-layout="footer" data-sobre="1">`. Contenu conforme à `EnTete.dc.html` / `PiedDePage.dc.html` (bandeau coordonnées, nav 7 entrées avec état actif, bouton « Faire un don », WhatsApp, menu mobile burger ; logo, adresse, 3 groupes de liens). Option `data-sobre="1"` pour masquer les liens commerciaux (espace, e-mails).
+- [x] `assets/js/layout.js` — **en-tête, pied de page et pied de page mini** partagés, injectés via `<div data-layout="header" data-active="...">`, `<div data-layout="footer" data-sobre="1">` ou `<div data-layout="footer-mini">`. Contenu conforme à `EnTete.dc.html` / `PiedDePage.dc.html` (bandeau coordonnées, nav 7 entrées avec état actif, bouton « Faire un don », WhatsApp, menu mobile burger ; logo, adresse, 3 groupes de liens). Option `data-sobre="1"` pour masquer les liens commerciaux (espace, e-mails). Le pied de page mini est celui des écrans compte et commande.
 - [x] `assets/js/main.js` — sélecteur d'états rendu générique (`data-state-target` / `data-state-pane` / `data-state-switcher` avec `data-active-class` et `data-idle-class`).
 - [x] Les variantes mobile (390px) et ordinateur (1440px) des maquettes sont fusionnées en **une seule page responsive** (breakpoint `lg`). Les états (erreur / envoi / succès) sont accessibles via un sélecteur en haut de page plutôt que des fichiers séparés.
 
@@ -38,11 +38,11 @@ Ce plan intègre de manière exhaustive **l'intégralité des 144 archives et va
 | Hors ligne / 404 | `pages/site/hors-ligne.html`, `404.html` | **[x] FAIT** | Aucun. |
 | Menu mobile ouvert | `pages/site/menu-mobile.html` | **[x] FAIT** | Aucun. |
 
-**Bilan : 20 pages réalisées.** Le module « Site public » est complet (17/17), ainsi que l'assistance, les dons et l'écran de connexion.
+**Bilan : 36 pages réalisées.** Modules terminés : **Site public (17/17)**, **Assistance & dons (8/8)**, **Compte (12/12)**, **Tunnel de commande (6/6)**.
 
 ### 0.3 Liens locaux pointant vers des pages non encore créées (attendu)
 
-`pages/auth/inscription.html`, `otp.html`, `mdp-oublie.html`, `pages/espace/charte.html`, `pages/commande/recapitulatif.html` — ces cibles sont prévues au plan et seront traitées ensuite.
+`pages/espace/charte.html`, `pages/espace/formations.html`, `pages/espace/profil.html` — ces cibles sont prévues au plan et seront traitées ensuite (module Espace personnel).
 
 ### 0.4 Placeholders à compléter côté contenu
 
@@ -85,20 +85,29 @@ Restent des valeurs entre crochets à remplacer par les données réelles (elles
 
 ---
 
-## 4. Authentification & Compte (`pages/auth/`)
-- [ ] Inscription (`inscription.html`) — mobile & ordinateur
-- [ ] Code OTP (`otp.html`) — mobile & ordinateur
-- [ ] Code OTP en erreur (`otp-erreur.html`) — mobile & ordinateur
-- [ ] Lien magique envoyé (`lien-magique.html`) — mobile & ordinateur
-- [~] Connexion (`connexion.html`) — écran conforme + état « connexion en erreur » ; reste l'état 2FA etc. dans les pages ci-dessous
-- [ ] Mot de passe oublié (`mdp-oublie.html`) — prochaine étape
-- [ ] Inscription (`inscription.html`) — prochaine étape
-- [ ] Code OTP (`otp.html`) — prochaine étape
-- [ ] Nouveau mot de passe / Réinitialisation (`nouveau-mdp.html`) — prochaine étape
-- [ ] Double authentification (2FA) : code (`2fa-code.html`), activation (`2fa-activation.html`, QR + clé), codes de secours (`2fa-secours.html`)
-- [ ] Code OTP en erreur (`otp-erreur.html`)
-- [ ] Lien magique envoyé (`lien-magique.html`)
-- [ ] Compte désactivé (`compte-desactive.html`)
+## 4. Authentification & Compte (`pages/auth/`) — **MODULE COMPLET (12/12 écrans)**
+- [x] Inscription (`inscription.html`) — choix avec / sans mot de passe, affichage du mot de passe
+- [x] Code OTP (`otp.html`) — **2 états** : code valide / code erroné (sélecteur en haut de page), compte à rebours
+- [x] Code OTP en erreur → état 2 de `otp.html`
+- [x] Lien magique envoyé (`lien-magique.html`)
+- [x] Connexion (`connexion.html`) — 2 états : connexion / connexion en erreur
+- [x] Connexion en erreur → état 2 de `connexion.html`
+- [x] Mot de passe oublié (`mdp-oublie.html`)
+- [x] Nouveau mot de passe (`nouveau-mdp.html`) — règles de validité
+- [x] Double authentification : code (`2fa-code.html`)
+- [x] Double authentification : activation (`2fa-activation.html`) — QR code + clé + copie
+- [x] Codes de secours (`2fa-secours.html`) — 8 codes, bouton Terminer bloqué tant que la case n'est pas cochée
+- [x] Compte désactivé (`compte-desactive.html`)
+
+---
+
+## 6. Tunnel de Commande & Inscription Payante (`pages/commande/`) — **MODULE COMPLET (6/6)**
+- [x] Récapitulatif (`commande/recapitulatif.html`) — fil d'étapes, montant, participant, CTA désactivé sans CGU
+- [x] Choix du moyen de paiement (`commande/paiement.html`) — 3 moyens, bloc conditionnel (numéro / adresse du siège)
+- [x] En attente du bureau (`commande/attente.html`) — référence, étapes de paiement, numéro à copier, timeline 4 étapes, signalement du paiement
+- [x] Accès débloqué (`commande/debloque.html`)
+- [x] Échec du paiement (`commande/echec.html`) — raisons fréquentes + dépôt de preuve
+- [x] Réservation expirée (`commande/expiree.html`)
 
 ---
 

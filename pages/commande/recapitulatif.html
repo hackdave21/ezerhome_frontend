@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre inscription — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white lg:bg-ezer-green-light text-ezer-dark font-sans text-base leading-normal min-h-screen flex flex-col">
+
+    <div data-layout="header" data-active="formation"></div>
+
+    <main class="flex-1">
+        <div class="px-4 py-7 lg:px-8 lg:py-14 lg:pb-20">
+            <div class="max-w-[600px] mx-auto lg:p-10 lg:border lg:border-ezer-green-border rounded-ezer bg-white flex flex-col gap-6">
+
+                <!-- FIL D'ÉTAPES -->
+                <div class="flex flex-col gap-3">
+                    <p class="text-sm text-ezer-muted">Étape <strong class="text-ezer-dark">1</strong> sur 3 · <strong class="text-ezer-dark">Récapitulatif</strong></p>
+                    <ol class="flex gap-2 list-none">
+                        <li class="flex-1 flex flex-col gap-1.5" aria-current="step">
+                            <span class="h-1.5 rounded-full bg-ezer-green"></span>
+                            <span class="text-[13px] font-semibold">Récapitulatif</span>
+                        </li>
+                        <li class="flex-1 flex flex-col gap-1.5">
+                            <span class="h-1.5 rounded-full bg-ezer-green-borderLight"></span>
+                            <span class="text-[13px] text-ezer-muted">Paiement</span>
+                        </li>
+                        <li class="flex-1 flex flex-col gap-1.5">
+                            <span class="h-1.5 rounded-full bg-ezer-green-borderLight"></span>
+                            <span class="text-[13px] text-ezer-muted">Confirmation</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <h1 class="font-cooper font-normal text-3xl">Votre inscription</h1>
+
+                <!-- OFFRE -->
+                <article class="flex flex-col gap-2.5 p-5 border border-ezer-green-border rounded-ezer">
+                    <span class="self-start text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-white border border-ezer-dark">Tarifé</span>
+                    <h2 class="text-xl font-semibold">Écoute active et relation d'aide</h2>
+                    <dl class="flex flex-col gap-1.5 text-[15px]">
+                        <div class="flex gap-2.5"><dt class="text-ezer-muted w-28 shrink-0">Dates</dt><dd>Du [date] au [date]</dd></div>
+                        <div class="flex gap-2.5"><dt class="text-ezer-muted w-28 shrink-0">Lieu</dt><dd>Siège d'Ezer Home, Lomé</dd></div>
+                        <div class="flex gap-2.5"><dt class="text-ezer-muted w-28 shrink-0">Intervenant</dt><dd>[Prénom Nom], psychologue</dd></div>
+                        <div class="flex gap-2.5"><dt class="text-ezer-muted w-28 shrink-0">Places</dt><dd>5 disponibles sur 12</dd></div>
+                    </dl>
+                </article>
+
+                <!-- MONTANT -->
+                <section class="flex flex-col gap-2">
+                    <h2 class="sr-only">Montant</h2>
+                    <div class="flex items-center justify-between gap-3 py-2 border-b border-ezer-green-borderLight">
+                        <span>Formation (3 jours)</span><span class="font-semibold">15 000 FCFA</span>
+                    </div>
+                    <div class="flex items-center justify-between gap-3 py-2 border-b border-ezer-green-borderLight">
+                        <span>Frais</span><span class="font-semibold">Aucun</span>
+                    </div>
+                    <div class="flex items-center justify-between gap-3 pt-2">
+                        <span class="font-semibold">Total à payer</span>
+                        <span class="font-cooper text-2xl">15 000 FCFA</span>
+                    </div>
+                </section>
+
+                <!-- PARTICIPANT -->
+                <section class="bg-ezer-green-light rounded-ezer p-5 flex flex-col gap-2">
+                    <h2 class="text-lg font-semibold">Participant(e)</h2>
+                    <div class="flex items-center justify-between gap-3">
+                        <div class="flex flex-col">
+                            <span class="font-semibold">Afi</span>
+                            <span class="text-sm text-ezer-muted">+228 90 •• •• 56</span>
+                        </div>
+                        <a href="../espace/profil.html" class="font-semibold text-ezer-green hover:underline">Modifier</a>
+                    </div>
+                </section>
+
+                <ul class="flex flex-col gap-2 text-[15px] list-none">
+                    <li class="flex items-start gap-2.5">
+                        <svg aria-hidden="true" class="shrink-0 mt-0.5 w-5 h-5 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+                        Votre place est réservée 48 heures, le temps de payer.
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                        <svg aria-hidden="true" class="shrink-0 mt-0.5 w-5 h-5 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11A8 8 0 0 0 6.3 6.3L4 8.5"></path><path d="M4 4v4.5h4.5"></path><path d="M4 13a8 8 0 0 0 13.7 4.7L20 15.5"></path><path d="M20 20v-4.5h-4.5"></path></svg>
+                        Annulation : [conditions d'annulation et de remboursement].
+                    </li>
+                </ul>
+
+                <label class="flex items-start gap-3 text-[15px] cursor-pointer">
+                    <input id="cgv" type="checkbox" checked class="w-6 h-6 shrink-0 accent-ezer-green">
+                    J'accepte les conditions d'inscription et d'annulation.
+                </label>
+
+                <div class="flex flex-col gap-2 items-start">
+                    <a id="cta" href="paiement.html" class="w-full sm:w-auto inline-flex items-center justify-center min-h-[56px] px-7 rounded-ezer bg-ezer-green text-white text-[17px] font-semibold hover:bg-ezer-green-dark transition-colors">Continuer vers le paiement</a>
+                    <a href="../site/formation-detail.html" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Retour à l'offre</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="footer-mini"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var cgv = document.getElementById('cgv');
+            var cta = document.getElementById('cta');
+            cgv.addEventListener('change', function () {
+                cta.setAttribute('aria-disabled', cgv.checked ? 'false' : 'true');
+                cta.classList.toggle('bg-ezer-green', cgv.checked);
+                cta.classList.toggle('hover:bg-ezer-green-dark', cgv.checked);
+                cta.classList.toggle('bg-ezer-muted', !cgv.checked);
+                cta.setAttribute('tabindex', cgv.checked ? '0' : '-1');
+            });
+        })();
+    </script>
+</body>
+</html>

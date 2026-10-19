@@ -175,18 +175,33 @@
       '</footer>';
   }
 
+  function miniFooter() {
+    return '' +
+      '<footer class="border-t border-ezer-green-borderLight bg-white px-4 py-5 text-sm text-ezer-muted">' +
+        '<div class="max-w-[1200px] mx-auto flex flex-wrap justify-between gap-2 lg:gap-6">' +
+          '<span>© 2026 Ezer Home</span>' +
+          '<nav aria-label="Liens utiles" class="flex flex-wrap gap-1 lg:gap-4">' +
+            '<a href="' + B + 'pages/site/legal.html#confidentialite" class="py-1.5 text-ezer-green hover:underline">Confidentialité</a>' +
+            '<a href="' + B + 'pages/site/legal.html#cgu" class="py-1.5 text-ezer-green hover:underline">CGU</a>' +
+            '<a href="' + B + 'pages/site/contact-particulier.html" class="py-1.5 text-ezer-green hover:underline">Contact</a>' +
+          '</nav>' +
+        '</div>' +
+      '</footer>';
+  }
+
   function mount() {
     var slots = document.querySelectorAll('[data-layout]');
     slots.forEach(function (slot) {
       var kind = slot.getAttribute('data-layout');
       var sobre = slot.getAttribute('data-sobre');
-      var html = kind === 'footer'
-        ? footer({ sobre: sobre })
-        : header({
-            active: slot.getAttribute('data-active') || '',
-            menu: slot.getAttribute('data-menu') || '',
-            don: slot.getAttribute('data-don') !== '0'
-          });
+      var html;
+      if (kind === 'footer') html = footer({ sobre: sobre });
+      else if (kind === 'footer-mini') html = miniFooter();
+      else html = header({
+        active: slot.getAttribute('data-active') || '',
+        menu: slot.getAttribute('data-menu') || '',
+        don: slot.getAttribute('data-don') !== '0'
+      });
       slot.outerHTML = html;
     });
 

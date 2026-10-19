@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accès débloqué — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white lg:bg-ezer-green-light text-ezer-dark font-sans text-base leading-normal min-h-screen flex flex-col">
+
+    <div data-layout="header" data-active="formation"></div>
+
+    <main class="flex-1">
+        <div class="px-4 py-7 lg:px-8 lg:py-14 lg:pb-20">
+            <div class="max-w-[600px] mx-auto lg:p-10 lg:border lg:border-ezer-green-border rounded-ezer bg-white flex flex-col gap-6">
+
+                <span aria-hidden="true" class="w-16 h-16 rounded-full bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+                </span>
+
+                <div class="flex flex-col gap-2">
+                    <h1 class="font-cooper font-normal text-3xl">C'est confirmé, votre accès est débloqué</h1>
+                    <p>Le bureau a bien reçu votre paiement de <strong class="font-semibold">15 000 FCFA</strong> le [date]. Bienvenue dans la formation « Écoute active et relation d'aide ».</p>
+                </div>
+
+                <section class="bg-ezer-green-light rounded-ezer p-5 flex flex-col gap-3">
+                    <h2 class="text-lg font-semibold">Ce qui vous attend</h2>
+                    <ul class="flex flex-col gap-2.5 list-none">
+                        <li class="flex items-start gap-2.5">
+                            <svg aria-hidden="true" class="shrink-0 mt-0.5 w-5 h-5 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+                            2 leçons et un support PDF, disponibles dès maintenant
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <svg aria-hidden="true" class="shrink-0 mt-0.5 w-5 h-5 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+                            Le calendrier des 3 journées, à ajouter à votre agenda
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <svg aria-hidden="true" class="shrink-0 mt-0.5 w-5 h-5 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+                            Première journée le [date], à 9 h, au siège
+                        </li>
+                    </ul>
+                </section>
+
+                <div class="flex flex-col gap-2.5">
+                    <a href="../espace/formations.html" class="w-full inline-flex items-center justify-center min-h-[56px] rounded-ezer bg-ezer-green text-white text-[17px] font-semibold hover:bg-ezer-green-dark transition-colors">Accéder à ma formation</a>
+                    <a href="#" class="w-full inline-flex items-center justify-center gap-2 min-h-[52px] rounded-ezer border-2 border-ezer-green bg-white text-ezer-green font-semibold hover:bg-ezer-green-light transition-colors">
+                        <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"></path><path d="M14 3v5h5"></path></svg>
+                        Télécharger le reçu (PDF)
+                    </a>
+                    <p class="text-center text-sm text-ezer-muted">Référence : <strong class="font-semibold">CMD-2026-00087</strong></p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="footer-mini"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

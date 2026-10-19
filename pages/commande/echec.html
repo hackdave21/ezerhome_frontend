@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Échec du paiement — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white lg:bg-ezer-green-light text-ezer-dark font-sans text-base leading-normal min-h-screen flex flex-col">
+
+    <div data-layout="header" data-active="formation"></div>
+
+    <main class="flex-1">
+        <div class="px-4 py-7 lg:px-8 lg:py-14 lg:pb-20">
+            <div class="max-w-[600px] mx-auto lg:p-10 lg:border lg:border-ezer-green-border rounded-ezer bg-white flex flex-col gap-6">
+
+                <span aria-hidden="true" class="w-16 h-16 rounded-full border-2 border-ezer-dark inline-flex items-center justify-center">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg>
+                </span>
+
+                <div class="flex flex-col gap-2">
+                    <h1 class="font-cooper font-normal text-3xl">Le paiement n'a pas pu être confirmé</h1>
+                    <p>Le bureau n'a pas retrouvé de paiement correspondant à la commande <strong class="font-semibold">CMD-2026-00087</strong>. Votre place reste réservée jusqu'au [date] à [heure].</p>
+                </div>
+
+                <section class="bg-ezer-green-light rounded-ezer p-5 flex flex-col gap-2.5">
+                    <h2 class="text-base font-semibold">Raisons fréquentes</h2>
+                    <ul class="flex flex-col gap-1.5 list-disc pl-5 text-[15px]">
+                        <li>Le montant envoyé est différent de 15 000 FCFA.</li>
+                        <li>Le paiement a été fait depuis un autre numéro que celui indiqué.</li>
+                        <li>La référence n'a pas été ajoutée au message.</li>
+                    </ul>
+                </section>
+
+                <p class="flex items-start gap-2.5 border-2 border-ezer-dark rounded-ezer p-4 px-5 text-[15px]">
+                    <svg aria-hidden="true" class="shrink-0 mt-0.5 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg>
+                    <span><strong class="font-semibold">De l'argent a été débité ?</strong> Il n'est pas perdu. Envoyez-nous la capture du SMS de confirmation : le bureau vous recontacte sous [48 heures].</span>
+                </p>
+
+                <div class="flex flex-col gap-2.5 items-start">
+                    <a href="paiement.html" class="w-full sm:w-auto inline-flex items-center justify-center min-h-[56px] px-7 rounded-ezer bg-ezer-green text-white text-[17px] font-semibold hover:bg-ezer-green-dark transition-colors">Réessayer le paiement</a>
+                    <label for="cm-preuve" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[52px] px-6 cursor-pointer rounded-ezer border-2 border-ezer-green bg-white text-ezer-green font-semibold hover:bg-ezer-green-light transition-colors">
+                        <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4"></path><path d="m7 9 5-5 5 5"></path><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"></path></svg>
+                        Envoyer une preuve de paiement
+                    </label>
+                    <input id="cm-preuve" type="file" accept="image/*,application/pdf" class="absolute h-px w-px opacity-0 overflow-hidden">
+                    <a href="https://wa.me/22800000000" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Parler au bureau sur WhatsApp</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="footer-mini"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
