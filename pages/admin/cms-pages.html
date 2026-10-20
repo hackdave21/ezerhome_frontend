@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pages et contenus — Administration Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="admin" data-user="Yawo" data-initiales="YA" data-role="admin"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="admin" data-actif="cms"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8">
+
+            <div data-etat-switcher="adm-cms" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+                <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+                <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Pages et contenus</button>
+                <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+                <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. Erreur</button>
+            </div>
+
+            <div data-etat="adm-cms" data-etat-panes
+                data-chargement-titre="Chargement des contenus…"
+                data-erreur-titre="Impossible d'afficher les pages et contenus pour le moment."
+                data-erreur-code="EZ-CMS-503">
+
+                <div data-etat-pane="normal" class="flex flex-col gap-5">
+
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <h1 class="font-cooper font-normal text-2xl lg:text-[32px]">Pages et contenus</h1>
+                        <a href="cms-charte.html" class="inline-flex items-center min-h-[44px] px-4 border-2 border-ezer-green rounded-ezer text-ezer-green font-semibold text-[15px] hover:bg-ezer-green-light transition-colors">Charte d'écoute</a>
+                    </div>
+
+                    <div role="tablist" aria-label="Contenus" class="flex gap-1 overflow-x-auto border-b border-ezer-green-border">
+                        <button type="button" role="tab" aria-selected="true" data-tab-target="onglet-pages" data-tab-group="cms" class="shrink-0 min-h-[48px] px-4 border-0 bg-transparent text-ezer-green border-b-2 border-ezer-green font-semibold text-[15px]">Pages</button>
+                        <button type="button" role="tab" aria-selected="false" data-tab-target="onglet-tarifs" data-tab-group="cms" class="shrink-0 min-h-[48px] px-4 border-0 bg-transparent text-ezer-muted text-[15px]">Tarifs</button>
+                        <button type="button" role="tab" aria-selected="false" data-tab-target="onglet-faq" data-tab-group="cms" class="shrink-0 min-h-[48px] px-4 border-0 bg-transparent text-ezer-muted text-[15px]">FAQ</button>
+                        <button type="button" role="tab" aria-selected="false" data-tab-target="onglet-dons" data-tab-group="cms" class="shrink-0 min-h-[48px] px-4 border-0 bg-transparent text-ezer-muted text-[15px] whitespace-nowrap">Page dons</button>
+                    </div>
+
+                    <!-- ONGLET PAGES -->
+                    <div id="onglet-pages" data-tab-pane="cms" class="flex flex-col gap-2.5">
+                        <div class="overflow-x-auto border border-ezer-green-border rounded-ezer">
+                            <table class="w-full min-w-[620px] text-sm">
+                                <caption class="sr-only">Pages du site</caption>
+                                <thead>
+                                    <tr class="bg-ezer-green-light text-left">
+                                        <th scope="col" class="py-2.5 px-3 font-semibold">Page</th>
+                                        <th scope="col" class="py-2.5 px-3 font-semibold">Dernière modification</th>
+                                        <th scope="col" class="py-2.5 px-3 font-semibold">Statut</th>
+                                        <th scope="col" class="py-2.5 px-3"><span class="sr-only">Action</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Accueil</th><td class="py-2 px-3 text-ezer-muted">[12/11] par Yawo</td>
+                                        <td class="py-2 px-3"><span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Publié</span></td>
+                                        <td class="py-2 px-3 text-right"><a href="#editer-accueil" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Modifier</a></td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">À propos</th><td class="py-2 px-3 text-ezer-muted">[02/11] par Yawo</td>
+                                        <td class="py-2 px-3"><span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Publié</span></td>
+                                        <td class="py-2 px-3 text-right"><a href="#editer-apropos" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Modifier</a></td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Écoute</th><td class="py-2 px-3 text-ezer-muted">[28/10] par Yawo</td>
+                                        <td class="py-2 px-3"><span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Publié</span></td>
+                                        <td class="py-2 px-3 text-right"><a href="#editer-ecoute" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Modifier</a></td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Assistance</th><td class="py-2 px-3 text-ezer-muted">[28/10] par Ablavi</td>
+                                        <td class="py-2 px-3"><span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Publié</span></td>
+                                        <td class="py-2 px-3 text-right"><a href="#editer-assistance" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Modifier</a></td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">À quoi servent les dons</th><td class="py-2 px-3 text-ezer-muted">[13/11] par Yawo</td>
+                                        <td class="py-2 px-3"><span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-dark">Brouillon</span></td>
+                                        <td class="py-2 px-3 text-right"><a href="#editer-dons" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Modifier</a></td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Mentions légales</th><td class="py-2 px-3 text-ezer-muted">[01/10] par Yawo</td>
+                                        <td class="py-2 px-3"><span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Publié</span></td>
+                                        <td class="py-2 px-3 text-right"><a href="#editer-mentions" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Modifier</a></td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Confidentialité</th><td class="py-2 px-3 text-ezer-muted">[01/10] par Yawo</td>
+                                        <td class="py-2 px-3"><span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Publié</span></td>
+                                        <td class="py-2 px-3 text-right"><a href="#editer-confid" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Modifier</a></td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">CGU</th><td class="py-2 px-3 text-ezer-muted">[01/10] par Yawo</td>
+                                        <td class="py-2 px-3"><span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Publié</span></td>
+                                        <td class="py-2 px-3 text-right"><a href="#editer-cgu" class="inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Modifier</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="m-0 text-[13px] text-ezer-muted">Chaque enregistrement crée une version. Vous pouvez revenir à une version précédente depuis l'éditeur.</p>
+                    </div>
+
+                    <!-- ONGLET TARIFS -->
+                    <div id="onglet-tarifs" data-tab-pane="cms" class="flex flex-col gap-2.5 hidden">
+                        <div class="overflow-x-auto border border-ezer-green-border rounded-ezer">
+                            <table class="w-full min-w-[600px] text-sm">
+                                <caption class="sr-only">Tarifs</caption>
+                                <thead>
+                                    <tr class="bg-ezer-green-light text-left">
+                                        <th scope="col" class="py-2.5 px-3 font-semibold">Offre</th>
+                                        <th scope="col" class="py-2.5 px-3 font-semibold">Gratuit</th>
+                                        <th scope="col" class="py-2.5 px-3 font-semibold">Prix (FCFA)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Écoute active et relation d'aide</th>
+                                        <td class="py-2 px-3"><input type="checkbox" aria-label="Écoute active et relation d'aide gratuit" class="w-5 h-5 accent-ezer-green"></td>
+                                        <td class="py-2 px-3"><input type="text" inputmode="numeric" value="15 000" aria-label="Prix de Écoute active et relation d'aide" class="w-[140px] h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer text-sm"></td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Gérer son stress au quotidien</th>
+                                        <td class="py-2 px-3"><input type="checkbox" aria-label="Gérer son stress au quotidien gratuit" class="w-5 h-5 accent-ezer-green"></td>
+                                        <td class="py-2 px-3"><input type="text" inputmode="numeric" value="5 000" aria-label="Prix de Gérer son stress au quotidien" class="w-[140px] h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer text-sm"></td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Accompagner un proche en difficulté</th>
+                                        <td class="py-2 px-3"><input type="checkbox" checked aria-label="Accompagner un proche en difficulté gratuit" class="w-5 h-5 accent-ezer-green"></td>
+                                        <td class="py-2 px-3"><input type="text" inputmode="numeric" value="0" aria-label="Prix de Accompagner un proche en difficulté" class="w-[140px] h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer text-sm"></td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Coaching Confiance en soi</th>
+                                        <td class="py-2 px-3"><input type="checkbox" aria-label="Coaching Confiance en soi gratuit" class="w-5 h-5 accent-ezer-green"></td>
+                                        <td class="py-2 px-3"><input type="text" inputmode="numeric" value="20 000" aria-label="Prix de Coaching Confiance en soi" class="w-[140px] h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer text-sm"></td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Séance découverte</th>
+                                        <td class="py-2 px-3"><input type="checkbox" checked aria-label="Séance découverte gratuite" class="w-5 h-5 accent-ezer-green"></td>
+                                        <td class="py-2 px-3"><input type="text" inputmode="numeric" value="0" aria-label="Prix de Séance découverte" class="w-[140px] h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer text-sm"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <button type="button" id="cta-tarifs" class="self-start min-h-[44px] px-4 border-0 rounded-ezer bg-ezer-green text-white text-sm font-semibold hover:bg-ezer-green-dark transition-colors">Enregistrer les tarifs</button>
+                    </div>
+
+                    <!-- ONGLET FAQ -->
+                    <div id="onglet-faq" data-tab-pane="cms" class="flex flex-col gap-2.5 hidden">
+                        <ol class="p-0 m-0 list-none flex flex-col gap-2">
+                            <li class="flex gap-2.5 items-start py-3 px-3.5 border border-ezer-green-border rounded-ezer">
+                                <span aria-hidden="true" class="text-ezer-muted pt-0.5">⋮⋮</span>
+                                <span class="flex-1 flex flex-col gap-0.5"><span class="font-semibold">Dois-je donner mon vrai nom ?</span><span class="text-[13px] text-ezer-muted">Page Écoute</span></span>
+                                <a href="#modifier-faq" class="inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Modifier</a>
+                            </li>
+                            <li class="flex gap-2.5 items-start py-3 px-3.5 border border-ezer-green-border rounded-ezer">
+                                <span aria-hidden="true" class="text-ezer-muted pt-0.5">⋮⋮</span>
+                                <span class="flex-1 flex flex-col gap-0.5"><span class="font-semibold">Qui peut lire ce que je partage ?</span><span class="text-[13px] text-ezer-muted">Page Écoute</span></span>
+                                <a href="#modifier-faq" class="inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Modifier</a>
+                            </li>
+                            <li class="flex gap-2.5 items-start py-3 px-3.5 border border-ezer-green-border rounded-ezer">
+                                <span aria-hidden="true" class="text-ezer-muted pt-0.5">⋮⋮</span>
+                                <span class="flex-1 flex flex-col gap-0.5"><span class="font-semibold">Puis-je donner sans créer de compte ?</span><span class="text-[13px] text-ezer-muted">Page À quoi servent les dons</span></span>
+                                <a href="#modifier-faq" class="inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Modifier</a>
+                            </li>
+                            <li class="flex gap-2.5 items-start py-3 px-3.5 border border-ezer-green-border rounded-ezer">
+                                <span aria-hidden="true" class="text-ezer-muted pt-0.5">⋮⋮</span>
+                                <span class="flex-1 flex flex-col gap-0.5"><span class="font-semibold">Est-ce que je reçois un reçu ?</span><span class="text-[13px] text-ezer-muted">Page À quoi servent les dons</span></span>
+                                <a href="#modifier-faq" class="inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Modifier</a>
+                            </li>
+                        </ol>
+                        <button type="button" class="self-start min-h-[44px] px-4 border-2 border-ezer-green rounded-ezer bg-white text-ezer-green text-sm font-semibold hover:bg-ezer-green-light transition-colors">Ajouter une question</button>
+                    </div>
+
+                    <!-- ONGLET PAGE DONS -->
+                    <div id="onglet-dons" data-tab-pane="cms" class="flex flex-col gap-3.5 hidden max-w-[720px]">
+                        <div class="flex flex-col gap-1">
+                            <label for="pd-intro" class="text-sm font-semibold">Texte d'introduction</label>
+                            <textarea id="pd-intro" rows="3" class="w-full p-2.5 px-3 border border-ezer-borderMuted rounded-ezer text-sm leading-[21px] resize-y focus:border-ezer-green focus:outline-none">Votre don finance l'aide matérielle et l'écoute gratuite proposées par l'association. Sans compte, en quelques étapes.</textarea>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label for="pd-secu" class="text-sm font-semibold">Mention de sécurité près du bouton</label>
+                            <textarea id="pd-secu" rows="2" class="w-full p-2.5 px-3 border border-ezer-borderMuted rounded-ezer text-sm leading-[21px] resize-y focus:border-ezer-green focus:outline-none">Aucun paiement n'est prélevé sur ce site. Vous validez le transfert sur votre téléphone, avec votre code secret.</textarea>
+                        </div>
+                        <p class="m-0 text-[13px] text-ezer-muted">Les montants suggérés et leurs exemples d'impact se règlent dans <a href="parametres.html" class="font-semibold text-ezer-green hover:underline">Paramètres</a>.</p>
+                        <button type="button" id="cta-dons-textes" class="self-start min-h-[44px] px-4 border-0 rounded-ezer bg-ezer-green text-white text-sm font-semibold hover:bg-ezer-green-dark transition-colors">Enregistrer</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            document.getElementById('cta-tarifs').addEventListener('click', function (e) {
+                var b = e.target; b.textContent = 'Tarifs enregistrés';
+                setTimeout(function () { b.textContent = 'Enregistrer les tarifs'; }, 2000);
+            });
+            document.getElementById('cta-dons-textes').addEventListener('click', function (e) {
+                var b = e.target; b.textContent = 'Enregistré';
+                setTimeout(function () { b.textContent = 'Enregistrer'; }, 2000);
+            });
+        })();
+    </script>
+</body>
+</html>

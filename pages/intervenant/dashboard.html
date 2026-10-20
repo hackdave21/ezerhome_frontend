@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord — Espace thérapeute / coach — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="intervenant" data-user="Mawuli" data-initiales="MA"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="intervenant" data-actif="dashboard"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8 lg:gap-7">
+
+            <div class="flex flex-col gap-0.5">
+                <h1 class="font-cooper font-normal text-[26px] leading-8 lg:text-[32px] lg:leading-[38px]">Bonjour, Mawuli</h1>
+                <span class="text-[15px] text-ezer-muted">Jeudi [date]</span>
+            </div>
+
+            <ul aria-label="En bref" class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                <li class="flex flex-col gap-0.5 p-3.5 border border-ezer-green-border rounded-ezer">
+                    <span class="text-[26px] leading-8 font-semibold">6</span>
+                    <span class="text-[13px] leading-[18px] text-ezer-muted">personnes accompagnées</span>
+                </li>
+                <li class="flex flex-col gap-0.5 p-3.5 border-2 border-ezer-green rounded-ezer">
+                    <span class="text-[26px] leading-8 font-semibold text-ezer-green">2</span>
+                    <span class="text-[13px] leading-[18px] text-ezer-muted">demandes à traiter</span>
+                </li>
+                <li class="flex flex-col gap-0.5 p-3.5 border border-ezer-green-border rounded-ezer">
+                    <span class="text-[26px] leading-8 font-semibold">4</span>
+                    <span class="text-[13px] leading-[18px] text-ezer-muted">réunions cette semaine</span>
+                </li>
+            </ul>
+
+            <section aria-labelledby="tb-dem" class="flex flex-col gap-3">
+                <div class="flex flex-col">
+                    <h2 id="tb-dem" class="text-xl leading-7 font-semibold">Demandes à accepter</h2>
+                    <span class="text-sm leading-5 text-ezer-muted">Merci de répondre sous 48 heures.</span>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-3">
+
+                    <article class="flex flex-col gap-2.5 p-[18px] border border-ezer-green-border rounded-ezer">
+                        <div class="flex items-center justify-between gap-2">
+                            <h3 class="text-[17px] leading-6 font-semibold">Kossi</h3>
+                            <span class="text-[13px] text-ezer-muted">Reçue hier</span>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full bg-ezer-green-light text-ezer-green">Écoute</span>
+                            <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-dark">Contact rapide souhaité</span>
+                            <span class="text-xs leading-4 px-2 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted">Préfère : Appel</span>
+                        </div>
+                        <p class="text-[15px] leading-[22px]">« Depuis la perte de mon travail, je n'arrive plus à dormir et je me sens seul. »</p>
+                        <div class="grid grid-cols-2 gap-2" data-actions>
+                            <button type="button" data-accepter data-nom="Kossi" data-retour="Kossi a été ajouté(e) à vos personnes accompagnées. Pensez à le/la contacter." class="min-h-[48px] rounded-ezer border-0 bg-ezer-green text-white text-[15px] font-semibold hover:bg-ezer-green-dark transition-colors">Accepter</button>
+                            <button type="button" data-decliner data-nom="Kossi" data-retour="Demande déclinée. La coordination proposera quelqu'un d'autre." class="min-h-[48px] rounded-ezer border-2 border-ezer-green bg-white text-ezer-green text-[15px] font-semibold hover:bg-ezer-green-light transition-colors">Décliner</button>
+                        </div>
+                    </article>
+
+                    <article class="flex flex-col gap-2.5 p-[18px] border border-ezer-green-border rounded-ezer">
+                        <div class="flex items-center justify-between gap-2">
+                            <h3 class="text-[17px] leading-6 font-semibold">Ama</h3>
+                            <span class="text-[13px] text-ezer-muted">Reçue le [date]</span>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full bg-ezer-green-light text-ezer-green">Écoute</span>
+                            <span class="text-xs leading-4 px-2 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted">Préfère : WhatsApp</span>
+                        </div>
+                        <p class="text-[15px] leading-[22px]">« J'aimerais parler de ma relation avec ma mère, qui est devenue difficile. »</p>
+                        <div class="grid grid-cols-2 gap-2" data-actions>
+                            <button type="button" data-accepter data-nom="Ama" data-retour="Ama a été ajouté(e) à vos personnes accompagnées. Pensez à le/la contacter." class="min-h-[48px] rounded-ezer border-0 bg-ezer-green text-white text-[15px] font-semibold hover:bg-ezer-green-dark transition-colors">Accepter</button>
+                            <button type="button" data-decliner data-nom="Ama" data-retour="Demande déclinée. La coordination proposera quelqu'un d'autre." class="min-h-[48px] rounded-ezer border-2 border-ezer-green bg-white text-ezer-green text-[15px] font-semibold hover:bg-ezer-green-light transition-colors">Décliner</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section aria-labelledby="tb-reu" class="flex flex-col gap-3">
+                <div class="flex items-baseline justify-between gap-2">
+                    <h2 id="tb-reu" class="text-xl leading-7 font-semibold">Réunions à venir</h2>
+                    <a href="agenda.html" class="inline-flex items-center min-h-[44px] text-[15px] font-semibold text-ezer-green hover:underline">Agenda</a>
+                </div>
+                <ul class="flex flex-col gap-2.5">
+                    <li class="flex flex-wrap items-center gap-2.5 gap-x-3.5 p-3.5 px-4 border-2 border-ezer-green rounded-ezer">
+                        <span class="shrink-0 flex flex-col min-w-[72px]">
+                            <span class="text-lg leading-6 font-semibold">15 h 00</span>
+                            <span class="text-[13px] leading-[18px] text-ezer-muted">Aujourd'hui</span>
+                        </span>
+                        <span class="flex-1 min-w-[160px] flex flex-col min-w-0">
+                            <span class="font-semibold">Afi</span>
+                            <span class="text-sm leading-5 text-ezer-muted">Écoute · appel vidéo · 45 min</span>
+                        </span>
+                        <span class="w-full lg:w-auto lg:flex-none flex flex-1 gap-2">
+                            <a href="#rejoindre" class="inline-flex items-center justify-center min-h-[44px] px-4 rounded-ezer bg-ezer-green text-white text-[15px] font-semibold hover:bg-ezer-green-dark transition-colors">Rejoindre</a>
+                            <a href="notes.html" class="inline-flex items-center justify-center min-h-[44px] px-4 rounded-ezer border-2 border-ezer-green text-ezer-green text-[15px] font-semibold hover:bg-ezer-green-light transition-colors">Notes</a>
+                        </span>
+                    </li>
+                    <li class="flex flex-wrap items-center gap-2.5 gap-x-3.5 p-3.5 px-4 border border-ezer-green-border rounded-ezer">
+                        <span class="shrink-0 flex flex-col min-w-[72px]">
+                            <span class="text-lg leading-6 font-semibold">18 h 00</span>
+                            <span class="text-[13px] leading-[18px] text-ezer-muted">Aujourd'hui</span>
+                        </span>
+                        <span class="flex-1 min-w-[160px] flex flex-col min-w-0">
+                            <span class="font-semibold">Edem</span>
+                            <span class="text-sm leading-5 text-ezer-muted">Coaching · séance 2 sur 4</span>
+                        </span>
+                        <span class="w-full lg:w-auto lg:flex-none flex flex-1 gap-2">
+                            <a href="#rejoindre" class="inline-flex items-center justify-center min-h-[44px] px-4 rounded-ezer bg-ezer-green text-white text-[15px] font-semibold hover:bg-ezer-green-dark transition-colors">Rejoindre</a>
+                            <a href="notes.html" class="inline-flex items-center justify-center min-h-[44px] px-4 rounded-ezer border-2 border-ezer-green text-ezer-green text-[15px] font-semibold hover:bg-ezer-green-light transition-colors">Notes</a>
+                        </span>
+                    </li>
+                    <li class="flex flex-wrap items-center gap-2.5 gap-x-3.5 p-3.5 px-4 border border-ezer-green-border rounded-ezer">
+                        <span class="shrink-0 flex flex-col min-w-[72px]">
+                            <span class="text-lg leading-6 font-semibold">10 h 00</span>
+                            <span class="text-[13px] leading-[18px] text-ezer-muted">Mardi</span>
+                        </span>
+                        <span class="flex-1 min-w-[160px] flex flex-col min-w-0">
+                            <span class="font-semibold">Afi</span>
+                            <span class="text-sm leading-5 text-ezer-muted">Écoute · au siège</span>
+                        </span>
+                        <span class="w-full lg:w-auto lg:flex-none flex flex-1 gap-2">
+                            <a href="notes.html" class="inline-flex items-center justify-center min-h-[44px] px-4 rounded-ezer border-2 border-ezer-green text-ezer-green text-[15px] font-semibold hover:bg-ezer-green-light transition-colors">Notes</a>
+                        </span>
+                    </li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="tb-pers" class="flex flex-col gap-3">
+                <h2 id="tb-pers" class="text-xl leading-7 font-semibold">Mes personnes accompagnées</h2>
+                <ul class="border-t border-ezer-green-borderLight">
+                    <li class="border-b border-ezer-green-borderLight">
+                        <a href="fiche-consultant.html" class="flex items-center gap-3 min-h-[64px] py-2 text-ezer-dark hover:text-ezer-green">
+                            <span aria-hidden="true" class="shrink-0 w-10 h-10 rounded-full bg-ezer-green-light inline-flex items-center justify-center font-semibold text-ezer-green">A</span>
+                            <span class="flex-1 min-w-0 flex flex-col"><span class="font-semibold">Afi</span><span class="text-[13px] leading-[18px] text-ezer-muted">Écoute · prochaine réunion aujourd'hui</span></span>
+                            <span class="shrink-0 inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-ezer-red text-white text-[11px] font-semibold">1<span class="sr-only"> messages non lus</span></span>
+                            <svg aria-hidden="true" class="shrink-0 w-[18px] h-[18px] text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+                        </a>
+                    </li>
+                    <li class="border-b border-ezer-green-borderLight">
+                        <a href="fiche-consultant.html" class="flex items-center gap-3 min-h-[64px] py-2 text-ezer-dark hover:text-ezer-green">
+                            <span aria-hidden="true" class="shrink-0 w-10 h-10 rounded-full bg-ezer-green-light inline-flex items-center justify-center font-semibold text-ezer-green">E</span>
+                            <span class="flex-1 flex flex-col"><span class="font-semibold">Edem</span><span class="text-[13px] leading-[18px] text-ezer-muted">Coaching · séance 1 sur 4 faite</span></span>
+                            <svg aria-hidden="true" class="shrink-0 w-[18px] h-[18px] text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+                        </a>
+                    </li>
+                    <li class="border-b border-ezer-green-borderLight">
+                        <a href="fiche-consultant.html" class="flex items-center gap-3 min-h-[64px] py-2 text-ezer-dark hover:text-ezer-green">
+                            <span aria-hidden="true" class="shrink-0 w-10 h-10 rounded-full bg-ezer-green-light inline-flex items-center justify-center font-semibold text-ezer-green">Y</span>
+                            <span class="flex-1 flex flex-col"><span class="font-semibold">Yao</span><span class="text-[13px] leading-[18px] text-ezer-muted">Écoute · dernière réunion il y a 5 jours</span></span>
+                            <span class="shrink-0 inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-ezer-red text-white text-[11px] font-semibold">2<span class="sr-only"> messages non lus</span></span>
+                            <svg aria-hidden="true" class="shrink-0 w-[18px] h-[18px] text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+                        </a>
+                    </li>
+                    <li class="border-b border-ezer-green-borderLight">
+                        <a href="fiche-consultant.html" class="flex items-center gap-3 min-h-[64px] py-2 text-ezer-dark hover:text-ezer-green">
+                            <span aria-hidden="true" class="shrink-0 w-10 h-10 rounded-full bg-ezer-green-light inline-flex items-center justify-center font-semibold text-ezer-green">D</span>
+                            <span class="flex-1 flex flex-col"><span class="font-semibold">Dela</span><span class="text-[13px] leading-[18px] text-ezer-muted">Écoute · aucune réunion programmée</span></span>
+                            <svg aria-hidden="true" class="shrink-0 w-[18px] h-[18px] text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+                        </a>
+                    </li>
+                    <li class="border-b border-ezer-green-borderLight">
+                        <a href="fiche-consultant.html" class="flex items-center gap-3 min-h-[64px] py-2 text-ezer-dark hover:text-ezer-green">
+                            <span aria-hidden="true" class="shrink-0 w-10 h-10 rounded-full bg-ezer-green-light inline-flex items-center justify-center font-semibold text-ezer-green">S</span>
+                            <span class="flex-1 flex flex-col"><span class="font-semibold">Sika</span><span class="text-[13px] leading-[18px] text-ezer-muted">Écoute · en pause à sa demande</span></span>
+                            <svg aria-hidden="true" class="shrink-0 w-[18px] h-[18px] text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            document.querySelectorAll('[data-actions]').forEach(function (bloc) {
+                var accepter = bloc.querySelector('[data-accepter]');
+                var decliner = bloc.querySelector('[data-decliner]');
+                function traiter(retour) {
+                    var p = document.createElement('p');
+                    p.setAttribute('role', 'status');
+                    p.className = 'p-2.5 px-3 rounded-ezer bg-ezer-green-light text-sm leading-5';
+                    p.textContent = retour;
+                    bloc.replaceWith(p);
+                }
+                accepter.addEventListener('click', function () { traiter(accepter.getAttribute('data-retour')); });
+                decliner.addEventListener('click', function () { traiter(decliner.getAttribute('data-retour')); });
+            });
+        })();
+    </script>
+</body>
+</html>

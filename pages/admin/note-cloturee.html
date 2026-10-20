@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture d'une note clôturée — Administration Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="admin" data-user="Yawo" data-initiales="YA" data-role="admin"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="admin" data-actif="reunions"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8">
+
+            <a href="reunions.html" class="self-start inline-flex items-center gap-1.5 min-h-[44px] text-[15px] font-semibold hover:text-ezer-green transition-colors">
+                <svg aria-hidden="true" class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+                Suivi des réunions
+            </a>
+
+            <div role="note" class="flex gap-3 items-start p-3.5 px-4 rounded-ezer bg-ezer-dark text-white">
+                <svg aria-hidden="true" class="shrink-0 mt-0.5 w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <p class="text-[15px] leading-[22px] m-0"><strong class="font-semibold">Cet accès est journalisé.</strong> Votre consultation (Yawo, [date] à 16 h 41) est enregistrée et visible par l'intervenant. Ne consultez une note que pour la supervision.</p>
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+                <span class="self-start inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted">
+                    <svg aria-hidden="true" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+                    Clôturée le [date] à 16 h 05
+                </span>
+                <h1 class="font-cooper font-normal text-2xl lg:text-[32px]">Réunion de Mawuli A. avec Afi</h1>
+                <span class="text-[15px] text-ezer-muted">Écoute · jeudi [date] · 15 h 00 – 15 h 45 · appel vidéo · 3e réunion</span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-5 lg:items-start">
+
+                <div class="flex flex-col gap-3.5 lg:col-span-3">
+                    <dl class="flex flex-col gap-3 m-0">
+                        <div class="flex flex-col gap-1.5">
+                            <dt class="text-[15px] font-semibold">Points abordés</dt>
+                            <dd class="m-0 p-3.5 rounded-ezer bg-ezer-green-pale border border-ezer-green-borderLight text-[15px] leading-[23px]">Fatigue liée à la situation familiale. Difficultés de sommeil depuis trois semaines. Soutien régulier de sa sœur.</dd>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <dt class="text-[15px] font-semibold">Ressenti</dt>
+                            <dd class="m-0 p-3.5 rounded-ezer bg-ezer-green-pale border border-ezer-green-borderLight text-[15px] leading-[23px]">Afi s'est exprimée librement, plus détendue en fin d'échange. De mon côté : besoin d'un cadre régulier.</dd>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <dt class="text-[15px] font-semibold">Actions convenues</dt>
+                            <dd class="m-0 p-3.5 rounded-ezer bg-ezer-green-pale border border-ezer-green-borderLight text-[15px] leading-[23px]">Noter chaque soir un moment positif de la journée. Reprendre contact avec sa sœur ce week-end.</dd>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <dt class="text-[15px] font-semibold">Prochaine étape</dt>
+                            <dd class="m-0 p-3.5 rounded-ezer bg-ezer-green-pale border border-ezer-green-borderLight text-[15px] leading-[23px]">Deuxième rencontre mardi [date] à 10 h, au siège.</dd>
+                        </div>
+                    </dl>
+
+                    <div class="flex flex-col gap-1 p-3.5 rounded-ezer bg-ezer-green-light">
+                        <span class="text-[13px] font-semibold text-ezer-green">Complément de l'intervenant · [date] à 10 h 12</span>
+                        <span class="text-[15px] leading-[23px]">Afi a confirmé par message qu'elle viendra mardi.</span>
+                    </div>
+                </div>
+
+                <section aria-labelledby="no-sup" class="flex flex-col gap-2.5 p-4.5 border-2 border-ezer-green rounded-ezer lg:col-span-2">
+                    <h2 id="no-sup" class="m-0 text-lg font-semibold">Commentaire de supervision</h2>
+                    <span class="text-[13px] text-ezer-muted leading-[18px]">Visible par Mawuli uniquement. Jamais par la personne accompagnée.</span>
+
+                    <div id="liste-commentaires" class="flex flex-col gap-2">
+                        <div class="flex flex-col gap-0.5 p-2.5 px-3 rounded-ezer bg-ezer-green-pale">
+                            <span class="text-[13px] font-semibold">Yawo (supervision) · [date]</span>
+                            <span class="text-[15px] leading-[22px]">Bon cadrage. Pensez à proposer un point sur le sommeil avec un médecin si les difficultés persistent.</span>
+                        </div>
+                    </div>
+
+                    <label for="no-com" class="text-sm font-semibold">Ajouter un commentaire</label>
+                    <textarea id="no-com" rows="4" class="w-full p-3.5 border border-ezer-borderMuted rounded-ezer text-[15px] leading-[22px] resize-y focus:border-ezer-green focus:outline-none"></textarea>
+                    <button type="button" id="btn-com" class="min-h-[48px] rounded-ezer bg-ezer-green text-white font-semibold text-[15px] hover:bg-ezer-green-dark transition-colors">Enregistrer le commentaire</button>
+                    <p role="status" id="retour-commentaire" hidden class="text-sm text-ezer-green font-semibold">Commentaire enregistré et visible par Mawuli. Signalé dans le journal d'audit.</p>
+                    <a href="#journal" class="inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Voir le journal des accès à cette note (2)</a>
+                </section>
+
+            </div>
+
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            document.getElementById('btn-com').addEventListener('click', function () {
+                var texte = document.getElementById('no-com').value.trim();
+                if (!texte) return;
+                var carte = document.createElement('div');
+                carte.className = 'flex flex-col gap-0.5 p-2.5 px-3 rounded-ezer bg-ezer-green-pale';
+                var auteur = document.createElement('span');
+                auteur.className = 'text-[13px] font-semibold';
+                auteur.textContent = 'Yawo (supervision) · à l’instant';
+                var corps = document.createElement('span');
+                corps.className = 'text-[15px] leading-[22px]';
+                corps.textContent = texte;
+                carte.appendChild(auteur);
+                carte.appendChild(corps);
+                document.getElementById('liste-commentaires').appendChild(carte);
+                document.getElementById('no-com').value = '';
+                document.getElementById('retour-commentaire').hidden = false;
+            });
+        })();
+    </script>
+</body>
+</html>

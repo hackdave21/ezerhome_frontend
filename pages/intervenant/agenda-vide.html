@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda — aucune réunion — Espace thérapeute / coach — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="intervenant" data-user="Mawuli" data-initiales="MA"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="intervenant" data-actif="agenda"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8 lg:gap-5">
+
+            <h1 class="font-cooper font-normal text-[26px] leading-8 lg:text-[32px] lg:leading-[38px]">Agenda</h1>
+
+            <div role="status" class="border border-dashed border-ezer-borderMuted rounded-ezer bg-ezer-green-pale p-6 lg:px-6 flex flex-col items-start gap-3">
+                <span aria-hidden="true" class="text-ezer-green">
+                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2.5-7.5A2 2 0 0 1 7.4 4h9.2a2 2 0 0 1 1.9 1.5L21 13"></path><path d="M3 13v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5h-5l-1.5 2.5h-5L8 13z"></path></svg>
+                </span>
+                <h2 class="text-lg leading-[26px] font-semibold">Aucune réunion cette semaine.</h2>
+                <p class="text-[15px] leading-[22px] text-ezer-muted max-w-[560px]">Programmez une réunion depuis la fiche de la personne accompagnée.</p>
+                <a href="programmer-reunion.html" class="mt-1 inline-flex items-center justify-center min-h-[48px] px-5 rounded-ezer bg-ezer-green text-white text-[15px] font-semibold hover:bg-ezer-green-dark transition-colors">Programmer une réunion</a>
+            </div>
+
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

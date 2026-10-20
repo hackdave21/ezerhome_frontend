@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partenaires — Administration Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="admin" data-user="Yawo" data-initiales="YA" data-role="admin"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="admin" data-actif="equipe"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8">
+
+            <div data-etat-switcher="adm-part" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+                <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+                <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Partenaires</button>
+                <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+                <button type="button" data-etat-btn="vide" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. Aucun partenaire</button>
+                <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">4. Erreur</button>
+            </div>
+
+            <div data-etat="adm-part" data-etat-panes
+                data-chargement-titre="Chargement des partenaires…"
+                data-vide-titre="Aucun partenaire pour le moment."
+                data-vide-texte="Ajoutez les partenaires qui seront présentés sur la page « Partenaires » du site."
+                data-vide-cta="Ajouter un partenaire"
+                data-vide-href="partenaires.html"
+                data-erreur-titre="Impossible d'afficher les partenaires pour le moment."
+                data-erreur-code="EZ-ORG-503">
+
+                <div data-etat-pane="normal" class="flex flex-col gap-5">
+
+                    <h1 class="font-cooper font-normal text-2xl lg:text-[32px]">Partenaires</h1>
+
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <p class="m-0 text-sm text-ezer-muted">Ordre d'affichage sur la page « Partenaires » du site.</p>
+                        <button type="button" class="min-h-[44px] px-3.5 border-0 rounded-ezer bg-ezer-green text-white text-sm font-semibold hover:bg-ezer-green-dark transition-colors">Ajouter un partenaire</button>
+                    </div>
+
+                    <ol class="p-0 m-0 list-none flex flex-col border border-ezer-green-border rounded-ezer overflow-hidden" data-ordre>
+                        <li class="flex flex-wrap items-center gap-2.5 py-2.5 px-3.5 border-b border-ezer-green-borderLight">
+                            <span class="shrink-0 w-6 font-semibold text-center tabular-nums">1</span>
+                            <span class="shrink-0 flex gap-0.5">
+                                <button type="button" data-move="-1" disabled aria-label="Monter [Partenaire 1]" class="w-[44px] min-h-[44px] border border-ezer-green-border rounded-ezer bg-white text-ezer-green text-lg">↑</button>
+                                <button type="button" data-move="1" aria-label="Descendre [Partenaire 1]" class="w-[44px] min-h-[44px] border border-ezer-green-border rounded-ezer bg-white text-ezer-green text-lg">↓</button>
+                            </span>
+                            <span aria-hidden="true" class="shrink-0 w-[72px] h-10 rounded-ezer border border-dashed border-ezer-borderMuted bg-ezer-green-pale flex items-center justify-center text-[11px] text-ezer-muted">Logo</span>
+                            <span class="flex-1 basis-[200px] min-w-0 flex flex-col"><span class="font-semibold">[Partenaire 1]</span><span class="text-[13px] text-ezer-muted">Institution · exemple-1.tg</span></span>
+                            <label class="shrink-0 inline-flex items-center gap-1.5 min-h-[44px] text-[13px] cursor-pointer"><input type="checkbox" role="switch" data-visibilite checked class="w-5 h-5 accent-ezer-green">Visible</label>
+                            <a href="#modifier-partenaire" class="shrink-0 inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Modifier</a>
+                        </li>
+                        <li class="flex flex-wrap items-center gap-2.5 py-2.5 px-3.5 border-b border-ezer-green-borderLight">
+                            <span class="shrink-0 w-6 font-semibold text-center tabular-nums">2</span>
+                            <span class="shrink-0 flex gap-0.5">
+                                <button type="button" data-move="-1" aria-label="Monter [Partenaire 2]" class="w-[44px] min-h-[44px] border border-ezer-green-border rounded-ezer bg-white text-ezer-green text-lg">↑</button>
+                                <button type="button" data-move="1" aria-label="Descendre [Partenaire 2]" class="w-[44px] min-h-[44px] border border-ezer-green-border rounded-ezer bg-white text-ezer-green text-lg">↓</button>
+                            </span>
+                            <span aria-hidden="true" class="shrink-0 w-[72px] h-10 rounded-ezer border border-dashed border-ezer-borderMuted bg-ezer-green-pale flex items-center justify-center text-[11px] text-ezer-muted">Logo</span>
+                            <span class="flex-1 basis-[200px] min-w-0 flex flex-col"><span class="font-semibold">[Partenaire 2]</span><span class="text-[13px] text-ezer-muted">Fondation · exemple-2.org</span></span>
+                            <label class="shrink-0 inline-flex items-center gap-1.5 min-h-[44px] text-[13px] cursor-pointer"><input type="checkbox" role="switch" data-visibilite checked class="w-5 h-5 accent-ezer-green">Visible</label>
+                            <a href="#modifier-partenaire" class="shrink-0 inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Modifier</a>
+                        </li>
+                        <li class="flex flex-wrap items-center gap-2.5 py-2.5 px-3.5 border-b border-ezer-green-borderLight">
+                            <span class="shrink-0 w-6 font-semibold text-center tabular-nums">3</span>
+                            <span class="shrink-0 flex gap-0.5">
+                                <button type="button" data-move="-1" aria-label="Monter [Partenaire 3]" class="w-[44px] min-h-[44px] border border-ezer-green-border rounded-ezer bg-white text-ezer-green text-lg">↑</button>
+                                <button type="button" data-move="1" aria-label="Descendre [Partenaire 3]" class="w-[44px] min-h-[44px] border border-ezer-green-border rounded-ezer bg-white text-ezer-green text-lg">↓</button>
+                            </span>
+                            <span aria-hidden="true" class="shrink-0 w-[72px] h-10 rounded-ezer border border-dashed border-ezer-borderMuted bg-ezer-green-pale flex items-center justify-center text-[11px] text-ezer-muted">Logo</span>
+                            <span class="flex-1 basis-[200px] min-w-0 flex flex-col"><span class="font-semibold">[Partenaire 3]</span><span class="text-[13px] text-ezer-muted">Entreprise · exemple-3.tg</span></span>
+                            <label class="shrink-0 inline-flex items-center gap-1.5 min-h-[44px] text-[13px] cursor-pointer"><input type="checkbox" role="switch" data-visibilite checked class="w-5 h-5 accent-ezer-green">Visible</label>
+                            <a href="#modifier-partenaire" class="shrink-0 inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Modifier</a>
+                        </li>
+                        <li data-masque class="flex flex-wrap items-center gap-2.5 py-2.5 px-3.5 border-b border-ezer-green-borderLight bg-ezer-green-pale opacity-60">
+                            <span class="shrink-0 w-6 font-semibold text-center tabular-nums">4</span>
+                            <span class="shrink-0 flex gap-0.5">
+                                <button type="button" data-move="-1" aria-label="Monter [Partenaire 4]" class="w-[44px] min-h-[44px] border border-ezer-green-border rounded-ezer bg-white text-ezer-green text-lg">↑</button>
+                                <button type="button" data-move="1" aria-label="Descendre [Partenaire 4]" class="w-[44px] min-h-[44px] border border-ezer-green-border rounded-ezer bg-white text-ezer-green text-lg">↓</button>
+                            </span>
+                            <span aria-hidden="true" class="shrink-0 w-[72px] h-10 rounded-ezer border border-dashed border-ezer-borderMuted bg-ezer-green-pale flex items-center justify-center text-[11px] text-ezer-muted">Logo</span>
+                            <span class="flex-1 basis-[200px] min-w-0 flex flex-col"><span class="font-semibold">[Partenaire 4]</span><span class="text-[13px] text-ezer-muted">Association · exemple-4.org</span></span>
+                            <label class="shrink-0 inline-flex items-center gap-1.5 min-h-[44px] text-[13px] cursor-pointer"><input type="checkbox" role="switch" data-visibilite class="w-5 h-5 accent-ezer-green">Visible</label>
+                            <a href="#modifier-partenaire" class="shrink-0 inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Modifier</a>
+                        </li>
+                        <li class="flex flex-wrap items-center gap-2.5 py-2.5 px-3.5 border-b-0">
+                            <span class="shrink-0 w-6 font-semibold text-center tabular-nums">5</span>
+                            <span class="shrink-0 flex gap-0.5">
+                                <button type="button" data-move="-1" aria-label="Monter [Partenaire 5]" class="w-[44px] min-h-[44px] border border-ezer-green-border rounded-ezer bg-white text-ezer-green text-lg">↑</button>
+                                <button type="button" data-move="1" disabled aria-label="Descendre [Partenaire 5]" class="w-[44px] min-h-[44px] border border-ezer-green-border rounded-ezer bg-white text-ezer-green text-lg">↓</button>
+                            </span>
+                            <span aria-hidden="true" class="shrink-0 w-[72px] h-10 rounded-ezer border border-dashed border-ezer-borderMuted bg-ezer-green-pale flex items-center justify-center text-[11px] text-ezer-muted">Logo</span>
+                            <span class="flex-1 basis-[200px] min-w-0 flex flex-col"><span class="font-semibold">[Partenaire 5]</span><span class="text-[13px] text-ezer-muted">Entreprise · exemple-5.tg</span></span>
+                            <label class="shrink-0 inline-flex items-center gap-1.5 min-h-[44px] text-[13px] cursor-pointer"><input type="checkbox" role="switch" data-visibilite checked class="w-5 h-5 accent-ezer-green">Visible</label>
+                            <a href="#modifier-partenaire" class="shrink-0 inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Modifier</a>
+                        </li>
+                    </ol>
+
+                    <p class="m-0 text-sm text-ezer-muted"><a href="organigramme.html" class="font-semibold text-ezer-green hover:underline">← Revenir à l'organigramme</a></p>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var ol = document.querySelector('ol[data-ordre]');
+
+            function majListe() {
+                var lis = Array.prototype.slice.call(ol.querySelectorAll('li'));
+                lis.forEach(function (li, i) {
+                    li.querySelector('span.tabular-nums').textContent = i + 1;
+                    li.querySelector('[data-move="-1"]').disabled = i === 0;
+                    li.querySelector('[data-move="1"]').disabled = i === lis.length - 1;
+                    li.classList.toggle('border-b', i < lis.length - 1);
+                    li.classList.toggle('border-b-0', i === lis.length - 1);
+                });
+            }
+
+            ol.querySelectorAll('button[data-move]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var li = btn.closest('li');
+                    var lis = Array.prototype.slice.call(ol.querySelectorAll('li'));
+                    var i = lis.indexOf(li);
+                    var j = i + parseInt(btn.getAttribute('data-move'), 10);
+                    if (j < 0 || j >= lis.length) return;
+                    if (j > i) { li.after(lis[j]); } else { li.before(lis[j]); }
+                    majListe();
+                });
+            });
+
+            ol.querySelectorAll('[data-visibilite]').forEach(function (cb) {
+                cb.addEventListener('change', function () {
+                    var li = cb.closest('li');
+                    var masque = !cb.checked;
+                    li.classList.toggle('bg-ezer-green-pale', masque);
+                    li.classList.toggle('opacity-60', masque);
+                });
+            });
+
+            majListe();
+        })();
+    </script>
+</body>
+</html>

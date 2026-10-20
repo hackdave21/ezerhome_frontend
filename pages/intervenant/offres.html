@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes offres — Espace thérapeute / coach — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="intervenant" data-user="Mawuli" data-initiales="MA"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="intervenant" data-actif="offres"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-4 pt-6 lg:pt-8 lg:gap-6">
+
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <h1 class="font-cooper font-normal text-[26px] leading-8 lg:text-[32px] lg:leading-[38px]">Mes offres</h1>
+                <a href="#creer-offre" class="inline-flex items-center justify-center min-h-[48px] px-[18px] rounded-ezer bg-ezer-green text-white text-[15px] font-semibold hover:bg-ezer-green-dark transition-colors">Créer une offre</a>
+            </div>
+
+            <p class="p-3 px-4 rounded-ezer bg-ezer-green-light text-sm leading-5">Chaque nouvelle offre est vérifiée par le comité de validation avant d'être publiée.</p>
+
+            <ul aria-label="Mes offres" class="grid grid-cols-1 lg:grid-cols-2 gap-3">
+
+                <li class="flex flex-col gap-2.5 p-[18px] border border-ezer-green-border rounded-ezer">
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Publiée</span>
+                        <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full bg-ezer-green-light text-ezer-green">Formation</span>
+                        <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-dark">Tarifé</span>
+                    </div>
+                    <h2 class="text-[17px] leading-6 font-semibold">Écoute active et relation d'aide</h2>
+                    <span class="text-sm leading-5 text-ezer-muted">Du [date] au [date] · 15 000 FCFA</span>
+                    <div class="flex flex-col gap-1">
+                        <div aria-hidden="true" class="h-2 rounded bg-ezer-green-light overflow-hidden"><span class="block h-full bg-ezer-green" style="width:58%"></span></div>
+                        <span class="text-[13px] leading-[18px]">7 inscrits sur 12 places</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="#modifier" class="flex-1 inline-flex items-center justify-center min-h-[44px] rounded-ezer border-2 border-ezer-green text-ezer-green text-[15px] font-semibold hover:bg-ezer-green-light transition-colors">Modifier</a>
+                        <a href="inscrits.html" class="flex-1 inline-flex items-center justify-center min-h-[44px] rounded-ezer bg-ezer-green text-white text-[15px] font-semibold hover:bg-ezer-green-dark transition-colors">Inscrits</a>
+                    </div>
+                </li>
+
+                <li class="flex flex-col gap-2.5 p-[18px] border border-ezer-green-border rounded-ezer">
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Publiée</span>
+                        <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full bg-ezer-green-light text-ezer-green">Coaching</span>
+                        <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-dark">Tarifé</span>
+                    </div>
+                    <h2 class="text-[17px] leading-6 font-semibold">Confiance en soi</h2>
+                    <span class="text-sm leading-5 text-ezer-muted">4 séances · 20 000 FCFA</span>
+                    <div class="flex flex-col gap-1">
+                        <div aria-hidden="true" class="h-2 rounded bg-ezer-green-light overflow-hidden"><span class="block h-full bg-ezer-green" style="width:50%"></span></div>
+                        <span class="text-[13px] leading-[18px]">2 inscrits sur 4 places</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="#modifier" class="flex-1 inline-flex items-center justify-center min-h-[44px] rounded-ezer border-2 border-ezer-green text-ezer-green text-[15px] font-semibold hover:bg-ezer-green-light transition-colors">Modifier</a>
+                        <a href="inscrits.html" class="flex-1 inline-flex items-center justify-center min-h-[44px] rounded-ezer bg-ezer-green text-white text-[15px] font-semibold hover:bg-ezer-green-dark transition-colors">Inscrits</a>
+                    </div>
+                </li>
+
+                <li class="flex flex-col gap-2.5 p-[18px] border border-ezer-green-border rounded-ezer">
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-dark">En attente de validation</span>
+                        <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full bg-ezer-green-light text-ezer-green">Formation</span>
+                        <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-green text-ezer-green">Gratuit</span>
+                    </div>
+                    <h2 class="text-[17px] leading-6 font-semibold">Accompagner un proche en difficulté</h2>
+                    <span class="text-sm leading-5 text-ezer-muted">Le [date] · Gratuit</span>
+                    <div class="flex flex-col gap-1">
+                        <div aria-hidden="true" class="h-2 rounded bg-ezer-green-light overflow-hidden"><span class="block h-full bg-ezer-green" style="width:0%"></span></div>
+                        <span class="text-[13px] leading-[18px]">0 inscrit sur 25 places</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="#modifier" class="flex-1 inline-flex items-center justify-center min-h-[44px] rounded-ezer border-2 border-ezer-green text-ezer-green text-[15px] font-semibold hover:bg-ezer-green-light transition-colors">Modifier</a>
+                        <a href="inscrits.html" class="flex-1 inline-flex items-center justify-center min-h-[44px] rounded-ezer bg-ezer-green text-white text-[15px] font-semibold hover:bg-ezer-green-dark transition-colors">Inscrits</a>
+                    </div>
+                </li>
+
+                <li class="flex flex-col gap-2.5 p-[18px] border border-ezer-green-border rounded-ezer">
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-dashed border-ezer-borderMuted text-ezer-muted">Brouillon</span>
+                        <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full bg-ezer-green-light text-ezer-green">Formation</span>
+                        <span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-dark">Tarifé</span>
+                    </div>
+                    <h2 class="text-[17px] leading-6 font-semibold">Gérer son stress au quotidien</h2>
+                    <span class="text-sm leading-5 text-ezer-muted">Date à fixer · 5 000 FCFA</span>
+                    <div class="flex flex-col gap-1">
+                        <div aria-hidden="true" class="h-2 rounded bg-ezer-green-light overflow-hidden"><span class="block h-full bg-ezer-green" style="width:0%"></span></div>
+                        <span class="text-[13px] leading-[18px]">0 inscrit sur 20 places</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="#modifier" class="flex-1 inline-flex items-center justify-center min-h-[44px] rounded-ezer border-2 border-ezer-green text-ezer-green text-[15px] font-semibold hover:bg-ezer-green-light transition-colors">Modifier</a>
+                        <a href="inscrits.html" class="flex-1 inline-flex items-center justify-center min-h-[44px] rounded-ezer bg-ezer-green text-white text-[15px] font-semibold hover:bg-ezer-green-dark transition-colors">Inscrits</a>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

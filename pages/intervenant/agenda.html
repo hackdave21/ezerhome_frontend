@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda — Espace thérapeute / coach — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="intervenant" data-user="Mawuli" data-initiales="MA"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="intervenant" data-actif="agenda"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8 lg:gap-5">
+
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <h1 class="font-cooper font-normal text-[26px] leading-8 lg:text-[32px] lg:leading-[38px]">Agenda</h1>
+                <a href="programmer-reunion.html" class="inline-flex items-center justify-center min-h-[48px] px-[18px] rounded-ezer bg-ezer-green text-white text-[15px] font-semibold hover:bg-ezer-green-dark transition-colors">Programmer</a>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 p-1.5 border border-ezer-green-border rounded-ezer">
+                <button type="button" aria-label="Semaine précédente" class="w-11 h-11 rounded-ezer border-0 bg-ezer-green-light text-ezer-green inline-flex items-center justify-center hover:bg-ezer-green-border transition-colors">
+                    <svg aria-hidden="true" class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+                </button>
+                <span class="font-semibold text-center">Semaine du [10] au [16] [nov.]</span>
+                <button type="button" aria-label="Semaine suivante" class="w-11 h-11 rounded-ezer border-0 bg-ezer-green-light text-ezer-green inline-flex items-center justify-center hover:bg-ezer-green-border transition-colors">
+                    <svg aria-hidden="true" class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+                </button>
+            </div>
+
+            <ol aria-label="Jours de la semaine" class="grid grid-cols-1 lg:grid-cols-7 gap-2.5">
+
+                <li class="flex gap-2.5 p-3 border border-ezer-green-border rounded-ezer">
+                    <span class="shrink-0 lg:w-auto w-12 flex lg:flex-col">
+                        <span class="text-[13px] leading-[18px] font-semibold uppercase">Lun</span>
+                        <span class="font-cooper text-[22px] leading-[26px]">[10]</span>
+                    </span>
+                    <div class="flex-1 min-w-0 flex flex-col gap-1.5">
+                        <a href="notes.html" class="flex flex-col p-2 px-2.5 rounded-ezer bg-ezer-green-light text-ezer-dark hover:bg-ezer-green-border transition-colors">
+                            <span class="text-[13px] leading-[18px] font-semibold">18 h 00</span>
+                            <span class="text-sm leading-5 font-semibold">Yao</span>
+                            <span class="text-xs leading-4 text-ezer-muted">Écoute · vidéo</span>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="flex gap-2.5 p-3 border border-ezer-green-border rounded-ezer">
+                    <span class="shrink-0 lg:w-auto w-12 flex lg:flex-col">
+                        <span class="text-[13px] leading-[18px] font-semibold uppercase">Mar</span>
+                        <span class="font-cooper text-[22px] leading-[26px]">[11]</span>
+                    </span>
+                    <div class="flex-1 min-w-0 flex flex-col gap-1.5">
+                        <a href="notes.html" class="flex flex-col p-2 px-2.5 rounded-ezer bg-ezer-green-light text-ezer-dark hover:bg-ezer-green-border transition-colors">
+                            <span class="text-[13px] leading-[18px] font-semibold">10 h 00</span>
+                            <span class="text-sm leading-5 font-semibold">Afi</span>
+                            <span class="text-xs leading-4 text-ezer-muted">Écoute · siège</span>
+                        </a>
+                        <a href="notes.html" class="flex flex-col p-2 px-2.5 rounded-ezer bg-ezer-green-light text-ezer-dark hover:bg-ezer-green-border transition-colors">
+                            <span class="text-[13px] leading-[18px] font-semibold">17 h 30</span>
+                            <span class="text-sm leading-5 font-semibold">Dela</span>
+                            <span class="text-xs leading-4 text-ezer-muted">Écoute · appel</span>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="flex gap-2.5 p-3 border border-ezer-green-border rounded-ezer">
+                    <span class="shrink-0 lg:w-auto w-12 flex lg:flex-col">
+                        <span class="text-[13px] leading-[18px] font-semibold uppercase">Mer</span>
+                        <span class="font-cooper text-[22px] leading-[26px]">[12]</span>
+                    </span>
+                    <div class="flex-1 min-w-0 flex flex-col gap-1.5">
+                        <a href="inscrits.html" class="flex flex-col p-2 px-2.5 rounded-ezer bg-white border-2 border-ezer-brown text-ezer-dark hover:bg-ezer-brown-light transition-colors">
+                            <span class="text-[13px] leading-[18px] font-semibold">9 h 00</span>
+                            <span class="text-sm leading-5 font-semibold">Écoute active</span>
+                            <span class="text-xs leading-4 text-ezer-muted">Formation · jour 1</span>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="flex gap-2.5 p-3 border-2 border-ezer-green rounded-ezer">
+                    <span class="shrink-0 lg:w-auto w-12 flex lg:flex-col">
+                        <span class="text-[13px] leading-[18px] font-semibold uppercase text-ezer-green">Jeu</span>
+                        <span class="font-cooper text-[22px] leading-[26px] text-ezer-green">[13]</span>
+                    </span>
+                    <div class="flex-1 min-w-0 flex flex-col gap-1.5">
+                        <a href="notes.html" class="flex flex-col p-2 px-2.5 rounded-ezer bg-ezer-green-light text-ezer-dark hover:bg-ezer-green-border transition-colors">
+                            <span class="text-[13px] leading-[18px] font-semibold">15 h 00</span>
+                            <span class="text-sm leading-5 font-semibold">Afi</span>
+                            <span class="text-xs leading-4 text-ezer-muted">Écoute · vidéo</span>
+                        </a>
+                        <a href="notes.html" class="flex flex-col p-2 px-2.5 rounded-ezer bg-white border-2 border-ezer-brown text-ezer-dark hover:bg-ezer-brown-light transition-colors">
+                            <span class="text-[13px] leading-[18px] font-semibold">18 h 00</span>
+                            <span class="text-sm leading-5 font-semibold">Edem</span>
+                            <span class="text-xs leading-4 text-ezer-muted">Coaching · vidéo</span>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="flex gap-2.5 p-3 border border-ezer-green-border rounded-ezer">
+                    <span class="shrink-0 lg:w-auto w-12 flex lg:flex-col">
+                        <span class="text-[13px] leading-[18px] font-semibold uppercase">Ven</span>
+                        <span class="font-cooper text-[22px] leading-[26px]">[14]</span>
+                    </span>
+                    <div class="flex-1 min-w-0 flex flex-col"><span class="text-[13px] leading-[18px] text-ezer-muted pt-1">Libre</span></div>
+                </li>
+
+                <li class="flex gap-2.5 p-3 border border-ezer-green-border rounded-ezer">
+                    <span class="shrink-0 lg:w-auto w-12 flex lg:flex-col">
+                        <span class="text-[13px] leading-[18px] font-semibold uppercase">Sam</span>
+                        <span class="font-cooper text-[22px] leading-[26px]">[15]</span>
+                    </span>
+                    <div class="flex-1 min-w-0 flex flex-col gap-1.5">
+                        <a href="notes.html" class="flex flex-col p-2 px-2.5 rounded-ezer bg-ezer-green-light text-ezer-dark hover:bg-ezer-green-border transition-colors">
+                            <span class="text-[13px] leading-[18px] font-semibold">10 h 00</span>
+                            <span class="text-sm leading-5 font-semibold">Kossi</span>
+                            <span class="text-xs leading-4 text-ezer-muted">Écoute · 1re rencontre</span>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="flex gap-2.5 p-3 border border-ezer-green-border rounded-ezer">
+                    <span class="shrink-0 lg:w-auto w-12 flex lg:flex-col">
+                        <span class="text-[13px] leading-[18px] font-semibold uppercase">Dim</span>
+                        <span class="font-cooper text-[22px] leading-[26px]">[16]</span>
+                    </span>
+                    <div class="flex-1 min-w-0 flex flex-col"><span class="text-[13px] leading-[18px] text-ezer-muted pt-1">Libre</span></div>
+                </li>
+            </ol>
+
+            <p class="flex flex-wrap gap-x-4 gap-y-1.5 text-[13px] leading-[18px] text-ezer-muted">
+                <span class="inline-flex items-center gap-1.5"><span aria-hidden="true" class="w-3.5 h-3.5 rounded-[4px] bg-ezer-green-light"></span>Écoute</span>
+                <span class="inline-flex items-center gap-1.5"><span aria-hidden="true" class="w-3.5 h-3.5 rounded-[4px] bg-white border-2 border-ezer-brown"></span>Coaching ou formation</span>
+            </p>
+
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

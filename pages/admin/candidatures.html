@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidatures intervenants — Administration Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="admin" data-user="Yawo" data-initiales="YA" data-role="admin"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="admin" data-actif="candidatures"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8">
+
+            <div data-etat-switcher="adm-cand" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+                <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+                <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Candidatures</button>
+                <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+                <button type="button" data-etat-btn="vide" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. Aucune candidature</button>
+                <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">4. Erreur</button>
+            </div>
+
+            <div data-etat="adm-cand" data-etat-panes
+                data-chargement-titre="Chargement des candidatures…"
+                data-vide-titre="Aucune candidature à examiner."
+                data-vide-texte="Les nouvelles candidatures apparaîtront ici avec leurs pièces justificatives."
+                data-erreur-titre="Impossible d'afficher les candidatures pour le moment."
+                data-erreur-code="EZ-CAN-503">
+
+                <div data-etat-pane="normal" class="flex flex-col gap-5">
+
+                    <h1 class="font-cooper font-normal text-2xl lg:text-[32px]">Candidatures intervenants</h1>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-5 lg:gap-5 gap-5 lg:items-start">
+
+                        <!-- LISTE -->
+                        <ul aria-label="Candidatures" id="liste-candidatures" class="flex flex-col gap-2 lg:col-span-2">
+
+                            <li data-actif="on" data-statut="examiner" class="flex flex-col gap-1 p-3.5 rounded-ezer border-2 border-ezer-green bg-ezer-green-light">
+                                <span class="flex flex-wrap items-center justify-between gap-2">
+                                    <span class="font-semibold">MENSAH Kodjo</span>
+                                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-dark">À examiner</span>
+                                </span>
+                                <span class="text-[13px] text-ezer-muted"><span class="tabular-nums">CAND-2026-0014</span> · Écoutant · coach · il y a 10 jours</span>
+                            </li>
+
+                            <li data-statut="complement" class="flex flex-col gap-1 p-3.5 rounded-ezer border border-ezer-green-border">
+                                <span class="flex flex-wrap items-center justify-between gap-2">
+                                    <span class="font-semibold">AKAKPO Elom</span>
+                                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full border-2 border-ezer-brown">Complément demandé</span>
+                                </span>
+                                <span class="text-[13px] text-ezer-muted"><span class="tabular-nums">CAND-2026-0013</span> · Formateur · il y a 12 jours</span>
+                            </li>
+
+                            <li data-statut="validee" class="flex flex-col gap-1 p-3.5 rounded-ezer border border-ezer-green-border">
+                                <span class="flex flex-wrap items-center justify-between gap-2">
+                                    <span class="font-semibold">TCHALLA Abla</span>
+                                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Validée</span>
+                                </span>
+                                <span class="text-[13px] text-ezer-muted"><span class="tabular-nums">CAND-2026-0012</span> · Écoutante · il y a 3 semaines</span>
+                            </li>
+
+                            <li data-statut="refusee" class="flex flex-col gap-1 p-3.5 rounded-ezer border border-ezer-green-border">
+                                <span class="flex flex-wrap items-center justify-between gap-2">
+                                    <span class="font-semibold">BOKO Sena</span>
+                                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-ezer-dark text-white">Refusée</span>
+                                </span>
+                                <span class="text-[13px] text-ezer-muted"><span class="tabular-nums">CAND-2026-0011</span> · Coach · il y a 1 mois</span>
+                            </li>
+
+                        </ul>
+
+                        <!-- DÉTAIL -->
+                        <article aria-labelledby="ca-titre" id="fiche-candidature" class="flex flex-col gap-4 p-5 border border-ezer-green-border rounded-ezer lg:col-span-3">
+                            <div class="flex flex-col gap-1">
+                                <h2 id="ca-titre" class="text-[22px] font-semibold">MENSAH Kodjo</h2>
+                                <span class="text-sm text-ezer-muted"><span class="tabular-nums">CAND-2026-0014</span> · reçue le [date] · Lomé · +228 91 •• •• 40</span>
+                            </div>
+
+                            <dl class="grid grid-cols-1 sm:grid-cols-2 gap-3 gap-x-5 text-[15px]">
+                                <div><dt class="text-[13px] text-ezer-muted">Rôles</dt><dd class="font-semibold">Écoutant · Coach</dd></div>
+                                <div><dt class="text-[13px] text-ezer-muted">Expérience</dt><dd class="font-semibold">5 à 10 ans</dd></div>
+                                <div><dt class="text-[13px] text-ezer-muted">Domaines</dt><dd class="font-semibold">Écoute et soutien, stress, confiance en soi</dd></div>
+                                <div><dt class="text-[13px] text-ezer-muted">Disponibilités</dt><dd class="font-semibold">2 à 5 h/sem · soirs et samedi · en ligne</dd></div>
+                                <div class="sm:col-span-2"><dt class="text-[13px] text-ezer-muted">Charte de l'intervenant</dt><dd class="font-semibold">Acceptée le [date] (version 1.0)</dd></div>
+                            </dl>
+
+                            <div class="flex flex-col gap-1.5">
+                                <h3 class="text-[15px] font-semibold">Motivation</h3>
+                                <p class="p-3.5 rounded-ezer bg-ezer-green-pale text-[15px] leading-[23px]">« J'accompagne depuis plusieurs années des jeunes en difficulté dans une ONG de Lomé. Je souhaite mettre cette expérience au service d'Ezer Home, en particulier pour l'écoute en soirée. »</p>
+                            </div>
+
+                            <div class="flex flex-col gap-1.5">
+                                <h3 class="text-[15px] font-semibold">Pièces</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="#cv" class="inline-flex items-center min-h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-sm font-semibold hover:border-ezer-green transition-colors">CV (PDF, 240 Ko)</a>
+                                    <a href="#diplome" class="inline-flex items-center min-h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-sm font-semibold hover:border-ezer-green transition-colors">Certificat d'écoute active (PDF)</a>
+                                    <span class="inline-flex items-center min-h-[44px] px-3 border border-dashed border-ezer-borderMuted rounded-ezer text-sm text-ezer-muted">Recommandation : non fournie</span>
+                                </div>
+                            </div>
+
+                            <!-- ACTIONS -->
+                            <div class="flex flex-wrap gap-2 pt-3.5 border-t border-ezer-green-borderLight" id="actions-cand">
+                                <button type="button" data-action="valider" class="flex-[1_1_140px] min-h-[48px] rounded-ezer bg-ezer-green text-white font-semibold text-[15px] hover:bg-ezer-green-dark transition-colors">Valider</button>
+                                <button type="button" data-action="complement" aria-pressed="false" class="flex-[1_1_200px] min-h-[48px] rounded-ezer border-2 border-ezer-green bg-white text-ezer-green font-semibold text-[15px] hover:bg-ezer-green-light transition-colors">Demander un complément</button>
+                                <button type="button" data-action="refus" aria-pressed="false" class="flex-[1_1_140px] min-h-[48px] rounded-ezer border-2 border-ezer-dark bg-white font-semibold text-[15px] hover:bg-ezer-green-pale transition-colors">Refuser</button>
+                            </div>
+
+                            <p role="status" id="pan-valider" hidden class="p-3 rounded-ezer bg-ezer-green-light text-sm">Candidature validée. Kodjo reçoit ses accès à l'espace thérapeute / coach et le lien vers la charte signée.</p>
+
+                            <!-- COMPLÉMENT -->
+                            <div id="pan-complement" hidden class="flex flex-col gap-2.5 p-4 border-2 border-ezer-green rounded-ezer">
+                                <h3 class="text-base font-semibold">Demander un complément</h3>
+                                <fieldset class="flex flex-col gap-1.5 border-0 p-0">
+                                    <legend class="text-sm font-semibold mb-1.5 p-0">Éléments demandés</legend>
+                                    <label class="flex items-center gap-2.5 min-h-[44px] text-[15px]"><input type="checkbox" checked class="w-5 h-5 accent-ezer-green">Lettre de recommandation</label>
+                                    <label class="flex items-center gap-2.5 min-h-[44px] text-[15px]"><input type="checkbox" class="w-5 h-5 accent-ezer-green">Diplôme complet</label>
+                                    <label class="flex items-center gap-2.5 min-h-[44px] text-[15px]"><input type="checkbox" class="w-5 h-5 accent-ezer-green">Précisions sur l'expérience</label>
+                                </fieldset>
+                                <label for="ca-compl" class="text-sm font-semibold">Message au candidat</label>
+                                <textarea id="ca-compl" rows="3" class="w-full p-2.5 border border-ezer-borderMuted rounded-ezer text-[15px] resize-y focus:border-ezer-green focus:outline-none">Bonjour, merci pour votre candidature. Pourriez-vous ajouter une lettre de recommandation depuis votre espace candidat ?</textarea>
+                                <button type="button" id="envoyer-complement" class="self-start min-h-[48px] px-5 rounded-ezer bg-ezer-green text-white font-semibold text-[15px] hover:bg-ezer-green-dark transition-colors">Envoyer la demande</button>
+                                <p role="status" id="retour-complement" hidden class="text-sm text-ezer-green font-semibold">Demande envoyée. Le candidat est notifié par SMS.</p>
+                            </div>
+
+                            <!-- REFUS -->
+                            <div id="pan-refus" hidden class="flex flex-col gap-2.5 p-4 border-2 border-ezer-dark rounded-ezer">
+                                <h3 class="text-base font-semibold">Refuser la candidature</h3>
+                                <label for="ca-motif" class="text-sm font-semibold">Motif du refus (obligatoire)</label>
+                                <span id="ca-motif-aide" class="text-[13px] text-ezer-muted leading-[18px]">Il est enregistré et envoyé au candidat. Restez factuel et bienveillant.</span>
+                                <textarea id="ca-motif" rows="3" aria-required="true" aria-invalid="true" aria-describedby="ca-motif-aide ca-motif-err" class="w-full p-2.5 border-2 border-ezer-dark rounded-ezer text-[15px] resize-y focus:border-ezer-green focus:outline-none"></textarea>
+                                <span id="ca-motif-err" class="flex items-center gap-1.5 text-[13px] font-semibold">
+                                    <svg aria-hidden="true" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg>
+                                    Le motif est obligatoire pour refuser.
+                                </span>
+                                <button type="button" id="btn-refus" disabled class="self-start min-h-[48px] px-5 rounded-ezer bg-ezer-muted text-white font-semibold text-[15px] cursor-not-allowed">Confirmer le refus</button>
+                                <p role="status" id="retour-refus" hidden class="text-sm text-ezer-green font-semibold">Refus enregistré. Le candidat reçoit le motif par SMS.</p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var btnValider = document.querySelector('[data-action="valider"]');
+            var btnCompl = document.querySelector('[data-action="complement"]');
+            var btnRefus = document.querySelector('[data-action="refus"]');
+            var panValider = document.getElementById('pan-valider');
+            var panCompl = document.getElementById('pan-complement');
+            var panRefus = document.getElementById('pan-refus');
+
+            function choisir(action) {
+                panValider.hidden = action !== 'valider';
+                panCompl.hidden = action !== 'complement';
+                panRefus.hidden = action !== 'refus';
+                btnCompl.setAttribute('aria-pressed', action === 'complement' ? 'true' : 'false');
+                btnCompl.classList.toggle('bg-ezer-green-light', action === 'complement');
+                btnRefus.setAttribute('aria-pressed', action === 'refus' ? 'true' : 'false');
+                btnRefus.classList.toggle('bg-ezer-green-pale', action === 'refus');
+            }
+
+            btnValider.addEventListener('click', function () { choisir('valider'); });
+            btnCompl.addEventListener('click', function () { choisir('complement'); });
+            btnRefus.addEventListener('click', function () { choisir('refus'); });
+
+            document.getElementById('envoyer-complement').addEventListener('click', function () {
+                document.getElementById('retour-complement').hidden = false;
+            });
+
+            var motif = document.getElementById('ca-motif');
+            var btnRefusConf = document.getElementById('btn-refus');
+            var errMotif = document.getElementById('ca-motif-err');
+
+            function verifierMotif() {
+                var vide = motif.value.trim().length === 0;
+                btnRefusConf.disabled = vide;
+                btnRefusConf.classList.toggle('bg-ezer-muted', vide);
+                btnRefusConf.classList.toggle('cursor-not-allowed', vide);
+                btnRefusConf.classList.toggle('bg-ezer-dark', !vide);
+                motif.setAttribute('aria-invalid', vide ? 'true' : 'false');
+                motif.classList.toggle('border-2', vide);
+                motif.classList.toggle('border-ezer-dark', vide);
+                motif.classList.toggle('border', !vide);
+                motif.classList.toggle('border-ezer-borderMuted', !vide);
+            }
+
+            motif.addEventListener('input', verifierMotif);
+            motif.addEventListener('change', verifierMotif);
+            btnRefusConf.addEventListener('click', function () {
+                if (motif.value.trim().length === 0) return;
+                errMotif.hidden = true;
+                document.getElementById('retour-refus').hidden = false;
+            });
+
+            verifierMotif();
+            choisir('valider');
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charte d'écoute — Administration Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="admin" data-user="Yawo" data-initiales="YA" data-role="admin"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="admin" data-actif="cms"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8">
+
+            <div data-etat-switcher="adm-charte" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+                <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+                <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Charte d'écoute</button>
+                <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+                <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. Erreur</button>
+            </div>
+
+            <div data-etat="adm-charte" data-etat-panes
+                data-chargement-titre="Chargement de la charte d'écoute…"
+                data-erreur-titre="Impossible d'afficher la charte d'écoute pour le moment."
+                data-erreur-code="EZ-CMS-503">
+
+                <div data-etat-pane="normal" class="flex flex-col gap-5">
+
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <h1 class="font-cooper font-normal text-2xl lg:text-[32px]">Charte d'écoute</h1>
+                        <a href="cms-pages.html" class="inline-flex items-center min-h-[44px] px-4 border-2 border-ezer-green rounded-ezer text-ezer-green font-semibold text-[15px] hover:bg-ezer-green-light transition-colors">Pages et contenus</a>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-5 gap-5 lg:items-start">
+
+                        <section aria-labelledby="ch-versions" class="flex flex-col gap-2 lg:col-span-2">
+                            <h2 id="ch-versions" class="m-0 text-[17px] leading-6 font-semibold">Versions de la charte d'écoute</h2>
+
+                            <div class="flex flex-col gap-0.5 p-3 px-3.5 border-2 border-ezer-green rounded-ezer bg-ezer-green-light">
+                                <span class="flex justify-between gap-2"><span class="font-semibold">Version 1.3</span><span class="text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-dark">Brouillon</span></span>
+                                <span class="text-[13px] text-ezer-muted">Modifié le [13/11] par Yawo</span>
+                            </div>
+                            <div class="flex flex-col gap-0.5 p-3 px-3.5 border border-ezer-green-border rounded-ezer bg-white">
+                                <span class="flex justify-between gap-2"><span class="font-semibold">Version 1.2</span><span class="text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-green text-ezer-green">En vigueur</span></span>
+                                <span class="text-[13px] text-ezer-muted">Depuis le [date] · 214 signatures</span>
+                            </div>
+                            <div class="flex flex-col gap-0.5 p-3 px-3.5 border border-ezer-green-border rounded-ezer bg-white">
+                                <span class="flex justify-between gap-2"><span class="font-semibold">Version 1.1</span><span class="text-xs font-semibold px-2 py-0.5 rounded-full border border-dashed border-ezer-borderMuted text-ezer-muted">Archivée</span></span>
+                                <span class="text-[13px] text-ezer-muted">Du [date] au [date] · 61 signatures</span>
+                            </div>
+                            <div class="flex flex-col gap-0.5 p-3 px-3.5 border border-ezer-green-border rounded-ezer bg-white">
+                                <span class="flex justify-between gap-2"><span class="font-semibold">Version 1.0</span><span class="text-xs font-semibold px-2 py-0.5 rounded-full border border-dashed border-ezer-borderMuted text-ezer-muted">Archivée</span></span>
+                                <span class="text-[13px] text-ezer-muted">Du [date] au [date] · 23 signatures</span>
+                            </div>
+
+                            <p class="m-0 text-[13px] leading-[18px] text-ezer-muted">Une version publiée n'est jamais modifiée : chaque signature reste liée à la version signée.</p>
+                        </section>
+
+                        <section aria-labelledby="ch-brouillon" class="flex flex-col gap-3 p-[18px] border-2 border-ezer-green rounded-ezer lg:col-span-3">
+                            <h2 id="ch-brouillon" class="m-0 text-[17px] leading-6 font-semibold">Brouillon de la version 1.3</h2>
+
+                            <div class="flex flex-col gap-1">
+                                <label for="ch-art5" class="text-sm font-semibold">Article 5 · Cadre des échanges</label>
+                                <textarea id="ch-art5" rows="4" class="w-full p-2.5 px-3 border border-ezer-borderMuted rounded-ezer text-sm leading-[21px] resize-y focus:border-ezer-green focus:outline-none">Les rencontres ont lieu aux horaires convenus ensemble. La messagerie sert à organiser les rendez-vous et à échanger entre deux rencontres ; elle n'est pas surveillée en permanence. Les intervenants répondent en général sous 48 heures.</textarea>
+                                <span class="text-xs text-ezer-muted">Modifié par rapport à la 1.2 : ajout de la dernière phrase.</span>
+                            </div>
+
+                            <a href="#articles" class="inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Voir les 8 articles</a>
+
+                            <div class="flex flex-col gap-1">
+                                <label for="ch-resume" class="text-sm font-semibold">Résumé des changements (obligatoire)</label>
+                                <input id="ch-resume" type="text" value="Précision du délai de réponse dans la messagerie." class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-sm focus:border-ezer-green focus:outline-none">
+                                <span class="text-xs text-ezer-muted">Il est montré aux personnes invitées à signer la nouvelle version.</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-2 max-w-[420px]">
+                                <div class="flex flex-col gap-1">
+                                    <label for="ch-date" class="text-sm font-semibold">Entrée en vigueur</label>
+                                    <input id="ch-date" type="date" class="h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer text-sm focus:border-ezer-green focus:outline-none">
+                                </div>
+                            </div>
+
+                            <label class="flex items-start gap-2.5 text-sm leading-5"><input type="checkbox" checked class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">Demander une nouvelle signature aux 214 personnes ayant signé une version précédente</label>
+
+                            <div class="flex flex-wrap gap-2">
+                                <button type="button" id="ch-publier" class="min-h-[44px] px-4 border-0 rounded-ezer bg-ezer-green text-white text-sm font-semibold hover:bg-ezer-green-dark transition-colors">Publier la version 1.3</button>
+                                <button type="button" class="min-h-[44px] px-4 border-2 border-ezer-green rounded-ezer bg-white text-ezer-green text-sm font-semibold hover:bg-ezer-green-light transition-colors">Comparer avec la 1.2</button>
+                            </div>
+                            <p id="ch-retour" hidden role="status" class="m-0 p-2.5 rounded-ezer bg-ezer-green-light text-sm"><strong class="font-semibold">Publication enregistrée.</strong> Les 214 personnes recevront une invitation à signer la version 1.3 par SMS ou e-mail, avec le résumé des changements.</p>
+                        </section>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            document.getElementById('ch-publier').addEventListener('click', function () {
+                var resume = document.getElementById('ch-resume');
+                if (!resume.value.trim()) { resume.focus(); return; }
+                document.getElementById('ch-retour').hidden = false;
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note verrouillée — Espace thérapeute / coach — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="intervenant" data-user="Mawuli" data-initiales="MA"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="intervenant" data-actif="agenda"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8 lg:gap-5">
+
+            <a href="fiche-consultant.html" class="self-start inline-flex items-center gap-1.5 min-h-[44px] text-[15px] font-semibold hover:text-ezer-green">
+                <svg aria-hidden="true" class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+                Fiche d'Afi
+            </a>
+
+            <div class="flex flex-col gap-2">
+                <span class="self-start inline-flex items-center gap-1.5 text-xs leading-4 font-semibold px-2.5 py-[3px] rounded-full border border-ezer-borderMuted text-ezer-muted">
+                    <svg aria-hidden="true" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>
+                    Verrouillée le [date] à 16 h 05
+                </span>
+                <h1 class="font-cooper font-normal text-[26px] leading-8 lg:text-[32px] lg:leading-[38px]">Réunion avec Afi</h1>
+                <span class="text-[15px] leading-[22px] text-ezer-muted">Jeudi [date] · 15 h 00 – 15 h 45 · Appel vidéo · Écoute</span>
+            </div>
+
+            <dl class="flex flex-col gap-3.5">
+                <div class="flex flex-col gap-1.5">
+                    <dt class="text-[15px] font-semibold">Points abordés</dt>
+                    <dd class="m-0 p-3 px-4 rounded-ezer bg-ezer-green-pale border border-ezer-green-borderLight text-[15px] leading-[23px]">Fatigue liée à la situation familiale. Difficultés de sommeil depuis trois semaines. Soutien régulier de sa sœur.</dd>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <dt class="text-[15px] font-semibold">Ressenti</dt>
+                    <dd class="m-0 p-3 px-4 rounded-ezer bg-ezer-green-pale border border-ezer-green-borderLight text-[15px] leading-[23px]">Afi s'est exprimée librement, plus détendue en fin d'échange. De mon côté : besoin d'un cadre régulier.</dd>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <dt class="text-[15px] font-semibold">Actions convenues</dt>
+                    <dd class="m-0 p-3 px-4 rounded-ezer bg-ezer-green-pale border border-ezer-green-borderLight text-[15px] leading-[23px]">Noter chaque soir un moment positif de la journée. Reprendre contact avec sa sœur ce week-end.</dd>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <dt class="text-[15px] font-semibold">Prochaine étape</dt>
+                    <dd class="m-0 p-3 px-4 rounded-ezer bg-ezer-green-pale border border-ezer-green-borderLight text-[15px] leading-[23px]">Deuxième rencontre mardi [date] à 10 h, au siège.</dd>
+                </div>
+            </dl>
+
+            <section aria-labelledby="no-comp" class="flex flex-col gap-3 pt-4 border-t border-ezer-green-borderLight">
+                <h2 id="no-comp" class="text-lg leading-[26px] font-semibold">Compléments</h2>
+                <div class="flex flex-col gap-1 p-3 px-4 rounded-ezer bg-ezer-green-light">
+                    <span class="text-[13px] leading-[18px] font-semibold text-ezer-green">Complément du [date] à 10 h 12</span>
+                    <span class="text-[15px] leading-[23px]">Afi a confirmé par message qu'elle viendra mardi.</span>
+                </div>
+                <div class="flex flex-col gap-6 pt-3">
+                    <div class="flex flex-col gap-1.5">
+                        <label for="no-ajout" class="text-[15px] font-semibold">Ajouter un complément</label>
+                        <span id="no-ajout-aide" class="text-sm leading-5 text-ezer-muted">Il sera daté automatiquement et ne pourra plus être modifié.</span>
+                        <textarea id="no-ajout" rows="3" aria-describedby="no-ajout-aide" class="w-full p-3 px-4 border border-ezer-borderMuted rounded-ezer text-base leading-6 focus:border-ezer-green focus:outline-none"></textarea>
+                    </div>
+                    <button type="button" class="w-full lg:w-auto lg:self-start min-h-[52px] px-6 rounded-ezer border-2 border-ezer-green bg-white text-ezer-green text-base font-semibold hover:bg-ezer-green-light transition-colors">Ajouter le complément</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

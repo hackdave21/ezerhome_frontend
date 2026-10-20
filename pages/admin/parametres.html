@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramètres — Administration Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="admin" data-user="Yawo" data-initiales="YA" data-role="admin"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="admin" data-actif="parametres"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8">
+
+            <div data-etat-switcher="adm-param" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+                <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+                <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Paramètres</button>
+                <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+                <button type="button" data-etat-btn="vide" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. Indisponibles</button>
+                <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">4. Erreur</button>
+            </div>
+
+            <div data-etat="adm-param" data-etat-panes
+                data-chargement-titre="Chargement des paramètres…"
+                data-vide-titre="Paramètres indisponibles."
+                data-vide-texte="Réessayez dans un instant."
+                data-erreur-titre="Impossible d'afficher les paramètres pour le moment."
+                data-erreur-code="EZ-PAR-503">
+
+                <div data-etat-pane="normal" class="flex flex-col gap-5">
+
+                    <h1 class="font-cooper font-normal text-2xl lg:text-[32px]">Paramètres</h1>
+
+                    <section aria-labelledby="pr-coord" class="flex flex-col gap-3 p-[18px] border border-ezer-green-border rounded-ezer max-w-[880px]">
+                        <h2 id="pr-coord" class="m-0 text-lg leading-[26px] font-semibold">Coordonnées affichées sur le site</h2>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-3">
+                            <div class="flex flex-col gap-1">
+                                <label for="co-adr" class="text-sm font-semibold">Adresse</label>
+                                <input id="co-adr" type="text" value="[Quartier, rue], Lomé, Togo" class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label for="co-tel" class="text-sm font-semibold">Téléphone</label>
+                                <input id="co-tel" type="text" value="+228 [00 00 00 00]" class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label for="co-mail" class="text-sm font-semibold">E-mail</label>
+                                <input id="co-mail" type="text" value="[contact@ezerhome.tg]" class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label for="co-wa" class="text-sm font-semibold">Numéro WhatsApp</label>
+                                <input id="co-wa" type="text" value="+228 [00 00 00 00]" class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label for="co-h" class="text-sm font-semibold">Horaires</label>
+                                <input id="co-h" type="text" value="[Du lundi au vendredi, 8 h – 17 h]" class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label for="co-urg" class="text-sm font-semibold">Numéros d'urgence affichés</label>
+                                <input id="co-urg" type="text" value="[numéros d'urgence au Togo]" class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section aria-labelledby="pr-montants" class="flex flex-col gap-3 p-[18px] border border-ezer-green-border rounded-ezer max-w-[880px]">
+                        <h2 id="pr-montants" class="m-0 text-lg leading-[26px] font-semibold">Montants suggérés pour les dons</h2>
+                        <div class="flex flex-col gap-2.5">
+                            <div class="flex flex-col lg:grid lg:grid-cols-[160px_minmax(0,1fr)_auto] gap-2 lg:items-end">
+                                <div class="flex flex-col gap-1">
+                                    <label for="mt-1" class="text-[13px] font-semibold">Montant 1 (FCFA)</label>
+                                    <input id="mt-1" type="text" inputmode="numeric" value="2 000" class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <label for="im-1" class="text-[13px] font-semibold">Exemple d'impact</label>
+                                    <input id="im-1" type="text" value="Un repas complet pour une personne accompagnée" class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                                </div>
+                                <button type="button" aria-label="Retirer le montant 1" class="h-[44px] px-3 border border-ezer-borderMuted rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Retirer</button>
+                            </div>
+                            <div class="flex flex-col lg:grid lg:grid-cols-[160px_minmax(0,1fr)_auto] gap-2 lg:items-end">
+                                <div class="flex flex-col gap-1">
+                                    <label for="mt-2" class="text-[13px] font-semibold">Montant 2 (FCFA)</label>
+                                    <input id="mt-2" type="text" inputmode="numeric" value="5 000" class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <label for="im-2" class="text-[13px] font-semibold">Exemple d'impact</label>
+                                    <input id="im-2" type="text" value="Un kit de fournitures scolaires pour un enfant" class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                                </div>
+                                <button type="button" aria-label="Retirer le montant 2" class="h-[44px] px-3 border border-ezer-borderMuted rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Retirer</button>
+                            </div>
+                            <div class="flex flex-col lg:grid lg:grid-cols-[160px_minmax(0,1fr)_auto] gap-2 lg:items-end">
+                                <div class="flex flex-col gap-1">
+                                    <label for="mt-3" class="text-[13px] font-semibold">Montant 3 (FCFA)</label>
+                                    <input id="mt-3" type="text" inputmode="numeric" value="10 000" class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <label for="im-3" class="text-[13px] font-semibold">Exemple d'impact</label>
+                                    <input id="im-3" type="text" value="Un panier alimentaire de base pour une famille" class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                                </div>
+                                <button type="button" aria-label="Retirer le montant 3" class="h-[44px] px-3 border border-ezer-borderMuted rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Retirer</button>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-3 items-end">
+                            <button type="button" class="min-h-[44px] px-3.5 border-2 border-ezer-green rounded-ezer bg-white text-ezer-green text-sm font-semibold hover:bg-ezer-green-light transition-colors">Ajouter un montant</button>
+                            <div class="flex flex-col gap-1">
+                                <label for="mt-min" class="text-[13px] font-semibold">Montant minimum libre</label>
+                                <input id="mt-min" type="text" value="500" class="w-[140px] h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section aria-labelledby="pr-conserv" class="flex flex-col gap-3 p-[18px] border border-ezer-green-border rounded-ezer max-w-[880px]">
+                        <div class="flex flex-col">
+                            <h2 id="pr-conserv" class="m-0 text-lg leading-[26px] font-semibold">Durées de conservation</h2>
+                            <span class="text-[13px] text-ezer-muted">Appliquées automatiquement chaque nuit. À faire valider au regard de la loi togolaise sur les données personnelles.</span>
+                        </div>
+                        <div class="overflow-x-auto border-2 border-ezer-green-border rounded-ezer">
+                            <table class="w-full min-w-[600px] text-sm">
+                                <caption class="sr-only">Durées de conservation</caption>
+                                <thead>
+                                    <tr class="bg-ezer-green-light text-left">
+                                        <th scope="col" class="py-2.5 px-3 font-semibold">Données</th>
+                                        <th scope="col" class="py-2.5 px-3 font-semibold">Durée</th>
+                                        <th scope="col" class="py-2.5 px-3 font-semibold">À l'échéance</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Demandes d'assistance</th>
+                                        <td class="py-2 px-3">
+                                            <select aria-label="Durée : Demandes d'assistance" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none"><option>6 mois</option><option>12 mois</option><option selected>24 mois</option><option>3 ans</option><option>5 ans</option><option>10 ans</option></select>
+                                        </td>
+                                        <td class="py-2 px-3">Anonymisation (statistiques conservées)</td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Messages et notes d'écoute</th>
+                                        <td class="py-2 px-3">
+                                            <select aria-label="Durée : Messages et notes d'écoute" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none"><option>6 mois</option><option>12 mois</option><option selected>24 mois</option><option>3 ans</option><option>5 ans</option><option>10 ans</option></select>
+                                        </td>
+                                        <td class="py-2 px-3">Suppression après la clôture</td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Candidatures non retenues</th>
+                                        <td class="py-2 px-3">
+                                            <select aria-label="Durée : Candidatures non retenues" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none"><option>6 mois</option><option selected>12 mois</option><option>24 mois</option><option>3 ans</option><option>5 ans</option><option>10 ans</option></select>
+                                        </td>
+                                        <td class="py-2 px-3">Suppression</td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Comptes inactifs</th>
+                                        <td class="py-2 px-3">
+                                            <select aria-label="Durée : Comptes inactifs" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none"><option>6 mois</option><option selected>12 mois</option><option>24 mois</option><option>3 ans</option><option>5 ans</option><option>10 ans</option></select>
+                                        </td>
+                                        <td class="py-2 px-3">Désactivation, puis suppression à 24 mois</td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Données de paiement et dons</th>
+                                        <td class="py-2 px-3">
+                                            <select aria-label="Durée : Données de paiement et dons" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none"><option>6 mois</option><option>12 mois</option><option>24 mois</option><option>3 ans</option><option>5 ans</option><option selected>10 ans</option></select>
+                                        </td>
+                                        <td class="py-2 px-3">Conservation légale, puis suppression</td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Photos d'actions</th>
+                                        <td class="py-2 px-3">
+                                            <select aria-label="Durée : Photos d'actions" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none"><option>6 mois</option><option>12 mois</option><option>24 mois</option><option>3 ans</option><option selected>5 ans</option><option>10 ans</option></select>
+                                        </td>
+                                        <td class="py-2 px-3">Archivage hors ligne</td>
+                                    </tr>
+                                    <tr class="border-t border-ezer-green-borderLight">
+                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Journal d'audit</th>
+                                        <td class="py-2 px-3">
+                                            <select aria-label="Durée : Journal d'audit" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none"><option>6 mois</option><option>12 mois</option><option>24 mois</option><option>3 ans</option><option selected>5 ans</option><option>10 ans</option></select>
+                                        </td>
+                                        <td class="py-2 px-3">Suppression</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section aria-labelledby="pr-pay" class="flex flex-col gap-3 p-[18px] border border-ezer-green-border rounded-ezer max-w-[880px]">
+                        <h2 id="pr-pay" class="m-0 text-lg leading-[26px] font-semibold">Paiements</h2>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
+                            <div class="flex flex-col gap-1">
+                                <label for="pp-mixx" class="text-sm font-semibold">Numéro Mixx By Yas</label>
+                                <input id="pp-mixx" type="text" value="+228 [XX XX XX XX]" class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label for="pp-moov" class="text-sm font-semibold">Numéro Moov Money</label>
+                                <input id="pp-moov" type="text" value="+228 [XX XX XX XX]" class="w-full h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-[15px] focus:border-ezer-green focus:outline-none">
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label for="pp-resa" class="text-sm font-semibold">Durée de réservation</label>
+                                <select id="pp-resa" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-[15px] focus:border-ezer-green focus:outline-none"><option>24 heures</option><option selected>48 heures</option><option>72 heures</option></select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="flex flex-wrap items-center gap-3 py-3 border-t border-ezer-green-border">
+                        <button type="button" id="pr-enregistrer" class="min-h-[48px] px-5 border-0 rounded-ezer bg-ezer-green text-white text-[15px] font-semibold hover:bg-ezer-green-dark transition-colors">Enregistrer les modifications</button>
+                        <span class="text-[13px] text-ezer-muted">Chaque modification est inscrite au journal d'audit.</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            document.getElementById('pr-enregistrer').addEventListener('click', function (e) {
+                var b = e.target; b.textContent = 'Modifications enregistrées (inscrites au journal d\'audit)';
+                setTimeout(function () { b.textContent = 'Enregistrer les modifications'; }, 2500);
+            });
+        })();
+    </script>
+</body>
+</html>

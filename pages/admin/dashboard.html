@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord — Administration Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="admin" data-user="Yawo" data-initiales="YA" data-role="admin"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="admin" data-actif="dashboard"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8">
+
+            <div data-etat-switcher="adm-tableau" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+                <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+                <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Normal</button>
+                <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+                <button type="button" data-etat-btn="vide" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. Tout est à jour</button>
+                <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">4. Erreur</button>
+            </div>
+
+            <div data-etat="adm-tableau" data-etat-panes
+                data-chargement-titre="Chargement du tableau de bord…"
+                data-vide-titre="Tout est à jour."
+                data-vide-texte="Aucune action n'attend votre intervention."
+                data-erreur-titre="Impossible d'afficher le tableau de bord pour le moment."
+                data-erreur-code="EZ-TAB-503">
+
+                <div data-etat-pane="normal" class="flex flex-col gap-5">
+
+                    <div class="flex flex-col gap-1">
+                        <h1 class="font-cooper font-normal text-2xl lg:text-[32px]">Tableau de bord</h1>
+                        <span class="text-[15px] text-ezer-muted">Jeudi [date] · mis à jour à 16 h 30</span>
+                    </div>
+
+                    <!-- INDICATEURS -->
+                    <div role="group" aria-label="Indicateurs" class="grid grid-cols-2 lg:grid-cols-5 gap-3">
+                        <a href="affectation-ecoute.html" class="flex flex-col gap-1 p-4 rounded-ezer border-2 border-ezer-dark hover:border-ezer-green-dark transition-colors">
+                            <span class="text-sm font-semibold">Demandes d'écoute en attente</span>
+                            <span class="text-[30px] leading-9 font-semibold tabular-nums">4</span>
+                            <span class="text-[13px] text-ezer-muted">dont 1 depuis plus de 48 h</span>
+                        </a>
+                        <a href="candidatures.html" class="flex flex-col gap-1 p-4 rounded-ezer border border-ezer-green-border hover:border-ezer-green transition-colors">
+                            <span class="text-sm font-semibold">Candidatures à examiner</span>
+                            <span class="text-[30px] leading-9 font-semibold tabular-nums">3</span>
+                            <span class="text-[13px] text-ezer-muted">la plus ancienne : 10 jours</span>
+                        </a>
+                        <a href="paiements.html" class="flex flex-col gap-1 p-4 rounded-ezer border border-ezer-green-border hover:border-ezer-green transition-colors">
+                            <span class="text-sm font-semibold">Paiements à confirmer</span>
+                            <span class="text-[30px] leading-9 font-semibold tabular-nums">5</span>
+                            <span class="text-[13px] text-ezer-muted">75 000 FCFA au total</span>
+                        </a>
+                        <a href="dons.html" class="flex flex-col gap-1 p-4 rounded-ezer border border-ezer-green-border hover:border-ezer-green transition-colors">
+                            <span class="text-sm font-semibold">Dons du mois</span>
+                            <span class="text-[30px] leading-9 font-semibold tabular-nums">312 500 F</span>
+                            <span class="text-[13px] text-ezer-muted">42 dons · 9 mensuels</span>
+                        </a>
+                        <a href="../comite/demandes.html" class="flex flex-col gap-1 p-4 rounded-ezer border border-ezer-green-border hover:border-ezer-green transition-colors">
+                            <span class="text-sm font-semibold">Assistance en cours</span>
+                            <span class="text-[30px] leading-9 font-semibold tabular-nums">7</span>
+                            <span class="text-[13px] text-ezer-muted">2 acceptées à décaisser</span>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-5 lg:grid-cols-2 lg:gap-5 lg:items-start">
+
+                        <!-- À TRAITER EN PRIORITÉ -->
+                        <section aria-labelledby="tb-prio" class="flex flex-col gap-2.5">
+                            <h2 class="text-xl font-semibold">À traiter en priorité</h2>
+                            <ul class="flex flex-col gap-2">
+                                <li>
+                                    <a href="affectation-ecoute.html" class="flex items-center gap-3 p-3.5 rounded-ezer border border-ezer-green-border hover:border-ezer-green transition-colors">
+                                        <span aria-hidden="true" class="shrink-0 w-2.5 h-2.5 rounded-full bg-ezer-dark"></span>
+                                        <span class="flex-1 min-w-0 flex flex-col">
+                                            <span class="font-semibold text-[15px]">Kossi attend une affectation depuis 52 h</span>
+                                            <span class="text-[13px] text-ezer-muted">Écoute · contact rapide souhaité</span>
+                                        </span>
+                                        <svg aria-hidden="true" class="shrink-0 w-[18px] h-[18px] text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="paiements.html" class="flex items-center gap-3 p-3.5 rounded-ezer border border-ezer-green-border hover:border-ezer-green transition-colors">
+                                        <span aria-hidden="true" class="shrink-0 w-2.5 h-2.5 rounded-full bg-ezer-dark"></span>
+                                        <span class="flex-1 min-w-0 flex flex-col">
+                                            <span class="font-semibold text-[15px]">Réservation CMD-2026-00087 expire ce soir</span>
+                                            <span class="text-[13px] text-ezer-muted">Paiement signalé par la personne, à vérifier</span>
+                                        </span>
+                                        <svg aria-hidden="true" class="shrink-0 w-[18px] h-[18px] text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="reunions.html" class="flex items-center gap-3 p-3.5 rounded-ezer border border-ezer-green-border hover:border-ezer-green transition-colors">
+                                        <span aria-hidden="true" class="shrink-0 w-2.5 h-2.5 rounded-full bg-ezer-brown"></span>
+                                        <span class="flex-1 min-w-0 flex flex-col">
+                                            <span class="font-semibold text-[15px]">Note manquante : Kodjo M. avec Dela</span>
+                                            <span class="text-[13px] text-ezer-muted">Réunion du [11/11], aucune note</span>
+                                        </span>
+                                        <svg aria-hidden="true" class="shrink-0 w-[18px] h-[18px] text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="candidatures.html" class="flex items-center gap-3 p-3.5 rounded-ezer border border-ezer-green-border hover:border-ezer-green transition-colors">
+                                        <span aria-hidden="true" class="shrink-0 w-2.5 h-2.5 rounded-full bg-ezer-brown"></span>
+                                        <span class="flex-1 min-w-0 flex flex-col">
+                                            <span class="font-semibold text-[15px]">Candidature de MENSAH Kodjo</span>
+                                            <span class="text-[13px] text-ezer-muted">Reçue il y a 10 jours</span>
+                                        </span>
+                                        <svg aria-hidden="true" class="shrink-0 w-[18px] h-[18px] text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- PAIEMENTS À CONFIRMER -->
+                        <section id="paiements-confirmer" class="flex flex-col gap-2.5">
+                            <div class="flex flex-col">
+                                <h2 class="text-xl font-semibold">Paiements à confirmer</h2>
+                                <span class="text-[13px] text-ezer-muted">Vérifiez la réception sur le relevé Mixx By Yas ou Moov Money avant de confirmer.</span>
+                            </div>
+                            <ul class="flex flex-col gap-2" id="liste-paiements">
+                                <li data-ref="CMD-2026-00087" class="flex flex-col gap-2 p-3.5 rounded-ezer border border-ezer-green-border">
+                                    <div class="flex justify-between gap-2">
+                                        <span class="font-semibold tabular-nums">CMD-2026-00087</span>
+                                        <span class="font-semibold">15 000 FCFA</span>
+                                    </div>
+                                    <span class="text-[13px] text-ezer-muted">Formation Écoute active · Mixx By Yas depuis +228 90 •• •• 56 · hier 18 h 02</span>
+                                    <div class="flex gap-2">
+                                        <button type="button" data-action="ok" class="flex-1 min-h-[44px] rounded-ezer bg-ezer-green text-white font-semibold text-sm hover:bg-ezer-green-dark transition-colors">Paiement reçu</button>
+                                        <button type="button" data-action="ko" class="flex-1 min-h-[44px] rounded-ezer border-2 border-ezer-dark bg-white font-semibold text-sm hover:bg-ezer-green-pale transition-colors">Introuvable</button>
+                                    </div>
+                                    <p role="status" data-retour hidden class="p-2 rounded-ezer bg-ezer-green-light text-[13px]"></p>
+                                </li>
+                                <li data-ref="DON-2026-00117" class="flex flex-col gap-2 p-3.5 rounded-ezer border border-ezer-green-border">
+                                    <div class="flex justify-between gap-2">
+                                        <span class="font-semibold tabular-nums">DON-2026-00117</span>
+                                        <span class="font-semibold">5 000 FCFA</span>
+                                    </div>
+                                    <span class="text-[13px] text-ezer-muted">Don ponctuel · Moov Money depuis +228 99 •• •• 21 · aujourd'hui 9 h 15</span>
+                                    <div class="flex gap-2">
+                                        <button type="button" data-action="ok" class="flex-1 min-h-[44px] rounded-ezer bg-ezer-green text-white font-semibold text-sm hover:bg-ezer-green-dark transition-colors">Paiement reçu</button>
+                                        <button type="button" data-action="ko" class="flex-1 min-h-[44px] rounded-ezer border-2 border-ezer-dark bg-white font-semibold text-sm hover:bg-ezer-green-pale transition-colors">Introuvable</button>
+                                    </div>
+                                    <p role="status" data-retour hidden class="p-2 rounded-ezer bg-ezer-green-light text-[13px]"></p>
+                                </li>
+                                <li data-ref="CMD-2026-00085" class="flex flex-col gap-2 p-3.5 rounded-ezer border border-ezer-green-border">
+                                    <div class="flex justify-between gap-2">
+                                        <span class="font-semibold tabular-nums">CMD-2026-00085</span>
+                                        <span class="font-semibold">20 000 FCFA</span>
+                                    </div>
+                                    <span class="text-[13px] text-ezer-muted">Coaching Confiance en soi · Mixx By Yas depuis +228 91 •• •• 03 · il y a 3 jours</span>
+                                    <div class="flex gap-2">
+                                        <button type="button" data-action="ok" class="flex-1 min-h-[44px] rounded-ezer bg-ezer-green text-white font-semibold text-sm hover:bg-ezer-green-dark transition-colors">Paiement reçu</button>
+                                        <button type="button" data-action="ko" class="flex-1 min-h-[44px] rounded-ezer border-2 border-ezer-dark bg-white font-semibold text-sm hover:bg-ezer-green-pale transition-colors">Introuvable</button>
+                                    </div>
+                                    <p role="status" data-retour hidden class="p-2 rounded-ezer bg-ezer-green-light text-[13px]"></p>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            document.querySelectorAll('#liste-paiements li').forEach(function (li) {
+                var retour = li.querySelector('[data-retour]');
+                li.querySelectorAll('[data-action]').forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        btn.hidden = true;
+                        li.querySelector('[data-action="' + (btn.getAttribute('data-action') === 'ok' ? 'ko' : 'ok') + '"]').hidden = true;
+                        retour.hidden = false;
+                        retour.textContent = btn.getAttribute('data-action') === 'ok'
+                            ? 'Paiement confirmé. Accès débloqué et SMS envoyé.'
+                            : 'Marqué introuvable. La personne est invitée à envoyer une preuve.';
+                    });
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modèles de notifications — Administration Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+    <style>.notif-actif{border:2px solid #187d50;background:#e9f7f0}.notif-inactif{border:1px solid #c8dccf;background:#fff}</style>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="admin" data-user="Yawo" data-initiales="YA" data-role="admin"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="admin" data-actif="notifications"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8">
+
+            <div data-etat-switcher="adm-notif" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+                <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+                <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Modèles de notifications</button>
+                <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+                <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. Erreur</button>
+            </div>
+
+            <div data-etat="adm-notif" data-etat-panes
+                data-chargement-titre="Chargement des modèles de notifications…"
+                data-erreur-titre="Impossible d'afficher les modèles de notifications pour le moment."
+                data-erreur-code="EZ-NOT-503">
+
+                <div data-etat-pane="normal" class="flex flex-col gap-5">
+
+                    <h1 class="font-cooper font-normal text-2xl lg:text-[32px]">Modèles de notifications</h1>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:items-start">
+
+                        <nav aria-label="Modèles" class="flex flex-col gap-3.5">
+                            <div class="flex flex-col gap-1">
+                                <span class="text-xs font-semibold tracking-[0.06em] uppercase text-ezer-muted">Écoute</span>
+                                <button type="button" notif-pick data-notif="recue" class="flex justify-between items-center gap-2 min-h-[44px] px-3 notif-inactif rounded-ezer text-left text-sm font-semibold"><span>Demande reçue</span><span class="text-[11px] font-semibold text-ezer-muted">SMS</span></button>
+                                <button type="button" notif-pick data-notif="affecte" class="flex justify-between items-center gap-2 min-h-[44px] px-3 notif-inactif rounded-ezer text-left text-sm font-semibold"><span>Intervenant attribué</span><span class="text-[11px] font-semibold text-ezer-muted">SMS · WA</span></button>
+                                <button type="button" notif-pick data-notif="rappel" aria-current="true" class="flex justify-between items-center gap-2 min-h-[44px] px-3 notif-actif rounded-ezer text-left text-sm font-semibold"><span>Rappel de réunion (la veille)</span><span class="text-[11px] font-semibold text-ezer-muted">SMS · WA</span></button>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-xs font-semibold tracking-[0.06em] uppercase text-ezer-muted">Paiements</span>
+                                <button type="button" notif-pick data-notif="paiementOk" class="flex justify-between items-center gap-2 min-h-[44px] px-3 notif-inactif rounded-ezer text-left text-sm font-semibold"><span>Paiement confirmé</span><span class="text-[11px] font-semibold text-ezer-muted">SMS · e-mail</span></button>
+                                <button type="button" notif-pick data-notif="expire" class="flex justify-between items-center gap-2 min-h-[44px] px-3 notif-inactif rounded-ezer text-left text-sm font-semibold"><span>Réservation expirée</span><span class="text-[11px] font-semibold text-ezer-muted">SMS</span></button>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-xs font-semibold tracking-[0.06em] uppercase text-ezer-muted">Compte</span>
+                                <button type="button" notif-pick data-notif="otp" class="flex justify-between items-center gap-2 min-h-[44px] px-3 notif-inactif rounded-ezer text-left text-sm font-semibold"><span>Code de connexion</span><span class="text-[11px] font-semibold text-ezer-muted">SMS</span></button>
+                                <button type="button" notif-pick data-notif="desact" class="flex justify-between items-center gap-2 min-h-[44px] px-3 notif-inactif rounded-ezer text-left text-sm font-semibold"><span>Désactivation prochaine</span><span class="text-[11px] font-semibold text-ezer-muted">SMS · e-mail</span></button>
+                            </div>
+                        </nav>
+
+                        <section aria-labelledby="nt-edit" id="editeur-notification" class="flex flex-col gap-3 p-[18px] border border-ezer-green-border rounded-ezer lg:col-span-2">
+                            <div class="flex flex-col gap-0.5">
+                                <h2 id="nt-edit" class="m-0 text-lg leading-[26px] font-semibold" data-notif-titre>Rappel de réunion (la veille)</h2>
+                                <span class="text-[13px] text-ezer-muted" data-notif-quand>Envoyé la veille à 18 h, si la case « rappel » a été cochée.</span>
+                            </div>
+
+                            <fieldset class="border-0 m-0 p-0 flex flex-wrap gap-2">
+                                <legend class="p-0 mb-1.5 text-sm font-semibold">Canaux</legend>
+                                <label class="inline-flex items-center gap-2 min-h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-sm"><input type="checkbox" checked class="w-[18px] h-[18px] accent-ezer-green">SMS</label>
+                                <label class="inline-flex items-center gap-2 min-h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-sm"><input type="checkbox" checked class="w-[18px] h-[18px] accent-ezer-green">WhatsApp</label>
+                                <label class="inline-flex items-center gap-2 min-h-[44px] px-3 border border-ezer-borderMuted rounded-ezer text-sm"><input type="checkbox" class="w-[18px] h-[18px] accent-ezer-green">E-mail</label>
+                            </fieldset>
+
+                            <div class="flex flex-col gap-1">
+                                <label for="nt-texte" class="text-sm font-semibold">Texte</label>
+                                <textarea id="nt-texte" rows="4" class="w-full p-2.5 px-3 border border-ezer-borderMuted rounded-ezer text-[15px] leading-[22px] resize-y focus:border-ezer-green focus:outline-none">Bonjour {prenom}, petit rappel : rendez-vous demain {date} à {heure}. {lien} Ezer Home</textarea>
+                                <div class="flex flex-wrap justify-between gap-1.5">
+                                    <span id="nt-compte" role="status" class="text-xs text-ezer-muted">95 caractères · 1 SMS (variables remplacées à l'envoi)</span>
+                                    <span class="flex flex-wrap gap-1">
+                                        <button type="button" data-variable="{prenom}" class="min-h-8 px-2 border border-dashed border-ezer-green rounded-ezer bg-white text-ezer-green font-mono text-xs">{prenom}</button>
+                                        <button type="button" data-variable="{date}" class="min-h-8 px-2 border border-dashed border-ezer-green rounded-ezer bg-white text-ezer-green font-mono text-xs">{date}</button>
+                                        <button type="button" data-variable="{heure}" class="min-h-8 px-2 border border-dashed border-ezer-green rounded-ezer bg-white text-ezer-green font-mono text-xs">{heure}</button>
+                                        <button type="button" data-variable="{lien}" class="min-h-8 px-2 border border-dashed border-ezer-green rounded-ezer bg-white text-ezer-green font-mono text-xs">{lien}</button>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-1.5">
+                                <span class="text-sm font-semibold">Aperçu</span>
+                                <div class="p-3.5 rounded-ezer bg-ezer-green-pale border border-ezer-green-borderLight">
+                                    <p id="nt-apercu" class="m-0 max-w-[300px] p-2.5 px-3 rounded-ezer bg-white border border-ezer-green-border text-sm leading-5">Bonjour Afi, petit rappel : rendez-vous demain mardi 18 nov. à 10 h.  Ezer Home</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2">
+                                <button type="button" id="nt-enregistrer" class="min-h-[44px] px-4 border-0 rounded-ezer bg-ezer-green text-white text-sm font-semibold hover:bg-ezer-green-dark transition-colors">Enregistrer</button>
+                                <button type="button" id="nt-test" class="min-h-[44px] px-4 border-2 border-ezer-green rounded-ezer bg-white text-ezer-green text-sm font-semibold hover:bg-ezer-green-light transition-colors">M'envoyer un test</button>
+                            </div>
+                            <span id="nt-blank" hidden class="text-[13px] text-ezer-red font-semibold">Le texte est vide : l'envoi de test est désactivé.</span>
+                        </section>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var EXEMPLES = { '{prenom}': 'Afi', '{intervenant}': 'Mawuli', '{date}': 'mardi 18 nov.', '{heure}': '10 h', '{lien}': '', '{montant}': '15 000 FCFA', '{offre}': 'Écoute active', '{reference}': 'CMD-2026-00087', '{code}': '482193' };
+            var MODELES = {
+                recue: ['Demande reçue', 'Envoyé dès l\'envoi de la demande d\'écoute.', 'Bonjour {prenom}, votre demande d\'écoute est bien reçue. Une personne de l\'équipe vous sera attribuée sous [X] jours. Ezer Home'],
+                affecte: ['Intervenant attribué', 'Envoyé quand l\'admin affecte la demande.', 'Bonjour {prenom}, {intervenant} va vous accompagner. Il ou elle vous contactera très bientôt. Ezer Home'],
+                rappel: ['Rappel de réunion (la veille)', 'Envoyé la veille à 18 h, si la case « rappel » a été cochée.', 'Bonjour {prenom}, petit rappel : rendez-vous demain {date} à {heure}. {lien} Ezer Home'],
+                paiementOk: ['Paiement confirmé', 'Envoyé quand un paiement est confirmé.', 'Bonjour {prenom}, votre paiement de {montant} pour {offre} est confirmé. Votre accès est ouvert dans votre espace. Ezer Home'],
+                expire: ['Réservation expirée', 'Envoyé 48 h après la commande sans paiement.', 'Bonjour {prenom}, votre réservation {reference} a expiré faute de paiement. Vous pouvez réserver à nouveau sur le site. Ezer Home'],
+                otp: ['Code de connexion', 'Envoyé à chaque demande de code.', 'Ezer Home : votre code est {code}. Il est valable 10 minutes. Ne le communiquez à personne.'],
+                desact: ['Désactivation prochaine', 'Envoyé 30 jours avant la désactivation d\'un compte inactif.', 'Bonjour {prenom}, votre compte Ezer Home sera désactivé le {date} faute de connexion. Connectez-vous pour le garder actif.']
+            };
+
+            var zone = document.getElementById('nt-texte');
+
+            function majApercu() {
+                var t = zone.value;
+                var ok = t.trim().length > 0;
+                document.getElementById('nt-blank').hidden = ok;
+                document.getElementById('nt-test').disabled = !ok;
+                document.getElementById('nt-test').classList.toggle('opacity-40', !ok);
+                Object.keys(EXEMPLES).forEach(function (k) { t = t.split(k).join(EXEMPLES[k]); });
+                document.getElementById('nt-apercu').textContent = t.replace(/\s+/g, ' ');
+                var n = zone.value.length;
+                document.getElementById('nt-compte').textContent = n + ' caractères · ' + (n <= 160 ? '1 SMS' : Math.ceil(n / 153) + ' SMS') + ' (variables remplacées à l\'envoi)';
+            }
+
+            zone.addEventListener('input', majApercu);
+            majApercu();
+
+            document.querySelectorAll('[data-variable]').forEach(function (b) {
+                b.addEventListener('click', function () {
+                    var pos = zone.selectionStart || zone.value.length;
+                    var v = b.textContent;
+                    zone.value = zone.value.slice(0, pos) + ' ' + v + zone.value.slice(pos);
+                    majApercu();
+                });
+            });
+
+            document.querySelectorAll('[notif-pick]').forEach(function (b) {
+                b.addEventListener('click', function () {
+                    document.querySelectorAll('[notif-pick]').forEach(function (x) {
+                        x.classList.remove('notif-actif');
+                        x.classList.add('notif-inactif');
+                        x.setAttribute('aria-current', 'false');
+                    });
+                    b.classList.remove('notif-inactif');
+                    b.classList.add('notif-actif');
+                    b.setAttribute('aria-current', 'true');
+                    var m = MODELES[b.getAttribute('data-notif')];
+                    document.querySelector('[data-notif-titre]').textContent = m[0];
+                    document.querySelector('[data-notif-quand]').textContent = m[1];
+                    zone.value = m[2];
+                    majApercu();
+                });
+            });
+
+            document.getElementById('nt-enregistrer').addEventListener('click', function (e) {
+                var b = e.target; b.textContent = 'Modèle enregistré';
+                setTimeout(function () { b.textContent = 'Enregistrer'; }, 2000);
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demandes d'écoute et affectation — Administration Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+    <style>.fiche-choisie{border-width:2px!important;border-color:#187d50!important;background:#e9f7f0!important}.chip-actif{background:#187d50;color:#fff;border:2px solid #187d50}.chip-inactif{background:#fff;color:#0e1c03;border:1px solid #6f8577}</style>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="admin" data-user="Yawo" data-initiales="YA" data-role="admin"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="admin" data-actif="ecoute"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8">
+
+            <div data-etat-switcher="adm-ecoute" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+                <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+                <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. File d'affectation</button>
+                <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+                <button type="button" data-etat-btn="vide" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. Rien à affecter</button>
+                <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">4. Erreur</button>
+            </div>
+
+            <div data-etat="adm-ecoute" data-etat-panes
+                data-chargement-titre="Chargement des demandes d'écoute…"
+                data-vide-titre="Aucune demande en attente."
+                data-vide-texte="Toutes les demandes d'écoute ont été confiées à un intervenant."
+                data-erreur-titre="Impossible d'afficher les demandes d'écoute pour le moment."
+                data-erreur-code="EZ-ECO-503">
+
+                <div data-etat-pane="normal" class="flex flex-col gap-5">
+
+                    <div class="flex flex-col gap-1">
+                        <h1 class="font-cooper font-normal text-2xl lg:text-[32px]">Demandes d'écoute</h1>
+                        <span class="text-[15px] text-ezer-muted">4 en attente d'affectation · la plus ancienne attend depuis 52 h</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-8 lg:items-start">
+
+                        <!-- 1. CHOISIR UNE DEMANDE -->
+                        <section aria-labelledby="ae-liste" class="flex flex-col gap-2.5">
+                            <h2 id="ae-liste" class="text-lg font-semibold">1. Choisir une demande</h2>
+                            <div role="radiogroup" aria-labelledby="ae-liste" id="liste-demandes" class="flex flex-col gap-2">
+
+                                <label class="fiche-choisie flex gap-3 p-3.5 rounded-ezer cursor-pointer border border-ezer-green-border transition-colors">
+                                    <input type="radio" name="ae-dem" data-nom="Kossi" checked class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
+                                    <span class="flex-1 min-w-0 flex flex-col gap-1">
+                                        <span class="flex flex-wrap justify-between gap-2"><span class="font-semibold">Kossi</span><span class="text-[13px] font-semibold">attend depuis 52 h</span></span>
+                                        <span class="flex flex-wrap gap-1.5">
+                                            <span class="text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-dark">Contact rapide souhaité</span>
+                                            <span class="text-xs px-2 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted">Appel</span>
+                                            <span class="text-xs px-2 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted">Disponible : Soirs</span>
+                                        </span>
+                                        <span class="text-sm text-ezer-muted">« Depuis la perte de mon travail, je n’arrive plus à dormir. »</span>
+                                    </span>
+                                </label>
+
+                                <label class="flex gap-3 p-3.5 rounded-ezer cursor-pointer border border-ezer-green-border transition-colors">
+                                    <input type="radio" name="ae-dem" data-nom="Ama" class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
+                                    <span class="flex-1 min-w-0 flex flex-col gap-1">
+                                        <span class="flex flex-wrap justify-between gap-2"><span class="font-semibold">Ama</span><span class="text-[13px]">attend depuis 20 h</span></span>
+                                        <span class="flex flex-wrap gap-1.5">
+                                            <span class="text-xs px-2 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted">WhatsApp</span>
+                                            <span class="text-xs px-2 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted">Disponible : Week-end</span>
+                                        </span>
+                                        <span class="text-sm text-ezer-muted">« J’aimerais parler de ma relation avec ma mère. »</span>
+                                    </span>
+                                </label>
+
+                                <label class="flex gap-3 p-3.5 rounded-ezer cursor-pointer border border-ezer-green-border transition-colors">
+                                    <input type="radio" name="ae-dem" data-nom="Dodzi" class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
+                                    <span class="flex-1 min-w-0 flex flex-col gap-1">
+                                        <span class="flex flex-wrap justify-between gap-2"><span class="font-semibold">Dodzi</span><span class="text-[13px]">attend depuis 6 h</span></span>
+                                        <span class="flex flex-wrap gap-1.5">
+                                            <span class="text-xs px-2 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted">Au siège</span>
+                                            <span class="text-xs px-2 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted">Disponible : Matins</span>
+                                        </span>
+                                        <span class="text-sm text-ezer-muted">« Je traverse un deuil et je n’arrive pas à en parler autour de moi. »</span>
+                                    </span>
+                                </label>
+
+                                <label class="flex gap-3 p-3.5 rounded-ezer cursor-pointer border border-ezer-green-border transition-colors">
+                                    <input type="radio" name="ae-dem" data-nom="Esso" class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
+                                    <span class="flex-1 min-w-0 flex flex-col gap-1">
+                                        <span class="flex flex-wrap justify-between gap-2"><span class="font-semibold">Esso</span><span class="text-[13px]">attend depuis 2 h</span></span>
+                                        <span class="flex flex-wrap gap-1.5">
+                                            <span class="text-xs px-2 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted">Messagerie</span>
+                                            <span class="text-xs px-2 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted">Disponible : Soirs</span>
+                                        </span>
+                                        <span class="text-sm text-ezer-muted">« Je me sens dépassé par mes études. »</span>
+                                    </span>
+                                </label>
+
+                            </div>
+                        </section>
+
+                        <!-- 2. AFFECTER -->
+                        <section aria-labelledby="ae-thera" class="flex flex-col gap-3">
+                            <h2 id="ae-thera" class="text-lg font-semibold">2. Affecter <span id="dem-nom">Kossi</span> à un thérapeute</h2>
+
+                            <div class="flex flex-col gap-1.5">
+                                <span class="text-sm font-semibold">Disponibilité</span>
+                                <div role="group" aria-label="Filtrer par disponibilité" id="filtres-dispo" class="flex flex-wrap gap-1.5">
+                                    <button type="button" data-dispo="tous" aria-pressed="true" class="chip-actif min-h-[44px] px-3 rounded-ezer font-semibold text-sm">Tous</button>
+                                    <button type="button" data-dispo="semaine" aria-pressed="false" class="chip-inactif min-h-[44px] px-3 rounded-ezer font-semibold text-sm">En semaine</button>
+                                    <button type="button" data-dispo="soirs" aria-pressed="false" class="chip-inactif min-h-[44px] px-3 rounded-ezer font-semibold text-sm">Soirs</button>
+                                    <button type="button" data-dispo="weekend" aria-pressed="false" class="chip-inactif min-h-[44px] px-3 rounded-ezer font-semibold text-sm">Week-end</button>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-1.5">
+                                <span class="text-sm font-semibold">Charge actuelle</span>
+                                <div role="group" aria-label="Filtrer par charge" id="filtres-charge" class="flex flex-wrap gap-1.5">
+                                    <button type="button" data-charge="toutes" aria-pressed="true" class="chip-actif min-h-[44px] px-3 rounded-ezer font-semibold text-sm">Toutes</button>
+                                    <button type="button" data-charge="legere" aria-pressed="false" class="chip-inactif min-h-[44px] px-3 rounded-ezer font-semibold text-sm">Légère (moins de 50 %)</button>
+                                    <button type="button" data-charge="moyenne" aria-pressed="false" class="chip-inactif min-h-[44px] px-3 rounded-ezer font-semibold text-sm">Pas surchargé</button>
+                                </div>
+                            </div>
+
+                            <p role="status" id="compte-thera" class="text-[13px] text-ezer-muted">4 thérapeutes correspondants</p>
+
+                            <div role="radiogroup" aria-label="Thérapeutes" id="liste-thera" class="flex flex-col gap-2">
+
+                                <label class="flex gap-3 p-3.5 rounded-ezer cursor-pointer border border-ezer-green-border transition-colors" data-dispo="soirs semaine" data-ratio="75">
+                                    <input type="radio" name="ae-thera" data-nom="Mawuli A." checked class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
+                                    <span class="flex-1 min-w-0 flex flex-col gap-1.5">
+                                        <span class="flex flex-wrap justify-between gap-2"><span class="font-semibold">Mawuli A.</span><span class="text-[13px] text-ezer-muted">Français, éwé</span></span>
+                                        <span class="text-[13px] text-ezer-muted">Écoute, stress, deuil</span>
+                                        <span class="flex items-center gap-2">
+                                            <span aria-hidden="true" class="flex-1 h-1.5 rounded-full bg-ezer-green-light overflow-hidden"><span class="block h-full bg-ezer-green" style="width:75%"></span></span>
+                                            <span class="text-[13px] font-semibold">6 / 8 personnes</span>
+                                        </span>
+                                        <span class="text-[13px]">Prochain créneau libre : jeudi 19 h</span>
+                                    </span>
+                                </label>
+
+                                <label class="flex gap-3 p-3.5 rounded-ezer cursor-pointer border border-ezer-green-border transition-colors" data-dispo="semaine weekend" data-ratio="25">
+                                    <input type="radio" name="ae-thera" data-nom="Esi K." class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
+                                    <span class="flex-1 min-w-0 flex flex-col gap-1.5">
+                                        <span class="flex flex-wrap justify-between gap-2"><span class="font-semibold">Esi K.</span><span class="text-[13px] text-ezer-muted">Français, mina</span></span>
+                                        <span class="text-[13px] text-ezer-muted">Écoute, parentalité, jeunesse</span>
+                                        <span class="flex items-center gap-2">
+                                            <span aria-hidden="true" class="flex-1 h-1.5 rounded-full bg-ezer-green-light overflow-hidden"><span class="block h-full bg-ezer-green" style="width:25%"></span></span>
+                                            <span class="text-[13px] font-semibold">2 / 8 personnes</span>
+                                        </span>
+                                        <span class="text-[13px]">Prochain créneau libre : demain 10 h</span>
+                                    </span>
+                                </label>
+
+                                <label class="flex gap-3 p-3.5 rounded-ezer cursor-pointer border border-ezer-green-border transition-colors" data-dispo="soirs weekend" data-ratio="50">
+                                    <input type="radio" name="ae-thera" data-nom="Kodjo M." class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
+                                    <span class="flex-1 min-w-0 flex flex-col gap-1.5">
+                                        <span class="flex flex-wrap justify-between gap-2"><span class="font-semibold">Kodjo M.</span><span class="text-[13px] text-ezer-muted">Français, kabyè</span></span>
+                                        <span class="text-[13px] text-ezer-muted">Écoute, insertion, confiance</span>
+                                        <span class="flex items-center gap-2">
+                                            <span aria-hidden="true" class="flex-1 h-1.5 rounded-full bg-ezer-green-light overflow-hidden"><span class="block h-full bg-ezer-green" style="width:50%"></span></span>
+                                            <span class="text-[13px] font-semibold">3 / 6 personnes</span>
+                                        </span>
+                                        <span class="text-[13px]">Prochain créneau libre : ce soir 18 h</span>
+                                    </span>
+                                </label>
+
+                                <label class="flex gap-3 p-3.5 rounded-ezer cursor-pointer border border-ezer-green-border transition-colors" data-dispo="semaine" data-ratio="87">
+                                    <input type="radio" name="ae-thera" data-nom="Afua D." class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
+                                    <span class="flex-1 min-w-0 flex flex-col gap-1.5">
+                                        <span class="flex flex-wrap justify-between gap-2"><span class="font-semibold">Afua D.</span><span class="text-[13px] text-ezer-muted">Français, anglais</span></span>
+                                        <span class="text-[13px] text-ezer-muted">Écoute, violences, deuil</span>
+                                        <span class="flex items-center gap-2">
+                                            <span aria-hidden="true" class="flex-1 h-1.5 rounded-full bg-ezer-green-light overflow-hidden"><span class="block h-full bg-ezer-brown" style="width:87%"></span></span>
+                                            <span class="text-[13px] font-semibold">7 / 8 personnes</span>
+                                        </span>
+                                        <span class="text-[13px]">Prochain créneau libre : lundi 9 h</span>
+                                    </span>
+                                </label>
+
+                            </div>
+
+                            <div class="flex flex-col gap-1.5">
+                                <label for="ae-msg" class="text-sm font-semibold">Message au thérapeute <span class="font-normal text-ezer-muted">(facultatif)</span></label>
+                                <textarea id="ae-msg" rows="2" class="w-full p-2.5 border border-ezer-borderMuted rounded-ezer resize-y text-[15px] focus:border-ezer-green focus:outline-none">Contact rapide souhaité. Merci de l'appeler sous 24 h si possible.</textarea>
+                            </div>
+
+                            <button type="button" id="btn-affecter" class="h-[52px] rounded-ezer bg-ezer-green text-white font-semibold hover:bg-ezer-green-dark transition-colors">Affecter à Mawuli A.</button>
+
+                            <p role="status" id="retour-affectation" hidden class="p-2.5 rounded-ezer bg-ezer-green-light text-sm">Demande affectée. <span id="retour-nom">Mawuli A.</span> et la personne sont prévenus par SMS. Le thérapeute a 48 h pour accepter.</p>
+                        </section>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            function styliserCartes(selecteur) {
+                document.querySelectorAll(selecteur + ' label').forEach(function (l) {
+                    l.classList.toggle('fiche-choisie', l.querySelector('input').checked);
+                });
+            }
+
+            document.querySelectorAll('input[name="ae-dem"]').forEach(function (r) {
+                r.addEventListener('change', function () {
+                    document.getElementById('dem-nom').textContent = r.getAttribute('data-nom');
+                    document.getElementById('retour-affectation').hidden = true;
+                    styliserCartes('#liste-demandes');
+                });
+            });
+
+            var dispo = 'tous';
+            var charge = 'toutes';
+
+            function basculerChips(conteneur, propriete, valeur) {
+                document.querySelectorAll('#' + conteneur + ' button').forEach(function (b) {
+                    var on = b.getAttribute('data-' + propriete) === valeur;
+                    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+                    b.classList.toggle('chip-actif', on);
+                    b.classList.toggle('chip-inactif', !on);
+                });
+            }
+
+            function filtrerTherapeutes() {
+                var visibles = 0;
+                var premier = null;
+                document.querySelectorAll('#liste-thera label').forEach(function (l) {
+                    var tdispo = (l.getAttribute('data-dispo') || '').split(' ');
+                    var ratio = parseInt(l.getAttribute('data-ratio'), 10);
+                    var okDispo = dispo === 'tous' || tdispo.indexOf(dispo) >= 0;
+                    var okCharge = charge === 'toutes' || (charge === 'legere' ? ratio < 50 : ratio < 80);
+                    var ok = okDispo && okCharge;
+                    l.classList.toggle('hidden', !ok);
+                    if (ok) { visibles++; if (!premier) premier = l; }
+                });
+                var compte = document.getElementById('compte-thera');
+                compte.textContent = visibles + (visibles === 1 ? ' thérapeute correspondant' : ' thérapeutes correspondants');
+                var choisi = document.querySelector('#liste-thera label:not(.hidden) input:checked');
+                if (!choisi && premier) choisi = premier.querySelector('input');
+                if (choisi) {
+                    choisi.checked = true;
+                    document.getElementById('btn-affecter').textContent = 'Affecter à ' + choisi.getAttribute('data-nom');
+                } else {
+                    document.getElementById('btn-affecter').textContent = 'Affecter';
+                }
+                styliserCartes('#liste-thera');
+            }
+
+            document.querySelectorAll('#filtres-dispo button').forEach(function (b) {
+                b.addEventListener('click', function () { dispo = b.getAttribute('data-dispo'); basculerChips('filtres-dispo', 'dispo', dispo); filtrerTherapeutes(); });
+            });
+            document.querySelectorAll('#filtres-charge button').forEach(function (b) {
+                b.addEventListener('click', function () { charge = b.getAttribute('data-charge'); basculerChips('filtres-charge', 'charge', charge); filtrerTherapeutes(); });
+            });
+
+            document.querySelectorAll('#liste-thera input').forEach(function (r) {
+                r.addEventListener('change', function () {
+                    document.getElementById('retour-affectation').hidden = true;
+                    document.getElementById('btn-affecter').textContent = 'Affecter à ' + r.getAttribute('data-nom');
+                    styliserCartes('#liste-thera');
+                });
+            });
+
+            document.getElementById('btn-affecter').addEventListener('click', function () {
+                var choisi = document.querySelector('input[name="ae-thera"]:checked');
+                if (!choisi) return;
+                document.getElementById('retour-nom').textContent = choisi.getAttribute('data-nom');
+                document.getElementById('retour-affectation').hidden = false;
+            });
+
+            filtrerTherapeutes();
+        })();
+    </script>
+</body>
+</html>

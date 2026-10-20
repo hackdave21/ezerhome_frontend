@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi des réunions — Administration Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="admin" data-user="Yawo" data-initiales="YA" data-role="admin"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="admin" data-actif="reunions"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8">
+
+            <div data-etat-switcher="adm-reunions" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+                <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+                <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Liste des réunions</button>
+                <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+                <button type="button" data-etat-btn="vide" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. Aucune réunion</button>
+                <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">4. Erreur</button>
+            </div>
+
+            <div data-etat="adm-reunions" data-etat-panes
+                data-chargement-titre="Chargement des réunions…"
+                data-vide-titre="Aucune réunion sur cette période."
+                data-vide-texte="Changez la période ou le filtre intervenant."
+                data-erreur-titre="Impossible d'afficher les réunions pour le moment."
+                data-erreur-code="EZ-REU-503">
+
+                <div data-etat-pane="normal" class="flex flex-col gap-5">
+
+                    <h1 class="font-cooper font-normal text-2xl lg:text-[32px]">Suivi des réunions</h1>
+
+                    <div role="group" aria-label="Indicateurs du mois" class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="flex flex-col gap-0.5 p-3.5 px-4 border border-ezer-green-border rounded-ezer">
+                            <span class="text-[13px] font-semibold">Réunions ce mois</span>
+                            <span class="text-[26px] leading-8 font-semibold tabular-nums">58</span>
+                            <span class="text-xs text-ezer-muted">+6 par rapport au mois dernier</span>
+                        </div>
+                        <div class="flex flex-col gap-0.5 p-3.5 px-4 border border-ezer-green-border rounded-ezer">
+                            <span class="text-[13px] font-semibold">Notes clôturées</span>
+                            <span class="text-[26px] leading-8 font-semibold tabular-nums">91 %</span>
+                            <span class="text-xs text-ezer-muted">4 notes en retard</span>
+                        </div>
+                        <div class="flex flex-col gap-0.5 p-3.5 px-4 border border-ezer-green-border rounded-ezer">
+                            <span class="text-[13px] font-semibold">Durée moyenne</span>
+                            <span class="text-[26px] leading-8 font-semibold tabular-nums">46 min</span>
+                            <span class="text-xs text-ezer-muted">écoute et coaching</span>
+                        </div>
+                        <div class="flex flex-col gap-0.5 p-3.5 px-4 border border-ezer-green-border rounded-ezer">
+                            <span class="text-[13px] font-semibold">Annulées ou absences</span>
+                            <span class="text-[26px] leading-8 font-semibold tabular-nums">5</span>
+                            <span class="text-xs text-ezer-muted">soit 8 %</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                        <div class="flex flex-col gap-1.5">
+                            <label for="re-int" class="text-sm font-semibold">Intervenant</label>
+                            <select id="re-int" class="w-full h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer bg-white text-[15px] focus:border-ezer-green focus:outline-none"><option>Tous</option><option>Mawuli A.</option><option>Esi K.</option><option>Kodjo M.</option></select>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label for="re-type" class="text-sm font-semibold">Type</label>
+                            <select id="re-type" class="w-full h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer bg-white text-[15px] focus:border-ezer-green focus:outline-none"><option>Tous</option><option>Écoute</option><option>Coaching</option><option>Formation</option></select>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label for="re-note" class="text-sm font-semibold">Note</label>
+                            <select id="re-note" class="w-full h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer bg-white text-[15px] focus:border-ezer-green focus:outline-none"><option>Toutes</option><option>Clôturée</option><option>Brouillon</option><option>Manquante</option></select>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label for="re-per" class="text-sm font-semibold">Période</label>
+                            <select id="re-per" class="w-full h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer bg-white text-[15px] focus:border-ezer-green focus:outline-none"><option>Ce mois-ci</option><option>Mois dernier</option><option>Ce trimestre</option></select>
+                        </div>
+                    </div>
+
+                    <div id="contenu-reunions" class="overflow-x-auto border border-ezer-green-border rounded-ezer">
+                        <table class="w-full min-w-[820px] text-[15px]">
+                            <caption class="sr-only">Réunions</caption>
+                            <thead>
+                                <tr class="bg-ezer-green-light text-left">
+                                    <th scope="col" class="py-3 px-3.5 font-semibold">Date</th>
+                                    <th scope="col" class="py-3 px-3.5 font-semibold">Intervenant</th>
+                                    <th scope="col" class="py-3 px-3.5 font-semibold">Personne</th>
+                                    <th scope="col" class="py-3 px-3.5 font-semibold">Type</th>
+                                    <th scope="col" class="py-3 px-3.5 font-semibold">Durée</th>
+                                    <th scope="col" class="py-3 px-3.5 font-semibold">Note</th>
+                                    <th scope="col" class="py-3 px-3.5 font-semibold"><span class="sr-only">Action</span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="lignes-reunions">
+                                <tr data-statut-reu="close" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2.5 px-3.5 whitespace-nowrap">[13/11] 15 h 00</td><td class="py-2.5 px-3.5">Mawuli A.</td><td class="py-2.5 px-3.5">Afi</td><td class="py-2.5 px-3.5">Écoute</td><td class="py-2.5 px-3.5">45 min</td>
+                                    <td class="py-2.5 px-3.5"><span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted whitespace-nowrap">Clôturée</span></td>
+                                    <td class="py-2.5 px-3.5"><a href="note-cloturee.html" class="inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Lire la note</a></td>
+                                </tr>
+                                <tr data-statut-reu="brouillon" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2.5 px-3.5 whitespace-nowrap">[13/11] 18 h 00</td><td class="py-2.5 px-3.5">Mawuli A.</td><td class="py-2.5 px-3.5">Edem</td><td class="py-2.5 px-3.5">Coaching</td><td class="py-2.5 px-3.5">60 min</td>
+                                    <td class="py-2.5 px-3.5"><span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-dark whitespace-nowrap">Brouillon</span></td>
+                                    <td class="py-2.5 px-3.5"><button type="button" data-relance class="min-h-[44px] px-2.5 border border-ezer-dark rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Relancer</button></td>
+                                </tr>
+                                <tr data-statut-reu="close" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2.5 px-3.5 whitespace-nowrap">[12/11] 10 h 00</td><td class="py-2.5 px-3.5">Esi K.</td><td class="py-2.5 px-3.5">Yawa</td><td class="py-2.5 px-3.5">Écoute</td><td class="py-2.5 px-3.5">45 min</td>
+                                    <td class="py-2.5 px-3.5"><span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted whitespace-nowrap">Clôturée</span></td>
+                                    <td class="py-2.5 px-3.5"><a href="note-cloturee.html" class="inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Lire la note</a></td>
+                                </tr>
+                                <tr data-statut-reu="manquante" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2.5 px-3.5 whitespace-nowrap">[11/11] 17 h 30</td><td class="py-2.5 px-3.5">Kodjo M.</td><td class="py-2.5 px-3.5">Dela</td><td class="py-2.5 px-3.5">Écoute</td><td class="py-2.5 px-3.5">30 min</td>
+                                    <td class="py-2.5 px-3.5"><span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-ezer-dark text-white whitespace-nowrap">Note manquante</span></td>
+                                    <td class="py-2.5 px-3.5"><button type="button" data-relance class="min-h-[44px] px-2.5 border border-ezer-dark rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Relancer</button></td>
+                                </tr>
+                                <tr data-statut-reu="close" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2.5 px-3.5 whitespace-nowrap">[10/11] 9 h 00</td><td class="py-2.5 px-3.5">Esi K.</td><td class="py-2.5 px-3.5">12 inscrits</td><td class="py-2.5 px-3.5">Formation</td><td class="py-2.5 px-3.5">6 h</td>
+                                    <td class="py-2.5 px-3.5"><span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted whitespace-nowrap">Clôturée</span></td>
+                                    <td class="py-2.5 px-3.5"><a href="note-cloturee.html" class="inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Lire la note</a></td>
+                                </tr>
+                                <tr data-statut-reu="close" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2.5 px-3.5 whitespace-nowrap">[08/11] 19 h 00</td><td class="py-2.5 px-3.5">Afua D.</td><td class="py-2.5 px-3.5">Sika</td><td class="py-2.5 px-3.5">Écoute</td><td class="py-2.5 px-3.5">45 min</td>
+                                    <td class="py-2.5 px-3.5"><span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border border-ezer-borderMuted text-ezer-muted whitespace-nowrap">Clôturée</span></td>
+                                    <td class="py-2.5 px-3.5"><a href="note-cloturee.html" class="inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Lire la note</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            document.querySelectorAll('[data-relance]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var span = document.createElement('span');
+                    span.setAttribute('role', 'status');
+                    span.className = 'text-[13px] text-ezer-green font-semibold';
+                    span.textContent = 'Relance envoyée par SMS.';
+                    btn.replaceWith(span);
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

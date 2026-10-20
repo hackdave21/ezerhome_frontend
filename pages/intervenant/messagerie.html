@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messagerie — Espace thérapeute / coach — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="intervenant" data-user="Mawuli" data-initiales="MA"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="intervenant" data-actif="messagerie"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8 lg:gap-6">
+
+            <h1 class="font-cooper font-normal text-[26px] leading-8 lg:text-[32px] lg:leading-[38px]">Messagerie</h1>
+
+            <div class="flex flex-col lg:flex-row lg:gap-4 lg:items-stretch">
+
+                <ul id="int-liste" aria-label="Conversations"
+                    class="lg:flex-col hidden lg:flex lg:w-[300px] lg:shrink-0 border border-ezer-green-border rounded-ezer overflow-hidden">
+                    <li class="border-b border-ezer-green-borderLight last:border-b-0">
+                        <button type="button" data-conv data-lyst data-cible="afi" aria-current="true"
+                            class="w-full flex items-center gap-3 min-h-[64px] px-3.5 py-2.5 text-left bg-ezer-green-light lg:bg-ezer-green-light">
+                            <span aria-hidden="true" class="shrink-0 w-9 h-9 rounded-full bg-white inline-flex items-center justify-center font-semibold text-ezer-green">A</span>
+                            <span class="flex-1 min-w-0 flex flex-col"><span class="text-[15px] font-semibold">Afi</span><span class="text-[13px] leading-[18px] text-ezer-muted truncate">Merci, à mardi alors.</span></span>
+                            <span class="shrink-0 inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-ezer-red text-white text-[12px]">1</span>
+                        </button>
+                    </li>
+                    <li class="border-b border-ezer-green-borderLight last:border-b-0">
+                        <button type="button" data-conv data-cible="yao"
+                            class="w-full flex items-center gap-3 min-h-[64px] px-3.5 py-2.5 text-left bg-white hover:bg-ezer-green-pale">
+                            <span aria-hidden="true" class="shrink-0 w-9 h-9 rounded-full bg-ezer-green-light inline-flex items-center justify-center font-semibold text-ezer-green">Y</span>
+                            <span class="flex-1 min-w-0 flex flex-col"><span class="text-[15px] font-semibold">Yao</span><span class="text-[13px] leading-[18px] text-ezer-muted truncate">Je peux décaler à 19 h ?</span></span>
+                            <span class="shrink-0 inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-ezer-red text-white text-[12px]">2</span>
+                        </button>
+                    </li>
+                    <li class="border-b border-ezer-green-borderLight last:border-b-0">
+                        <button type="button" data-conv data-cible="edem"
+                            class="w-full flex items-center gap-3 min-h-[64px] px-3.5 py-2.5 text-left bg-white hover:bg-ezer-green-pale">
+                            <span aria-hidden="true" class="shrink-0 w-9 h-9 rounded-full bg-ezer-green-light inline-flex items-center justify-center font-semibold text-ezer-green">E</span>
+                            <span class="flex-1 min-w-0 flex flex-col"><span class="text-[15px] font-semibold">Edem</span><span class="text-[13px] leading-[18px] text-ezer-muted truncate">Vous : Voici le bilan de la séance.</span></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" data-conv data-cible="dela"
+                            class="w-full flex items-center gap-3 min-h-[64px] px-3.5 py-2.5 text-left bg-white hover:bg-ezer-green-pale">
+                            <span aria-hidden="true" class="shrink-0 w-9 h-9 rounded-full bg-ezer-green-light inline-flex items-center justify-center font-semibold text-ezer-green">D</span>
+                            <span class="flex-1 min-w-0 flex flex-col"><span class="text-[15px] font-semibold">Dela</span><span class="text-[13px] leading-[18px] text-ezer-muted truncate">Vous : Comment allez-vous cette semaine ?</span></span>
+                        </button>
+                    </li>
+                </ul>
+
+                <div id="int-fil" data-cible-id="afi" class="border border-ezer-green-border rounded-ezer overflow-hidden flex flex-col min-w-0">
+                    <div class="flex items-center gap-2.5 px-3.5 py-3 border-b border-ezer-green-border">
+                        <button type="button" id="int-retour" aria-label="Toutes les conversations"
+                            class="lg:hidden shrink-0 w-11 h-11 rounded-ezer bg-ezer-green-light text-ezer-green inline-flex items-center justify-center">
+                            <svg aria-hidden="true" class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+                        </button>
+                        <div class="flex-1 flex flex-col min-w-0">
+                            <h2 class="text-[17px] leading-6 font-semibold">Afi</h2>
+                            <span class="text-[13px] leading-[18px] text-ezer-muted">Écoute · échanges chiffrés</span>
+                        </div>
+                        <a href="fiche-consultant.html" class="inline-flex items-center min-h-[44px] text-sm font-semibold text-ezer-green hover:underline">Fiche</a>
+                    </div>
+                    <ol aria-label="Fil de messages" class="p-3.5 flex flex-col gap-2.5">
+                        <li class="self-end max-w-[82%] flex flex-col items-end gap-1">
+                            <span class="sr-only">Mawuli :</span>
+                            <span class="px-3.5 py-2.5 rounded-ezer bg-ezer-green text-white text-[15px] leading-[22px]">Bonjour Afi, je vous propose un premier échange jeudi à 15 h, par appel vidéo. Cela vous convient-il ?</span>
+                            <span class="text-xs leading-4 text-ezer-muted">Lundi 11:05 · Lu</span>
+                        </li>
+                        <li class="self-start max-w-[82%] flex flex-col items-start gap-1">
+                            <span class="sr-only">Afi :</span>
+                            <span class="px-3.5 py-2.5 rounded-ezer bg-ezer-green-light text-[15px] leading-[22px]">Oui, c'est parfait.</span>
+                            <span class="text-xs leading-4 text-ezer-muted">Lundi 11:20</span>
+                        </li>
+                        <li class="self-end max-w-[82%] flex flex-col items-end gap-1">
+                            <span class="sr-only">Mawuli :</span>
+                            <span class="px-3.5 py-2.5 rounded-ezer bg-ezer-green text-white text-[15px] leading-[22px]">C'est noté. Le lien sera disponible dans votre espace.</span>
+                            <span class="text-xs leading-4 text-ezer-muted">Lundi 14:02 · Lu</span>
+                        </li>
+                        <li class="self-start max-w-[82%] flex flex-col items-start gap-1">
+                            <span class="sr-only">Afi :</span>
+                            <span class="px-3.5 py-2.5 rounded-ezer bg-ezer-green-light text-[15px] leading-[22px] font-semibold">Merci, à mardi alors.</span>
+                            <span class="text-xs leading-4 text-ezer-muted">Aujourd'hui 16:20 · nouveau</span>
+                        </li>
+                    </ol>
+                    <form aria-label="Répondre" class="flex items-end gap-2 p-3 border-t border-ezer-green-border bg-ezer-green-pale">
+                        <label for="int-msg" class="sr-only">Votre message</label>
+                        <textarea id="int-msg" rows="2" placeholder="Écrire à Afi…"
+                            class="flex-1 min-w-0 p-2.5 px-3.5 border border-ezer-borderMuted rounded-ezer text-base leading-[22px] bg-white focus:border-ezer-green focus:outline-none"></textarea>
+                        <button type="submit" aria-label="Envoyer"
+                            class="shrink-0 w-[52px] h-[52px] rounded-ezer bg-ezer-green text-white inline-flex items-center justify-center hover:bg-ezer-green-dark transition-colors">
+                            <svg aria-hidden="true" class="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l16-8-6 16-2.5-6.5z"></path></svg>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <p class="text-[13px] leading-[18px] text-ezer-muted">Les messages sont conservés dans le dossier de la personne. Restez dans le cadre de la charte de l'intervenant.</p>
+
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var liste = document.getElementById('int-liste');
+            var fil = document.getElementById('int-fil');
+            var retour = document.getElementById('int-retour');
+
+            liste.querySelectorAll('[data-conv]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    liste.querySelectorAll('[data-conv]').forEach(function (b) {
+                        var on = b === btn;
+                        b.setAttribute('aria-current', on ? 'true' : 'false');
+                        b.classList.toggle('bg-ezer-green-light', on);
+                        b.classList.toggle('bg-white', !on);
+                    });
+                    fil.setAttribute('data-cible-id', btn.getAttribute('data-cible'));
+                    if (window.innerWidth < 1024) {
+                        liste.classList.add('hidden');
+                        fil.classList.remove('hidden');
+                    }
+                });
+            });
+
+            retour.addEventListener('click', function () {
+                fil.classList.add('hidden');
+                liste.classList.remove('hidden');
+            });
+        })();
+    </script>
+</body>
+</html>

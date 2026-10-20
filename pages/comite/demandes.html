@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demandes d'assistance — Comité Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="comite"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="comite" data-actif="demandes"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8">
+
+            <div class="flex-1 min-w-0 flex flex-col gap-5">
+                <h1 class="font-cooper font-normal text-2xl lg:text-[32px]">Demandes d'assistance</h1>
+
+                <div data-etat-switcher="comite-liste" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+                    <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+                    <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Liste</button>
+                    <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+                    <button type="button" data-etat-btn="vide" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. Aucun résultat</button>
+                    <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">4. Erreur</button>
+                </div>
+
+                <div data-etat="comite-liste" data-etat-panes
+                    data-chargement-titre="Chargement des demandes…"
+                    data-vide-titre="Aucune demande ne correspond à ces filtres."
+                    data-vide-texte="Essayez un autre statut ou une autre période. Les nouvelles demandes arrivent avec le statut « Reçue »."
+                    data-vide-cta="Effacer les filtres"
+                    data-vide-href="demandes.html"
+                    data-erreur-titre="Impossible d'afficher les demandes pour le moment."
+                    data-erreur-code="EZ-LIS-503">
+
+                    <div data-etat-pane="normal" class="flex flex-col gap-5">
+
+                        <p class="text-[15px] text-ezer-muted">7 demandes ce mois-ci · 3 reçues · 1 en examen · 2 doublons possibles</p>
+
+                        <!-- FILTRES -->
+                        <div class="border border-ezer-green-border rounded-ezer p-4 lg:p-5 flex flex-col gap-4">
+                            <div class="flex flex-col gap-1.5">
+                                <label for="q" class="text-[15px] font-semibold">Rechercher</label>
+                                <input id="q" type="search" placeholder="Numéro, nom ou téléphone" class="w-full h-[52px] px-4 border border-ezer-borderMuted rounded-ezer bg-white focus:border-ezer-green focus:outline-none">
+                            </div>
+
+                            <div role="group" aria-label="Filtrer par statut" class="flex flex-wrap gap-2">
+                                <button type="button" data-statut="toutes" aria-pressed="true" class="min-h-[44px] px-4 rounded-full border-2 border-ezer-green bg-ezer-green text-white font-semibold text-[15px]">Toutes</button>
+                                <button type="button" data-statut="recue" aria-pressed="false" class="min-h-[44px] px-4 rounded-full border border-ezer-borderMuted bg-white text-ezer-dark font-semibold text-[15px]">Reçues</button>
+                                <button type="button" data-statut="examen" aria-pressed="false" class="min-h-[44px] px-4 rounded-full border-2 border-ezer-brown bg-white text-ezer-dark font-semibold text-[15px]">En examen</button>
+                                <button type="button" data-statut="acceptee" aria-pressed="false" class="min-h-[44px] px-4 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green font-semibold text-[15px]">Acceptées</button>
+                                <button type="button" data-statut="close" aria-pressed="false" class="min-h-[44px] px-4 rounded-full border border-dashed border-ezer-borderMuted bg-white text-ezer-muted font-semibold text-[15px]">Closes</button>
+                                <button type="button" data-statut="refusee" aria-pressed="false" class="min-h-[44px] px-4 rounded-full border border-ezer-dark bg-ezer-dark text-white font-semibold text-[15px]">Refusées</button>
+                            </div>
+
+                            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                                <div class="flex flex-col gap-1.5">
+                                    <label for="type" class="text-[15px] font-semibold">Type d'aide</label>
+                                    <select id="type" class="w-full h-[52px] px-4 border border-ezer-borderMuted rounded-ezer bg-white focus:border-ezer-green focus:outline-none">
+                                        <option>Tous</option>
+                                        <option>Logement</option>
+                                        <option>Alimentation</option>
+                                        <option>Habillement</option>
+                                        <option>Frais de scolarité</option>
+                                        <option>Fournitures</option>
+                                        <option>Autre</option>
+                                    </select>
+                                </div>
+                                <div class="flex flex-col gap-1.5">
+                                    <label for="periode" class="text-[15px] font-semibold">Période</label>
+                                    <select id="periode" class="w-full h-[52px] px-4 border border-ezer-borderMuted rounded-ezer bg-white focus:border-ezer-green focus:outline-none">
+                                        <option>30 derniers jours</option>
+                                        <option>Ce trimestre</option>
+                                        <option>Cette année</option>
+                                        <option>Tout</option>
+                                    </select>
+                                </div>
+                                <label class="flex items-center gap-2.5 min-h-[52px] px-3.5 border border-ezer-borderMuted rounded-ezer bg-white text-[15px] cursor-pointer">
+                                    <input id="doublons" type="checkbox" checked class="w-5 h-5 shrink-0 accent-ezer-green">
+                                    Doublons de téléphone uniquement
+                                </label>
+                            </div>
+                        </div>
+
+                        <p role="status" id="compte" class="text-sm text-ezer-muted">7 demandes affichées</p>
+
+                        <!-- MOBILE : CARTES -->
+                        <ul class="lg:hidden flex flex-col gap-3 list-none">
+                            <li>
+                                <a href="fiche-demande.html" class="flex flex-col gap-2 p-4 border border-ezer-green-border rounded-ezer hover:border-ezer-green transition-colors">
+                                    <span class="flex flex-wrap items-center justify-between gap-2">
+                                        <span class="font-semibold">ASS-2026-00042</span>
+                                        <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full border-2 border-ezer-brown bg-white">En examen</span>
+                                    </span>
+                                    <span class="font-medium">MENSAH Akossiwa · Logement</span>
+                                    <span class="text-sm text-ezer-muted">Reçue le [13/11]</span>
+                                    <span class="text-sm text-ezer-brown">Doublon possible : même téléphone que ASS-2026-00031</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="fiche-demande.html" class="flex flex-col gap-2 p-4 border border-ezer-green-border rounded-ezer hover:border-ezer-green transition-colors">
+                                    <span class="flex flex-wrap items-center justify-between gap-2">
+                                        <span class="font-semibold">ASS-2026-00041</span>
+                                        <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full border border-ezer-dark bg-white">Reçue</span>
+                                    </span>
+                                    <span class="font-medium">KOFFI Edem · Frais de scolarité</span>
+                                    <span class="text-sm text-ezer-muted">Reçue le [13/11]</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="fiche-demande.html" class="flex flex-col gap-2 p-4 border border-ezer-green-border rounded-ezer hover:border-ezer-green transition-colors">
+                                    <span class="flex flex-wrap items-center justify-between gap-2">
+                                        <span class="font-semibold">ASS-2026-00040</span>
+                                        <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full border border-ezer-dark bg-white">Reçue</span>
+                                    </span>
+                                    <span class="font-medium">AGBO Yawa · Alimentation</span>
+                                    <span class="text-sm text-ezer-muted">Reçue le [12/11]</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="fiche-demande.html" class="flex flex-col gap-2 p-4 border border-ezer-green-border rounded-ezer hover:border-ezer-green transition-colors">
+                                    <span class="flex flex-wrap items-center justify-between gap-2">
+                                        <span class="font-semibold">ASS-2026-00039</span>
+                                        <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Acceptée</span>
+                                    </span>
+                                    <span class="font-medium">DOSSOU Komi · Fournitures</span>
+                                    <span class="text-sm text-ezer-muted">Reçue le [11/11]</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="fiche-demande.html" class="flex flex-col gap-2 p-4 border border-ezer-green-border rounded-ezer hover:border-ezer-green transition-colors">
+                                    <span class="flex flex-wrap items-center justify-between gap-2">
+                                        <span class="font-semibold">ASS-2026-00038</span>
+                                        <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full border border-ezer-dark bg-white">Reçue</span>
+                                    </span>
+                                    <span class="font-medium">ATTIOGBE Sena · Habillement</span>
+                                    <span class="text-sm text-ezer-muted">Reçue le [10/11]</span>
+                                    <span class="text-sm text-ezer-brown">Doublon possible : même téléphone que ASS-2026-00022</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="fiche-demande.html" class="flex flex-col gap-2 p-4 border border-ezer-green-border rounded-ezer hover:border-ezer-green transition-colors">
+                                    <span class="flex flex-wrap items-center justify-between gap-2">
+                                        <span class="font-semibold">ASS-2026-00037</span>
+                                        <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full border border-dashed border-ezer-borderMuted text-ezer-muted">Close</span>
+                                    </span>
+                                    <span class="font-medium">LAWSON Ama · Alimentation</span>
+                                    <span class="text-sm text-ezer-muted">Reçue le [08/11]</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="fiche-demande.html" class="flex flex-col gap-2 p-4 border border-ezer-green-border rounded-ezer hover:border-ezer-green transition-colors">
+                                    <span class="flex flex-wrap items-center justify-between gap-2">
+                                        <span class="font-semibold">ASS-2026-00036</span>
+                                        <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-ezer-dark text-white">Refusée</span>
+                                    </span>
+                                    <span class="font-medium">KPOGO Yao · Logement</span>
+                                    <span class="text-sm text-ezer-muted">Reçue le [07/11]</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- ORDINATEUR : TABLEAU -->
+                        <div class="hidden lg:block overflow-x-auto">
+                            <table class="w-full text-[15px]">
+                                <caption class="sr-only">Demandes d'assistance</caption>
+                                <thead>
+                                    <tr class="text-left text-ezer-muted border-b border-ezer-green-border">
+                                        <th scope="col" class="py-3 pr-4 font-semibold">N° de suivi</th>
+                                        <th scope="col" class="py-3 pr-4 font-semibold">Date</th>
+                                        <th scope="col" class="py-3 pr-4 font-semibold">Demandeur</th>
+                                        <th scope="col" class="py-3 pr-4 font-semibold">Type d'aide</th>
+                                        <th scope="col" class="py-3 pr-4 font-semibold">Statut</th>
+                                        <th scope="col" class="py-3 font-semibold">Alerte</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="lignes">
+                                    <tr data-statut-ligne="examen" class="border-b border-ezer-green-borderLight">
+                                        <td class="py-3 pr-4"><a href="fiche-demande.html" class="font-semibold text-ezer-green hover:underline">ASS-2026-00042</a></td>
+                                        <td class="py-3 pr-4">[13/11]</td><td class="py-3 pr-4">MENSAH Akossiwa</td><td class="py-3 pr-4">Logement</td>
+                                        <td class="py-3 pr-4"><span class="inline-block text-[13px] font-semibold px-2.5 py-0.5 rounded-full border-2 border-ezer-brown">En examen</span></td>
+                                        <td class="py-3 text-ezer-brown">Doublon tél. (ASS-2026-00031)</td>
+                                    </tr>
+                                    <tr data-statut-ligne="recue" class="border-b border-ezer-green-borderLight">
+                                        <td class="py-3 pr-4"><a href="fiche-demande.html" class="font-semibold text-ezer-green hover:underline">ASS-2026-00041</a></td>
+                                        <td class="py-3 pr-4">[13/11]</td><td class="py-3 pr-4">KOFFI Edem</td><td class="py-3 pr-4">Frais de scolarité</td>
+                                        <td class="py-3 pr-4"><span class="inline-block text-[13px] font-semibold px-2.5 py-0.5 rounded-full border border-ezer-dark">Reçue</span></td>
+                                        <td class="py-3"></td>
+                                    </tr>
+                                    <tr data-statut-ligne="recue" class="border-b border-ezer-green-borderLight">
+                                        <td class="py-3 pr-4"><a href="fiche-demande.html" class="font-semibold text-ezer-green hover:underline">ASS-2026-00040</a></td>
+                                        <td class="py-3 pr-4">[12/11]</td><td class="py-3 pr-4">AGBO Yawa</td><td class="py-3 pr-4">Alimentation</td>
+                                        <td class="py-3 pr-4"><span class="inline-block text-[13px] font-semibold px-2.5 py-0.5 rounded-full border border-ezer-dark">Reçue</span></td>
+                                        <td class="py-3"></td>
+                                    </tr>
+                                    <tr data-statut-ligne="acceptee" class="border-b border-ezer-green-borderLight">
+                                        <td class="py-3 pr-4"><a href="fiche-demande.html" class="font-semibold text-ezer-green hover:underline">ASS-2026-00039</a></td>
+                                        <td class="py-3 pr-4">[11/11]</td><td class="py-3 pr-4">DOSSOU Komi</td><td class="py-3 pr-4">Fournitures</td>
+                                        <td class="py-3 pr-4"><span class="inline-block text-[13px] font-semibold px-2.5 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Acceptée</span></td>
+                                        <td class="py-3"></td>
+                                    </tr>
+                                    <tr data-statut-ligne="recue" class="border-b border-ezer-green-borderLight">
+                                        <td class="py-3 pr-4"><a href="fiche-demande.html" class="font-semibold text-ezer-green hover:underline">ASS-2026-00038</a></td>
+                                        <td class="py-3 pr-4">[10/11]</td><td class="py-3 pr-4">ATTIOGBE Sena</td><td class="py-3 pr-4">Habillement</td>
+                                        <td class="py-3 pr-4"><span class="inline-block text-[13px] font-semibold px-2.5 py-0.5 rounded-full border border-ezer-dark">Reçue</span></td>
+                                        <td class="py-3 text-ezer-brown">Doublon tél. (ASS-2026-00022)</td>
+                                    </tr>
+                                    <tr data-statut-ligne="close" class="border-b border-ezer-green-borderLight">
+                                        <td class="py-3 pr-4"><a href="fiche-demande.html" class="font-semibold text-ezer-green hover:underline">ASS-2026-00037</a></td>
+                                        <td class="py-3 pr-4">[08/11]</td><td class="py-3 pr-4">LAWSON Ama</td><td class="py-3 pr-4">Alimentation</td>
+                                        <td class="py-3 pr-4"><span class="inline-block text-[13px] font-semibold px-2.5 py-0.5 rounded-full border border-dashed border-ezer-borderMuted text-ezer-muted">Close</span></td>
+                                        <td class="py-3"></td>
+                                    </tr>
+                                    <tr data-statut-ligne="refusee">
+                                        <td class="py-3 pr-4"><a href="fiche-demande.html" class="font-semibold text-ezer-green hover:underline">ASS-2026-00036</a></td>
+                                        <td class="py-3 pr-4">[07/11]</td><td class="py-3 pr-4">KPOGO Yao</td><td class="py-3 pr-4">Logement</td>
+                                        <td class="py-3 pr-4"><span class="inline-block text-[13px] font-semibold px-2.5 py-0.5 rounded-full bg-ezer-dark text-white">Refusée</span></td>
+                                        <td class="py-3"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var lignes = Array.prototype.slice.call(document.querySelectorAll('[data-statut-ligne]'));
+            var cartes = Array.prototype.slice.call(document.querySelectorAll('#liste-cartes li, ul.lg\\:hidden > li'));
+            var compte = document.getElementById('compte');
+
+            document.querySelectorAll('[data-statut]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var f = btn.getAttribute('data-statut');
+                    document.querySelectorAll('[data-statut]').forEach(function (b) {
+                        var on = b === btn;
+                        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+                        b.classList.toggle('bg-ezer-green', on);
+                        b.classList.toggle('text-white', on);
+                        b.classList.toggle('border-ezer-green', on);
+                        b.classList.toggle('border-2', on);
+                        b.classList.toggle('bg-white', !on);
+                        b.classList.toggle('text-ezer-dark', !on);
+                        b.classList.toggle('border', !on);
+                        b.classList.toggle('border-ezer-borderMuted', !on);
+                    });
+
+                    var visibles = 0;
+                    lignes.forEach(function (l) {
+                        var ok = f === 'toutes' || l.getAttribute('data-statut-ligne') === f;
+                        l.classList.toggle('hidden', !ok);
+                        if (ok) visibles++;
+                    });
+                    cartes.forEach(function (c, i) {
+                        c.classList.toggle('hidden', f !== 'toutes' && lignes[i] && lignes[i].getAttribute('data-statut-ligne') !== f);
+                    });
+                    compte.textContent = visibles + (visibles > 1 ? ' demandes affichées' : ' demande affichée');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

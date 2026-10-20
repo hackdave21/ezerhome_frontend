@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devenir thérapeute ou coach — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="header" data-active="a-propos"></div>
+
+    <main>
+        <section class="bg-ezer-green-light">
+            <div class="max-w-[880px] mx-auto px-4 py-6 lg:px-8 lg:py-12 lg:pb-14 flex flex-col gap-3">
+                <nav aria-label="Fil d'Ariane" class="text-sm leading-5">
+                    <ol class="flex flex-wrap gap-2 list-none text-ezer-muted">
+                        <li><a href="../site/accueil.html" class="text-ezer-green font-semibold hover:underline">Accueil</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li><a href="../site/equipe.html" class="text-ezer-green font-semibold hover:underline">Notre équipe</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li aria-current="page">Devenir intervenant</li>
+                    </ol>
+                </nav>
+                <h1 class="font-cooper font-normal text-[30px] leading-9 lg:text-[44px] lg:leading-[52px]">Devenir thérapeute ou coach</h1>
+                <p class="text-base leading-[1.6] max-w-[640px]">Vous êtes thérapeute, écoutant·e, coach ou formateur·rice et souhaitez rejoindre l'équipe ? Présentez-vous : le comité de validation étudie chaque candidature avec attention. Comptez environ 15 minutes.</p>
+            </div>
+        </section>
+
+        <div class="max-w-[880px] mx-auto px-4 py-8 lg:px-8 lg:py-14 lg:pb-[88px]">
+
+            <form aria-label="Candidature intervenant" class="flex flex-col gap-10">
+                <p class="text-sm leading-5 text-ezer-muted">Tous les champs sont obligatoires, sauf mention « facultatif ». Vous pouvez enregistrer et reprendre plus tard.</p>
+
+                <!-- 1 -->
+                <fieldset class="border-0 min-w-0 flex flex-col gap-[18px]">
+                    <legend class="mb-4 font-cooper font-normal text-2xl leading-[30px]">1. Vous</legend>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-[18px]">
+                        <div class="flex flex-col gap-1.5">
+                            <label for="ca-nom" class="text-[15px] font-semibold">Nom et prénoms</label>
+                            <input id="ca-nom" type="text" autocomplete="name" class="w-full h-[52px] px-4 border border-ezer-borderMuted rounded-ezer text-base bg-white focus:border-ezer-green focus:outline-none">
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label for="ca-ville" class="text-[15px] font-semibold">Ville</label>
+                            <input id="ca-ville" type="text" autocomplete="address-level2" value="Lomé" class="w-full h-[52px] px-4 border border-ezer-borderMuted rounded-ezer text-base bg-white focus:border-ezer-green focus:outline-none">
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label for="ca-tel" class="text-[15px] font-semibold">Téléphone ou WhatsApp</label>
+                            <input id="ca-tel" type="tel" autocomplete="tel" placeholder="+228" class="w-full h-[52px] px-4 border border-ezer-borderMuted rounded-ezer text-base bg-white focus:border-ezer-green focus:outline-none">
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <label for="ca-mail" class="text-[15px] font-semibold">E-mail</label>
+                            <input id="ca-mail" type="email" autocomplete="email" class="w-full h-[52px] px-4 border border-ezer-borderMuted rounded-ezer text-base bg-white focus:border-ezer-green focus:outline-none">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- 2 -->
+                <fieldset class="border-0 min-w-0 flex flex-col gap-2.5">
+                    <legend class="mb-1.5 font-cooper font-normal text-2xl leading-[30px]">2. Votre rôle</legend>
+                    <span class="text-sm leading-5 text-ezer-muted">Plusieurs choix possibles.</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                        <label class="flex items-start gap-3 p-4 rounded-ezer cursor-pointer border border-ezer-borderMuted hover:border-ezer-green" data-choix="ecoute">
+                            <input type="checkbox" checked class="w-[22px] h-[22px] shrink-0 mt-0.5 accent-ezer-green">
+                            <span class="flex flex-col gap-0.5"><span class="font-semibold">Écoutant·e ou thérapeute</span><span class="text-sm leading-5 text-ezer-muted">Accompagnement gratuit</span></span>
+                        </label>
+                        <label class="flex items-start gap-3 p-4 rounded-ezer cursor-pointer border border-ezer-borderMuted hover:border-ezer-green" data-choix="coach">
+                            <input type="checkbox" checked class="w-[22px] h-[22px] shrink-0 mt-0.5 accent-ezer-green">
+                            <span class="flex flex-col gap-0.5"><span class="font-semibold">Coach</span><span class="text-sm leading-5 text-ezer-muted">Suivi en plusieurs séances</span></span>
+                        </label>
+                        <label class="flex items-start gap-3 p-4 rounded-ezer cursor-pointer border border-ezer-borderMuted hover:border-ezer-green" data-choix="formation">
+                            <input type="checkbox" class="w-[22px] h-[22px] shrink-0 mt-0.5 accent-ezer-green">
+                            <span class="flex flex-col gap-0.5"><span class="font-semibold">Formateur·rice</span><span class="text-sm leading-5 text-ezer-muted">Animer des formations</span></span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- 3 -->
+                <fieldset class="border-0 min-w-0 flex flex-col gap-[18px]">
+                    <legend class="mb-4 font-cooper font-normal text-2xl leading-[30px]">3. Votre parcours</legend>
+                    <div class="flex flex-col gap-1.5">
+                        <label for="ca-exp" class="text-[15px] font-semibold">Années d'expérience</label>
+                        <select id="ca-exp" class="w-full sm:max-w-[320px] h-[52px] px-3.5 border border-ezer-borderMuted rounded-ezer bg-white focus:border-ezer-green focus:outline-none">
+                            <option>Choisissez</option>
+                            <option>Moins de 2 ans</option>
+                            <option>2 à 5 ans</option>
+                            <option>5 à 10 ans</option>
+                            <option>Plus de 10 ans</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <label for="ca-parcours" class="text-[15px] font-semibold">Formation et expérience</label>
+                        <span id="ca-parcours-aide" class="text-sm leading-5 text-ezer-muted">Diplômes, certifications, structures où vous avez exercé.</span>
+                        <textarea id="ca-parcours" rows="5" aria-describedby="ca-parcours-aide" class="w-full p-3 px-4 border border-ezer-borderMuted rounded-ezer text-base leading-6 focus:border-ezer-green focus:outline-none"></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- 4 -->
+                <fieldset class="border-0 min-w-0 flex flex-col gap-2.5">
+                    <legend class="mb-1.5 font-cooper font-normal text-2xl leading-[30px]">4. Vos domaines</legend>
+                    <span class="text-sm leading-5 text-ezer-muted">Choisissez ceux dans lesquels vous êtes à l'aise.</span>
+                    <div class="flex flex-wrap gap-2">
+                        <label class="inline-flex items-center gap-2 min-h-[44px] px-3.5 rounded-ezer text-[15px] cursor-pointer border border-ezer-borderMuted" data-choix="d1"><input type="checkbox" checked class="w-[18px] h-[18px] accent-ezer-green">Écoute et soutien</label>
+                        <label class="inline-flex items-center gap-2 min-h-[44px] px-3.5 rounded-ezer text-[15px] cursor-pointer border border-ezer-borderMuted" data-choix="d2"><input type="checkbox" class="w-[18px] h-[18px] accent-ezer-green">Deuil</label>
+                        <label class="inline-flex items-center gap-2 min-h-[44px] px-3.5 rounded-ezer text-[15px] cursor-pointer border border-ezer-borderMuted" data-choix="d3"><input type="checkbox" class="w-[18px] h-[18px] accent-ezer-green">Violences</label>
+                        <label class="inline-flex items-center gap-2 min-h-[44px] px-3.5 rounded-ezer text-[15px] cursor-pointer border border-ezer-borderMuted" data-choix="d4"><input type="checkbox" class="w-[18px] h-[18px] accent-ezer-green">Parentalité</label>
+                        <label class="inline-flex items-center gap-2 min-h-[44px] px-3.5 rounded-ezer text-[15px] cursor-pointer border border-ezer-borderMuted" data-choix="d5"><input type="checkbox" class="w-[18px] h-[18px] accent-ezer-green">Jeunesse</label>
+                        <label class="inline-flex items-center gap-2 min-h-[44px] px-3.5 rounded-ezer text-[15px] cursor-pointer border border-ezer-borderMuted" data-choix="d6"><input type="checkbox" class="w-[18px] h-[18px] accent-ezer-green">Insertion professionnelle</label>
+                        <label class="inline-flex items-center gap-2 min-h-[44px] px-3.5 rounded-ezer text-[15px] cursor-pointer border border-ezer-borderMuted" data-choix="d7"><input type="checkbox" checked class="w-[18px] h-[18px] accent-ezer-green">Confiance en soi</label>
+                        <label class="inline-flex items-center gap-2 min-h-[44px] px-3.5 rounded-ezer text-[15px] cursor-pointer border border-ezer-borderMuted" data-choix="d8"><input type="checkbox" checked class="w-[18px] h-[18px] accent-ezer-green">Gestion du stress</label>
+                        <label class="inline-flex items-center gap-2 min-h-[44px] px-3.5 rounded-ezer text-[15px] cursor-pointer border border-ezer-borderMuted" data-choix="d9"><input type="checkbox" class="w-[18px] h-[18px] accent-ezer-green">Autre</label>
+                    </div>
+                </fieldset>
+
+                <!-- 5 -->
+                <fieldset class="border-0 min-w-0 flex flex-col gap-3.5">
+                    <legend class="mb-1.5 font-cooper font-normal text-2xl leading-[30px]">5. Vos disponibilités</legend>
+                    <span class="text-sm leading-5 text-ezer-muted">Cochez les créneaux où vous êtes généralement libre.</span>
+                    <div class="overflow-x-auto border border-ezer-green-border rounded-ezer">
+                        <table class="w-full text-[15px]">
+                            <caption class="sr-only">Disponibilités par jour et moment</caption>
+                            <thead>
+                                <tr class="bg-ezer-green-light">
+                                    <th scope="col" class="py-2.5 px-3 text-left font-semibold">Jour</th>
+                                    <th scope="col" class="py-2.5 px-1.5 font-semibold text-center">Matin</th>
+                                    <th scope="col" class="py-2.5 px-1.5 font-semibold text-center">Après-midi</th>
+                                    <th scope="col" class="py-2.5 px-1.5 font-semibold text-center">Soir</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t border-ezer-green-borderLight">
+                                    <th scope="row" class="px-3 py-1.5 text-left font-semibold">Lundi</th>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Lundi matin" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Lundi après-midi" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" checked aria-label="Lundi soir" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                </tr>
+                                <tr class="border-t border-ezer-green-borderLight">
+                                    <th scope="row" class="px-3 py-1.5 text-left font-semibold">Mardi</th>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Mardi matin" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" checked aria-label="Mardi après-midi" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Mardi soir" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                </tr>
+                                <tr class="border-t border-ezer-green-borderLight">
+                                    <th scope="row" class="px-3 py-1.5 text-left font-semibold">Mercredi</th>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Mercredi matin" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Mercredi après-midi" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" checked aria-label="Mercredi soir" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                </tr>
+                                <tr class="border-t border-ezer-green-borderLight">
+                                    <th scope="row" class="px-3 py-1.5 text-left font-semibold">Jeudi</th>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Jeudi matin" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" checked aria-label="Jeudi après-midi" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Jeudi soir" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                </tr>
+                                <tr class="border-t border-ezer-green-borderLight">
+                                    <th scope="row" class="px-3 py-1.5 text-left font-semibold">Vendredi</th>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Vendredi matin" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Vendredi après-midi" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Vendredi soir" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                </tr>
+                                <tr class="border-t border-ezer-green-borderLight">
+                                    <th scope="row" class="px-3 py-1.5 text-left font-semibold">Samedi</th>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" checked aria-label="Samedi matin" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" checked aria-label="Samedi après-midi" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Samedi soir" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                </tr>
+                                <tr class="border-t border-ezer-green-borderLight">
+                                    <th scope="row" class="px-3 py-1.5 text-left font-semibold">Dimanche</th>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Dimanche matin" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Dimanche après-midi" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                    <td class="text-center"><label class="inline-flex w-11 h-11 items-center justify-center cursor-pointer"><input type="checkbox" aria-label="Dimanche soir" class="w-[22px] h-[22px] accent-ezer-green"></label></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-[18px]">
+                        <div class="flex flex-col gap-1.5">
+                            <label for="ca-heures" class="text-[15px] font-semibold">Heures par semaine</label>
+                            <select id="ca-heures" class="w-full h-[52px] px-3.5 border border-ezer-borderMuted rounded-ezer bg-white focus:border-ezer-green focus:outline-none">
+                                <option>Moins de 2 h</option>
+                                <option selected>2 à 5 h</option>
+                                <option>5 à 10 h</option>
+                                <option>Plus de 10 h</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <span class="text-[15px] font-semibold">Je peux intervenir</span>
+                            <div class="flex flex-wrap gap-2">
+                                <label class="inline-flex items-center gap-2 min-h-[44px] px-3.5 rounded-ezer text-[15px] cursor-pointer border-2 border-ezer-green bg-ezer-green-light"><input type="checkbox" checked class="w-[18px] h-[18px] accent-ezer-green">En ligne</label>
+                                <label class="inline-flex items-center gap-2 min-h-[44px] px-3.5 rounded-ezer text-[15px] cursor-pointer border border-ezer-borderMuted hover:border-ezer-green"><input type="checkbox" class="w-[18px] h-[18px] accent-ezer-green">Au siège, à Lomé</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- 6 -->
+                <fieldset class="border-0 min-w-0 flex flex-col gap-1.5">
+                    <legend class="mb-4 font-cooper font-normal text-2xl leading-[30px]">6. Votre motivation</legend>
+                    <label for="ca-motiv" class="text-[15px] font-semibold">Pourquoi souhaitez-vous rejoindre Ezer Home ?</label>
+                    <textarea id="ca-motiv" rows="5" class="w-full p-3 px-4 border border-ezer-borderMuted rounded-ezer text-base leading-6 focus:border-ezer-green focus:outline-none"></textarea>
+                    <span class="text-[13px] leading-[18px] text-ezer-muted">Quelques lignes suffisent.</span>
+                </fieldset>
+
+                <!-- 7 -->
+                <fieldset class="border-0 min-w-0 flex flex-col gap-3.5">
+                    <legend class="mb-1.5 font-cooper font-normal text-2xl leading-[30px]">7. Vos pièces</legend>
+                    <span class="text-sm leading-5 text-ezer-muted">Format PDF, 5 Mo maximum par fichier. Sur une connexion lente, l'envoi peut prendre une minute.</span>
+
+                    <div class="flex flex-col gap-2">
+                        <span class="text-[15px] font-semibold">CV</span>
+                        <div class="flex items-center gap-3 p-3 px-3.5 border border-ezer-green-border rounded-ezer bg-ezer-green-light">
+                            <svg aria-hidden="true" class="shrink-0 w-[22px] h-[22px] text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"></path><path d="M14 3v5h5M9 14l2 2 4-4"></path></svg>
+                            <span class="flex-1 min-w-0 flex flex-col">
+                                <span class="font-semibold truncate">CV_Mensah_Kodjo.pdf</span>
+                                <span class="text-[13px] leading-[18px] text-ezer-muted">240 Ko · envoyé</span>
+                            </span>
+                            <button type="button" class="shrink-0 min-h-[44px] px-2 border-0 text-sm font-semibold underline hover:no-underline">Retirer</button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <span class="text-[15px] font-semibold">Diplômes et certificats</span>
+                        <label class="flex items-center justify-center gap-2.5 min-h-[64px] p-3 border-2 border-dashed border-ezer-borderMuted rounded-ezer text-ezer-green font-semibold cursor-pointer hover:bg-ezer-green-pale transition-colors">
+                            <svg aria-hidden="true" class="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"></path></svg>
+                            Ajouter un fichier PDF
+                            <input type="file" accept="application/pdf" class="sr-only">
+                        </label>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <span class="text-[15px] font-semibold">Lettre de recommandation <span class="font-normal text-ezer-muted">(facultatif)</span></span>
+                        <label class="flex items-center justify-center gap-2.5 min-h-[64px] p-3 border-2 border-dashed border-ezer-borderMuted rounded-ezer text-ezer-green font-semibold cursor-pointer hover:bg-ezer-green-pale transition-colors">
+                            <svg aria-hidden="true" class="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"></path></svg>
+                            Ajouter un fichier PDF
+                            <input type="file" accept="application/pdf" class="sr-only">
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- 8 -->
+                <fieldset class="border-0 min-w-0 flex flex-col gap-3.5">
+                    <legend class="mb-1.5 font-cooper font-normal text-2xl leading-[30px]">8. La charte de l'intervenant</legend>
+                    <div class="p-[18px] px-5 rounded-ezer bg-ezer-green-light flex flex-col gap-2.5">
+                        <span class="text-sm leading-5 text-ezer-muted">Version 1.0 · en vigueur depuis le [date]</span>
+                        <ul class="flex flex-col gap-2 text-[15px] leading-[22px]">
+                            <li class="flex gap-2.5"><svg aria-hidden="true" class="shrink-0 mt-1 w-4 h-4 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Respecter la confidentialité absolue des échanges.</span></li>
+                            <li class="flex gap-2.5"><svg aria-hidden="true" class="shrink-0 mt-1 w-4 h-4 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Accompagner sans jugement, sans prosélytisme et sans contrepartie personnelle.</span></li>
+                            <li class="flex gap-2.5"><svg aria-hidden="true" class="shrink-0 mt-1 w-4 h-4 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Rédiger des notes factuelles après chaque réunion, sur la plateforme uniquement.</span></li>
+                            <li class="flex gap-2.5"><svg aria-hidden="true" class="shrink-0 mt-1 w-4 h-4 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Orienter vers un professionnel ou les urgences quand la situation le demande.</span></li>
+                            <li class="flex gap-2.5"><svg aria-hidden="true" class="shrink-0 mt-1 w-4 h-4 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg><span>Signaler au bureau toute situation de danger.</span></li>
+                        </ul>
+                        <a href="#charte-intervenant.pdf" class="self-start inline-flex items-center min-h-[44px] font-semibold text-ezer-green hover:underline">Lire la charte complète (PDF)</a>
+                    </div>
+                    <label id="ca-charte-label" class="flex items-start gap-3 p-4 rounded-ezer text-[15px] leading-[22px] cursor-pointer border border-ezer-borderMuted">
+                        <input id="ca-charte" type="checkbox" class="w-6 h-6 shrink-0 mt-0.5 accent-ezer-green">
+                        J'ai lu la charte de l'intervenant (version 1.0) et je m'engage à la respecter.
+                    </label>
+                    <label class="flex items-start gap-3 text-[15px] leading-[22px] cursor-pointer">
+                        <input type="checkbox" class="w-6 h-6 shrink-0 mt-0.5 accent-ezer-green">
+                        J'accepte qu'Ezer Home conserve ma candidature pendant [12 mois] pour l'étudier.
+                    </label>
+                </fieldset>
+
+                <div class="flex flex-wrap gap-3 pt-6 border-t border-ezer-green-borderLight">
+                    <button id="ca-envoyer" type="button" disabled class="flex-1 min-w-[260px] inline-flex items-center justify-center min-h-[56px] rounded-ezer border-0 bg-ezer-muted text-white text-[17px] font-semibold">Envoyer ma candidature</button>
+                    <button type="button" class="flex-1 min-w-[200px] min-h-[56px] border-2 border-ezer-green rounded-ezer bg-white text-ezer-green text-base font-semibold hover:bg-ezer-green-light transition-colors">Enregistrer et reprendre plus tard</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div data-layout="footer"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var charte = document.getElementById('ca-charte');
+            var label = document.getElementById('ca-charte-label');
+            var envoyer = document.getElementById('ca-envoyer');
+
+            function maj() {
+                var ok = charte.checked;
+                envoyer.disabled = !ok;
+                envoyer.classList.toggle('bg-ezer-green', ok);
+                envoyer.classList.toggle('bg-ezer-muted', !ok);
+                envoyer.classList.toggle('hover:bg-ezer-green-dark', ok);
+                label.classList.toggle('border-2', ok);
+                label.classList.toggle('border-ezer-green', ok);
+                label.classList.toggle('border', !ok);
+                label.classList.toggle('border-ezer-borderMuted', !ok);
+            }
+            charte.addEventListener('change', maj);
+            envoyer.addEventListener('click', function () {
+                if (!charte.checked) return;
+                window.location.href = 'candidature-attente.html';
+            });
+
+            document.querySelectorAll('label[data-choix]').forEach(function (l) {
+                var box = l.querySelector('input[type="checkbox"]');
+                function majCarte() {
+                    l.classList.toggle('border-2', box.checked);
+                    l.classList.toggle('border-ezer-green', box.checked);
+                    l.classList.toggle('bg-ezer-green-light', box.checked);
+                    l.classList.toggle('border', !box.checked);
+                    l.classList.toggle('border-ezer-borderMuted', !box.checked);
+                }
+                box.addEventListener('change', majCarte);
+                majCarte();
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidature envoyée — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="header" data-active="a-propos"></div>
+
+    <main>
+        <section class="bg-ezer-green-light">
+            <div class="max-w-[880px] mx-auto px-4 py-6 lg:px-8 lg:py-12 lg:pb-14 flex flex-col gap-3">
+                <nav aria-label="Fil d'Ariane" class="text-sm leading-5">
+                    <ol class="flex flex-wrap gap-2 list-none text-ezer-muted">
+                        <li><a href="../site/accueil.html" class="text-ezer-green font-semibold hover:underline">Accueil</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li><a href="../site/equipe.html" class="text-ezer-green font-semibold hover:underline">Notre équipe</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li aria-current="page">Devenir intervenant</li>
+                    </ol>
+                </nav>
+                <h1 class="font-cooper font-normal text-[30px] leading-9 lg:text-[44px] lg:leading-[52px]">Votre candidature est bien arrivée</h1>
+            </div>
+        </section>
+
+        <div class="max-w-[880px] mx-auto px-4 py-8 lg:px-8 lg:py-14 lg:pb-[88px]">
+            <div class="max-w-[600px] flex flex-col gap-6">
+
+                <span class="self-start inline-flex items-center gap-1.5 text-[13px] leading-[18px] font-semibold px-3 py-1 rounded-ezer border border-ezer-dark">
+                    <svg aria-hidden="true" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+                    En cours d'examen
+                </span>
+
+                <p class="text-[17px] leading-[1.6]">Merci pour votre candidature. Le comité de validation va l'étudier avec soin. Vous serez prévenu(e) par SMS et par e-mail à chaque étape.</p>
+
+                <div class="bg-ezer-green-light rounded-ezer p-5 flex flex-col gap-1">
+                    <span class="text-xs leading-4 font-semibold uppercase tracking-[0.08em] text-ezer-green">Référence</span>
+                    <span class="font-cooper text-[26px] leading-[34px]">CAND-2026-0014</span>
+                    <span class="text-sm leading-5 text-ezer-muted">Envoyée le [date] · Rôles : écoutant·e, coach</span>
+                </div>
+
+                <ol class="flex flex-col">
+                    <li aria-current="false" class="flex gap-3.5">
+                        <div aria-hidden="true" class="shrink-0 flex flex-col items-center">
+                            <span class="w-[26px] h-[26px] rounded-full bg-ezer-green inline-flex items-center justify-center text-white">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+                            </span>
+                            <span class="flex-1 w-0.5 min-h-3 bg-ezer-green"></span>
+                        </div>
+                        <div class="flex flex-col pb-[18px]">
+                            <span class="font-normal">Candidature reçue<span class="sr-only"> (terminé)</span></span>
+                            <span class="text-sm leading-5 text-ezer-muted">Le [date]</span>
+                        </div>
+                    </li>
+                    <li aria-current="step" class="flex gap-3.5">
+                        <div aria-hidden="true" class="shrink-0 flex flex-col items-center">
+                            <span class="w-[26px] h-[26px] rounded-full border-[3px] border-ezer-green bg-white inline-flex items-center justify-center text-white"></span>
+                            <span class="flex-1 w-0.5 min-h-3 bg-ezer-green-border"></span>
+                        </div>
+                        <div class="flex flex-col pb-[18px]">
+                            <span class="font-semibold">Examen par le comité de validation<span class="sr-only"> (en cours)</span></span>
+                            <span class="text-sm leading-5 text-ezer-muted">En cours</span>
+                        </div>
+                    </li>
+                    <li aria-current="false" class="flex gap-3.5">
+                        <div aria-hidden="true" class="shrink-0 flex flex-col items-center">
+                            <span class="w-[26px] h-[26px] rounded-full border-2 border-ezer-borderMuted bg-white inline-flex items-center justify-center"></span>
+                            <span class="flex-1 w-0.5 min-h-3 bg-ezer-green-border"></span>
+                        </div>
+                        <div class="flex flex-col pb-[18px]">
+                            <span class="text-ezer-muted">Entretien avec le comité<span class="sr-only"> (à venir)</span></span>
+                            <span class="text-sm leading-5 text-ezer-muted">Par appel ou au siège</span>
+                        </div>
+                    </li>
+                    <li aria-current="false" class="flex gap-3.5">
+                        <div aria-hidden="true" class="shrink-0 flex flex-col items-center">
+                            <span class="w-[26px] h-[26px] rounded-full border-2 border-ezer-borderMuted bg-white inline-flex items-center justify-center"></span>
+                            <span class="w-0.5"></span>
+                        </div>
+                        <div>
+                            <span class="text-ezer-muted">Décision et accueil<span class="sr-only"> (à venir)</span></span>
+                            <span class="block text-sm leading-5 text-ezer-muted">Vous recevez vos accès à l'espace thérapeute / coach</span>
+                        </div>
+                    </li>
+                </ol>
+
+                <p class="text-[15px] leading-[22px]">Délai habituel : <strong class="font-semibold">[3 semaines]</strong>. Le comité peut vous demander une pièce complémentaire.</p>
+
+                <div class="flex flex-wrap gap-3">
+                    <a href="#ajouter-piece" class="inline-flex items-center justify-center min-h-[52px] px-6 border-2 border-ezer-green rounded-ezer text-ezer-green font-semibold hover:bg-ezer-green-light transition-colors">Ajouter une pièce</a>
+                    <a href="../site/accueil.html" class="inline-flex items-center justify-center min-h-[52px] px-6 rounded-ezer bg-ezer-green text-white font-semibold hover:bg-ezer-green-dark transition-colors">Retour à l'accueil</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="footer"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

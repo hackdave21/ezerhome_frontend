@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilisateurs — Administration Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+    <style>.chip-actif{background:#187d50;color:#fff;border:2px solid #187d50}.chip-inactif{background:#fff;color:#0e1c03;border:1px solid #6f8577}</style>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="admin" data-user="Yawo" data-initiales="YA" data-role="admin"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="admin" data-actif="utilisateurs"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8">
+
+            <div data-etat-switcher="adm-us" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+                <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+                <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Liste des comptes</button>
+                <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+                <button type="button" data-etat-btn="vide" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. Aucun résultat</button>
+                <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">4. Erreur</button>
+            </div>
+
+            <div data-etat="adm-us" data-etat-panes
+                data-chargement-titre="Chargement des utilisateurs…"
+                data-vide-titre="Aucun utilisateur ne correspond à la recherche."
+                data-vide-texte="Vérifiez l'orthographe ou cherchez par numéro de téléphone."
+                data-vide-cta="Effacer la recherche"
+                data-vide-href="utilisateurs.html"
+                data-erreur-titre="Impossible d'afficher les utilisateurs pour le moment."
+                data-erreur-code="EZ-UTI-503">
+
+                <div data-etat-pane="normal" class="flex flex-col gap-5">
+
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <h1 class="font-cooper font-normal text-2xl lg:text-[32px]">Utilisateurs</h1>
+                        <span class="text-sm text-ezer-muted">412 comptes · 9 intervenants · 4 membres du comité</span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2.5 items-end">
+                        <div class="flex flex-col gap-1.5 flex-[1_1_280px]">
+                            <label for="us-rech" class="text-sm font-semibold">Rechercher</label>
+                            <input id="us-rech" type="search" placeholder="Nom, pseudonyme, téléphone ou e-mail" class="w-full h-[52px] px-3.5 border border-ezer-borderMuted rounded-ezer bg-white focus:border-ezer-green focus:outline-none">
+                        </div>
+                        <div role="group" aria-label="Filtrer par rôle" id="filtres-role" class="flex flex-wrap gap-1.5">
+                            <button type="button" data-role="tous" aria-pressed="true" class="chip-actif min-h-[44px] px-3 rounded-ezer font-semibold text-sm">Tous</button>
+                            <button type="button" data-role="consultant" aria-pressed="false" class="chip-inactif min-h-[44px] px-3 rounded-ezer font-semibold text-sm">Consultants</button>
+                            <button type="button" data-role="intervenant" aria-pressed="false" class="chip-inactif min-h-[44px] px-3 rounded-ezer font-semibold text-sm">Intervenants</button>
+                            <button type="button" data-role="comite" aria-pressed="false" class="chip-inactif min-h-[44px] px-3 rounded-ezer font-semibold text-sm">Comité</button>
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto border border-ezer-green-border rounded-ezer">
+                        <table class="w-full min-w-[860px] text-[15px]">
+                            <caption class="sr-only">Comptes utilisateurs</caption>
+                            <thead>
+                                <tr class="bg-ezer-green-light text-left">
+                                    <th scope="col" class="py-3 px-3.5 font-semibold">Nom</th>
+                                    <th scope="col" class="py-3 px-3.5 font-semibold">Contact</th>
+                                    <th scope="col" class="py-3 px-3.5 font-semibold">Rôle</th>
+                                    <th scope="col" class="py-3 px-3.5 font-semibold">Statut</th>
+                                    <th scope="col" class="py-3 px-3.5 font-semibold">Dernière connexion</th>
+                                    <th scope="col" class="py-3 px-3.5 font-semibold">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="lignes-utilisateurs">
+                                <tr data-role-ligne="consultant" data-rech="afi +228 90 56" class="border-t border-ezer-green-borderLight">
+                                    <th scope="row" class="py-2.5 px-3.5 text-left font-semibold">Afi</th>
+                                    <td class="py-2.5 px-3.5 text-ezer-muted">+228 90 •• •• 56</td>
+                                    <td class="py-2.5 px-3.5">
+                                        <label class="sr-only" for="role-u1">Rôle de Afi</label>
+                                        <select id="role-u1" data-r="consultant" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none">
+                                            <option selected>Consultant</option><option>Thérapeute</option><option>Coach / formateur</option><option>Comité d'assistance</option><option>Admin</option>
+                                        </select>
+                                    </td>
+                                    <td class="py-2.5 px-3.5"><span data-statut="actif" class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border bg-white whitespace-nowrap">Actif</span></td>
+                                    <td class="py-2.5 px-3.5">aujourd'hui</td>
+                                    <td class="py-2.5 px-3.5"><div class="flex flex-wrap gap-1.5"><button type="button" data-action="suspendre" class="min-h-[44px] px-2.5 border border-ezer-dark rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Suspendre</button><button type="button" data-action="desactiver" class="min-h-[44px] px-2.5 border border-ezer-dark rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Désactiver</button></div></td>
+                                </tr>
+                                <tr data-role-ligne="intervenant" data-rech="mawuli mawuli.a exemple.tg" class="border-t border-ezer-green-borderLight">
+                                    <th scope="row" class="py-2.5 px-3.5 text-left font-semibold">Mawuli A.</th>
+                                    <td class="py-2.5 px-3.5 text-ezer-muted">m•••@exemple.tg</td>
+                                    <td class="py-2.5 px-3.5">
+                                        <label class="sr-only" for="role-u2">Rôle de Mawuli A.</label>
+                                        <select id="role-u2" data-r="intervenant" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none">
+                                            <option>Consultant</option><option selected>Thérapeute</option><option>Coach / formateur</option><option>Comité d'assistance</option><option>Admin</option>
+                                        </select>
+                                    </td>
+                                    <td class="py-2.5 px-3.5"><span data-statut="actif" class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border bg-white whitespace-nowrap">Actif</span></td>
+                                    <td class="py-2.5 px-3.5">aujourd'hui</td>
+                                    <td class="py-2.5 px-3.5"><div class="flex flex-wrap gap-1.5"><button type="button" data-action="suspendre" class="min-h-[44px] px-2.5 border border-ezer-dark rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Suspendre</button><button type="button" data-action="desactiver" class="min-h-[44px] px-2.5 border border-ezer-dark rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Désactiver</button></div></td>
+                                </tr>
+                                <tr data-role-ligne="consultant" data-rech="kossi +228 93 18" class="border-t border-ezer-green-borderLight">
+                                    <th scope="row" class="py-2.5 px-3.5 text-left font-semibold">Kossi</th>
+                                    <td class="py-2.5 px-3.5 text-ezer-muted">+228 93 •• •• 18</td>
+                                    <td class="py-2.5 px-3.5">
+                                        <label class="sr-only" for="role-u3">Rôle de Kossi</label>
+                                        <select id="role-u3" data-r="consultant" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none">
+                                            <option selected>Consultant</option><option>Thérapeute</option><option>Coach / formateur</option><option>Comité d'assistance</option><option>Admin</option>
+                                        </select>
+                                    </td>
+                                    <td class="py-2.5 px-3.5"><span data-statut="actif" class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border bg-white whitespace-nowrap">Actif</span></td>
+                                    <td class="py-2.5 px-3.5">hier</td>
+                                    <td class="py-2.5 px-3.5"><div class="flex flex-wrap gap-1.5"><button type="button" data-action="suspendre" class="min-h-[44px] px-2.5 border border-ezer-dark rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Suspendre</button><button type="button" data-action="desactiver" class="min-h-[44px] px-2.5 border border-ezer-dark rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Désactiver</button></div></td>
+                                </tr>
+                                <tr data-role-ligne="intervenant" data-rech="esi k. +228 92 77" class="border-t border-ezer-green-borderLight">
+                                    <th scope="row" class="py-2.5 px-3.5 text-left font-semibold">Esi K.</th>
+                                    <td class="py-2.5 px-3.5 text-ezer-muted">+228 92 •• •• 77</td>
+                                    <td class="py-2.5 px-3.5">
+                                        <label class="sr-only" for="role-u4">Rôle de Esi K.</label>
+                                        <select id="role-u4" data-r="intervenant" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none">
+                                            <option>Consultant</option><option>Thérapeute</option><option selected>Coach / formateur</option><option>Comité d'assistance</option><option>Admin</option>
+                                        </select>
+                                    </td>
+                                    <td class="py-2.5 px-3.5"><span data-statut="suspendu" class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border-2 border-ezer-brown bg-white whitespace-nowrap">Suspendu</span></td>
+                                    <td class="py-2.5 px-3.5">il y a 2 semaines</td>
+                                    <td class="py-2.5 px-3.5"><div class="flex flex-wrap gap-1.5"><button type="button" data-action="desactiver" class="min-h-[44px] px-2.5 border border-ezer-dark rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Désactiver</button><button type="button" data-action="reactiver" class="min-h-[44px] px-2.5 border-0 rounded-ezer bg-ezer-green text-white text-[13px] font-semibold hover:bg-ezer-green-dark transition-colors">Réactiver</button></div></td>
+                                </tr>
+                                <tr data-role-ligne="comite" data-rech="ablavi b. ablavi.b exemple.tg" class="border-t border-ezer-green-borderLight">
+                                    <th scope="row" class="py-2.5 px-3.5 text-left font-semibold">Ablavi B.</th>
+                                    <td class="py-2.5 px-3.5 text-ezer-muted">a•••@exemple.tg</td>
+                                    <td class="py-2.5 px-3.5">
+                                        <label class="sr-only" for="role-u5">Rôle de Ablavi B.</label>
+                                        <select id="role-u5" data-r="comite" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none">
+                                            <option>Consultant</option><option>Thérapeute</option><option>Coach / formateur</option><option selected>Comité d'assistance</option><option>Admin</option>
+                                        </select>
+                                    </td>
+                                    <td class="py-2.5 px-3.5"><span data-statut="actif" class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border bg-white whitespace-nowrap">Actif</span></td>
+                                    <td class="py-2.5 px-3.5">il y a 2 jours</td>
+                                    <td class="py-2.5 px-3.5"><div class="flex flex-wrap gap-1.5"><button type="button" data-action="suspendre" class="min-h-[44px] px-2.5 border border-ezer-dark rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Suspendre</button><button type="button" data-action="desactiver" class="min-h-[44px] px-2.5 border border-ezer-dark rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Désactiver</button></div></td>
+                                </tr>
+                                <tr data-role-ligne="consultant" data-rech="komla +228 97 40" class="border-t border-ezer-green-borderLight">
+                                    <th scope="row" class="py-2.5 px-3.5 text-left font-semibold">Komla</th>
+                                    <td class="py-2.5 px-3.5 text-ezer-muted">+228 97 •• •• 40</td>
+                                    <td class="py-2.5 px-3.5">
+                                        <label class="sr-only" for="role-u6">Rôle de Komla</label>
+                                        <select id="role-u6" data-r="consultant" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none">
+                                            <option selected>Consultant</option><option>Thérapeute</option><option>Coach / formateur</option><option>Comité d'assistance</option><option>Admin</option>
+                                        </select>
+                                    </td>
+                                    <td class="py-2.5 px-3.5"><span data-statut="desactive" class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full border border-dashed border-ezer-borderMuted bg-white text-ezer-muted whitespace-nowrap">Désactivé</span></td>
+                                    <td class="py-2.5 px-3.5">il y a 14 mois</td>
+                                    <td class="py-2.5 px-3.5"><div class="flex flex-wrap gap-1.5"><button type="button" data-action="reactiver" class="min-h-[44px] px-2.5 border-0 rounded-ezer bg-ezer-green text-white text-[13px] font-semibold hover:bg-ezer-green-dark transition-colors">Réactiver</button></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="text-[13px] text-ezer-muted">Chaque changement de rôle ou de statut est journalisé avec votre nom et la date. La personne est prévenue par SMS.</p>
+
+                    <section aria-labelledby="us-proches" class="flex flex-col gap-2.5 p-4.5 border-2 border-ezer-brown rounded-ezer">
+                        <div class="flex flex-col">
+                            <h2 id="us-proches" class="text-lg font-semibold">Comptes proches de la désactivation</h2>
+                            <span class="text-[13px] text-ezer-muted leading-[18px]">Sans connexion depuis plus de [11 mois]. Désactivation automatique à [12 mois].</span>
+                        </div>
+                        <ul class="flex flex-col border-t border-ezer-green-borderLight list-none">
+                            <li class="flex flex-wrap items-center gap-2 gap-x-4 py-2.5 border-b border-ezer-green-borderLight">
+                                <span class="flex-[1_1_220px] flex flex-col"><span class="font-semibold">Yao</span><span class="text-[13px] text-ezer-muted">Consultant · dernière connexion le [date]</span></span>
+                                <span class="text-[13px] font-semibold">Désactivé le [date]</span>
+                                <span class="flex gap-1.5"><button type="button" class="min-h-[44px] px-3 border-2 border-ezer-green rounded-ezer bg-white text-ezer-green text-[13px] font-semibold hover:bg-ezer-green-light transition-colors">Envoyer un rappel</button><button type="button" class="min-h-[44px] px-3 border border-ezer-borderMuted rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Prolonger de 6 mois</button></span>
+                            </li>
+                            <li class="flex flex-wrap items-center gap-2 gap-x-4 py-2.5 border-b border-ezer-green-borderLight">
+                                <span class="flex-[1_1_220px] flex flex-col"><span class="font-semibold">Mensah P.</span><span class="text-[13px] text-ezer-muted">Consultant · dernière connexion le [date]</span></span>
+                                <span class="text-[13px] font-semibold">Désactivé le [date]</span>
+                                <span class="flex gap-1.5"><button type="button" class="min-h-[44px] px-3 border-2 border-ezer-green rounded-ezer bg-white text-ezer-green text-[13px] font-semibold hover:bg-ezer-green-light transition-colors">Envoyer un rappel</button><button type="button" class="min-h-[44px] px-3 border border-ezer-borderMuted rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Prolonger de 6 mois</button></span>
+                            </li>
+                            <li class="flex flex-wrap items-center gap-2 gap-x-4 py-2.5 border-b border-ezer-green-borderLight">
+                                <span class="flex-[1_1_220px] flex flex-col"><span class="font-semibold">Dzifa</span><span class="text-[13px] text-ezer-muted">Consultante · dernière connexion le [date]</span></span>
+                                <span class="text-[13px] font-semibold">Désactivé le [date]</span>
+                                <span class="flex gap-1.5"><button type="button" class="min-h-[44px] px-3 border-2 border-ezer-green rounded-ezer bg-white text-ezer-green text-[13px] font-semibold hover:bg-ezer-green-light transition-colors">Envoyer un rappel</button><button type="button" class="min-h-[44px] px-3 border border-ezer-borderMuted rounded-ezer bg-white text-[13px] font-semibold hover:bg-ezer-green-pale transition-colors">Prolonger de 6 mois</button></span>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var role = 'tous';
+            var requete = '';
+
+            var STYLES = {
+                actif: { label: 'Actif', cls: 'border border-ezer-green bg-ezer-green-light text-ezer-green' },
+                suspendu: { label: 'Suspendu', cls: 'border-2 border-ezer-brown bg-white text-ezer-dark' },
+                desactive: { label: 'Désactivé', cls: 'border border-dashed border-ezer-borderMuted bg-white text-ezer-muted' }
+            };
+
+            function styliserChips() {
+                document.querySelectorAll('#filtres-role button').forEach(function (b) {
+                    var on = b.getAttribute('data-role') === role;
+                    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+                    b.classList.toggle('chip-actif', on);
+                    b.classList.toggle('chip-inactif', !on);
+                });
+            }
+
+            function appliquer() {
+                var visibles = 0;
+                document.querySelectorAll('#lignes-utilisateurs tr').forEach(function (tr) {
+                    var okRole = role === 'tous' || tr.getAttribute('data-role-ligne') === role;
+                    var okRech = !requete || tr.getAttribute('data-rech').indexOf(requete) >= 0 || tr.getAttribute('data-rech').toUpperCase().indexOf(requete.toUpperCase()) >= 0;
+                    var ok = okRole && okRech;
+                    tr.classList.toggle('hidden', !ok);
+                    if (ok) visibles++;
+                });
+            }
+
+            document.querySelectorAll('#filtres-role button').forEach(function (b) {
+                b.addEventListener('click', function () { role = b.getAttribute('data-role'); styliserChips(); appliquer(); });
+            });
+
+            document.getElementById('us-rech').addEventListener('input', function (e) { requete = e.target.value.trim(); appliquer(); });
+
+            function majStatut(tr, cible) {
+                var badge = tr.querySelector('[data-statut]');
+                var s = STYLES[cible === 'reactiver' ? 'actif' : (cible === 'suspendre' ? 'suspendu' : 'desactive')];
+                badge.setAttribute('data-statut', cible === 'reactiver' ? 'actif' : (cible === 'suspendre' ? 'suspendu' : 'desactive'));
+                badge.className = 'inline-block text-xs font-semibold px-2 py-0.5 rounded-full whitespace-nowrap ' + s.cls;
+                badge.textContent = s.label;
+
+                var boutons = cible === 'reactiver'
+                    ? ['suspendre', 'desactiver']
+                    : (cible === 'suspendre' ? ['desactiver', 'reactiver'] : ['reactiver']);
+                var actions = tr.querySelector('td:last-child div');
+                actions.innerHTML = boutons.map(function (a) {
+                    return a === 'reactiver'
+                        ? '<button type="button" data-action="reactiver" class="min-h-[44px] px-2.5 border-0 rounded-ezer bg-ezer-green text-white text-[13px] font-semibold">Réactiver</button>'
+                        : '<button type="button" data-action="' + a + '" class="min-h-[44px] px-2.5 border border-ezer-dark rounded-ezer bg-white text-[13px] font-semibold">' + (a === 'desactiver' ? 'Désactiver' : 'Suspendre') + '</button>';
+                }).join('');
+                lierActions(tr);
+            }
+
+            function lierActions(tr) {
+                tr.querySelectorAll('button[data-action]').forEach(function (btn) {
+                    if (btn.getAttribute('data-lie') === '1') return;
+                    btn.setAttribute('data-lie', '1');
+                    btn.addEventListener('click', function () { majStatut(tr, btn.getAttribute('data-action')); });
+                });
+            }
+
+            document.querySelectorAll('#lignes-utilisateurs tr').forEach(lierActions);
+        })();
+    </script>
+</body>
+</html>

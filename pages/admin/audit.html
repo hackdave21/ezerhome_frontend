@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal d'audit — Administration Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="admin" data-user="Yawo" data-initiales="YA" data-role="admin"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="admin" data-actif="audit"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8">
+
+            <div data-etat-switcher="adm-audit" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-wrap items-center gap-2">
+                <span class="text-xs font-semibold text-ezer-muted w-full">Mode de démonstration :</span>
+                <button type="button" data-etat-btn="normal" aria-pressed="true" class="px-3 py-1.5 rounded-ezer bg-ezer-dark text-white font-semibold text-xs">1. Journal d'audit</button>
+                <button type="button" data-etat-btn="chargement" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">2. Chargement</button>
+                <button type="button" data-etat-btn="vide" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">3. Aucun résultat</button>
+                <button type="button" data-etat-btn="erreur" aria-pressed="false" class="px-3 py-1.5 rounded-ezer bg-white text-ezer-dark font-semibold text-xs border border-ezer-borderMuted">4. Erreur</button>
+            </div>
+
+            <div data-etat="adm-audit" data-etat-panes
+                data-chargement-titre="Chargement du journal d'audit…"
+                data-vide-titre="Aucune action ne correspond aux filtres."
+                data-vide-texte="Élargissez la période ou retirez un filtre (qui, quoi, IP)."
+                data-vide-cta="Réinitialiser les filtres"
+                data-vide-href="audit.html"
+                data-erreur-titre="Impossible d'afficher le journal d'audit pour le moment."
+                data-erreur-code="EZ-AUD-503">
+
+                <div data-etat-pane="normal" class="flex flex-col gap-5">
+
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <h1 class="font-cooper font-normal text-2xl lg:text-[32px]">Journal d'audit</h1>
+                        <a href="#audit.csv" class="inline-flex items-center min-h-[44px] px-3.5 border-2 border-ezer-green rounded-ezer text-ezer-green font-semibold text-sm hover:bg-ezer-green-light transition-colors">Exporter la sélection (CSV)</a>
+                    </div>
+
+                    <p class="m-0 text-[15px] text-ezer-muted">Le journal ne peut être ni modifié ni supprimé. Conservation : [5 ans].</p>
+
+                    <div role="group" aria-label="Filtres du journal" class="grid grid-cols-2 lg:grid-cols-5 gap-2.5 items-end p-3.5 border border-ezer-green-border rounded-ezer">
+                        <div class="flex flex-col gap-1">
+                            <label for="au-qui" class="text-[13px] font-semibold">Qui</label>
+                            <select id="au-qui" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none"><option>Tout le monde</option><option>Yawo (admin)</option><option>Ablavi (comité)</option><option>Mawuli A. (thérapeute)</option></select>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label for="au-quoi" class="text-[13px] font-semibold">Quoi</label>
+                            <select id="au-quoi" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer bg-white text-sm focus:border-ezer-green focus:outline-none">
+                                <option value="tout">Toutes les actions</option>
+                                <option value="note">Consultation de note</option>
+                                <option value="statut">Changement de statut</option>
+                                <option value="paiement">Paiement confirmé</option>
+                                <option value="compte">Rôle ou statut de compte</option>
+                                <option value="connexion">Connexion</option>
+                                <option value="export">Export</option>
+                            </select>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label for="au-du" class="text-[13px] font-semibold">Du</label>
+                            <input id="au-du" type="date" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer text-sm focus:border-ezer-green focus:outline-none">
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label for="au-au" class="text-[13px] font-semibold">Au</label>
+                            <input id="au-au" type="date" class="h-[44px] px-2 border border-ezer-borderMuted rounded-ezer text-sm focus:border-ezer-green focus:outline-none">
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label for="au-ip" class="text-[13px] font-semibold">Adresse IP</label>
+                            <input id="au-ip" type="text" placeholder="Ex. 102.64." class="h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer text-sm focus:border-ezer-green focus:outline-none">
+                        </div>
+                    </div>
+
+                    <p id="au-compte" role="status" class="m-0 text-[13px] text-ezer-muted">10 événements · les adresses IP sont partiellement masquées à l'affichage</p>
+
+                    <div class="overflow-x-auto border border-ezer-green-border rounded-ezer">
+                        <table class="w-full min-w-[820px] text-sm">
+                            <caption class="sr-only">Journal d'audit</caption>
+                            <thead>
+                                <tr class="bg-ezer-green-light text-left">
+                                    <th scope="col" class="py-2.5 px-3 font-semibold">Quand</th>
+                                    <th scope="col" class="py-2.5 px-3 font-semibold">Qui</th>
+                                    <th scope="col" class="py-2.5 px-3 font-semibold">Quoi</th>
+                                    <th scope="col" class="py-2.5 px-3 font-semibold">Objet</th>
+                                    <th scope="col" class="py-2.5 px-3 font-semibold">IP</th>
+                                </tr>
+                            </thead>
+                            <tbody id="lignes-audit">
+                                <tr data-type="note" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2 px-3 whitespace-nowrap tabular-nums">[13/11] 16:41:07</td><td class="py-2 px-3">Yawo (admin)</td><td class="py-2 px-3 font-semibold">Consultation de note</td><td class="py-2 px-3">Note : Mawuli A. avec Afi, 13/11</td><td class="py-2 px-3 font-mono text-[13px]">102.64.●●.18</td>
+                                </tr>
+                                <tr data-type="paiement" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2 px-3 whitespace-nowrap tabular-nums">[13/11] 16:30:52</td><td class="py-2 px-3">Yawo (admin)</td><td class="py-2 px-3">Paiement confirmé</td><td class="py-2 px-3">CMD-2026-00086 · 20 000 F</td><td class="py-2 px-3 font-mono text-[13px]">102.64.●●.18</td>
+                                </tr>
+                                <tr data-type="note" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2 px-3 whitespace-nowrap tabular-nums">[13/11] 15:52:10</td><td class="py-2 px-3">Mawuli A. (thérapeute)</td><td class="py-2 px-3 font-semibold">Note verrouillée</td><td class="py-2 px-3">Réunion avec Afi, 13/11</td><td class="py-2 px-3 font-mono text-[13px]">154.66.●●.201</td>
+                                </tr>
+                                <tr data-type="statut" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2 px-3 whitespace-nowrap tabular-nums">[13/11] 14:20:33</td><td class="py-2 px-3">Ablavi (comité)</td><td class="py-2 px-3">Changement de statut</td><td class="py-2 px-3">ASS-2026-00042 : Reçue → En examen</td><td class="py-2 px-3 font-mono text-[13px]">41.207.●●.9</td>
+                                </tr>
+                                <tr data-type="compte" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2 px-3 whitespace-nowrap tabular-nums">[13/11] 11:05:47</td><td class="py-2 px-3">Yawo (admin)</td><td class="py-2 px-3">Rôle modifié</td><td class="py-2 px-3">Esi K. : Thérapeute → Coach / formateur</td><td class="py-2 px-3 font-mono text-[13px]">102.64.●●.18</td>
+                                </tr>
+                                <tr data-type="compte" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2 px-3 whitespace-nowrap tabular-nums">[13/11] 10:12:02</td><td class="py-2 px-3">Yawo (admin)</td><td class="py-2 px-3">Compte suspendu</td><td class="py-2 px-3">Esi K.</td><td class="py-2 px-3 font-mono text-[13px]">102.64.●●.18</td>
+                                </tr>
+                                <tr data-type="connexion" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2 px-3 whitespace-nowrap tabular-nums">[13/11] 09:58:21</td><td class="py-2 px-3">Yawo (admin)</td><td class="py-2 px-3">Connexion</td><td class="py-2 px-3">Double authentification réussie</td><td class="py-2 px-3 font-mono text-[13px]">102.64.●●.18</td>
+                                </tr>
+                                <tr data-type="connexion" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2 px-3 whitespace-nowrap tabular-nums">[12/11] 19:44:05</td><td class="py-2 px-3">Inconnu</td><td class="py-2 px-3 font-semibold">Connexion échouée</td><td class="py-2 px-3">Compte y•••@exemple.tg · 3 essais</td><td class="py-2 px-3 font-mono text-[13px]">197.234.●●.77</td>
+                                </tr>
+                                <tr data-type="export" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2 px-3 whitespace-nowrap tabular-nums">[12/11] 18:03:16</td><td class="py-2 px-3">Ablavi (comité)</td><td class="py-2 px-3">Export</td><td class="py-2 px-3">Demandes d'assistance · octobre (CSV)</td><td class="py-2 px-3 font-mono text-[13px]">41.207.●●.9</td>
+                                </tr>
+                                <tr data-type="compte" class="border-t border-ezer-green-borderLight">
+                                    <td class="py-2 px-3 whitespace-nowrap tabular-nums">[12/11] 17:30:40</td><td class="py-2 px-3">Yawo (admin)</td><td class="py-2 px-3">Paramètre modifié</td><td class="py-2 px-3">Durée de réservation : 72 h → 48 h</td><td class="py-2 px-3 font-mono text-[13px]">102.64.●●.18</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p id="au-vide-lignes" hidden class="m-0 text-[13px] text-ezer-muted">Aucune ligne ne correspond. Changez le filtre « Quoi ».</p>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var quoi = document.getElementById('au-quoi');
+            var compte = document.getElementById('au-compte');
+            var videlignes = document.getElementById('au-vide-lignes');
+
+            function filtrer() {
+                var cible = quoi.value;
+                var visibles = 0;
+                document.querySelectorAll('#lignes-audit tr').forEach(function (tr) {
+                    var ok = cible === 'tout' || tr.getAttribute('data-type') === cible;
+                    tr.hidden = !ok;
+                    if (ok) visibles++;
+                });
+                var total = document.querySelectorAll('#lignes-audit tr').length;
+                compte.textContent = visibles + ' événement' + (visibles > 1 ? 's' : '') + ' · les adresses IP sont partiellement masquées à l\'affichage';
+                videlignes.hidden = visibles > 0;
+            }
+
+            quoi.addEventListener('change', filtrer);
+        })();
+    </script>
+</body>
+</html>

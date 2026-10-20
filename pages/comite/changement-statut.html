@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changer le statut — ASS-2026-00042 — Comité Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="comite"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="comite" data-actif="demandes"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8 lg:gap-6">
+
+            <a href="demandes.html" class="self-start inline-flex items-center gap-1.5 min-h-[44px] text-[15px] font-semibold hover:text-ezer-green">
+                <svg aria-hidden="true" class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+                Toutes les demandes
+            </a>
+
+            <div class="flex flex-col gap-1.5">
+                <h1 class="font-cooper font-normal text-[26px] leading-8 lg:text-[32px] lg:leading-[38px] tabular-nums">ASS-2026-00042</h1>
+                <div class="flex flex-wrap items-center gap-2">
+                    <span class="inline-block text-[13px] font-semibold px-2.5 py-0.5 rounded-full border-2 border-ezer-brown">En examen</span>
+                    <span class="text-sm text-ezer-muted">Reçue le [date] à 09 h 12 · Logement</span>
+                </div>
+            </div>
+
+            <section aria-labelledby="cs-titre" class="lg:max-w-[720px] flex flex-col gap-5">
+                <h2 id="cs-titre" class="text-[22px] leading-[30px] font-semibold">Changer le statut</h2>
+
+                <fieldset class="border-0 min-w-0 flex flex-col gap-2">
+                    <legend class="mb-2 text-[15px] font-semibold">Nouveau statut</legend>
+                    <label class="flex items-center gap-3 min-h-[52px] px-3.5 py-2.5 rounded-ezer cursor-pointer" data-statut="recue">
+                        <input type="radio" name="cs-statut" class="w-5 h-5 shrink-0 accent-ezer-green">
+                        <span class="flex-1 font-semibold">Reçue</span>
+                    </label>
+                    <label class="flex items-center gap-3 min-h-[52px] px-3.5 py-2.5 rounded-ezer cursor-pointer" data-statut="examen">
+                        <input type="radio" name="cs-statut" class="w-5 h-5 shrink-0 accent-ezer-green" checked>
+                        <span class="flex-1 font-semibold">En examen</span>
+                        <span class="text-xs text-ezer-muted">statut actuel</span>
+                    </label>
+                    <label class="flex items-center gap-3 min-h-[52px] px-3.5 py-2.5 rounded-ezer cursor-pointer" data-statut="acceptee">
+                        <input type="radio" name="cs-statut" class="w-5 h-5 shrink-0 accent-ezer-green">
+                        <span class="flex-1 font-semibold">Acceptée</span>
+                    </label>
+                    <label class="flex items-center gap-3 min-h-[52px] px-3.5 py-2.5 rounded-ezer cursor-pointer" data-statut="close">
+                        <input type="radio" name="cs-statut" class="w-5 h-5 shrink-0 accent-ezer-green">
+                        <span class="flex-1 font-semibold">Close</span>
+                    </label>
+                    <label class="flex items-center gap-3 min-h-[52px] px-3.5 py-2.5 rounded-ezer cursor-pointer" data-statut="refusee">
+                        <input type="radio" name="cs-statut" class="w-5 h-5 shrink-0 accent-ezer-green">
+                        <span class="flex-1 font-semibold">Refusée</span>
+                    </label>
+                </fieldset>
+
+                <div class="flex flex-col gap-1.5">
+                    <label for="cs-msg" class="text-[15px] font-semibold">Message au demandeur</label>
+                    <span id="cs-msg-aide" class="text-sm leading-5 text-ezer-muted">Message-type proposé pour ce statut. Vous pouvez le modifier avant l'envoi.</span>
+                    <textarea id="cs-msg" rows="5" aria-describedby="cs-msg-aide cs-compte" class="w-full p-3 px-4 border border-ezer-borderMuted rounded-ezer text-base leading-6 focus:border-ezer-green focus:outline-none"></textarea>
+                    <div class="flex flex-wrap justify-between gap-2 text-[13px] leading-[18px] text-ezer-muted">
+                        <span id="cs-compte" aria-live="polite"></span>
+                        <button type="button" id="cs-reinit" class="min-h-[32px] border-0 text-ezer-green text-[13px] font-semibold underline hover:no-underline">Revenir au message-type</button>
+                    </div>
+                </div>
+
+                <div id="cs-bloc-motif" hidden class="flex flex-col gap-1.5">
+                    <label for="cs-motif" class="text-[15px] font-semibold">Motif du refus <span class="font-normal text-ezer-muted">(interne, non envoyé)</span></label>
+                    <textarea id="cs-motif" rows="2" class="w-full p-2.5 px-3.5 border border-ezer-borderMuted rounded-ezer text-base focus:border-ezer-green focus:outline-none"></textarea>
+                </div>
+
+                <label class="flex items-start gap-3 text-[15px] leading-[22px] cursor-pointer">
+                    <input type="checkbox" checked class="w-[22px] h-[22px] shrink-0 mt-0.5 accent-ezer-green">
+                    Envoyer aussi par SMS et WhatsApp au +228 90 •• •• 56
+                </label>
+
+                <div class="flex flex-wrap gap-2.5">
+                    <a href="fiche-demande.html" id="cs-enregistrer" class="flex-1 min-w-[220px] inline-flex items-center justify-center min-h-[52px] rounded-ezer bg-ezer-green text-white text-base font-semibold hover:bg-ezer-green-dark transition-colors">Enregistrer « Acceptée »</a>
+                    <a href="fiche-demande.html" class="inline-flex items-center justify-center min-h-[52px] px-6 w-full sm:w-auto sm:min-w-[160px] border-2 border-ezer-green rounded-ezer text-ezer-green font-semibold hover:bg-ezer-green-light transition-colors">Annuler</a>
+                </div>
+                <p class="text-[13px] leading-[18px] text-ezer-muted">Le changement est daté et ajouté à l'historique, avec votre nom.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var REF = 'ASS-2026-00042';
+            var MODELES = {
+                recue: 'Bonjour, votre demande d’assistance ' + REF + ' a bien été reçue. Le comité d’assistance l’étudiera sous [X] jours. Ezer Home',
+                examen: 'Bonjour, votre demande ' + REF + ' est en cours d’examen par le comité d’assistance. Nous pourrons vous appeler pour en parler. Ezer Home',
+                acceptee: 'Bonjour, votre demande ' + REF + ' a été acceptée. Nous vous appelons très vite pour organiser la remise de l’aide. Ezer Home',
+                close: 'Bonjour, votre demande ' + REF + ' est maintenant close. Merci de votre confiance. Vous pouvez nous écrire à tout moment. Ezer Home',
+                refusee: 'Bonjour, après examen, nous ne pouvons pas répondre favorablement à votre demande ' + REF + ' pour le moment. Vous pouvez nous appeler pour en parler. Ezer Home'
+            };
+            var LIBELLES = { recue: 'Reçue', examen: 'En examen', acceptee: 'Acceptée', close: 'Close', refusee: 'Refusée' };
+
+            var labels = document.querySelectorAll('label[data-statut]');
+            var radios = document.querySelectorAll('input[name="cs-statut"]');
+            var message = document.getElementById('cs-msg');
+            var compte = document.getElementById('cs-compte');
+            var reinit = document.getElementById('cs-reinit');
+            var enregistrer = document.getElementById('cs-enregistrer');
+            var blocMotif = document.getElementById('cs-bloc-motif');
+            var choix = 'acceptee';
+
+            function majSelection() {
+                labels.forEach(function (l) {
+                    var on = l.getAttribute('data-statut') === choix;
+                    l.classList.toggle('border-2', on);
+                    l.classList.toggle('border-ezer-green', on);
+                    l.classList.toggle('bg-ezer-green-light', on);
+                    l.classList.toggle('border', !on);
+                    l.classList.toggle('border-ezer-borderMuted', !on);
+                    l.classList.toggle('bg-white', !on);
+                });
+                blocMotif.hidden = choix !== 'refusee';
+                enregistrer.textContent = 'Enregistrer « ' + LIBELLES[choix] + ' »';
+            }
+
+            function majMessage() {
+                var texte = MODELES[choix];
+                message.value = texte;
+                majCompte();
+            }
+
+            function majCompte() {
+                var n = message.value.length;
+                compte.textContent = n + ' caractères · ' + (n <= 160 ? '1 SMS' : Math.ceil(n / 153) + ' SMS');
+            }
+
+            radios.forEach(function (r) {
+                r.addEventListener('change', function () {
+                    choix = r.closest('label').getAttribute('data-statut');
+                    majSelection();
+                    majMessage();
+                });
+            });
+
+            message.addEventListener('input', majCompte);
+            reinit.addEventListener('click', majMessage);
+
+            majSelection();
+            majMessage();
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmer une réunion — Espace thérapeute / coach — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="intervenant" data-user="Mawuli" data-initiales="MA"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="intervenant" data-actif="agenda"></div>
+
+        <div class="flex-1 min-w-0 flex flex-col gap-5 pt-6 lg:pt-8 lg:gap-6">
+
+            <a href="fiche-consultant.html" class="self-start inline-flex items-center gap-1.5 min-h-[44px] text-[15px] font-semibold hover:text-ezer-green">
+                <svg aria-hidden="true" class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+                Fiche d'Afi
+            </a>
+
+            <h1 class="font-cooper font-normal text-[26px] leading-8 lg:text-[32px] lg:leading-[38px]">Programmer une réunion</h1>
+
+            <form aria-label="Programmer une réunion" class="lg:max-w-[640px] flex flex-col gap-[22px]">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-[18px]">
+                    <div class="flex flex-col gap-1.5">
+                        <label for="pr-avec" class="text-[15px] font-semibold">Avec</label>
+                        <select id="pr-avec" class="w-full h-[52px] px-3.5 border border-ezer-borderMuted rounded-ezer bg-white focus:border-ezer-green focus:outline-none">
+                            <option>Afi</option>
+                            <option>Kossi</option>
+                            <option>Ama</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <label for="pr-titre" class="text-[15px] font-semibold">Titre</label>
+                        <input id="pr-titre" type="text" value="Deuxième rencontre" class="w-full h-[52px] px-4 border border-ezer-borderMuted rounded-ezer text-base bg-white focus:border-ezer-green focus:outline-none">
+                    </div>
+                </div>
+
+                <fieldset class="border-0 min-w-0 flex flex-col gap-2">
+                    <legend class="mb-2 text-[15px] font-semibold">Type de réunion</legend>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <label class="flex items-center gap-2.5 min-h-[52px] px-3.5 py-2.5 rounded-ezer cursor-pointer" data-type="visio">
+                            <input type="radio" name="pr-type" class="w-5 h-5 shrink-0 accent-ezer-green">
+                            Appel vidéo
+                        </label>
+                        <label class="flex items-center gap-2.5 min-h-[52px] px-3.5 py-2.5 rounded-ezer cursor-pointer" data-type="tel">
+                            <input type="radio" name="pr-type" class="w-5 h-5 shrink-0 accent-ezer-green">
+                            Appel téléphonique
+                        </label>
+                        <label class="flex items-center gap-2.5 min-h-[52px] px-3.5 py-2.5 rounded-ezer cursor-pointer" data-type="siege">
+                            <input type="radio" name="pr-type" class="w-5 h-5 shrink-0 accent-ezer-green" checked>
+                            Au siège
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="flex flex-col gap-1.5">
+                        <label for="pr-date" class="text-[15px] font-semibold">Date</label>
+                        <input id="pr-date" type="date" class="w-full h-[52px] px-3 border border-ezer-borderMuted rounded-ezer focus:border-ezer-green focus:outline-none">
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                        <label for="pr-heure" class="text-[15px] font-semibold">Heure</label>
+                        <input id="pr-heure" type="time" value="10:00" class="w-full h-[52px] px-3 border border-ezer-borderMuted rounded-ezer focus:border-ezer-green focus:outline-none">
+                    </div>
+                </div>
+
+                <fieldset class="border-0 min-w-0 flex flex-col gap-2">
+                    <legend class="mb-2 text-[15px] font-semibold">Durée</legend>
+                    <div class="flex flex-wrap gap-2">
+                        <label class="inline-flex items-center gap-2 min-h-[44px] px-4 rounded-ezer text-[15px] font-semibold cursor-pointer" data-duree>
+                            <input type="radio" name="pr-duree" class="w-[18px] h-[18px] accent-ezer-green">30 min
+                        </label>
+                        <label class="inline-flex items-center gap-2 min-h-[44px] px-4 rounded-ezer text-[15px] font-semibold cursor-pointer" data-duree>
+                            <input type="radio" name="pr-duree" class="w-[18px] h-[18px] accent-ezer-green">45 min
+                        </label>
+                        <label class="inline-flex items-center gap-2 min-h-[44px] px-4 rounded-ezer text-[15px] font-semibold cursor-pointer" data-duree>
+                            <input type="radio" name="pr-duree" class="w-[18px] h-[18px] accent-ezer-green">60 min
+                        </label>
+                        <label class="inline-flex items-center gap-2 min-h-[44px] px-4 rounded-ezer text-[15px] font-semibold cursor-pointer" data-duree>
+                            <input type="radio" name="pr-duree" class="w-[18px] h-[18px] accent-ezer-green">90 min
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div id="pr-bloc-lien" class="flex flex-col gap-1.5">
+                    <label for="pr-lien" class="text-[15px] font-semibold">Lien de la réunion</label>
+                    <span id="pr-lien-aide" class="text-sm leading-5 text-ezer-muted">Google Meet, Jitsi, Zoom… La personne le verra dans son espace 10 minutes avant.</span>
+                    <input id="pr-lien" type="url" inputmode="url" placeholder="https://" aria-describedby="pr-lien-aide" class="w-full h-[52px] px-4 border border-ezer-borderMuted rounded-ezer text-base bg-white focus:border-ezer-green focus:outline-none">
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                    <label for="pr-msg" class="text-[15px] font-semibold">Message à Afi <span class="font-normal text-ezer-muted">(facultatif)</span></label>
+                    <textarea id="pr-msg" rows="3" class="w-full p-3 px-4 border border-ezer-borderMuted rounded-ezer text-base leading-6 focus:border-ezer-green focus:outline-none">Comme convenu, on se retrouve au siège. Prenez soin de vous d'ici là.</textarea>
+                </div>
+
+                <label class="flex items-start gap-3 text-[15px] leading-[22px] cursor-pointer">
+                    <input type="checkbox" checked class="w-[22px] h-[22px] shrink-0 mt-0.5 accent-ezer-green">
+                    Envoyer un rappel par SMS la veille
+                </label>
+
+                <div class="flex flex-wrap gap-2.5">
+                    <a href="agenda.html" class="flex-1 min-w-[220px] inline-flex items-center justify-center min-h-[56px] rounded-ezer bg-ezer-green text-white text-[17px] font-semibold hover:bg-ezer-green-dark transition-colors">Programmer la réunion</a>
+                    <a href="fiche-consultant.html" class="inline-flex items-center justify-center min-h-[56px] px-6 w-full sm:w-auto sm:min-w-[160px] border-2 border-ezer-green rounded-ezer text-ezer-green font-semibold hover:bg-ezer-green-light transition-colors">Annuler</a>
+                </div>
+            </form>
+
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var types = document.querySelectorAll('label[data-type]');
+            var blocLien = document.getElementById('pr-bloc-lien');
+
+            function majType() {
+                var courant = document.querySelector('input[name="pr-type"]:checked').closest('label').getAttribute('data-type');
+                blocLien.hidden = courant !== 'visio';
+                types.forEach(function (l) {
+                    l.classList.toggle('border-2', l.checked || false);
+                });
+                types.forEach(function (l) {
+                    var on = l.getAttribute('data-type') === courant;
+                    l.classList.toggle('border-2', on);
+                    l.classList.toggle('border-ezer-green', on);
+                    l.classList.toggle('bg-ezer-green-light', on);
+                    l.classList.toggle('border', !on);
+                    l.classList.toggle('border-ezer-borderMuted', !on);
+                    l.classList.toggle('bg-white', !on);
+                });
+            }
+            document.querySelectorAll('input[name="pr-type"]').forEach(function (r) {
+                r.addEventListener('change', majType);
+            });
+
+            var durees = document.querySelectorAll('label[data-duree]');
+            function majDuree() {
+                var courant = document.querySelector('input[name="pr-duree"]:checked').closest('label');
+                durees.forEach(function (l) {
+                    var on = l === courant;
+                    l.classList.toggle('border-2', on);
+                    l.classList.toggle('border-ezer-green', on);
+                    l.classList.toggle('bg-ezer-green-light', on);
+                    l.classList.toggle('border', !on);
+                    l.classList.toggle('border-ezer-borderMuted', !on);
+                    l.classList.toggle('bg-white', !on);
+                });
+            }
+            document.querySelectorAll('input[name="pr-duree"]').forEach(function (r) {
+                r.addEventListener('change', majDuree);
+            });
+            durees[2].querySelector('input').checked = true;
+
+            majType();
+            majDuree();
+        })();
+    </script>
+</body>
+</html>

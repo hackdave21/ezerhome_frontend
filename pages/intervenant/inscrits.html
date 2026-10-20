@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrits — Espace thérapeute / coach — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal">
+
+    <div data-layout="interne-header" data-espace="intervenant" data-user="Mawuli" data-initiales="MA"></div>
+
+    <main class="max-w-[1200px] mx-auto w-full px-4 lg:px-8 pb-12 lg:pb-16 flex flex-col lg:flex-row lg:items-start lg:gap-10">
+        <div data-layout="interne-nav" data-espace="intervenant" data-actif="inscrits"></div>
+
+        <div id="int-inscrits" class="flex-1 min-w-0 flex flex-col gap-4 pt-6 lg:pt-8 lg:gap-5">
+
+            <a href="offres.html" class="self-start inline-flex items-center gap-1.5 min-h-[44px] text-[15px] font-semibold hover:text-ezer-green">
+                <svg aria-hidden="true" class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>
+                Mes offres
+            </a>
+
+            <div class="flex flex-col gap-1">
+                <h1 class="font-cooper font-normal text-[26px] leading-8 lg:text-[32px] lg:leading-[38px]">Inscrits</h1>
+                <span class="text-[15px] leading-[22px] text-ezer-muted">Écoute active et relation d'aide · Du [date] au [date]</span>
+            </div>
+
+            <p class="text-[15px]">7 inscrits sur 12 places · <strong class="font-semibold">5 confirmés</strong> · 2 en attente de paiement</p>
+
+            <div class="flex flex-wrap items-center justify-between gap-2.5">
+                <div role="group" aria-label="Filtrer" class="flex flex-wrap gap-2">
+                    <button type="button" data-filtre="tous" aria-pressed="true" class="min-h-[44px] px-3.5 rounded-ezer border-2 border-ezer-green bg-ezer-green text-white text-sm font-semibold">Tous (5)</button>
+                    <button type="button" data-filtre="ok" aria-pressed="false" class="min-h-[44px] px-3.5 rounded-ezer border border-ezer-borderMuted bg-white text-ezer-dark text-sm font-semibold">Confirmés</button>
+                    <button type="button" data-filtre="attente" aria-pressed="false" class="min-h-[44px] px-3.5 rounded-ezer border border-ezer-borderMuted bg-white text-ezer-dark text-sm font-semibold">En attente</button>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <a href="#ecrire-tous" class="inline-flex items-center min-h-[44px] px-3.5 rounded-ezer border-2 border-ezer-green text-ezer-green text-sm font-semibold hover:bg-ezer-green-light transition-colors">Écrire aux inscrits</a>
+                    <a href="#export.csv" class="inline-flex items-center min-h-[44px] px-3.5 rounded-ezer border-2 border-ezer-green text-ezer-green text-sm font-semibold hover:bg-ezer-green-light transition-colors">Exporter (CSV)</a>
+                </div>
+            </div>
+
+            <ul role="list" aria-label="Liste des inscrits" class="lg:hidden flex flex-col gap-2.5">
+                <li data-paiement="ok" class="flex flex-col gap-1.5 p-3.5 px-4 border border-ezer-green-border rounded-ezer">
+                    <div class="flex items-center justify-between gap-2"><span class="font-semibold">Akossiwa M.</span><span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Confirmé</span></div>
+                    <span class="text-sm leading-5 text-ezer-muted">+228 90 •• •• 12 · inscrit le [02/11]</span>
+                    <span class="text-[13px] leading-[18px]">2 leçons sur 5</span>
+                </li>
+                <li data-paiement="ok" class="flex flex-col gap-1.5 p-3.5 px-4 border border-ezer-green-border rounded-ezer">
+                    <div class="flex items-center justify-between gap-2"><span class="font-semibold">Edem K.</span><span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Confirmé</span></div>
+                    <span class="text-sm leading-5 text-ezer-muted">+228 91 •• •• 40 · inscrit le [03/11]</span>
+                    <span class="text-[13px] leading-[18px]">1 leçon sur 5</span>
+                </li>
+                <li data-paiement="attente" class="flex flex-col gap-1.5 p-3.5 px-4 border border-ezer-green-border rounded-ezer">
+                    <div class="flex items-center justify-between gap-2"><span class="font-semibold">Yawa A.</span><span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-dark">En attente de paiement</span></div>
+                    <span class="text-sm leading-5 text-ezer-muted">+228 98 •• •• 07 · inscrit le [05/11]</span>
+                    <span class="text-[13px] leading-[18px]">—</span>
+                </li>
+                <li data-paiement="ok" class="flex flex-col gap-1.5 p-3.5 px-4 border border-ezer-green-border rounded-ezer">
+                    <div class="flex items-center justify-between gap-2"><span class="font-semibold">Komi D.</span><span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Confirmé</span></div>
+                    <span class="text-sm leading-5 text-ezer-muted">k•••@exemple.tg · inscrit le [06/11]</span>
+                    <span class="text-[13px] leading-[18px]">3 leçons sur 5</span>
+                </li>
+                <li data-paiement="attente" class="flex flex-col gap-1.5 p-3.5 px-4 border border-ezer-green-border rounded-ezer">
+                    <div class="flex items-center justify-between gap-2"><span class="font-semibold">Sena T.</span><span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-dark">En attente de paiement</span></div>
+                    <span class="text-sm leading-5 text-ezer-muted">+228 99 •• •• 63 · inscrit le [08/11]</span>
+                    <span class="text-[13px] leading-[18px]">—</span>
+                </li>
+            </ul>
+
+            <div class="hidden lg:block overflow-x-auto border border-ezer-green-border rounded-ezer">
+                <table class="w-full border-collapse text-[15px]">
+                    <caption class="absolute w-px h-px overflow-hidden" style="clip: rect(0 0 0 0)">Liste des inscrits</caption>
+                    <thead>
+                        <tr class="bg-ezer-green-light text-left">
+                            <th scope="col" class="p-3 px-4 font-semibold">Nom</th>
+                            <th scope="col" class="p-3 px-4 font-semibold">Contact</th>
+                            <th scope="col" class="p-3 px-4 font-semibold">Inscription</th>
+                            <th scope="col" class="p-3 px-4 font-semibold">Paiement</th>
+                            <th scope="col" class="p-3 px-4 font-semibold">Progression</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-paiement="ok" class="border-t border-ezer-green-borderLight">
+                            <th scope="row" class="p-3.5 px-4 text-left font-semibold">Akossiwa M.</th>
+                            <td class="p-3.5 px-4">+228 90 •• •• 12</td>
+                            <td class="p-3.5 px-4">le [02/11]</td>
+                            <td class="p-3.5 px-4"><span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Confirmé</span></td>
+                            <td class="p-3.5 px-4">2 leçons sur 5</td>
+                        </tr>
+                        <tr data-paiement="ok" class="border-t border-ezer-green-borderLight">
+                            <th scope="row" class="p-3.5 px-4 text-left font-semibold">Edem K.</th>
+                            <td class="p-3.5 px-4">+228 91 •• •• 40</td>
+                            <td class="p-3.5 px-4">le [03/11]</td>
+                            <td class="p-3.5 px-4"><span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Confirmé</span></td>
+                            <td class="p-3.5 px-4">1 leçon sur 5</td>
+                        </tr>
+                        <tr data-paiement="attente" class="border-t border-ezer-green-borderLight">
+                            <th scope="row" class="p-3.5 px-4 text-left font-semibold">Yawa A.</th>
+                            <td class="p-3.5 px-4">+228 98 •• •• 07</td>
+                            <td class="p-3.5 px-4">le [05/11]</td>
+                            <td class="p-3.5 px-4"><span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-dark">En attente de paiement</span></td>
+                            <td class="p-3.5 px-4">—</td>
+                        </tr>
+                        <tr data-paiement="ok" class="border-t border-ezer-green-borderLight">
+                            <th scope="row" class="p-3.5 px-4 text-left font-semibold">Komi D.</th>
+                            <td class="p-3.5 px-4">k•••@exemple.tg</td>
+                            <td class="p-3.5 px-4">le [06/11]</td>
+                            <td class="p-3.5 px-4"><span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-green bg-ezer-green-light text-ezer-green">Confirmé</span></td>
+                            <td class="p-3.5 px-4">3 leçons sur 5</td>
+                        </tr>
+                        <tr data-paiement="attente" class="border-t border-ezer-green-borderLight">
+                            <th scope="row" class="p-3.5 px-4 text-left font-semibold">Sena T.</th>
+                            <td class="p-3.5 px-4">+228 99 •• •• 63</td>
+                            <td class="p-3.5 px-4">le [08/11]</td>
+                            <td class="p-3.5 px-4"><span class="text-xs leading-4 font-semibold px-2 py-0.5 rounded-full border border-ezer-dark">En attente de paiement</span></td>
+                            <td class="p-3.5 px-4">—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="text-[13px] leading-[18px] text-ezer-muted">Les coordonnées complètes ne sont visibles que pour les inscriptions confirmées.</p>
+
+        </div>
+    </main>
+
+    <div data-layout="interne-footer"></div>
+
+    <script src="../../assets/js/interne.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var racine = document.getElementById('int-inscrits');
+            var boutons = racine.querySelectorAll('[data-filtre]');
+
+            function appliquer(filtre) {
+                boutons.forEach(function (b) {
+                    var on = b.getAttribute('data-filtre') === filtre;
+                    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+                    b.classList.toggle('border-ezer-green', on);
+                    b.classList.toggle('bg-ezer-green', on);
+                    b.classList.toggle('text-white', on);
+                    b.classList.toggle('bg-white', !on);
+                    b.classList.toggle('text-ezer-dark', !on);
+                    b.classList.toggle('border-ezer-borderMuted', !on);
+                });
+                racine.querySelectorAll('[data-paiement]').forEach(function (ligne) {
+                    var visible = filtre === 'tous' || ligne.getAttribute('data-paiement') === filtre;
+                    ligne.classList.toggle('hidden', !visible);
+                });
+            }
+
+            boutons.forEach(function (b) {
+                b.addEventListener('click', function () { appliquer(b.getAttribute('data-filtre')); });
+            });
+        })();
+    </script>
+</body>
+</html>

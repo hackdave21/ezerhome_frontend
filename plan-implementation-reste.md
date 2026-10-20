@@ -38,14 +38,12 @@ Ce plan intègre de manière exhaustive **l'intégralité des 144 archives et va
 | Hors ligne / 404 | `pages/site/hors-ligne.html`, `404.html` | **[x] FAIT** | Aucun. |
 | Menu mobile ouvert | `pages/site/menu-mobile.html` | **[x] FAIT** | Aucun. |
 
-**Bilan : 43 pages réalisées.** Modules terminés : **Site public (17/17)**, **Assistance & dons (8/8)**, **Compte (12/12)**, **Tunnel de commande (6/6)**, **Espace personnel (9/9)**. **Aucun lien local non résolu.**
+**Bilan (à jour du 19-10-2026) : 61 fichiers HTML réalisés.** Modules terminés : **Site public (17/17)**, **Assistance & dons (8/8)**, **Compte (12/12)**, **Tunnel de commande (6/6)**, **Espace personnel (9/9)**, **Comité d'assistance (5/5)**, **Thérapeutes, coachs & intervenants (13/13)**. **Aucun lien local non résolu.**
 
 ### 0.3 Reste à réaliser
 
 | Module | Écrans restants |
 |---|---|
-| Thérapeutes, coachs & intervenants | 13 |
-| Comité d'assistance | 5 |
 | Administration | 20 |
 | E-mails, SMS & composants | 12 |
 
@@ -129,63 +127,53 @@ Restent des valeurs entre crochets à remplacer par les données réelles (elles
 
 ---
 
-## 6. Tunnel de Commande & Inscription Payante (`pages/commande/`)
-- [ ] Récapitulatif (`commande/recapitulatif.html`) — mobile & ordinateur
-- [ ] Choix du moyen de paiement (`commande/paiement.html`)
-- [ ] En attente de confirmation du bureau (`commande/attente.html`) — mobile & ordinateur
-- [ ] Accès débloqué / Succès (`commande/debloque.html`) — mobile & ordinateur
-- [ ] Échec du paiement (`commande/echec.html`)
-- [ ] Réservation expirée (`commande/expiree.html`)
+## 7. Thérapeutes, Coachs & Intervenants (`pages/intervenant/`) — **MODULE COMPLET (13/13)**
+- [x] Candidature intervenant (formulaire) (`intervenant/candidature.html`) — mobile & ordinateur
+- [x] Candidature en attente / envoyée (`intervenant/candidature-attente.html`)
+- [x] Espace intervenant : tableau de bord (`intervenant/dashboard.html`)
+- [x] Fiche consultant (`intervenant/fiche-consultant.html`)
+- [x] Programmer une réunion (`intervenant/programmer-reunion.html`)
+- [x] Agenda (`intervenant/agenda.html`) — mobile & ordinateur
+- [x] Agenda vide (`intervenant/agenda-vide.html`)
+- [x] Notes de réunion (`intervenant/notes.html`)
+- [x] Terminer la note / Confirmation (`intervenant/notes-confirmation.html`)
+- [x] Note verrouillée (`intervenant/notes-verrouillee.html`)
+- [x] Messagerie (`intervenant/messagerie.html`) — liste + fil, filtre de conversation mobile
+- [x] Mes offres (`intervenant/offres.html`) — 4 offres, statuts publiée / validation / brouillon, jauges
+- [x] Liste des inscrits (`intervenant/inscrits.html`) — mobile & ordinateur, filtres Tous / Confirmés / En attente
 
 ---
 
-## 7. Thérapeutes, Coachs & Intervenants (`pages/intervenant/`)
-- [ ] Candidature intervenant (formulaire) (`intervenant/candidature.html`) — mobile & ordinateur
-- [ ] Candidature en attente / envoyée (`intervenant/candidature-attente.html`)
-- [ ] Espace intervenant : tableau de bord (`intervenant/dashboard.html`)
-- [ ] Fiche consultant (`intervenant/fiche-consultant.html`)
-- [ ] Programmer une réunion (`intervenant/programmer-reunion.html`)
-- [ ] Agenda (`intervenant/agenda.html`) — mobile & ordinateur
-- [ ] Agenda vide (`intervenant/agenda-vide.html`)
-- [ ] Notes de réunion (`intervenant/notes.html`)
-- [ ] Terminer la note / Confirmation (`intervenant/notes-confirmation.html`)
-- [ ] Note verrouillée (`intervenant/notes-verrouillee.html`)
-- [ ] Messagerie (`intervenant/messagerie.html`) — mobile & ordinateur
-- [ ] Mes offres (`intervenant/offres.html`)
-- [ ] Liste des inscrits (`intervenant/inscrits.html`) — mobile & ordinateur
+## 8. Comité d'Assistance Matérielle (`pages/comite/`) — **MODULE COMPLET (5/5)**
+- [x] Liste des demandes (`comite/demandes.html`) — mobile & ordinateur
+- [x] Fiche d'une demande (`comite/fiche-demande.html`) — mobile & ordinateur
+- [x] Changement de statut (`comite/changement-statut.html`) — mobile & ordinateur
+- [x] Photos d'actions sur le terrain (`comite/photos.html`) — mobile & ordinateur
+- [x] Aucun résultat / Erreur de chargement (`comite/erreur-vide.html`) — mobile & ordinateur
 
 ---
 
-## 8. Comité d'Assistance Matérielle (`pages/comite/`)
-- [ ] Liste des demandes (`comite/demandes.html`) — mobile & ordinateur
-- [ ] Fiche d'une demande (`comite/fiche-demande.html`) — mobile & ordinateur
-- [ ] Changement de statut (`comite/changement-statut.html`) — mobile & ordinateur
-- [ ] Photos d'actions sur le terrain (`comite/photos.html`) — mobile & ordinateur
-- [ ] Aucun résultat / Erreur de chargement (`comite/erreur-vide.html`) — mobile & ordinateur
-
----
-
-## 9. Panneau d'Administration (`pages/admin/`)
-- [ ] Tableau de bord (`admin/dashboard.html`) — mobile & ordinateur
-- [ ] Demandes d'écoute et affectation (`admin/affectation-ecoute.html`) — mobile & ordinateur
-- [ ] Candidatures intervenants (`admin/candidatures.html`)
-- [ ] Gestion des utilisateurs (`admin/utilisateurs.html`)
-- [ ] Suivi des réunions (`admin/reunions.html`)
-- [ ] Lecture d'une note clôturée (`admin/note-cloturee.html`) — mobile & ordinateur
-- [ ] Paiements et rapprochement (`admin/paiements.html`) — mobile & ordinateur
-- [ ] Paiements : état chargement (`admin/paiements-chargement.html`)
-- [ ] Dons et reçus (`admin/dons.html`)
-- [ ] Médiathèque (`admin/mediatheque.html`)
-- [ ] Médiathèque vide (`admin/mediatheque-vide.html`)
-- [ ] Médiathèque : suppression bloquée (`admin/mediatheque-bloquee.html`)
-- [ ] Organigramme (`admin/organigramme.html`)
-- [ ] Partenaires (`admin/partenaires.html`)
-- [ ] CMS : pages et contenus (`admin/cms-pages.html`)
-- [ ] CMS : charte versionnée (`admin/cms-charte.html`)
-- [ ] Modèles de notifications (`admin/notifications.html`)
-- [ ] Paramètres (`admin/parametres.html`)
-- [ ] Journal d'audit (`admin/audit.html`)
-- [ ] Journal d'audit : erreur (`admin/audit-erreur.html`)
+## 9. Panneau d'Administration (`pages/admin/`) — TERMINÉ
+- [x] Tableau de bord (`admin/dashboard.html`) — mobile & ordinateur
+- [x] Demandes d'écoute et affectation (`admin/affectation-ecoute.html`) — états 1-4 inclus (sélecteur de démonstration), conforme à la section 0
+- [x] Candidatures intervenants (`admin/candidatures.html`) — liste + fiche + pan refus avec motif obligatoire
+- [x] Gestion des utilisateurs (`admin/utilisateurs.html`) — recherche + chips rôle, activer/suspendre/désactiver/réactiver en direct
+- [x] Suivi des réunions (`admin/reunions.html`) — états 1-4 inclus
+- [x] Lecture d'une note clôturée (`admin/note-cloturee.html`) — journalisation, commentaires de supervision, retour vers reunions.html
+- [x] Paiements et rapprochement (`admin/paiements.html`) — états 1-4 inclus ; rapprochement 4 lignes, référence opérateur obligatoire
+- [x] Paiements : état chargement — fusionné dans `paiements.html` (dém. 2), fichier séparé supprimé du plan
+- [x] Dons et reçus (`admin/dons.html`) — états 1-4 inclus ; aperçu du reçu PDF intégré
+- [x] Médiathèque (`admin/mediatheque.html`) — états 1-4 inclus ; suppression bloquée (dém. du panneau de droite)
+- [x] Médiathèque vide — fusionné dans `mediatheque.html` (dém. 3)
+- [x] Médiathèque : suppression bloquée — fusionné dans `mediatheque.html` (panneau « Suppression impossible »)
+- [x] Organigramme (`admin/organigramme.html`) — 3 comités, réordonner monter/descendre + visibilité
+- [x] Partenaires (`admin/partenaires.html`) — ordre numéroté, visibilité, liens croisés organigramme↔partenaires
+- [x] CMS : pages et contenus (`admin/cms-pages.html`) — onglets Pages / Tarifs / FAQ / Page dons
+- [x] CMS : charte versionnée (`admin/cms-charte.html`) — versions 1.0-1.3, brouillon, publication avec résumé obligatoire
+- [x] Modèles de notifications (`admin/notifications.html`) — 7 modèles, variables {…}, aperçu SMS avec compte de caractères
+- [x] Paramètres (`admin/parametres.html`) — coordonnées, montants suggérés, durées de conservation, paiements
+- [x] Journal d'audit (`admin/audit.html`) — états 1-4 inclus ; filtres qui/quoi/période/IP fonctionnels
+- [x] Journal d'audit : erreur — fusionné dans `audit.html` (dém. 4)
 
 ---
 
