@@ -38,14 +38,16 @@ Ce plan intègre de manière exhaustive **l'intégralité des 144 archives et va
 | Hors ligne / 404 | `pages/site/hors-ligne.html`, `404.html` | **[x] FAIT** | Aucun. |
 | Menu mobile ouvert | `pages/site/menu-mobile.html` | **[x] FAIT** | Aucun. |
 
-**Bilan (à jour du 19-10-2026) : 61 fichiers HTML réalisés.** Modules terminés : **Site public (17/17)**, **Assistance & dons (8/8)**, **Compte (12/12)**, **Tunnel de commande (6/6)**, **Espace personnel (9/9)**, **Comité d'assistance (5/5)**, **Thérapeutes, coachs & intervenants (13/13)**. **Aucun lien local non résolu.**
+**Bilan (à jour du 20-10-2026) : 73 fichiers HTML réalisés.** Modules terminés : **Site public (17/17)**, **Assistance & dons (8/8)**, **Compte (12/12)**, **Tunnel de commande (6/6)**, **Espace personnel (9/9)**, **Comité d'assistance (5/5)**, **Thérapeutes, coachs & intervenants (13/13)**, **Administration (20/20)**, **E-mails, SMS & composants (12/12)**. **Toutes les maquettes sont converties.** **Aucun lien local non résolu.**
 
 ### 0.3 Reste à réaliser
 
 | Module | Écrans restants |
 |---|---|
-| Administration | 20 |
-| E-mails, SMS & composants | 12 |
+| Administration | 0 — terminé |
+| E-mails, SMS & composants | 0 — terminé |
+
+**Le prototype est complet : l'intégralité des maquettes de `maquette/` est convertie.**
 
 ### 0.4 Placeholders à compléter côté contenu
 
@@ -177,19 +179,20 @@ Restent des valeurs entre crochets à remplacer par les données réelles (elles
 
 ---
 
-## 10. E-mails, SMS & Référence (`pages/emails/`, `pages/messages/`, `pages/composants/`)
+## 10. E-mails, SMS & Référence (`pages/emails/`, `pages/messages/`, `pages/composants/`) — **MODULE COMPLET (12/12)**
+- Gabarit partagé des e-mails factorisé dans **`assets/js/emails.js`** (conforme à `MessageModele.dc.html` : bandeau De/Objet/Aperçu, logo, code, statut, détails, bouton + lien de secours, note sécurité, pied sombre). Les variantes ordinateur et téléphone sont rendues au gabarit 680 px ou 375 px.
 - **E-mails transactionnels HTML** :
-  - [ ] Vérification de compte (`emails/verification-compte.html`)
-  - [ ] Vérification (téléphone) (`emails/verification- telephone.html`)
-  - [ ] Réunion programmée (`emails/reunion-programmee.html`)
-  - [ ] Réunion modifiée (`emails/reunion-modifiee.html`)
-  - [ ] Réunion annulée (`emails/reunion-annulee.html`)
-  - [ ] Rappel de réunion (`emails/rappel-reunion.html`)
-  - [ ] Rappel (téléphone) (`emails/rappel-telephone.html`)
-  - [ ] Statut d'assistance (`emails/statut-assistance.html`)
-  - [ ] Reçu de don (`emails/recu-don.html`)
-  - [ ] Préavis de désactivation (`emails/preavis-desactivation.html`)
+  - [x] Vérification de compte (`emails/verification-compte.html`)
+  - [x] Vérification (téléphone) (`emails/verification-telephone.html`) — gabarit téléphone 375 px
+  - [x] Réunion programmée (`emails/reunion-programmee.html`)
+  - [x] Réunion modifiée (`emails/reunion-modifiee.html`) — anciennes valeurs barrées
+  - [x] Réunion annulée (`emails/reunion-annulee.html`)
+  - [x] Rappel de réunion (`emails/rappel-reunion.html`)
+  - [x] Rappel (téléphone) (`emails/rappel-telephone.html`) — gabarit téléphone 375 px
+  - [x] Statut d'assistance (`emails/statut-assistance.html`) — encart « Nouveau statut »
+  - [x] Reçu de don (`emails/recu-don.html`) — détails montant / date / reçu
+  - [x] Préavis de désactivation (`emails/preavis-desactivation.html`)
 - **Formats courts** :
-  - [ ] SMS et WhatsApp (`messages/formats-courts.html`)
+  - [x] SMS et WhatsApp (`messages/formats-courts.html`) — 8 modèles, compteur GSM/Unicode en direct, règles (donnée sensible, lien court, 160 caractères)
 - **Design System** :
-  - [ ] Composants et états de référence (`composants/composants.html`)
+  - [x] Composants et états de référence (`composants/composants.html`) — 12 couleurs, typographie, boutons, badges/statuts, champs, cartes + tableau, états chargement / vide / erreur / succès / hors ligne

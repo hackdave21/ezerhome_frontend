@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formats courts : SMS et WhatsApp — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal min-h-screen flex flex-col">
+
+    <div data-layout="header"></div>
+
+    <main class="flex-1 max-w-[1200px] mx-auto w-full px-4 lg:px-8 py-8 lg:py-12 flex flex-col gap-8">
+
+        <div class="flex flex-col gap-1">
+            <p class="text-xs font-semibold uppercase tracking-widest text-ezer-green">Ezer Home · Notifications</p>
+            <h1 class="font-cooper font-normal text-3xl lg:text-[36px]">Formats courts : SMS et WhatsApp</h1>
+        </div>
+
+        <div data-ezer-mail-nav data-ezer-mail-nav-actif="formats-courts" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-col gap-2">
+            <span class="text-xs font-semibold text-ezer-muted">Modèles de messages (10 e-mails + formats courts + composants) :</span>
+        </div>
+
+        <!-- RÈGLES -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="p-4 border border-ezer-green-border rounded-ezer flex flex-col gap-1.5">
+                <h2 class="text-base font-semibold">Jamais de donnée sensible</h2>
+                <p class="text-sm text-ezer-muted">Ni nom d'intervenant, ni nature du suivi, ni contenu d'une demande d'aide, ni lien direct de visioconférence. Le message dit seulement qu'il y a du nouveau et où le consulter.</p>
+            </div>
+            <div class="p-4 border border-ezer-green-border rounded-ezer flex flex-col gap-1.5">
+                <h2 class="text-base font-semibold">Un lien court personnel</h2>
+                <p class="text-sm text-ezer-muted">Lien ezerhome.tg/… unique, sans identifiant lisible, qui expire et demande la connexion (ou le numéro de demande pour l'assistance).</p>
+            </div>
+            <div class="p-4 border border-ezer-green-border rounded-ezer flex flex-col gap-1.5">
+                <h2 class="text-base font-semibold">1 SMS, 160 caractères</h2>
+                <p class="text-sm text-ezer-muted">Toujours commencer par « Ezer Home : ». Éviter ê, ç, ô, î, û et l'apostrophe courbe : un seul de ces signes fait passer le SMS à 70 caractères.</p>
+            </div>
+        </div>
+
+        <!-- FORMATS -->
+        <div id="formats" class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start"></div>
+
+        <p class="text-sm text-ezer-muted">Les modèles WhatsApp doivent être validés par Meta avant envoi ; les variables (date, heure, code, numéro de demande) sont les seules parties modifiables. Le code de vérification n'est jamais envoyé par WhatsApp si l'utilisateur a choisi le SMS, et inversement.</p>
+
+    </main>
+
+    <div data-layout="footer" data-sobre="1"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script>
+        (function () {
+            var gsm = '@\u00a3$\u00a5\u00e8\u00e9\u00f9\u00ec\u00f2\u00c7\n\u00d8\u00f8\r\u00c5\u00e5\u0394_\u03a6\u0393\u039b\u03a9\u03a0\u03a8\u03a3\u0398\u039e\u00c6\u00e6\u00df\u00c9 !"#\u00a4%&\'()*+,-./0123456789:;<=>?\u00a1ABCDEFGHIJKLMNOPQRSTUVWXYZ\u00c4\u00d6\u00d1\u00dc\u00a7\u00bfabcdefghijklmnopqrstuvwxyz\u00e4\u00f6\u00f1\u00fc\u00e0';
+            function compte(texte) {
+                var chars = Array.prototype.slice.call(texte);
+                var ok = chars.every(function (c) { return gsm.indexOf(c) !== -1; });
+                var max = ok ? 160 : 70;
+                var n = chars.length;
+                var seg = n <= max ? 1 : Math.ceil(n / (ok ? 153 : 67));
+                return n + ' / ' + max + ' caract\u00e8res \u00b7 ' + seg + ' SMS \u00b7 ' + (ok ? 'alphabet GSM' : 'Unicode');
+            }
+            // [titre, canaux, sms, WhatsApp, bouton]
+            var L = [
+                ['Vérification de compte', 'SMS', 'Ezer Home : votre code de vérification est 482913. Valable 10 min. Ne le communiquez à personne, nous ne vous le demanderons jamais.', 'Votre code de vérification Ezer Home est *482913*. Il est valable 10 minutes. Ne le communiquez à personne.', 'Copier le code'],
+                ['Rendez-vous programmé', 'SMS + WhatsApp', 'Ezer Home : rendez-vous confirmé le mar. 20/10 à 10h00. Détails et lien de connexion : ezerhome.tg/r/K7P2', 'Votre rendez-vous est confirmé le mardi 20 octobre à 10 h 00. Retrouvez les détails dans votre espace.', 'Voir mon rendez-vous'],
+                ['Rendez-vous modifié', 'SMS + WhatsApp', 'Ezer Home : votre rendez-vous est déplacé au jeu. 22/10 à 15h00. Détails : ezerhome.tg/r/K7P2', 'Votre rendez-vous a été déplacé au jeudi 22 octobre à 15 h 00. Cette date ne vous convient pas ? Proposez-en une autre depuis votre espace.', 'Voir mon rendez-vous'],
+                ['Rendez-vous annulé', 'SMS + WhatsApp', 'Ezer Home : votre rendez-vous du 20/10 à 10h00 est annulé. Choisir un nouveau créneau : ezerhome.tg/r/K7P2', 'Votre rendez-vous du mardi 20 octobre est annulé. Votre accompagnement continue : choisissez un nouveau créneau quand vous le souhaitez.', 'Choisir un créneau'],
+                ['Rappel de rendez-vous', 'SMS + WhatsApp', 'Ezer Home : rappel, rendez-vous demain à 10h00. Le lien sera actif 15 min avant : ezerhome.tg/r/K7P2', 'Rappel : rendez-vous demain, mardi 20 octobre, à 10 h 00. Le lien de connexion sera actif 15 minutes avant.', 'Ouvrir mon rendez-vous'],
+                ["Statut d'assistance", 'SMS + WhatsApp', 'Ezer Home : votre demande ASS-2026-00042 a été mise à jour. Suivi : ezerhome.tg/s/A42X', 'Votre demande ASS-2026-00042 a été mise à jour. Consultez la page de suivi avec votre numéro de demande.', 'Suivre ma demande'],
+                ['Reçu de don', 'SMS', 'Ezer Home : merci pour votre don ! Votre justificatif REC-2026-0117 est disponible : ezerhome.tg/d/Q8M4', 'Merci pour votre don ! Votre justificatif REC-2026-0117 est disponible en PDF.', 'Télécharger'],
+                ['Préavis de désactivation', 'SMS + WhatsApp', 'Ezer Home : sans connexion de votre part, votre compte sera désactivé le 12/11. Pour le garder : ezerhome.tg/c', 'Sans connexion de votre part, votre compte Ezer Home sera désactivé le 12 novembre. Connectez-vous une fois pour le garder.', 'Garder mon compte']
+            ];
+
+            var fleche = '<svg aria-hidden="true" class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"></path><path d="M20 4l-9 9"></path><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"></path></svg>';
+
+            var html = L.map(function (m) {
+                return '<section aria-label="' + m[0] + '" class="p-5 border border-ezer-green-border rounded-ezer flex flex-col gap-3.5">' +
+                    '<div class="flex items-center justify-between gap-3 flex-wrap">' +
+                        '<h2 class="text-lg font-semibold">' + m[0] + '</h2>' +
+                        '<span class="text-xs font-semibold px-2.5 py-0.5 rounded-ezer border border-ezer-borderMuted text-ezer-muted">' + m[1] + '</span>' +
+                    '</div>' +
+                    '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">' +
+                        '<div class="flex flex-col gap-1.5">' +
+                            '<span class="text-xs font-semibold uppercase tracking-wider text-ezer-muted">SMS</span>' +
+                            '<p class="m-0 px-3.5 py-3 rounded-ezer rounded-br-[4px] bg-ezer-green-light text-[15px]">' + m[2] + '</p>' +
+                            '<span class="text-[13px] text-ezer-muted tabular-nums" data-compte="' + m[2].replace(/"/g, '&quot;') + '"></span>' +
+                        '</div>' +
+                        '<div class="flex flex-col gap-1.5">' +
+                            '<span class="text-xs font-semibold uppercase tracking-wider text-ezer-muted">WhatsApp (mod\u00e8le)</span>' +
+                            '<div class="border border-ezer-green-border rounded-ezer overflow-hidden bg-white">' +
+                                '<div class="px-3.5 py-3 flex flex-col gap-1.5">' +
+                                    '<span class="text-[13px] font-semibold text-ezer-green">Ezer Home</span>' +
+                                    '<p class="m-0 text-[15px]">' + m[3] + '</p>' +
+                                '</div>' +
+                                '<span class="flex items-center justify-center gap-1.5 min-h-[44px] border-t border-ezer-green-borderLight text-[15px] font-semibold text-ezer-green">' + fleche + m[4] + '</span>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</section>';
+            }).join('');
+            document.getElementById('formats').innerHTML = html;
+
+            document.querySelectorAll('[data-compte]').forEach(function (el) {
+                el.textContent = compte(el.getAttribute('data-compte'));
+            });
+        })();
+    </script>
+</body>
+</html>

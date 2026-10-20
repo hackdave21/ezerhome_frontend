@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composants et états — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-normal min-h-screen flex flex-col">
+
+    <div data-layout="header"></div>
+
+    <main class="flex-1 max-w-[1200px] mx-auto w-full px-4 lg:px-8 py-8 lg:py-14 flex flex-col gap-12">
+
+        <div class="flex flex-col gap-1.5">
+            <p class="text-xs font-semibold uppercase tracking-widest text-ezer-green">Ezer Home · Système</p>
+            <h1 class="font-cooper font-normal text-4xl">Composants et états</h1>
+            <p class="text-ezer-muted max-w-[760px]">Référence unique pour l'intégration Blade + Tailwind : chaque écran du projet utilise ces styles. Rayon 12 px partout, zones tactiles d'au moins 44 px, aucune information portée par la couleur seule.</p>
+        </div>
+
+        <div data-ezer-mail-nav data-ezer-mail-nav-actif="composants" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-col gap-2">
+            <span class="text-xs font-semibold text-ezer-muted">Modèles de messages (10 e-mails + formats courts + composants) :</span>
+        </div>
+
+        <!-- 1. COULEURS -->
+        <section class="flex flex-col gap-4">
+            <h2 class="text-[22px] font-semibold">1. Couleurs</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="flex flex-col gap-1.5"><div class="h-14 rounded-ezer bg-[#22b573]"></div><span class="text-sm font-semibold">Primaire</span><span class="text-[13px] text-ezer-muted tabular-nums">#22b573 · aplats, logo</span></div>
+                <div class="flex flex-col gap-1.5"><div class="h-14 rounded-ezer bg-ezer-green"></div><span class="text-sm font-semibold">Primaire foncé</span><span class="text-[13px] text-ezer-muted tabular-nums">#187d50 · boutons, liens</span></div>
+                <div class="flex flex-col gap-1.5"><div class="h-14 rounded-ezer bg-ezer-red"></div><span class="text-sm font-semibold">Secondaire</span><span class="text-[13px] text-ezer-muted tabular-nums">#c1272d · non-lus seulement</span></div>
+                <div class="flex flex-col gap-1.5"><div class="h-14 rounded-ezer bg-ezer-brown"></div><span class="text-sm font-semibold">Tertiaire</span><span class="text-[13px] text-ezer-muted tabular-nums">#a67c52 · filets, avatars</span></div>
+                <div class="flex flex-col gap-1.5"><div class="h-14 rounded-ezer bg-ezer-dark"></div><span class="text-sm font-semibold">Encre</span><span class="text-[13px] text-ezer-muted tabular-nums">#0e1c03 · texte, erreurs</span></div>
+                <div class="flex flex-col gap-1.5"><div class="h-14 rounded-ezer bg-ezer-muted"></div><span class="text-sm font-semibold">Texte doux</span><span class="text-[13px] text-ezer-muted tabular-nums">#5b6656 · aides, désactivé</span></div>
+                <div class="flex flex-col gap-1.5"><div class="h-14 rounded-ezer border border-ezer-green-border bg-white"></div><span class="text-sm font-semibold">Fond</span><span class="text-[13px] text-ezer-muted tabular-nums">#ffffff · pages</span></div>
+                <div class="flex flex-col gap-1.5"><div class="h-14 rounded-ezer bg-ezer-green-light"></div><span class="text-sm font-semibold">Fond doux</span><span class="text-[13px] text-ezer-muted tabular-nums">#e9f7f0 · sections, en-têtes</span></div>
+                <div class="flex flex-col gap-1.5"><div class="h-14 rounded-ezer bg-ezer-borderMuted"></div><span class="text-sm font-semibold">Bord de champ</span><span class="text-[13px] text-ezer-muted tabular-nums">#6f8577 · champs (3:1)</span></div>
+                <div class="flex flex-col gap-1.5"><div class="h-14 rounded-ezer bg-ezer-green-border"></div><span class="text-sm font-semibold">Bord de carte</span><span class="text-[13px] text-ezer-muted tabular-nums">#c8dccf · cartes, cadres</span></div>
+                <div class="flex flex-col gap-1.5"><div class="h-14 rounded-ezer bg-ezer-green-borderLight"></div><span class="text-sm font-semibold">Séparateur</span><span class="text-[13px] text-ezer-muted tabular-nums">#d3e6db · lignes de liste</span></div>
+                <div class="flex flex-col gap-1.5"><div class="h-14 rounded-ezer border border-ezer-green-borderLight bg-ezer-green-pale"></div><span class="text-sm font-semibold">Surface claire</span><span class="text-[13px] text-ezer-muted tabular-nums">#f6faf8 · vide, désactivé</span></div>
+            </div>
+            <p class="text-sm text-ezer-muted">Le rouge #c1272d est réservé aux pastilles de non-lus. Les erreurs sont en Encre (bordure 2 px, icône, texte gras).</p>
+        </section>
+
+        <!-- 2. TYPOGRAPHIE -->
+        <section class="flex flex-col gap-4">
+            <h2 class="text-[22px] font-semibold">2. Typographie</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="flex flex-col gap-1.5"><span class="font-cooper text-[34px] leading-10">Titre H1</span><span class="text-[13px] text-ezer-muted">Cooper Black · 34 / 48 px (site) · 26 / 34 px (espaces)</span></div>
+                <div class="flex flex-col gap-1.5"><span class="font-cooper text-[26px] leading-8">Titre H2</span><span class="text-[13px] text-ezer-muted">Cooper Black · 26 / 36 px</span></div>
+                <div class="flex flex-col gap-1.5"><span class="text-lg font-semibold">Titre de carte, H3</span><span class="text-[13px] text-ezer-muted">Poppins 600 · 18–20 px</span></div>
+                <div class="flex flex-col gap-1.5"><span>Texte courant, 16 px minimum sur téléphone.</span><span class="text-[13px] text-ezer-muted">Poppins 400 · 16 / 24 px</span></div>
+                <div class="flex flex-col gap-1.5"><span class="text-sm text-ezer-muted">Aide sous un champ, légende.</span><span class="text-[13px] text-ezer-muted">Poppins 400 · 14 / 20 px · Texte doux</span></div>
+                <div class="flex flex-col gap-1.5"><span class="text-xs font-semibold uppercase tracking-widest text-ezer-green">Surtitre</span><span class="text-[13px] text-ezer-muted">Poppins 600 · 12 px · capitales espacées</span></div>
+            </div>
+        </section>
+
+        <!-- 3. BOUTONS -->
+        <section class="flex flex-col gap-4">
+            <h2 class="text-[22px] font-semibold">3. Boutons</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-x-6 gap-y-4 items-center">
+                <span class="text-sm font-semibold text-ezer-muted">Tailles</span>
+                <div class="flex flex-wrap items-center gap-3">
+                    <button type="button" class="min-h-[56px] px-7 rounded-ezer bg-ezer-green text-white text-[17px] font-semibold cursor-pointer">Grand · 56 px</button>
+                    <button type="button" class="min-h-[52px] px-6 rounded-ezer bg-ezer-green text-white text-base font-semibold cursor-pointer">Formulaire · 52 px</button>
+                    <button type="button" class="min-h-[48px] px-5 rounded-ezer bg-ezer-green text-white text-[15px] font-semibold cursor-pointer">Standard · 48 px</button>
+                    <button type="button" class="min-h-[44px] px-3.5 rounded-ezer bg-ezer-green text-white text-sm font-semibold cursor-pointer">Compact · 44 px</button>
+                    <span class="text-[13px] text-ezer-muted">Grand : accueil et appels principaux. Compact : tableaux et espaces internes uniquement.</span>
+                </div>
+                <span class="text-sm font-semibold text-ezer-muted">Variantes</span>
+                <div class="flex flex-wrap items-center gap-3">
+                    <button type="button" class="min-h-[48px] px-5 rounded-ezer bg-ezer-green text-white text-[15px] font-semibold cursor-pointer">Principal</button>
+                    <button type="button" class="min-h-[48px] px-4 rounded-ezer border-2 border-ezer-green bg-white text-ezer-green text-[15px] font-semibold cursor-pointer">Secondaire</button>
+                    <button type="button" class="min-h-[48px] px-4 rounded-ezer border border-ezer-borderMuted bg-white text-ezer-dark text-[15px] font-semibold cursor-pointer">Neutre</button>
+                    <button type="button" class="min-h-[48px] px-4 rounded-ezer border border-ezer-dark bg-white text-ezer-dark text-[15px] font-semibold cursor-pointer">Action sensible</button>
+                    <a href="#boutons-lien" class="inline-flex items-center min-h-[48px] px-1 font-semibold text-[15px]">Lien d'action</a>
+                    <a href="https://wa.me/22800000000" class="inline-flex items-center gap-2 min-h-[48px] px-4 bg-ezer-green text-white rounded-ezer font-semibold text-[15px]">
+                        <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1 1 8 19.6z"></path><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-2-2l.8-1-1-2z"></path></svg>
+                        WhatsApp
+                    </a>
+                    <span class="inline-flex p-2.5 bg-ezer-green rounded-ezer"><button type="button" class="min-h-[44px] px-4 rounded-ezer bg-white text-ezer-dark text-[15px] font-semibold cursor-pointer">Sur fond vert</button></span>
+                </div>
+                <span class="text-sm font-semibold text-ezer-muted">États</span>
+                <div class="flex flex-wrap items-center gap-3">
+                    <button type="button" disabled class="min-h-[48px] px-5 rounded-ezer bg-ezer-muted text-white text-[15px] font-semibold cursor-not-allowed">Désactivé</button>
+                    <button type="button" aria-busy="true" class="inline-flex items-center gap-2.5 min-h-[48px] px-5 rounded-ezer bg-[#3f6f58] text-white text-[15px] font-semibold">
+                        <svg aria-hidden="true" class="w-[18px] h-[18px] animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9"></path></svg>
+                        Envoi en cours…
+                    </button>
+                    <button type="button" class="min-h-[48px] px-5 rounded-ezer bg-ezer-green text-white text-[15px] font-semibold outline outline-2 outline-ezer-dark outline-offset-2">Focus clavier</button>
+                    <span class="text-[13px] text-ezer-muted">Désactivé : on explique toujours pourquoi à côté (ex. « Saisissez la référence »). En cours : le libellé change, le bouton n'est plus cliquable.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. BADGES -->
+        <section class="flex flex-col gap-4">
+            <h2 class="text-[22px] font-semibold">4. Badges, statuts, pastilles</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-[180px_minmax(0,1fr)] lg:gap-x-6 gap-y-4 items-center">
+                <span class="text-sm font-semibold text-ezer-muted">Offres</span>
+                <div class="flex flex-wrap items-center gap-3">
+                    <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-ezer bg-ezer-green-light text-ezer-green border border-ezer-green">Gratuit</span>
+                    <span class="text-[13px] font-semibold px-2.5 py-0.5 rounded-ezer bg-white text-ezer-dark border border-ezer-dark">Tarifé</span>
+                    <span class="text-[13px] text-ezer-muted">Un badge sur chaque offre, sans exception.</span>
+                </div>
+                <span class="text-sm font-semibold text-ezer-muted">Statuts</span>
+                <div class="flex flex-wrap items-center gap-2.5">
+                    <span class="inline-flex items-center min-h-[28px] px-2.5 rounded-ezer border border-ezer-dark bg-white text-ezer-dark text-[13px] font-semibold">Reçue · À confirmer</span>
+                    <span class="inline-flex items-center min-h-[28px] px-2.5 rounded-ezer border-2 border-ezer-brown bg-white text-ezer-dark text-[13px] font-semibold">En examen</span>
+                    <span class="inline-flex items-center min-h-[28px] px-2.5 rounded-ezer border border-ezer-green bg-ezer-green-light text-ezer-green text-[13px] font-semibold">Acceptée · Confirmé</span>
+                    <span class="inline-flex items-center min-h-[28px] px-2.5 rounded-ezer border border-dashed border-ezer-borderMuted bg-white text-ezer-muted text-[13px] font-semibold">Close · Expiré</span>
+                    <span class="inline-flex items-center min-h-[28px] px-2.5 rounded-ezer border border-ezer-dark bg-ezer-dark text-white text-[13px] font-semibold">Refusée · Échoué</span>
+                    <span class="inline-flex items-center min-h-[28px] px-2.5 rounded-ezer border border-dashed border-ezer-borderMuted bg-ezer-green-pale text-ezer-muted text-[13px] font-semibold">Masqué</span>
+                    <span class="text-[13px] text-ezer-muted">Distingués par la bordure (fine, épaisse, pointillée) et le remplissage, jamais par la teinte seule.</span>
+                </div>
+                <span class="text-sm font-semibold text-ezer-muted">Non-lus</span>
+                <div class="flex flex-wrap items-center gap-3">
+                    <span class="inline-flex items-center gap-2 font-semibold">Messagerie<span class="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 rounded-full bg-ezer-red text-white text-xs">2<span class="sr-only"> messages non lus</span></span></span>
+                    <span class="text-[13px] text-ezer-muted">Toujours accompagnée d'un texte lisible par les lecteurs d'écran (« 2 messages non lus »).</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CHAMPS -->
+        <section class="flex flex-col gap-4">
+            <h2 class="text-[22px] font-semibold">5. Champs de formulaire</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="flex flex-col gap-1.5">
+                    <label for="cp-a" class="text-[15px] font-semibold">Normal</label>
+                    <input id="cp-a" type="text" class="w-full h-[52px] px-4 border border-ezer-borderMuted rounded-ezer bg-white text-base text-ezer-dark focus:outline-none">
+                    <span class="text-sm text-ezer-muted">Aide toujours visible, jamais dans le placeholder.</span>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="cp-b" class="text-[15px] font-semibold">Focus</label>
+                    <input id="cp-b" type="text" value="Afi" class="w-full h-[52px] px-4 border border-ezer-dark rounded-ezer bg-white text-base text-ezer-dark outline outline-2 outline-ezer-dark outline-offset-2 focus:outline-none">
+                    <span class="text-sm text-ezer-muted">Contour Encre 2 px, décalé.</span>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="cp-c" class="text-[15px] font-semibold">Erreur</label>
+                    <input id="cp-c" type="tel" value="90 00" aria-invalid="true" aria-describedby="cp-c-e" class="w-full h-[52px] px-4 border-2 border-ezer-dark rounded-ezer bg-white text-base text-ezer-dark focus:outline-none">
+                    <span id="cp-c-e" class="flex items-center gap-1.5 text-sm font-semibold">
+                        <svg aria-hidden="true" class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg>
+                        Le numéro doit comporter 8 chiffres.
+                    </span>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="cp-d" class="text-[15px] font-semibold text-ezer-muted">Désactivé</label>
+                    <input id="cp-d" type="text" value="Non modifiable" disabled class="w-full h-[52px] px-4 border border-dashed border-ezer-borderMuted rounded-ezer bg-ezer-green-pale text-base text-ezer-muted">
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="cp-e" class="text-[15px] font-semibold">Liste</label>
+                    <select id="cp-e" class="w-full h-[52px] px-3 border border-ezer-borderMuted rounded-ezer bg-white text-base text-ezer-dark focus:outline-none">
+                        <option>Mixx By Yas</option>
+                        <option>Moov Money</option>
+                    </select>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <label for="cp-f" class="text-[15px] font-semibold">Texte long</label>
+                    <textarea id="cp-f" rows="2" class="w-full px-4 py-3 border border-ezer-borderMuted rounded-ezer bg-white text-base text-ezer-dark resize-y focus:outline-none"></textarea>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-6 items-center">
+                <label class="flex items-center gap-2.5 min-h-[44px]"><input type="checkbox" checked class="w-[22px] h-[22px] m-0 accent-ezer-green">Case à cocher</label>
+                <label class="flex items-center gap-2.5 min-h-[44px]"><input type="radio" name="cp-r" checked class="w-[22px] h-[22px] m-0 accent-ezer-green">Bouton radio</label>
+                <label class="flex items-center gap-2.5 min-h-[44px]"><input type="checkbox" role="switch" checked class="w-[22px] h-[22px] m-0 accent-ezer-green">Interrupteur « Visible »</label>
+                <label class="flex gap-3 px-4 py-3.5 border-2 border-ezer-green bg-ezer-green-light rounded-ezer min-w-[260px]"><input type="radio" name="cp-r2" checked class="w-[22px] h-[22px] m-0 accent-ezer-green"><span class="flex flex-col"><span class="font-semibold">Choix en carte</span><span class="text-sm text-ezer-muted">Sélection : bordure 2 px + fond doux</span></span></label>
+            </div>
+            <div role="alert" class="flex gap-2.5 items-start max-w-[640px] border-2 border-ezer-dark rounded-ezer px-4 py-3.5">
+                <svg aria-hidden="true" class="shrink-0 mt-0.5 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg>
+                <div class="flex flex-col gap-0.5">
+                    <span class="font-semibold">2 champs à corriger avant l'envoi</span>
+                    <span class="text-sm"><a href="#cp-c" class="font-semibold text-ezer-green hover:underline">Numéro de téléphone</a> · <a href="#cp-e" class="font-semibold text-ezer-green hover:underline">Moyen de paiement</a></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CARTES ET TABLEAUX -->
+        <section class="flex flex-col gap-4">
+            <h2 class="text-[22px] font-semibold">6. Cartes et tableaux</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-[340px_minmax(0,1fr)] gap-6 items-start">
+                <article class="flex flex-col gap-2.5 p-5 border border-ezer-green-border rounded-ezer bg-white">
+                    <div class="flex justify-between gap-2 items-start">
+                        <h3 class="text-lg font-semibold">Gérer son stress au travail</h3>
+                        <span class="shrink-0 text-[13px] font-semibold px-2.5 py-0.5 rounded-ezer bg-white text-ezer-dark border border-ezer-dark">Tarifé</span>
+                    </div>
+                    <p class="text-sm text-ezer-muted">5 leçons · En ligne · [prix] F CFA</p>
+                    <a href="#detail-cartes" class="inline-flex items-center min-h-[44px] font-semibold text-[15px] text-ezer-green hover:underline">Voir le détail</a>
+                </article>
+                <div class="flex flex-col gap-2">
+                    <div class="overflow-x-auto border border-ezer-green-border rounded-ezer">
+                        <table class="w-full min-w-[560px] text-sm">
+                            <thead>
+                                <tr class="bg-ezer-green-light text-left">
+                                    <th scope="col" class="px-3 py-2.5 font-semibold">Référence</th>
+                                    <th scope="col" class="px-3 py-2.5 font-semibold">Date</th>
+                                    <th scope="col" class="px-3 py-2.5 font-semibold text-right">Montant</th>
+                                    <th scope="col" class="px-3 py-2.5 font-semibold">Statut</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t border-ezer-green-borderLight">
+                                    <td class="px-3 py-2.5 tabular-nums">CMD-2026-00087</td>
+                                    <td class="px-3 py-2.5">12/10</td>
+                                    <td class="px-3 py-2.5 text-right tabular-nums">15 000 F</td>
+                                    <td class="px-3 py-2.5"><span class="inline-flex items-center min-h-[26px] px-2.5 rounded-ezer border border-ezer-dark text-[13px] font-semibold">À confirmer</span></td>
+                                </tr>
+                                <tr class="border-t border-ezer-green-borderLight">
+                                    <td colspan="4" class="px-3 py-5 text-center text-ezer-muted">Aucune autre transaction sur cette période. <a href="#filtres-cartes" class="font-semibold text-ezer-green hover:underline">Effacer les filtres</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <span class="text-[13px] text-ezer-muted">En-tête fond doux, séparateurs #d3e6db, chiffres alignés à droite. Sur téléphone, le tableau défile dans son cadre ou devient une liste de cartes.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. ÉTATS -->
+        <section class="flex flex-col gap-4">
+            <h2 class="text-[22px] font-semibold">7. États : chargement, vide, erreur, succès, hors ligne</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                <div class="flex flex-col gap-2">
+                    <span class="text-[13px] font-semibold uppercase tracking-wider text-ezer-muted">Chargement</span>
+                    <div role="status" aria-busy="true" class="flex flex-col gap-2.5">
+                        <p class="flex items-center gap-2 text-[15px]">
+                            <svg aria-hidden="true" class="w-[18px] h-[18px] animate-spin text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9"></path></svg>
+                            Chargement des demandes…
+                        </p>
+                        <div aria-hidden="true" class="flex items-center gap-3 px-4 py-3.5 border border-ezer-green-borderLight rounded-ezer">
+                            <span class="shrink-0 w-10 h-10 rounded-full bg-ezer-green-light"></span>
+                            <span class="flex-1 flex flex-col gap-2"><span class="block h-3 w-[62%] rounded-full bg-ezer-green-light"></span><span class="block h-2.5 w-[34%] rounded-full bg-ezer-green-pale border border-ezer-green-light"></span></span>
+                        </div>
+                        <div aria-hidden="true" class="flex items-center gap-3 px-4 py-3.5 border border-ezer-green-borderLight rounded-ezer">
+                            <span class="shrink-0 w-10 h-10 rounded-full bg-ezer-green-light"></span>
+                            <span class="flex-1 flex flex-col gap-2"><span class="block h-3 w-[74%] rounded-full bg-ezer-green-light"></span><span class="block h-2.5 w-[26%] rounded-full bg-ezer-green-pale border border-ezer-green-light"></span></span>
+                        </div>
+                        <span class="text-[13px] text-ezer-muted">Blocs fixes, sans animation (2G/3G, peu d'effets). Texte « Chargement de … » toujours présent.</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <span class="text-[13px] font-semibold uppercase tracking-wider text-ezer-muted">Vide</span>
+                    <div class="flex flex-col items-start gap-2.5 p-6 border border-dashed border-ezer-borderMuted rounded-ezer bg-ezer-green-pale">
+                        <svg aria-hidden="true" class="w-8 h-8 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2.5-7.5A2 2 0 0 1 7.4 4h9.2a2 2 0 0 1 1.9 1.5L21 13"></path><path d="M3 13v5a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5h-5l-1.5 2.5h-5L8 13z"></path></svg>
+                        <h3 class="text-lg font-semibold">Vous n'êtes inscrit(e) à aucune formation.</h3>
+                        <p class="text-[15px] text-ezer-muted">Une phrase qui explique ce qui apparaîtra ici, puis une seule action utile.</p>
+                        <a href="#action-vide" class="inline-flex items-center min-h-[48px] px-5 rounded-ezer bg-ezer-green text-white font-semibold text-[15px] hover:bg-ezer-green-dark transition-colors">Voir les formations</a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <span class="text-[13px] font-semibold uppercase tracking-wider text-ezer-muted">Erreur de chargement</span>
+                    <div role="alert" class="flex flex-col items-start gap-2.5 p-5 border-2 border-ezer-dark rounded-ezer">
+                        <p class="flex items-start gap-2 font-semibold">
+                            <svg aria-hidden="true" class="shrink-0 mt-0.5 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.5"></path></svg>
+                            Impossible d'afficher les demandes pour le moment.
+                        </p>
+                        <p class="text-[15px] text-ezer-muted">La connexion semble interrompue ou le service ne répond pas. Vos données sont en sécurité.</p>
+                        <button type="button" class="min-h-[48px] px-5 rounded-ezer border-2 border-ezer-green bg-white text-ezer-green text-[15px] font-semibold cursor-pointer hover:bg-ezer-green-light transition-colors">Réessayer</button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <span class="text-[13px] font-semibold uppercase tracking-wider text-ezer-muted">Succès</span>
+                    <div role="status" class="flex gap-3 items-start p-5 rounded-ezer bg-ezer-green-light border border-ezer-green">
+                        <svg aria-hidden="true" class="shrink-0 w-7 h-7 text-ezer-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.5 2.5L16 9.5"></path></svg>
+                        <div class="flex flex-col gap-1">
+                            <span class="font-semibold">Votre demande a bien été envoyée.</span>
+                            <span class="text-[15px]">Numéro : ASS-2026-00042. Nous vous répondons sous [délai].</span>
+                        </div>
+                    </div>
+                    <span class="text-[13px] font-semibold uppercase tracking-wider text-ezer-muted mt-2">Hors ligne (bandeau)</span>
+                    <div role="status" class="flex flex-wrap items-center gap-2 px-4 py-2.5 rounded-ezer bg-ezer-dark text-white text-sm">
+                        <svg aria-hidden="true" class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 8.5a15 15 0 0 1 20 0M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"></path><path d="M3 3l18 18"></path></svg>
+                        <span>Vous êtes hors ligne. Votre saisie est conservée et sera envoyée au retour du réseau.</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div data-layout="footer" data-sobre="1"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

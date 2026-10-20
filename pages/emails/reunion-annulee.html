@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-mail — réunion annulée — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-ezer-green-pale text-ezer-dark font-sans text-base leading-normal min-h-screen flex flex-col">
+
+    <div data-layout="header"></div>
+
+    <main class="flex-1 max-w-[760px] mx-auto w-full px-4 lg:px-8 py-7 lg:py-10 flex flex-col gap-5">
+        <div class="flex flex-col gap-1">
+            <p class="text-xs font-semibold uppercase tracking-widest text-ezer-green">Ezer Home · Notifications</p>
+            <h1 class="font-cooper font-normal text-3xl">E-mail — réunion annulée</h1>
+            <p class="text-ezer-muted">E-mail transactionnel · format ordinateur (1440 px) · gabarit 680 px. Sens : annulation · déclencheur : annulation par l'intervenant ou l'équipe. Le message rassure et propose de reprendre rapidement.</p>
+            <p class="text-ezer-muted text-[15px]">Envoi automatique depuis <span class="font-semibold text-ezer-dark">notifications@ezerhome.tg</span> · rien à saisir, rien à traiter : le rendu ci-dessous est identique à ce que reçoit la personne.</p>
+        </div>
+
+        <div data-ezer-mail-nav data-ezer-mail-nav-actif="reunion-annulee" class="bg-ezer-green-light p-3 rounded-ezer border border-ezer-green-border flex flex-col gap-2">
+            <span class="text-xs font-semibold text-ezer-muted">Modèles de messages (10 e-mails + formats courts + composants) :</span>
+        </div>
+
+        <div data-ezer-mail="reunion-annulee" data-ezer-mail-format="ordinateur"></div>
+
+        <p class="text-sm text-ezer-muted max-w-[680px]">Rappel sécurité (présent dans chaque e-mail) : Ezer Home ne demande jamais un mot de passe ou un code par téléphone, SMS ou WhatsApp. Les liens de connexion expirent et les codes sont valables 10 minutes.</p>
+    </main>
+
+    <div data-layout="footer" data-sobre="1"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/emails.js"></script>
+</body>
+</html>
+
