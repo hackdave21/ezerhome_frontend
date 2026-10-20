@@ -42,7 +42,7 @@ module.exports = {
         'ezer-nav': 'inset 0 -3px 0 #187d50',
       },
       maxWidth: {
-        'site': '1200px',
+        'site': '1400px',
       }
     },
   },

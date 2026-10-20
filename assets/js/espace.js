@@ -28,7 +28,7 @@
 
     return '' +
       '<section class="bg-ezer-green-light">' +
-        '<div class="max-w-[1200px] mx-auto px-4 lg:px-8 py-5 lg:py-6 flex flex-wrap items-end justify-between gap-3">' +
+        '<div class="max-w-[1400px] mx-auto px-6 lg:px-12 py-5 lg:py-6 flex flex-wrap items-end justify-between gap-3">' +
           '<div class="flex flex-col gap-1">' +
             '<p class="text-xs font-semibold uppercase tracking-wider text-ezer-green">Mon espace</p>' +
             '<h1 class="font-cooper font-normal text-2xl lg:text-[34px]">Bonjour, Afi</h1>' +
@@ -37,9 +37,9 @@
         '</div>' +
       '</section>' +
 
-      '<div class="max-w-[1200px] mx-auto px-4 lg:px-8">' +
+      '<div class="max-w-[1400px] mx-auto px-6 lg:px-12">' +
         '<nav role="tablist" aria-label="Rubriques de mon espace" aria-orientation="horizontal" ' +
-          'class="lg:flex lg:gap-12 -mx-4 px-4 lg:px-0 lg:pt-8 lg:pb-0 lg:flex-col overflow-x-auto border-b lg:border-0 border-ezer-green-border bg-white sticky top-0 lg:top-24 lg:bg-transparent z-40">' +
+          'class="lg:flex lg:gap-12 -mx-6 px-6 lg:-mx-12 lg:px-0 lg:pt-8 lg:pb-0 lg:flex-col overflow-x-auto border-b lg:border-0 border-ezer-green-border bg-white sticky top-0 lg:top-24 lg:bg-transparent z-40">' +
           tabs +
         '</nav>' +
       '</div>';

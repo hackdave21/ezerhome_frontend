@@ -77,7 +77,7 @@
 
     return '' +
       '<header class="bg-white border-b border-ezer-green-borderLight">' +
-        '<div class="max-w-[1200px] mx-auto px-4 lg:px-8 py-3 flex items-center justify-between gap-4">' +
+        '<div class="max-w-[1400px] mx-auto px-6 lg:px-12 py-3 flex items-center justify-between gap-4">' +
           '<a href="' + B + e.accueil + '" class="flex flex-col leading-none">' +
             '<span class="font-cooper text-xl text-ezer-green">Ezer Home</span>' +
             '<span class="text-xs uppercase tracking-wider text-ezer-muted mt-1">' + e.titre + '</span>' +

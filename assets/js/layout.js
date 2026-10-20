@@ -14,6 +14,7 @@
   var B = document.currentScript.src.replace(/assets\/js\/layout\.js.*$/, '');
 
   var NAV = [
+    { id: 'accueil', label: 'Accueil', href: 'pages/site/accueil.html' },
     { id: 'a-propos', label: 'À propos', href: 'pages/site/a-propos.html' },
     { id: 'ecoute', label: 'Écoute', href: 'pages/site/ecoute.html', badge: true },
     { id: 'formation', label: 'Formation', href: 'pages/site/formations.html' },
@@ -65,7 +66,7 @@
 
     return '' +
       '<div class="bg-ezer-dark text-white text-xs lg:text-sm">' +
-        '<div class="max-w-[1200px] mx-auto px-4 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2 lg:gap-6">' +
+        '<div class="max-w-[1400px] mx-auto px-6 lg:px-12 py-2 flex flex-wrap items-center justify-between gap-2 lg:gap-6">' +
           '<div class="flex flex-wrap items-center gap-4 lg:gap-7">' +
             '<span class="inline-flex items-center gap-1.5">' + ICON.pin + '[Quartier, rue], Lomé, Togo</span>' +
             '<a href="tel:+22800000000" class="hover:underline inline-flex items-center gap-1.5">' + ICON.tel + '+228 [00 00 00 00]</a>' +
@@ -77,7 +78,7 @@
       '</div>' +
 
       '<header class="sticky top-0 z-50 bg-white border-b border-ezer-green-borderLight">' +
-        '<div class="max-w-[1200px] mx-auto px-4 lg:px-8 py-3 flex items-center justify-between gap-4">' +
+        '<div class="max-w-[1400px] mx-auto px-6 lg:px-12 py-3 flex items-center justify-between gap-4">' +
           '<a href="' + B + 'pages/site/accueil.html" aria-label="Ezer Home, retour à l\'accueil" class="block shrink-0">' +
             '<img src="' + B + 'assets/images/Logo_Ezer-01.png" alt="Logo Ezer Home" class="h-16 lg:h-20 w-auto object-contain">' +
           '</a>' +
@@ -155,7 +156,7 @@
 
     return '' +
       '<footer class="bg-white border-t-4 border-t-ezer-brown mt-12">' +
-        '<div class="max-w-[1200px] mx-auto px-4 lg:px-8 py-10 lg:py-14 flex flex-col gap-8">' +
+        '<div class="max-w-[1400px] mx-auto px-6 lg:px-12 py-10 lg:py-14 flex flex-col gap-8">' +
           '<div class="flex flex-wrap gap-8">' +
             '<div class="flex-1 min-w-[260px] max-w-[320px] flex flex-col gap-4">' +
               '<img src="' + B + 'assets/images/Logo_Ezer-01.png" alt="Ezer Home" class="h-14 w-auto object-contain self-start">' +
@@ -178,7 +179,7 @@
   function miniFooter() {
     return '' +
       '<footer class="border-t border-ezer-green-borderLight bg-white px-4 py-5 text-sm text-ezer-muted">' +
-        '<div class="max-w-[1200px] mx-auto flex flex-wrap justify-between gap-2 lg:gap-6">' +
+        '<div class="max-w-[1400px] mx-auto flex flex-wrap justify-between gap-2 lg:gap-6">' +
           '<span>© 2026 Ezer Home</span>' +
           '<nav aria-label="Liens utiles" class="flex flex-wrap gap-1 lg:gap-4">' +
             '<a href="' + B + 'pages/site/legal.html#confidentialite" class="py-1.5 text-ezer-green hover:underline">Confidentialité</a>' +
