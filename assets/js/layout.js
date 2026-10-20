@@ -79,7 +79,7 @@
       '<header class="sticky top-0 z-50 bg-white border-b border-ezer-green-borderLight">' +
         '<div class="max-w-[1200px] mx-auto px-4 lg:px-8 py-3 flex items-center justify-between gap-4">' +
           '<a href="' + B + 'pages/site/accueil.html" aria-label="Ezer Home, retour à l\'accueil" class="block shrink-0">' +
-            '<img src="' + B + 'assets/images/Logo Ezer-01.png" alt="Logo Ezer Home" class="h-12 lg:h-14 w-auto object-contain">' +
+            '<img src="' + B + 'assets/images/Logo_Ezer-01.png" alt="Logo Ezer Home" class="h-16 lg:h-20 w-auto object-contain">' +
           '</a>' +
 
           '<nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-1">' + navDesktop + '</nav>' +
@@ -158,7 +158,7 @@
         '<div class="max-w-[1200px] mx-auto px-4 lg:px-8 py-10 lg:py-14 flex flex-col gap-8">' +
           '<div class="flex flex-wrap gap-8">' +
             '<div class="flex-1 min-w-[260px] max-w-[320px] flex flex-col gap-4">' +
-              '<img src="' + B + 'assets/images/Logo Ezer-01.png" alt="Ezer Home" class="h-14 w-auto object-contain self-start">' +
+              '<img src="' + B + 'assets/images/Logo_Ezer-01.png" alt="Ezer Home" class="h-14 w-auto object-contain self-start">' +
               '<address class="not-italic flex flex-col gap-1 text-[15px] text-ezer-dark">' +
                 '<span>[Quartier, rue], Lomé, Togo</span>' +
                 '<a href="tel:+22800000000" class="text-ezer-green hover:underline">+228 [00 00 00 00]</a>' +

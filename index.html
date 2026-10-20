@@ -19,12 +19,6 @@
             <p class="text-ezer-muted max-w-[860px]">point d'entrée de la navigation : chaque écran est accessible ici. Les maquettes mobiles et ordinateurs ont été fusionnées en une page responsive unique ; les états (erreur, chargement, succès) sont accessibles via le sélecteur en haut de chaque page. <strong class="text-ezer-dark">Toutes les pages réalisées (73 fichiers)</strong> : site public, assistance, dons, compte, commande, espace personnel, comité, intervenants, administration, e-mails, SMS et composants sont complets.</p>
         </div>
 
-        <div id="filtres" class="flex flex-wrap gap-2 mb-6" role="group" aria-label="Filtrer les écrans">
-            <button type="button" data-filtre="tous" aria-pressed="true" class="min-h-[44px] px-4 rounded-ezer border-2 border-ezer-green bg-ezer-green text-white font-semibold text-[15px]">Tous</button>
-            <button type="button" data-filtre="faits" aria-pressed="false" class="min-h-[44px] px-4 rounded-ezer border border-ezer-borderMuted bg-white text-ezer-dark font-semibold text-[15px]">Réalisés</button>
-            <button type="button" data-filtre="a-venir" aria-pressed="false" class="min-h-[44px] px-4 rounded-ezer border border-ezer-borderMuted bg-white text-ezer-dark font-semibold text-[15px]">À venir</button>
-        </div>
-
         <div id="plan" class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 items-start"></div>
 
     </div>
@@ -35,22 +29,22 @@
             var groupes = [
                 { titre: 'Site public', ecrans: [
                     ['Accueil', P + 'site/accueil.html', 'fait'],
-                    ['Menu mobile ouvert', P + 'site/menu-mobile.html'],
+                    ['Menu mobile ouvert', P + 'site/menu-mobile.html', 'fait'],
                     ['Écoute', P + 'site/ecoute.html', 'fait'],
                     ['Formations : liste des offres', P + 'site/formations.html', 'fait'],
-                    ['Formation : détail d\'une offre', P + 'site/formation-detail.html'],
-                    ['Coaching : liste des offres', P + 'site/coaching.html'],
-                    ['Coaching : détail d\'une offre', P + 'site/coaching-detail.html'],
-                    ['Tarifs', P + 'site/tarifs.html'],
-                    ['À propos', P + 'site/a-propos.html'],
-                    ['Notre équipe', P + 'site/equipe.html'],
-                    ['À quoi servent les dons', P + 'site/usage-dons.html'],
-                    ['Partenaires', P + 'site/partenaires.html'],
-                    ['Contact : particulier', P + 'site/contact-particulier.html'],
-                    ['Contact : donateur institutionnel', P + 'site/contact-institutionnel.html'],
-                    ['Pages légales', P + 'site/legal.html'],
-                    ['Hors ligne', P + 'site/hors-ligne.html'],
-                    ['Page introuvable (404)', P + 'site/404.html']
+                    ['Formation : détail d\'une offre', P + 'site/formation-detail.html', 'fait'],
+                    ['Coaching : liste des offres', P + 'site/coaching.html', 'fait'],
+                    ['Coaching : détail d\'une offre', P + 'site/coaching-detail.html', 'fait'],
+                    ['Tarifs', P + 'site/tarifs.html', 'fait'],
+                    ['À propos', P + 'site/a-propos.html', 'fait'],
+                    ['Notre équipe', P + 'site/equipe.html', 'fait'],
+                    ['À quoi servent les dons', P + 'site/usage-dons.html', 'fait'],
+                    ['Partenaires', P + 'site/partenaires.html', 'fait'],
+                    ['Contact : particulier', P + 'site/contact-particulier.html', 'fait'],
+                    ['Contact : donateur institutionnel', P + 'site/contact-institutionnel.html', 'fait'],
+                    ['Pages légales', P + 'site/legal.html', 'fait'],
+                    ['Hors ligne', P + 'site/hors-ligne.html', 'fait'],
+                    ['Page introuvable (404)', P + 'site/404.html', 'fait']
                 ]},
                 { titre: 'Assistance et dons', ecrans: [
                     ['Assistance : formulaire', P + 'assistance/demande.html', 'fait', '4 états'],
@@ -78,7 +72,7 @@
                 ]},
                 { titre: 'Espace personnel', ecrans: [
                     ['Écoute : suivi de la demande', P + 'espace/suivi-ecoute.html', 'fait', '4 états'],
-                    ['Écoute : demande d\'accompagnement', P + 'espace/demande-ecoute.html'],
+                    ['Écoute : demande d\'accompagnement', P + 'espace/demande-ecoute.html', 'fait'],
                     ['Charte éthique (signature bloquante)', P + 'espace/charte.html', 'fait'],
                     ['Messagerie sécurisée', P + 'espace/messagerie.html', 'fait', '4 états'],
                     ['Messagerie : chargement', P + 'espace/messagerie.html', 'fait', 'état 2'],
@@ -96,46 +90,46 @@
                     ['Réservation expirée', P + 'commande/expiree.html', 'fait']
                 ]},
                 { titre: 'Thérapeutes et coachs', ecrans: [
-                    ['Candidature intervenant', P + 'intervenant/candidature.html'],
-                    ['Candidature envoyée', P + 'intervenant/candidature-attente.html'],
-                    ['Tableau de bord intervenant', P + 'intervenant/dashboard.html'],
-                    ['Fiche consultant', P + 'intervenant/fiche-consultant.html'],
-                    ['Programmer une réunion', P + 'intervenant/programmer-reunion.html'],
-                    ['Agenda', P + 'intervenant/agenda.html'],
-                    ['Agenda vide', P + 'intervenant/agenda-vide.html'],
-                    ['Notes de réunion', P + 'intervenant/notes.html'],
-                    ['Terminer la note', P + 'intervenant/notes-confirmation.html'],
-                    ['Note verrouillée', P + 'intervenant/notes-verrouillee.html'],
-                    ['Messagerie', P + 'intervenant/messagerie.html'],
-                    ['Mes offres', P + 'intervenant/offres.html'],
-                    ['Liste des inscrits', P + 'intervenant/inscrits.html']
+                    ['Candidature intervenant', P + 'intervenant/candidature.html', 'fait'],
+                    ['Candidature envoyée', P + 'intervenant/candidature-attente.html', 'fait'],
+                    ['Tableau de bord intervenant', P + 'intervenant/dashboard.html', 'fait'],
+                    ['Fiche consultant', P + 'intervenant/fiche-consultant.html', 'fait'],
+                    ['Programmer une réunion', P + 'intervenant/programmer-reunion.html', 'fait'],
+                    ['Agenda', P + 'intervenant/agenda.html', 'fait'],
+                    ['Agenda vide', P + 'intervenant/agenda-vide.html', 'fait'],
+                    ['Notes de réunion', P + 'intervenant/notes.html', 'fait'],
+                    ['Terminer la note', P + 'intervenant/notes-confirmation.html', 'fait'],
+                    ['Note verrouillée', P + 'intervenant/notes-verrouillee.html', 'fait'],
+                    ['Messagerie', P + 'intervenant/messagerie.html', 'fait'],
+                    ['Mes offres', P + 'intervenant/offres.html', 'fait'],
+                    ['Liste des inscrits', P + 'intervenant/inscrits.html', 'fait']
                 ]},
                 { titre: 'Comité d\'assistance', ecrans: [
-                    ['Liste des demandes', P + 'comite/demandes.html'],
-                    ['Fiche d\'une demande', P + 'comite/fiche-demande.html'],
-                    ['Changement de statut', P + 'comite/changement-statut.html'],
-                    ['Photos d\'actions', P + 'comite/photos.html'],
-                    ['Aucun résultat / erreur de chargement', P + 'comite/erreur-vide.html']
+                    ['Liste des demandes', P + 'comite/demandes.html', 'fait'],
+                    ['Fiche d\'une demande', P + 'comite/fiche-demande.html', 'fait'],
+                    ['Changement de statut', P + 'comite/changement-statut.html', 'fait'],
+                    ['Photos d\'actions', P + 'comite/photos.html', 'fait'],
+                    ['Aucun résultat / erreur de chargement', P + 'comite/erreur-vide.html', 'fait']
                 ]},
                 { titre: 'Administration', ecrans: [
-                    ['Tableau de bord', P + 'admin/dashboard.html'],
-                    ['Demandes d\'écoute et affectation', P + 'admin/affectation-ecoute.html'],
-                    ['Candidatures intervenants', P + 'admin/candidatures.html'],
-                    ['Utilisateurs', P + 'admin/utilisateurs.html'],
-                    ['Suivi des réunions', P + 'admin/reunions.html'],
-                    ['Lecture d\'une note clôturée', P + 'admin/note-cloturee.html'],
-                    ['Paiements et rapprochement (états inclus)', P + 'admin/paiements.html'],
-                    ['Dons et reçus', P + 'admin/dons.html'],
-                    ['Médiathèque (états inclus)', P + 'admin/mediatheque.html'],
-                    ['Médiathèque : suppression bloquée (dém. 3)', P + 'admin/mediatheque.html'],
-                    ['Organigramme', P + 'admin/organigramme.html'],
-                    ['Partenaires', P + 'admin/partenaires.html'],
-                    ['CMS : pages et contenus', P + 'admin/cms-pages.html'],
-                    ['CMS : charte versionnée', P + 'admin/cms-charte.html'],
-                    ['Modèles de notifications', P + 'admin/notifications.html'],
-                    ['Paramètres', P + 'admin/parametres.html'],
-                    ['Journal d\'audit (états inclus)', P + 'admin/audit.html'],
-                    ['Journal d\'audit : erreur (dém. 4)', P + 'admin/audit.html']
+                    ['Tableau de bord', P + 'admin/dashboard.html', 'fait'],
+                    ['Demandes d\'écoute et affectation', P + 'admin/affectation-ecoute.html', 'fait'],
+                    ['Candidatures intervenants', P + 'admin/candidatures.html', 'fait'],
+                    ['Utilisateurs', P + 'admin/utilisateurs.html', 'fait'],
+                    ['Suivi des réunions', P + 'admin/reunions.html', 'fait'],
+                    ['Lecture d\'une note clôturée', P + 'admin/note-cloturee.html', 'fait'],
+                    ['Paiements et rapprochement (états inclus)', P + 'admin/paiements.html', 'fait'],
+                    ['Dons et reçus', P + 'admin/dons.html', 'fait'],
+                    ['Médiathèque (états inclus)', P + 'admin/mediatheque.html', 'fait'],
+                    ['Médiathèque : suppression bloquée (dém. 3)', P + 'admin/mediatheque.html', 'fait'],
+                    ['Organigramme', P + 'admin/organigramme.html', 'fait'],
+                    ['Partenaires', P + 'admin/partenaires.html', 'fait'],
+                    ['CMS : pages et contenus', P + 'admin/cms-pages.html', 'fait'],
+                    ['CMS : charte versionnée', P + 'admin/cms-charte.html', 'fait'],
+                    ['Modèles de notifications', P + 'admin/notifications.html', 'fait'],
+                    ['Paramètres', P + 'admin/parametres.html', 'fait'],
+                    ['Journal d\'audit (états inclus)', P + 'admin/audit.html', 'fait'],
+                    ['Journal d\'audit : erreur (dém. 4)', P + 'admin/audit.html', 'fait']
                 ]},
                 { titre: 'Messages et système', ecrans: [
                     ['E-mail : vérification de compte', P + 'emails/verification-compte.html', 'fait'],
@@ -155,14 +149,10 @@
 
             var plan = document.getElementById('plan');
 
-            function rendre(filtre) {
+            function rendre() {
                 plan.innerHTML = '';
                 groupes.forEach(function (g) {
-                    var lignes = g.ecrans.filter(function (e) {
-                        if (filtre === 'faits') return e[2] === 'fait';
-                        if (filtre === 'a-venir') return e[2] !== 'fait';
-                        return true;
-                    });
+                    var lignes = g.ecrans;
                     if (!lignes.length) return;
 
                     var section = document.createElement('section');
@@ -200,13 +190,9 @@
                             a.className = 'inline-flex items-center justify-center min-h-[44px] px-4 rounded-ezer bg-ezer-green text-white font-semibold hover:bg-ezer-green-dark transition-colors';
                             a.textContent = 'Ouvrir';
                             tdAction.appendChild(a);
-                        } else {
-                            var span = document.createElement('span');
-                            span.className = 'text-ezer-muted font-semibold';
-                            span.textContent = 'À venir';
-                            tdAction.appendChild(span);
                         }
                         tr.appendChild(tdAction);
+
 
                         table.appendChild(tr);
                     });
@@ -216,25 +202,7 @@
                 });
             }
 
-            document.querySelectorAll('[data-filtre]').forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    var f = btn.getAttribute('data-filtre');
-                    document.querySelectorAll('[data-filtre]').forEach(function (b) {
-                        var on = b === btn;
-                        b.setAttribute('aria-pressed', on ? 'true' : 'false');
-                        b.classList.toggle('bg-ezer-green', on);
-                        b.classList.toggle('text-white', on);
-                        b.classList.toggle('border-ezer-green', on);
-                        b.classList.toggle('border-2', on);
-                        b.classList.toggle('bg-white', !on);
-                        b.classList.toggle('text-ezer-dark', !on);
-                        b.classList.toggle('border-ezer-borderMuted', !on);
-                    });
-                    rendre(f);
-                });
-            });
-
-            rendre('tous');
+            rendre();
         })();
     </script>
 </body>
