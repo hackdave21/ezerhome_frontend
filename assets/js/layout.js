@@ -68,9 +68,9 @@
       '<div class="bg-ezer-dark text-white text-xs lg:text-sm">' +
         '<div class="max-w-[1400px] mx-auto px-6 lg:px-12 py-2 flex flex-wrap items-center justify-between gap-2 lg:gap-6">' +
           '<div class="flex flex-wrap items-center gap-4 lg:gap-7">' +
-            '<span class="inline-flex items-center gap-1.5">' + ICON.pin + '[Quartier, rue], Lomé, Togo</span>' +
-            '<a href="tel:+22800000000" class="hover:underline inline-flex items-center gap-1.5">' + ICON.tel + '+228 [00 00 00 00]</a>' +
-            '<a href="mailto:contact@ezerhome.tg" class="hover:underline inline-flex items-center gap-1.5">' + ICON.mail + '[contact@ezerhome.tg]</a>' +
+            '<span class="inline-flex items-center gap-1.5">' + ICON.pin + '138, Boulevard du 13 Janvier, Hanoukopé, Lomé</span>' +
+            '<a href="tel:+22898135757" class="hover:underline inline-flex items-center gap-1.5">' + ICON.tel + '+228 98 13 57 57</a>' +
+            '<a href="mailto:mail@ezerhome.org" class="hover:underline inline-flex items-center gap-1.5">' + ICON.mail + 'mail@ezerhome.org</a>' +
           '</div>' +
           '<a href="' + B + 'pages/auth/connexion.html" class="inline-flex items-center gap-2 font-semibold hover:text-ezer-green-light">' +
             ICON.user + 'Mon espace</a>' +
@@ -87,11 +87,11 @@
 
           '<div class="hidden lg:flex items-center gap-3">' +
             (showDon ? '<a href="' + B + 'pages/dons/don.html" class="inline-flex items-center justify-center min-h-[44px] px-4 rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold text-[15px] hover:bg-ezer-green hover:text-white transition-colors">Faire un don</a>' : '') +
-            '<a href="https://wa.me/22800000000" target="_blank" rel="noopener" class="inline-flex items-center gap-2 min-h-[48px] px-4 rounded-ezer bg-ezer-green text-white font-semibold text-[15px] hover:bg-ezer-green-dark transition-colors">' + ICON.chat + 'WhatsApp</a>' +
+            '<a href="https://wa.me/22898135757" target="_blank" rel="noopener" class="inline-flex items-center gap-2 min-h-[48px] px-4 rounded-ezer bg-ezer-green text-white font-semibold text-[15px] hover:bg-ezer-green-dark transition-colors">' + ICON.chat + 'WhatsApp</a>' +
           '</div>' +
 
           '<div class="flex lg:hidden items-center gap-2">' +
-            '<a href="https://wa.me/22800000000" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 min-h-[40px] px-3 rounded-ezer bg-ezer-green text-white font-semibold text-sm">' + ICON.chat + 'WhatsApp</a>' +
+            '<a href="https://wa.me/22898135757" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 min-h-[40px] px-3 rounded-ezer bg-ezer-green text-white font-semibold text-sm">' + ICON.chat + 'WhatsApp</a>' +
             '<button type="button" data-toggle-menu="menu-mobile" data-menu-toggle aria-expanded="' + ouvert + '" aria-controls="menu-mobile" ' +
               'class="w-11 h-11 inline-flex items-center justify-center border border-ezer-borderMuted rounded-ezer text-ezer-dark hover:bg-gray-100" ' +
               'aria-label="' + (ouvert ? 'Fermer le menu' : 'Ouvrir le menu') + '">' + (ouvert ? ICON.close : ICON.burger) + '</button>' +
@@ -161,9 +161,9 @@
             '<div class="flex-1 min-w-[260px] max-w-[320px] flex flex-col gap-4">' +
               '<img src="' + B + 'assets/images/Logo_Ezer-01.png" alt="Ezer Home" class="h-14 w-auto object-contain self-start">' +
               '<address class="not-italic flex flex-col gap-1 text-[15px] text-ezer-dark">' +
-                '<span>[Quartier, rue], Lomé, Togo</span>' +
-                '<a href="tel:+22800000000" class="text-ezer-green hover:underline">+228 [00 00 00 00]</a>' +
-                '<a href="mailto:contact@ezerhome.tg" class="text-ezer-green hover:underline">[contact@ezerhome.tg]</a>' +
+                '<span>138, Boulevard du 13 Janvier, Hanoukopé, Lomé</span>' +
+                '<a href="tel:+22898135757" class="text-ezer-green hover:underline">+228 98 13 57 57</a>' +
+                '<a href="mailto:mail@ezerhome.org" class="text-ezer-green hover:underline">mail@ezerhome.org</a>' +
               '</address>' +
             '</div>' +
             colonnes +

@@ -49,6 +49,11 @@ Les textes entre guillemets « … » sont ceux du client, repris tels quels (se
 
 ### 1.1 Coordonnées à afficher (pied de page / contact)
 
+- [x] **FAIT** — Coordonnées à afficher (pied de page / contact) mises à jour et validées :
+  - **Adresse** : 138, Boulevard du 13 Janvier, Hanoukopé, Lomé
+  - **Téléphone / WhatsApp** : +228 98 13 57 57
+  - **E-mail** : mail@ezerhome.org
+
 - **Adresse** : 138, Boulevard du 13 Janvier, Hanoukopé, Lomé
 - **Téléphone / WhatsApp** : +228 98 13 57 57
 - **E-mail** : mail@ezerhome.org

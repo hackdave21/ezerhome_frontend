@@ -200,8 +200,8 @@
         '<tr><td style="padding: ' + s.piedPad + '; background: #0e1c03; border-radius: 0 0 11px 11px; color: #ffffff; font-size: 13px; line-height: 20px">' +
           '<div style="display: flex; flex-direction: column; gap: 8px">' +
             '<span style="font-family: \'Cooper Black\', Georgia, serif; font-size: 18px; line-height: 24px; color: #22b573">Ezer Home</span>' +
-            '<span>[Quartier, rue], Lomé, Togo</span>' +
-            '<span>+228 [00 00 00 00] · <a href="https://wa.me/22800000000" style="color: #ffffff">WhatsApp</a> · <a href="mailto:contact@ezerhome.tg" style="color: #ffffff">[contact@ezerhome.tg]</a></span>' +
+            '<span>138, Boulevard du 13 Janvier, Hanoukopé, Lomé</span>' +
+            '<span>+228 98 13 57 57 · <a href="https://wa.me/22898135757" style="color: #ffffff">WhatsApp</a> · <a href="mailto:mail@ezerhome.org" style="color: #ffffff">mail@ezerhome.org</a></span>' +
             '<span style="color: #c8dccf">' + m.raison + '</span>' +
             '<span><a href="https://ezerhome.tg/confidentialite" style="color: #ffffff">Confidentialité</a> · <a href="https://ezerhome.tg/espace/profil#notifications" style="color: #ffffff">Préférences de notification</a> · <a href="https://ezerhome.tg/contact" style="color: #ffffff">Nous écrire</a></span>' +
           '</div>' +
