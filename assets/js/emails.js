@@ -1,13 +1,13 @@
 /**
- * Ezer Home - PrÃ©visualisation des e-mails transactionnels
+ * Ezer Home - Prévisualisation des e-mails transactionnels
  *
  * Usage dans une page :
  *   <div data-ezer-mail="reunion-programmee" data-ezer-mail-format="ordinateur"></div>
  *   <div data-ezer-mail-nav data-ezer-mail-nav-actif="reunion-programmee"></div>
  *   <script src="../../assets/js/emails.js"></script>
  *
- * Format : "ordinateur" (gabarit 680 px) ou "mobile" (tÃ©lÃ©phone, 375 px)
- * Gabarit conforme Ã  MessageModele.dc.html (maquette).
+ * Format : "ordinateur" (gabarit 680 px) ou "mobile" (téléphone, 375 px)
+ * Gabarit conforme à MessageModele.dc.html (maquette).
  */
 (function () {
   var B = document.currentScript.src.replace(/assets\/js\/emails\.js.*$/, '');
@@ -29,95 +29,95 @@
 
   var M = {
     'verification': {
-      objet: 'Votre code de vÃ©rification Ezer Home', apercu: 'Saisissez ce code pour activer votre compte.',
-      titre: 'Confirmez votre adresse', intro: 'Vous venez de crÃ©er votre compte. Saisissez ce code sur la page de vÃ©rification, ou utilisez le bouton ci-dessous.',
-      aCode: true, code: '482 913', bouton: 'Confirmer mon adresse', lien: 'https://ezerhome.tg/verifier/â—â—â—â—', lienTexte: 'https://ezerhome.tg/verifier/â—â—â—â—',
-      note: "Vous n'Ãªtes pas Ã  l'origine de cette inscription ? Ignorez ce message : aucun compte ne sera activÃ©.", salut: 'Bonjour,'
+      objet: 'Votre code de vérification Ezer Home', apercu: 'Saisissez ce code pour activer votre compte.',
+      titre: 'Confirmez votre adresse', intro: 'Vous venez de créer votre compte. Saisissez ce code sur la page de vérification, ou utilisez le bouton ci-dessous.',
+      aCode: true, code: '482 913', bouton: 'Confirmer mon adresse', lien: 'https://ezerhome.tg/verifier/●●●●', lienTexte: 'https://ezerhome.tg/verifier/●●●●',
+      note: "Vous n'êtes pas à l'origine de cette inscription ? Ignorez ce message : aucun compte ne sera activé.", salut: 'Bonjour,'
     },
     'reunion-programmee': {
-      objet: 'Rendez-vous confirmÃ© le mardi 20 octobre', apercu: 'Retrouvez le lien de connexion dans votre espace.',
-      titre: 'Votre rendez-vous est confirmÃ©', intro: 'Un rendez-vous a Ã©tÃ© programmÃ© pour vous. Vous pouvez le retrouver Ã  tout moment dans votre espace.',
+      objet: 'Rendez-vous confirmé le mardi 20 octobre', apercu: 'Retrouvez le lien de connexion dans votre espace.',
+      titre: 'Votre rendez-vous est confirmé', intro: 'Un rendez-vous a été programmé pour vous. Vous pouvez le retrouver à tout moment dans votre espace.',
       aDetails: true,
       details: [
         { l: 'Date', v: 'Mardi 20 octobre 2026' },
-        { l: 'Heure', v: '10 h 00 â€“ 11 h 00 (heure de LomÃ©)' },
+        { l: 'Heure', v: '10 h 00 – 11 h 00 (heure de Lomé)' },
         { l: 'Format', v: 'En ligne' }
       ],
       bouton: 'Voir mon rendez-vous', lien: RDV, lienTexte: RDV,
-      note: "Le bouton de connexion Ã  la rÃ©union s'active 15 minutes avant le dÃ©but. Un empÃªchement ? Vous pouvez demander Ã  dÃ©placer le rendez-vous depuis votre espace."
+      note: "Le bouton de connexion à la réunion s'active 15 minutes avant le début. Un empêchement ? Vous pouvez demander à déplacer le rendez-vous depuis votre espace."
     },
     'reunion-modifiee': {
-      objet: 'Votre rendez-vous a Ã©tÃ© dÃ©placÃ©', apercu: 'Nouvelle date : jeudi 22 octobre Ã  15 h 00.',
-      titre: 'Votre rendez-vous a changÃ©', intro: 'La date de votre rendez-vous a Ã©tÃ© modifiÃ©e. Voici les nouvelles informations.',
+      objet: 'Votre rendez-vous a été déplacé', apercu: 'Nouvelle date : jeudi 22 octobre à 15 h 00.',
+      titre: 'Votre rendez-vous a changé', intro: 'La date de votre rendez-vous a été modifiée. Voici les nouvelles informations.',
       aDetails: true,
       details: [
         { l: 'Nouvelle date', v: 'Jeudi 22 octobre 2026', avant: 'Mardi 20 octobre 2026' },
-        { l: 'Nouvelle heure', v: '15 h 00 â€“ 16 h 00', avant: '10 h 00 â€“ 11 h 00' },
+        { l: 'Nouvelle heure', v: '15 h 00 – 16 h 00', avant: '10 h 00 – 11 h 00' },
         { l: 'Format', v: 'En ligne' }
       ],
       bouton: 'Voir mon rendez-vous', lien: RDV, lienTexte: RDV,
-      note: "Cette nouvelle date ne vous convient pas ? Proposez-en une autre depuis votre espace, sans avoir Ã  vous justifier."
+      note: "Cette nouvelle date ne vous convient pas ? Proposez-en une autre depuis votre espace, sans avoir à vous justifier."
     },
     'reunion-annulee': {
-      objet: 'Votre rendez-vous du 20 octobre est annulÃ©', apercu: 'Vous pouvez choisir un nouveau crÃ©neau.',
-      titre: 'Rendez-vous annulÃ©', intro: "Votre rendez-vous du mardi 20 octobre Ã  10 h 00 n'aura pas lieu. Nous en sommes dÃ©solÃ©s. Votre accompagnement continue : un nouveau crÃ©neau peut Ãªtre fixÃ© rapidement.",
-      bouton: 'Choisir un nouveau crÃ©neau', lien: RDV, lienTexte: RDV,
-      note: "Si vous avez besoin de parler avant, Ã©crivez-nous depuis la messagerie de votre espace."
+      objet: 'Votre rendez-vous du 20 octobre est annulé', apercu: 'Vous pouvez choisir un nouveau créneau.',
+      titre: 'Rendez-vous annulé', intro: "Votre rendez-vous du mardi 20 octobre à 10 h 00 n'aura pas lieu. Nous en sommes désolés. Votre accompagnement continue : un nouveau créneau peut être fixé rapidement.",
+      bouton: 'Choisir un nouveau créneau', lien: RDV, lienTexte: RDV,
+      note: "Si vous avez besoin de parler avant, écrivez-nous depuis la messagerie de votre espace."
     },
     'rappel': {
-      objet: 'Rappel : rendez-vous demain Ã  10 h 00', apercu: 'Le lien de connexion sera actif 15 minutes avant.',
-      titre: 'Ã€ demain', intro: 'Petit rappel de votre rendez-vous.',
+      objet: 'Rappel : rendez-vous demain à 10 h 00', apercu: 'Le lien de connexion sera actif 15 minutes avant.',
+      titre: 'À demain', intro: 'Petit rappel de votre rendez-vous.',
       aDetails: true,
       details: [
         { l: 'Date', v: 'Demain, mardi 20 octobre' },
-        { l: 'Heure', v: '10 h 00 (heure de LomÃ©)' },
+        { l: 'Heure', v: '10 h 00 (heure de Lomé)' },
         { l: 'Format', v: 'En ligne' }
       ],
       bouton: 'Ouvrir mon rendez-vous', lien: RDV, lienTexte: RDV,
-      note: "Conseil : installez-vous dans un endroit calme, avec une connexion stable. Si le rÃ©seau coupe, revenez simplement sur le lien."
+      note: "Conseil : installez-vous dans un endroit calme, avec une connexion stable. Si le réseau coupe, revenez simplement sur le lien."
     },
     'assistance': {
-      objet: 'Votre demande ASS-2026-00042 a Ã©tÃ© mise Ã  jour', apercu: 'Consultez le suivi de votre demande.',
-      titre: 'Votre demande avance', intro: "Le comitÃ© d'assistance a examinÃ© votre demande. Le dÃ©tail de la dÃ©cision est disponible sur la page de suivi.",
+      objet: 'Votre demande ASS-2026-00042 a été mise à jour', apercu: 'Consultez le suivi de votre demande.',
+      titre: 'Votre demande avance', intro: "Le comité d'assistance a examiné votre demande. Le détail de la décision est disponible sur la page de suivi.",
       aStatut: true, statut: 'En examen',
       bouton: 'Suivre ma demande', lien: 'https://ezerhome.tg/assistance/suivi', lienTexte: 'https://ezerhome.tg/assistance/suivi',
-      note: 'Munissez-vous de votre numÃ©ro de demande ASS-2026-00042 et du numÃ©ro de tÃ©lÃ©phone indiquÃ© lors du dÃ©pÃ´t.',
-      raison: "Vous recevez ce message car vous avez dÃ©posÃ© une demande d'assistance.", salut: 'Bonjour,'
+      note: 'Munissez-vous de votre numéro de demande ASS-2026-00042 et du numéro de téléphone indiqué lors du dépôt.',
+      raison: "Vous recevez ce message car vous avez déposé une demande d'assistance.", salut: 'Bonjour,'
     },
     'recu-don': {
-      objet: 'Merci pour votre don â€“ reÃ§u REC-2026-0117', apercu: 'Votre reÃ§u est joint Ã  ce message.',
-      titre: 'Merci pour votre don', intro: 'Votre gÃ©nÃ©rositÃ© aide directement les familles accompagnÃ©es par Ezer Home. Votre reÃ§u est joint Ã  ce message au format PDF.',
+      objet: 'Merci pour votre don – reçu REC-2026-0117', apercu: 'Votre reçu est joint à ce message.',
+      titre: 'Merci pour votre don', intro: 'Votre générosité aide directement les familles accompagnées par Ezer Home. Votre reçu est joint à ce message au format PDF.',
       aDetails: true,
       details: [
         { l: 'Montant', v: '10 000 F CFA' },
         { l: 'Date', v: '13 octobre 2026' },
-        { l: 'ReÃ§u', v: 'REC-2026-0117 (PDF joint)' }
+        { l: 'Reçu', v: 'REC-2026-0117 (PDF joint)' }
       ],
-      bouton: 'TÃ©lÃ©charger le reÃ§u', lien: 'https://ezerhome.tg/recu/â—â—â—â—', lienTexte: 'https://ezerhome.tg/recu/â—â—â—â—',
-      note: "Pour savoir Ã  quoi servent les dons, consultez la page dÃ©diÃ©e sur notre site. Une question sur ce reÃ§u ? RÃ©pondez via la page Contact en indiquant son numÃ©ro.",
-      raison: 'Vous recevez ce message car vous avez fait un don Ã  Ezer Home.', salut: 'Bonjour,'
+      bouton: 'Télécharger le reçu', lien: 'https://ezerhome.tg/recu/●●●●', lienTexte: 'https://ezerhome.tg/recu/●●●●',
+      note: "Pour savoir à quoi servent les dons, consultez la page dédiée sur notre site. Une question sur ce reçu ? Répondez via la page Contact en indiquant son numéro.",
+      raison: 'Vous recevez ce message car vous avez fait un don à Ezer Home.', salut: 'Bonjour,'
     },
     'desactivation': {
-      objet: 'Votre compte Ezer Home sera dÃ©sactivÃ© le 12 novembre', apercu: 'Connectez-vous pour le garder actif.',
-      titre: 'Votre compte va Ãªtre dÃ©sactivÃ©', intro: "Nous n'avons pas eu de nouvelles depuis 12 mois. Pour protÃ©ger vos donnÃ©es, votre compte sera dÃ©sactivÃ© le 12 novembre 2026, puis vos donnÃ©es seront supprimÃ©es selon notre politique de conservation.",
+      objet: 'Votre compte Ezer Home sera désactivé le 12 novembre', apercu: 'Connectez-vous pour le garder actif.',
+      titre: 'Votre compte va être désactivé', intro: "Nous n'avons pas eu de nouvelles depuis 12 mois. Pour protéger vos données, votre compte sera désactivé le 12 novembre 2026, puis vos données seront supprimées selon notre politique de conservation.",
       bouton: 'Garder mon compte', lien: 'https://ezerhome.tg/connexion', lienTexte: 'https://ezerhome.tg/connexion',
-      note: "Il suffit de vous connecter une fois avant cette date. Vous ne souhaitez plus utiliser Ezer Home ? Vous n'avez rien Ã  faire."
+      note: "Il suffit de vous connecter une fois avant cette date. Vous ne souhaitez plus utiliser Ezer Home ? Vous n'avez rien à faire."
     }
   };
 
   var NAVMAIL = [
-    ['verification-compte', 'VÃ©rification de compte', 'pages/emails/verification-compte.html'],
-    ['verification-telephone', 'VÃ©rification (tÃ©lÃ©phone)', 'pages/emails/verification-telephone.html'],
-    ['reunion-programmee', 'RÃ©union programmÃ©e', 'pages/emails/reunion-programmee.html'],
-    ['reunion-modifiee', 'RÃ©union modifiÃ©e', 'pages/emails/reunion-modifiee.html'],
-    ['reunion-annulee', 'RÃ©union annulÃ©e', 'pages/emails/reunion-annulee.html'],
-    ['rappel-reunion', 'Rappel de rÃ©union', 'pages/emails/rappel-reunion.html'],
-    ['rappel-telephone', 'Rappel (tÃ©lÃ©phone)', 'pages/emails/rappel-telephone.html'],
+    ['verification-compte', 'Vérification de compte', 'pages/emails/verification-compte.html'],
+    ['verification-telephone', 'Vérification (téléphone)', 'pages/emails/verification-telephone.html'],
+    ['reunion-programmee', 'Réunion programmée', 'pages/emails/reunion-programmee.html'],
+    ['reunion-modifiee', 'Réunion modifiée', 'pages/emails/reunion-modifiee.html'],
+    ['reunion-annulee', 'Réunion annulée', 'pages/emails/reunion-annulee.html'],
+    ['rappel-reunion', 'Rappel de réunion', 'pages/emails/rappel-reunion.html'],
+    ['rappel-telephone', 'Rappel (téléphone)', 'pages/emails/rappel-telephone.html'],
     ['statut-assistance', "Statut d'assistance", 'pages/emails/statut-assistance.html'],
-    ['recu-don', 'ReÃ§u de don', 'pages/emails/recu-don.html'],
-    ['preavis-desactivation', 'PrÃ©avis de dÃ©sactivation', 'pages/emails/preavis-desactivation.html'],
+    ['recu-don', 'Reçu de don', 'pages/emails/recu-don.html'],
+    ['preavis-desactivation', 'Préavis de désactivation', 'pages/emails/preavis-desactivation.html'],
     ['formats-courts', 'SMS et WhatsApp', 'pages/messages/formats-courts.html'],
-    ['composants', 'Composants de rÃ©fÃ©rence', 'pages/composants/composants.html']
+    ['composants', 'Composants de référence', 'pages/composants/composants.html']
   ];
 
   function bandLine(cle, valeur, muted) {
@@ -148,7 +148,7 @@
 
     if (m.aCode) {
       html += '<div style="display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 12px; background: #e9f7f0; text-align: center">' +
-        '<span style="font-size: 14px; line-height: 20px; color: #5b6656">Votre code de vÃ©rification</span>' +
+        '<span style="font-size: 14px; line-height: 20px; color: #5b6656">Votre code de vérification</span>' +
         '<span style="font-size: 32px; line-height: 40px; font-weight: 600; letter-spacing: 0.2em; font-variant-numeric: tabular-nums">' + m.code + '</span>' +
         '<span style="font-size: 14px; line-height: 20px; color: #5b6656">Valable 10 minutes</span></div>';
     }
@@ -173,11 +173,11 @@
       html += '<p style="margin: 0; font-size: 15px; line-height: 22px; color: #5b6656">' + m.note + '</p>';
     }
 
-    html += '<p style="margin: 0">Avec toute notre attention,<br>L\'Ã©quipe Ezer Home</p>';
+    html += '<p style="margin: 0">Avec toute notre attention,<br>L\'équipe Ezer Home</p>';
 
     html += '<div style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border: 1px dashed #6f8577; border-radius: 12px; font-size: 13px; line-height: 18px; color: #5b6656">' +
       '<svg aria-hidden="true" style="flex: 0 0 auto; margin-top: 1px" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0e1c03" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>' +
-      '<span>Ezer Home ne vous demandera jamais votre mot de passe ou un code par tÃ©lÃ©phone, SMS ou WhatsApp. Ce message ne contient aucune information sur votre suivi : les dÃ©tails restent dans votre espace sÃ©curisÃ©.</span></div>';
+      '<span>Ezer Home ne vous demandera jamais votre mot de passe ou un code par téléphone, SMS ou WhatsApp. Ce message ne contient aucune information sur votre suivi : les détails restent dans votre espace sécurisé.</span></div>';
 
     return html;
   }
@@ -190,7 +190,7 @@
       '<div style="box-sizing: border-box; padding: 12px 16px; border: 1px solid #c8dccf; border-radius: 12px; background: #ffffff; display: flex; flex-direction: column; gap: 2px; font-size: 13px; line-height: 18px">' +
         bandLine('De', 'Ezer Home &lt;notifications@ezerhome.tg&gt;') +
         bandLine('Objet', m.objet) +
-        bandLine('AperÃ§u', m.apercu, true) +
+        bandLine('Aperçu', m.apercu, true) +
       '</div>';
 
     var table =
@@ -200,10 +200,10 @@
         '<tr><td style="padding: ' + s.piedPad + '; background: #0e1c03; border-radius: 0 0 11px 11px; color: #ffffff; font-size: 13px; line-height: 20px">' +
           '<div style="display: flex; flex-direction: column; gap: 8px">' +
             '<span style="font-family: \'Cooper Black\', Georgia, serif; font-size: 18px; line-height: 24px; color: #22b573">Ezer Home</span>' +
-            '<span>[Quartier, rue], LomÃ©, Togo</span>' +
-            '<span>+228 [00 00 00 00] Â· <a href="https://wa.me/22800000000" style="color: #ffffff">WhatsApp</a> Â· <a href="mailto:contact@ezerhome.tg" style="color: #ffffff">[contact@ezerhome.tg]</a></span>' +
+            '<span>[Quartier, rue], Lomé, Togo</span>' +
+            '<span>+228 [00 00 00 00] · <a href="https://wa.me/22800000000" style="color: #ffffff">WhatsApp</a> · <a href="mailto:contact@ezerhome.tg" style="color: #ffffff">[contact@ezerhome.tg]</a></span>' +
             '<span style="color: #c8dccf">' + m.raison + '</span>' +
-            '<span><a href="https://ezerhome.tg/confidentialite" style="color: #ffffff">ConfidentialitÃ©</a> Â· <a href="https://ezerhome.tg/espace/profil#notifications" style="color: #ffffff">PrÃ©fÃ©rences de notification</a> Â· <a href="https://ezerhome.tg/contact" style="color: #ffffff">Nous Ã©crire</a></span>' +
+            '<span><a href="https://ezerhome.tg/confidentialite" style="color: #ffffff">Confidentialité</a> · <a href="https://ezerhome.tg/espace/profil#notifications" style="color: #ffffff">Préférences de notification</a> · <a href="https://ezerhome.tg/contact" style="color: #ffffff">Nous écrire</a></span>' +
           '</div>' +
         '</td></tr>' +
       '</table>';
@@ -219,7 +219,7 @@
         ' class="px-3 py-1.5 rounded-ezer text-xs font-semibold ' +
         (on ? 'bg-ezer-dark text-white' : 'bg-white text-ezer-dark border border-ezer-borderMuted hover:bg-ezer-green-light') + '">' + n[1] + '</a>';
     }).join('');
-    return '<div class="flex flex-wrap items-center gap-2" role="group" aria-label="ModÃ¨les de messages">' + items + '</div>';
+    return '<div class="flex flex-wrap items-center gap-2" role="group" aria-label="Modèles de messages">' + items + '</div>';
   }
 
   document.querySelectorAll('[data-ezer-mail]').forEach(function (slot) {
