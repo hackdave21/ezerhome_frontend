@@ -39,7 +39,6 @@
 
                     <div role="tablist" aria-label="Contenus" class="flex gap-1 overflow-x-auto border-b border-ezer-green-border">
                         <button type="button" role="tab" aria-selected="true" data-tab-target="onglet-pages" data-tab-group="cms" class="shrink-0 min-h-[48px] px-4 border-0 bg-transparent text-ezer-green border-b-2 border-ezer-green font-semibold text-[15px]">Pages</button>
-                        <button type="button" role="tab" aria-selected="false" data-tab-target="onglet-tarifs" data-tab-group="cms" class="shrink-0 min-h-[48px] px-4 border-0 bg-transparent text-ezer-muted text-[15px]">Tarifs</button>
                         <button type="button" role="tab" aria-selected="false" data-tab-target="onglet-faq" data-tab-group="cms" class="shrink-0 min-h-[48px] px-4 border-0 bg-transparent text-ezer-muted text-[15px]">FAQ</button>
                         <button type="button" role="tab" aria-selected="false" data-tab-target="onglet-dons" data-tab-group="cms" class="shrink-0 min-h-[48px] px-4 border-0 bg-transparent text-ezer-muted text-[15px] whitespace-nowrap">Page dons</button>
                     </div>
@@ -104,50 +103,6 @@
                         <p class="m-0 text-[13px] text-ezer-muted">Chaque enregistrement crée une version. Vous pouvez revenir à une version précédente depuis l'éditeur.</p>
                     </div>
 
-                    <!-- ONGLET TARIFS -->
-                    <div id="onglet-tarifs" data-tab-pane="cms" class="flex flex-col gap-2.5 hidden">
-                        <div class="overflow-x-auto border border-ezer-green-border rounded-ezer">
-                            <table class="w-full min-w-[600px] text-sm">
-                                <caption class="sr-only">Tarifs</caption>
-                                <thead>
-                                    <tr class="bg-ezer-green-light text-left">
-                                        <th scope="col" class="py-2.5 px-3 font-semibold">Offre</th>
-                                        <th scope="col" class="py-2.5 px-3 font-semibold">Gratuit</th>
-                                        <th scope="col" class="py-2.5 px-3 font-semibold">Prix (FCFA)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="border-t border-ezer-green-borderLight">
-                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Écoute active et relation d'aide</th>
-                                        <td class="py-2 px-3"><input type="checkbox" aria-label="Écoute active et relation d'aide gratuit" class="w-5 h-5 accent-ezer-green"></td>
-                                        <td class="py-2 px-3"><input type="text" inputmode="numeric" value="15 000" aria-label="Prix de Écoute active et relation d'aide" class="w-[140px] h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer text-sm"></td>
-                                    </tr>
-                                    <tr class="border-t border-ezer-green-borderLight">
-                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Gérer son stress au quotidien</th>
-                                        <td class="py-2 px-3"><input type="checkbox" aria-label="Gérer son stress au quotidien gratuit" class="w-5 h-5 accent-ezer-green"></td>
-                                        <td class="py-2 px-3"><input type="text" inputmode="numeric" value="5 000" aria-label="Prix de Gérer son stress au quotidien" class="w-[140px] h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer text-sm"></td>
-                                    </tr>
-                                    <tr class="border-t border-ezer-green-borderLight">
-                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Accompagner un proche en difficulté</th>
-                                        <td class="py-2 px-3"><input type="checkbox" checked aria-label="Accompagner un proche en difficulté gratuit" class="w-5 h-5 accent-ezer-green"></td>
-                                        <td class="py-2 px-3"><input type="text" inputmode="numeric" value="0" aria-label="Prix de Accompagner un proche en difficulté" class="w-[140px] h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer text-sm"></td>
-                                    </tr>
-                                    <tr class="border-t border-ezer-green-borderLight">
-                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Coaching Confiance en soi</th>
-                                        <td class="py-2 px-3"><input type="checkbox" aria-label="Coaching Confiance en soi gratuit" class="w-5 h-5 accent-ezer-green"></td>
-                                        <td class="py-2 px-3"><input type="text" inputmode="numeric" value="20 000" aria-label="Prix de Coaching Confiance en soi" class="w-[140px] h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer text-sm"></td>
-                                    </tr>
-                                    <tr class="border-t border-ezer-green-borderLight">
-                                        <th scope="row" class="py-2 px-3 text-left font-semibold">Séance découverte</th>
-                                        <td class="py-2 px-3"><input type="checkbox" checked aria-label="Séance découverte gratuite" class="w-5 h-5 accent-ezer-green"></td>
-                                        <td class="py-2 px-3"><input type="text" inputmode="numeric" value="0" aria-label="Prix de Séance découverte" class="w-[140px] h-[44px] px-2.5 border border-ezer-borderMuted rounded-ezer text-sm"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <button type="button" id="cta-tarifs" class="self-start min-h-[44px] px-4 border-0 rounded-ezer bg-ezer-green text-white text-sm font-semibold hover:bg-ezer-green-dark transition-colors">Enregistrer les tarifs</button>
-                    </div>
-
                     <!-- ONGLET FAQ -->
                     <div id="onglet-faq" data-tab-pane="cms" class="flex flex-col gap-2.5 hidden">
                         <ol class="p-0 m-0 list-none flex flex-col gap-2">
@@ -200,10 +155,6 @@
     <script src="../../assets/js/main.js"></script>
     <script>
         (function () {
-            document.getElementById('cta-tarifs').addEventListener('click', function (e) {
-                var b = e.target; b.textContent = 'Tarifs enregistrés';
-                setTimeout(function () { b.textContent = 'Enregistrer les tarifs'; }, 2000);
-            });
             document.getElementById('cta-dons-textes').addEventListener('click', function (e) {
                 var b = e.target; b.textContent = 'Enregistré';
                 setTimeout(function () { b.textContent = 'Enregistrer'; }, 2000);
