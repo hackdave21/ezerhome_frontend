@@ -16,16 +16,20 @@
   var NAV = [
     { id: 'accueil', label: 'Accueil', href: 'pages/site/accueil.html' },
     { id: 'a-propos', label: 'À propos', href: 'pages/site/a-propos.html' },
+    { id: 'approche', label: 'Notre approche', href: 'pages/site/accueil.html#notre-approche' },
+    { id: 'parcours', label: 'Le Parcours', href: 'pages/site/accueil.html#le-parcours' },
     { id: 'ecoute', label: 'Écoute', href: 'pages/site/ecoute.html', badge: true },
     { id: 'formation', label: 'Formation', href: 'pages/site/formations.html' },
     { id: 'coaching', label: 'Coaching', href: 'pages/site/coaching.html' },
-    { id: 'tarifs', label: 'Tarifs', href: 'pages/site/tarifs.html' },
     { id: 'assistance', label: 'Assistance', href: 'pages/assistance/demande.html', badge: true },
     { id: 'contact', label: 'Contact', href: 'pages/site/contact-particulier.html' }
   ];
 
   var MOBILE_EXTRA = [
-    { label: 'Notre équipe', href: 'pages/site/equipe.html' }
+    { label: 'Notre équipe', href: 'pages/site/equipe.html' },
+    { label: 'Club EZER (Telegram et WhatsApp)', href: 'pages/site/accueil.html#club-ezer' },
+    { label: 'Une parole pour aujourd\'hui', href: 'pages/site/accueil.html#parole-du-jour' },
+    { label: 'Charte d\'accompagnement', href: 'pages/site/accueil.html#charte-accompagnement' }
   ];
 
   var ICON = {
@@ -118,8 +122,7 @@
           { label: 'Écoute', href: 'pages/site/ecoute.html' },
           { label: 'Formation', href: 'pages/site/formations.html' },
           { label: 'Coaching', href: 'pages/site/coaching.html' },
-          { label: 'Assistance', href: 'pages/assistance/demande.html' },
-          { label: 'Tarifs', href: 'pages/site/tarifs.html', commercial: true }
+          { label: 'Assistance', href: 'pages/assistance/demande.html' }
         ]
       },
       {
