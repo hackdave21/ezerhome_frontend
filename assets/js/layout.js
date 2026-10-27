@@ -131,7 +131,7 @@
           { label: 'À propos', href: 'pages/site/a-propos.html' },
           { label: 'Notre équipe', href: 'pages/site/equipe.html' },
           { label: 'Partenaires', href: 'pages/site/partenaires.html' },
-          { label: 'Faire un don (dès 100 F)', href: 'pages/dons/don.html', commercial: true },
+          { label: 'Faire un don', href: 'pages/dons/don.html', commercial: true },
           { label: 'À quoi servent les dons', href: 'pages/site/usage-dons.html', commercial: true },
           { label: 'Devenir thérapeute ou coach', href: 'pages/intervenant/candidature.html', commercial: true }
         ]
