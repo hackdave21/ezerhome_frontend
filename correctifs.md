@@ -233,6 +233,8 @@ Tout le reste de ces écrans : ✅ validé.
 
 > ❓ La remarque contient « il vous explique » : probablement « elle » (l'équipe). À confirmer.
 
+> ✅ **FAIT** — Titre, texte de retour sous 24h et les trois étapes « Et maintenant ? » intégrés (accord au féminin « elle », l'équipe).
+
 ---
 
 ## 4. Soutenir Ezer Home / don — PDF p. 7–10
@@ -411,7 +413,7 @@ Points techniques à prévoir :
 - [ ] Ajouter les sections **Notre approche** et **Parcours** (§ 1.7, 1.8) et les entrées de menu
 - [ ] Ajouter **Club EZER**, **Parole pour aujourd'hui**, **Charte d'accompagnement** (§ 1.12 à 1.14)
 - [x] Assistance : 3 blocs de réassurance réécrits (§ 2)
-- [ ] Confirmation d'aide : textes (§ 3)
+- [x] Confirmation d'aide : textes (§ 3)
 - [ ] Coaching : « Sur évaluation, à partir de 25 000 FCFA / séance » (§ 7)
 - [ ] **Supprimer la page Tarifs** + routes + liens (§ 8)
 - [ ] À propos : nouveau texte (§ 9)
