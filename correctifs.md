@@ -343,7 +343,7 @@ Conséquences à traiter dans le code :
 - **SSS Consulting and Training**
 - **DS Consulting**
 
-> ❓ Logos et liens externes non fournis.
+> ❓ Logos (dans le dossiers C:\projets web\EZER_HOME\ezerhome_frontend\assets\images\partenaires) et liens externes non fournis(après). Les logos manquants seront ajoutés plutard
 
 ---
 
