@@ -27,7 +27,7 @@
                 </nav>
                 <h1 class="font-cooper font-normal text-3xl lg:text-5xl">Soutenir Ezer Home</h1>
                 <p class="text-lg lg:text-xl font-semibold text-ezer-green">L'écoute gratuite : pour qu'elle reste accessible à toutes et à tous.</p>
-                <p class="text-base max-w-[640px]">Votre don finance l'aide matérielle et l'écoute gratuite proposées par l'association. Sans compte, en quelques étapes.</p>
+                <p class="text-base max-w-[640px]">Votre don finance l'aide matérielle et l'écoute gratuite proposées par l'association. Sans compte, <strong>dès 100 FCFA</strong>, chaque geste compte.</p>
             </div>
         </section>
 
@@ -64,7 +64,14 @@
                             <!-- 1. MONTANT -->
                             <fieldset id="dn-montant" aria-describedby="dn-montant-err" class="border-0 p-0 m-0 min-w-0 flex flex-col gap-2.5">
                                 <legend class="p-0 mb-2.5 text-xl font-semibold">1. Choisissez un montant</legend>
-                                <div class="grid grid-cols-1 lg:grid-cols-3 gap-2.5">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+                                    <label class="flex items-start gap-3 p-4 border border-ezer-borderMuted rounded-ezer bg-white cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                                        <input type="radio" name="dn-montant" value="100" class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
+                                        <span class="flex flex-col gap-0.5">
+                                            <span class="text-xl font-semibold">100 FCFA</span>
+                                            <span class="text-sm text-ezer-muted">Une contribution solidaire accessible à tous</span>
+                                        </span>
+                                    </label>
                                     <label class="flex items-start gap-3 p-4 border border-ezer-borderMuted rounded-ezer bg-white cursor-pointer has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
                                         <input type="radio" name="dn-montant" value="2000" class="w-5 h-5 mt-0.5 shrink-0 accent-ezer-green">
                                         <span class="flex flex-col gap-0.5">
@@ -86,13 +93,13 @@
                                             <span class="text-sm text-ezer-muted">Un panier alimentaire de base pour une famille</span>
                                         </span>
                                     </label>
-                                    <div class="lg:col-span-3 flex flex-col gap-2.5 p-4 border border-ezer-borderMuted rounded-ezer bg-white has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
+                                    <div class="sm:col-span-2 lg:col-span-4 flex flex-col gap-2.5 p-4 border border-ezer-borderMuted rounded-ezer bg-white has-[:checked]:border-2 has-[:checked]:border-ezer-green has-[:checked]:bg-ezer-green-light">
                                         <label class="flex items-center gap-3 font-semibold cursor-pointer">
                                             <input type="radio" name="dn-montant" value="autre" class="w-5 h-5 shrink-0 accent-ezer-green">
                                             Autre montant
                                         </label>
                                         <div class="flex items-stretch border border-ezer-borderMuted rounded-ezer overflow-hidden bg-white max-w-[320px]">
-                                            <input id="dn-autre" type="text" inputmode="numeric" aria-label="Autre montant, en francs CFA" placeholder="Ex. 3 000" class="flex-1 min-w-0 h-[52px] px-4 border-0 bg-white focus:outline-none">
+                                            <input id="dn-autre" type="text" inputmode="numeric" aria-label="Autre montant, en francs CFA" placeholder="Dès 100 FCFA (ex. 500, 1 000...)" class="flex-1 min-w-0 h-[52px] px-4 border-0 bg-white focus:outline-none">
                                             <span aria-hidden="true" class="inline-flex items-center px-3.5 bg-ezer-green-light font-semibold border-l border-ezer-borderMuted">FCFA</span>
                                         </div>
                                     </div>
@@ -316,7 +323,7 @@
                 var e = {};
                 if (!v('dn-montant')) e.montant = 'Choisissez un montant ou saisissez-en un.';
                 else if (v('dn-montant') === 'autre' && !montantNum()) e.montant = 'Saisissez le montant de votre don.';
-                else if (montantNum() < 500) e.montant = 'Le montant minimum est de 500 FCFA.';
+                else if (montantNum() < 100) e.montant = 'Le montant minimum est de 100 FCFA.';
                 if (!v('dn-freq')) e.freq = 'Choisissez si vous donnez une fois ou chaque mois.';
                 if (!v('dn-moyen')) e.moyen = 'Choisissez un moyen de paiement.';
                 if (!contactOk(texte('dn-contact'))) e.contact = 'Indiquez un numéro à 8 chiffres ou une adresse e-mail complète.';

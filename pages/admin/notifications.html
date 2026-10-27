@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -48,6 +48,10 @@
                                 <span class="text-xs font-semibold tracking-[0.06em] uppercase text-ezer-muted">Paiements</span>
                                 <button type="button" notif-pick data-notif="paiementOk" class="flex justify-between items-center gap-2 min-h-[44px] px-3 notif-inactif rounded-ezer text-left text-sm font-semibold"><span>Paiement confirmé</span><span class="text-[11px] font-semibold text-ezer-muted">SMS · e-mail</span></button>
                                 <button type="button" notif-pick data-notif="expire" class="flex justify-between items-center gap-2 min-h-[44px] px-3 notif-inactif rounded-ezer text-left text-sm font-semibold"><span>Réservation expirée</span><span class="text-[11px] font-semibold text-ezer-muted">SMS</span></button>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-xs font-semibold tracking-[0.06em] uppercase text-ezer-muted">Candidatures & Validation</span>
+                                <button type="button" notif-pick data-notif="candValidation" class="flex justify-between items-center gap-2 min-h-[44px] px-3 notif-inactif rounded-ezer text-left text-sm font-semibold"><span>Étape de validation</span><span class="text-[11px] font-semibold text-ezer-muted">SMS · e-mail</span></button>
                             </div>
                             <div class="flex flex-col gap-1">
                                 <span class="text-xs font-semibold tracking-[0.06em] uppercase text-ezer-muted">Compte</span>
@@ -117,6 +121,7 @@
                 rappel: ['Rappel de réunion (la veille)', 'Envoyé la veille à 18 h, si la case « rappel » a été cochée.', 'Bonjour {prenom}, petit rappel : rendez-vous demain {date} à {heure}. {lien} Ezer Home'],
                 paiementOk: ['Paiement confirmé', 'Envoyé quand un paiement est confirmé.', 'Bonjour {prenom}, votre paiement de {montant} pour {offre} est confirmé. Votre accès est ouvert dans votre espace. Ezer Home'],
                 expire: ['Réservation expirée', 'Envoyé 48 h après la commande sans paiement.', 'Bonjour {prenom}, votre réservation {reference} a expiré faute de paiement. Vous pouvez réserver à nouveau sur le site. Ezer Home'],
+                candValidation: ['Étape de validation (Candidature / Offre)', 'Envoyé à chaque changement de statut ou étape de validation (complément, entretien, validation, refus).', 'Bonjour {prenom}, le statut de votre candidature a évolué : nouvelle étape en cours. Consultez le détail dans votre espace ou contactez l\'équipe. Ezer Home'],
                 otp: ['Code de connexion', 'Envoyé à chaque demande de code.', 'Ezer Home : votre code est {code}. Il est valable 10 minutes. Ne le communiquez à personne.'],
                 desact: ['Désactivation prochaine', 'Envoyé 30 jours avant la désactivation d\'un compte inactif.', 'Bonjour {prenom}, votre compte Ezer Home sera désactivé le {date} faute de connexion. Connectez-vous pour le garder actif.']
             };

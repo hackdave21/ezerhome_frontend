@@ -90,7 +90,7 @@
           '<nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-1">' + navDesktop + '</nav>' +
 
           '<div class="hidden lg:flex items-center gap-3">' +
-            (showDon ? '<a href="' + B + 'pages/dons/don.html" class="inline-flex items-center justify-center min-h-[44px] px-4 rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold text-[15px] hover:bg-ezer-green hover:text-white transition-colors">Faire un don</a>' : '') +
+            (showDon ? '<a href="' + B + 'pages/dons/don.html" class="inline-flex items-center justify-center min-h-[44px] px-4 rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold text-[15px] hover:bg-ezer-green hover:text-white transition-colors">Faire un don <span class="text-xs ml-1 font-normal opacity-85">(dès 100 F)</span></a>' : '') +
             '<a href="https://wa.me/22898135757" target="_blank" rel="noopener" class="inline-flex items-center gap-2 min-h-[48px] px-4 rounded-ezer bg-ezer-green text-white font-semibold text-[15px] hover:bg-ezer-green-dark transition-colors">' + ICON.chat + 'WhatsApp</a>' +
           '</div>' +
 
@@ -108,7 +108,7 @@
             '<a href="' + B + 'pages/auth/connexion.html" class="inline-flex items-center justify-center min-h-[48px] rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold text-[15px]">Se connecter</a>' +
             '<a href="' + B + 'pages/auth/inscription.html" class="inline-flex items-center justify-center min-h-[48px] rounded-ezer bg-ezer-green text-white font-semibold text-[15px]">Créer un compte</a>' +
           '</div>' +
-          (showDon ? '<a href="' + B + 'pages/dons/don.html" class="w-full inline-flex items-center justify-center min-h-[48px] rounded-ezer border border-ezer-borderMuted text-ezer-dark font-semibold text-[15px]">Faire un don</a>' : '') +
+          (showDon ? '<a href="' + B + 'pages/dons/don.html" class="w-full inline-flex items-center justify-center min-h-[48px] rounded-ezer border border-ezer-borderMuted text-ezer-dark font-semibold text-[15px]">Faire un don (dès 100 FCFA)</a>' : '') +
         '</nav>' +
       '</header>';
   }
@@ -131,7 +131,7 @@
           { label: 'À propos', href: 'pages/site/a-propos.html' },
           { label: 'Notre équipe', href: 'pages/site/equipe.html' },
           { label: 'Partenaires', href: 'pages/site/partenaires.html' },
-          { label: 'Faire un don', href: 'pages/dons/don.html', commercial: true },
+          { label: 'Faire un don (dès 100 F)', href: 'pages/dons/don.html', commercial: true },
           { label: 'À quoi servent les dons', href: 'pages/site/usage-dons.html', commercial: true },
           { label: 'Devenir thérapeute ou coach', href: 'pages/intervenant/candidature.html', commercial: true }
         ]
