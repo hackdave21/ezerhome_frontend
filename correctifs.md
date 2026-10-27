@@ -244,6 +244,8 @@ Tout le reste de ces écrans : ✅ validé.
 
   > ❓ Le texte est tronqué dans le document (« rest cessible à toutes et à tou »). La phrase ci-dessus est reconstituée, **à confirmer**.
 
+  > ✅ **FAIT** — Accroche affichée dans le bandeau de la page don (`pages/dons/don.html`), en complément de sa présence sur l'Accueil et dans le bloc « À quoi servent vos dons ».
+
 - ⏳ **Paiement « Mixx By Yas »** : le client écrit **« On en reparle »**. Ne pas figer le parcours. Étapes actuellement proposées pour mémoire :
   1. Composer le code USSD Mixx By Yas (à fournir) ou ouvrir l'application.
   2. Choisir « Envoyer de l'argent » et saisir le numéro d'Ezer Home indiqué.
@@ -414,6 +416,7 @@ Points techniques à prévoir :
 - [ ] Ajouter **Club EZER**, **Parole pour aujourd'hui**, **Charte d'accompagnement** (§ 1.12 à 1.14)
 - [x] Assistance : 3 blocs de réassurance réécrits (§ 2)
 - [x] Confirmation d'aide : textes (§ 3)
+- [x] Don : accroche « L'écoute gratuite… » (§ 4)
 - [ ] Coaching : « Sur évaluation, à partir de 25 000 FCFA / séance » (§ 7)
 - [ ] **Supprimer la page Tarifs** + routes + liens (§ 8)
 - [ ] À propos : nouveau texte (§ 9)
