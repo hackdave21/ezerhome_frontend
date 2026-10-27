@@ -217,6 +217,8 @@ Statut : « **OK pour moi sauf** » les trois blocs ci-dessous.
 
 > ❓ Le client ne précise pas lesquels (« élargir les champs… »). À lui demander. Piste issue de l'Accueil : *logement, nourriture, vêtements, frais de scolarité, vivres, fournitures, aide ponctuelle*.
 
+> ✅ **FAIT** — Les 3 blocs de réassurance sont réécrits et le champ « Type d'aide » propose désormais aussi **Vivres** et **Aide ponctuelle** (en complément de Logement, Alimentation, Habillement, Frais de scolarité, Fournitures, Autre).
+
 Tout le reste de ces écrans : ✅ validé.
 
 ---
@@ -408,7 +410,7 @@ Points techniques à prévoir :
 - [ ] Accueil : titre « Besoin d'assistance ? » (§ 1.10)
 - [ ] Ajouter les sections **Notre approche** et **Parcours** (§ 1.7, 1.8) et les entrées de menu
 - [ ] Ajouter **Club EZER**, **Parole pour aujourd'hui**, **Charte d'accompagnement** (§ 1.12 à 1.14)
-- [ ] Assistance : 3 blocs de réassurance réécrits (§ 2)
+- [x] Assistance : 3 blocs de réassurance réécrits (§ 2)
 - [ ] Confirmation d'aide : textes (§ 3)
 - [ ] Coaching : « Sur évaluation, à partir de 25 000 FCFA / séance » (§ 7)
 - [ ] **Supprimer la page Tarifs** + routes + liens (§ 8)
