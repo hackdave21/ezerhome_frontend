@@ -342,9 +342,8 @@ Conséquences à traiter dans le code :
 - **MCPRA**
 - **SSS Consulting and Training**
 - **DS Consulting**
-- … *(la liste se poursuit, noms à compléter)*
 
-> ❓ Liste **incomplète** (points de suspension). Logos et liens externes non fournis.
+> ❓ Logos et liens externes non fournis.
 
 ---
 
