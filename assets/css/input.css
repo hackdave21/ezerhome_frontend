@@ -21,9 +21,13 @@
     line-height: 1.5;
   }
 
-  /* Paragraphes justifiés (alignés à gauche et à droite) sur tous les écrans.
-     Les utilitaires Tailwind (text-center, text-left, text-right) gardent la priorité. */
-  p {
+  /* Textes justifiés (alignés à gauche et à droite) sur tous les écrans.
+     Les utilitaires Tailwind (text-center, text-left, text-right) gardent la priorité.
+     Les textes sur une seule ligne (menus, boutons, libellés) ne sont pas affectés. */
+  p,
+  li,
+  dd,
+  blockquote {
     text-align: justify;
     text-justify: inter-word;
     -webkit-hyphens: auto;
