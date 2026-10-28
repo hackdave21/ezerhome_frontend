@@ -27,9 +27,7 @@
     { label: 'Notre équipe', href: 'pages/site/equipe.html' },
     { label: 'Notre approche', href: 'pages/site/a-propos.html#notre-approche' },
     { label: 'Le Parcours', href: 'pages/site/a-propos.html#le-parcours' },
-    { label: 'Club EZER (Telegram et WhatsApp)', href: 'pages/site/accueil.html#club-ezer' },
-    { label: 'Une parole pour aujourd\'hui', href: 'pages/site/accueil.html#parole-du-jour' },
-    { label: 'Charte d\'accompagnement', href: 'pages/site/accueil.html#charte-accompagnement' }
+    { label: 'Club EZER (Telegram et WhatsApp)', href: 'pages/site/accueil.html#club-ezer' }
   ];
 
   var ICON = {

@@ -20,6 +20,16 @@
     margin: 0;
     line-height: 1.5;
   }
+
+  /* Paragraphes justifiés (alignés à gauche et à droite) sur tous les écrans.
+     Les utilitaires Tailwind (text-center, text-left, text-right) gardent la priorité. */
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
 }
 
 /* Custom scrollbar for tabs */
@@ -29,4 +39,27 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Item de navigation actif (menu indexé) */
+.nav-item-active {
+  color: #187d50 !important;
+  position: relative;
+  border-left: 1px solid #d3e6db;
+  border-right: 1px solid #d3e6db;
+  box-shadow: inset 0 -3px 0 #187d50;
+}
+
+/* Bouton « Faire un don » */
+.btn-don-ezer {
+  background-color: #fdf2f2 !important;
+  color: #c1272d !important;
+  border: 1.5px solid #c1272d !important;
+  border-radius: 12px !important;
+  transition: all 0.2s ease-in-out;
+}
+.btn-don-ezer:hover {
+  background-color: #fce8e8 !important;
+  border-color: #a81f25 !important;
+  color: #a81f25 !important;
 }
