@@ -36,6 +36,16 @@
   }
 }
 
+/* Dans les cartes et encadrés (bords arrondis), on aligne à gauche :
+   la justification crée de grands espaces sur ces colonnes étroites.
+   Les vrais paragraphes larges (hors cartes) restent justifiés. */
+.rounded-ezer p,
+.rounded-ezer li,
+.rounded-ezer dd,
+.rounded-ezer blockquote {
+  text-align: left;
+}
+
 /* Custom scrollbar for tabs */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
