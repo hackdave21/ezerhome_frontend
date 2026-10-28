@@ -90,7 +90,7 @@
           '<nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-1">' + navDesktop + '</nav>' +
 
           '<div class="hidden lg:flex items-center gap-3">' +
-            (showDon ? '<a href="' + B + 'pages/dons/don.html" class="inline-flex items-center justify-center min-h-[44px] px-4 rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold text-[15px] hover:bg-ezer-green hover:text-white transition-colors">Faire un don <span class="text-xs ml-1 font-normal opacity-85">(dès 100 F)</span></a>' : '') +
+            (showDon ? '<a href="' + B + 'pages/dons/don.html" class="inline-flex items-center justify-center min-h-[44px] px-4 rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold text-[15px] hover:bg-ezer-green hover:text-white transition-colors">Faire un don</a>' : '') +
             '<a href="https://wa.me/22898135757" target="_blank" rel="noopener" class="inline-flex items-center gap-2 min-h-[48px] px-4 rounded-ezer bg-ezer-green text-white font-semibold text-[15px] hover:bg-ezer-green-dark transition-colors">' + ICON.chat + 'WhatsApp</a>' +
           '</div>' +
 
@@ -173,7 +173,6 @@
           '</div>' +
           '<div class="border-t border-ezer-green-borderLight pt-6 flex flex-wrap items-center justify-between gap-4 text-[13px] text-ezer-muted">' +
             '<p>© 2026 Ezer Home · Accompagnement · Assistance · Formation</p>' +
-            '<a href="' + B + 'index.html" class="text-ezer-green font-semibold hover:underline">Plan du prototype</a>' +
           '</div>' +
         '</div>' +
       '</footer>';
