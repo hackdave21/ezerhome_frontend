@@ -16,8 +16,8 @@
   var NAV = [
     { id: 'accueil', label: 'Accueil', href: 'pages/site/accueil.html' },
     { id: 'a-propos', label: 'À propos', href: 'pages/site/a-propos.html' },
-    { id: 'approche', label: 'Notre approche', href: 'pages/site/accueil.html#notre-approche' },
-    { id: 'parcours', label: 'Le Parcours', href: 'pages/site/accueil.html#le-parcours' },
+    { id: 'approche', label: 'Notre approche', href: 'pages/site/notre-approche.html' },
+    { id: 'parcours', label: 'Le Parcours', href: 'pages/site/le-parcours.html' },
     { id: 'ecoute', label: 'Écoute', href: 'pages/site/ecoute.html', badge: true },
     { id: 'formation', label: 'Formation', href: 'pages/site/formations.html' },
     { id: 'coaching', label: 'Coaching', href: 'pages/site/coaching.html' },
@@ -51,7 +51,7 @@
     var showDon = opts.don !== false;
 
     var navDesktop = NAV.map(function (n) {
-      var on = n.id === actif;
+      var on = (n.id === actif);
       return '<a href="' + B + n.href + '"' + (on ? ' aria-current="page"' : '') +
         ' class="px-3 py-2 font-semibold text-[15px] ' +
         (on ? 'text-ezer-green shadow-ezer-nav' : 'text-ezer-dark hover:text-ezer-green') + '">' +
@@ -59,7 +59,7 @@
     }).join('');
 
     var navMobile = NAV.concat(MOBILE_EXTRA).map(function (n) {
-      var on = n.id === actif || n.id === 'equipe' && actif === 'equipe';
+      var on = (n.id === actif);
       return '<li class="border-b border-ezer-green-borderLight last:border-0">' +
         '<a href="' + B + n.href + '"' + (on ? ' aria-current="page"' : '') +
         ' class="flex items-center justify-between gap-3 min-h-[52px] font-semibold text-[17px] ' +
@@ -129,6 +129,8 @@
         titre: 'L\'association',
         liens: [
           { label: 'À propos', href: 'pages/site/a-propos.html' },
+          { label: 'Notre approche', href: 'pages/site/notre-approche.html' },
+          { label: 'Le Parcours', href: 'pages/site/le-parcours.html' },
           { label: 'Notre équipe', href: 'pages/site/equipe.html' },
           { label: 'Partenaires', href: 'pages/site/partenaires.html' },
           { label: 'Faire un don', href: 'pages/dons/don.html', commercial: true },

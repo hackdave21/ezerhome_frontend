@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Parcours d'accompagnement — Ezer Home</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <script src="../../assets/js/theme.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = ezerTheme();</script>
+</head>
+<body class="bg-white text-ezer-dark font-sans text-base leading-relaxed">
+
+    <div data-layout="header" data-active="parcours"></div>
+
+    <main class="flex flex-col">
+
+        <!-- BANDEAU -->
+        <section class="bg-ezer-green-light">
+            <div class="max-w-[1400px] mx-auto px-6 lg:px-12 py-8 lg:py-14 flex flex-col gap-3.5">
+                <nav aria-label="Fil d'Ariane" class="text-sm">
+                    <ol class="flex flex-wrap items-center gap-2 text-ezer-muted">
+                        <li><a href="accueil.html" class="text-ezer-green hover:underline">Accueil</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li aria-current="page">Le Parcours</li>
+                    </ol>
+                </nav>
+                <p class="text-xs font-semibold uppercase tracking-wider text-ezer-green">Accompagnement &amp; Relèvement</p>
+                <h1 class="font-cooper font-normal text-3xl lg:text-5xl text-ezer-dark">Sur le chemin d'Emmaüs</h1>
+                <p class="text-base lg:text-lg text-ezer-muted max-w-[880px]">Deux disciples abattus marchent vers Emmaüs. Jésus les rejoint, les écoute, éclaire leur histoire, puis les laisse repartir relevés (Luc 24:13-35). Notre parcours d'accompagnement suit ce même modèle d'espérance et de bienveillance.</p>
+            </div>
+        </section>
+
+        <!-- CONTENU PRINCIPAL -->
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 py-10 lg:py-16 flex flex-col gap-12 lg:gap-16">
+
+            <!-- LES 4 ÉTAPES -->
+            <section class="flex flex-col gap-8">
+                <div class="flex flex-col gap-2">
+                    <h2 class="font-cooper font-normal text-2xl lg:text-3xl text-ezer-dark">Les 4 étapes de votre cheminement</h2>
+                    <p class="text-ezer-muted text-base max-w-[720px]">Chaque personne accueillie à Ezer Home vit un parcours respectueux de son rythme et de ses convictions.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+                    <article class="rounded-ezer border border-ezer-green-border bg-white p-6 lg:p-7 flex flex-col gap-4 shadow-sm hover:border-ezer-green transition-colors">
+                        <span class="w-12 h-12 rounded-full bg-ezer-green text-white inline-flex items-center justify-center font-bold text-xl">1</span>
+                        <h3 class="text-xl font-semibold text-ezer-dark">S'approcher</h3>
+                        <p class="text-ezer-muted text-sm">« Jésus s'approcha, et fit route avec eux. » — <strong>Luc 24:15</strong></p>
+                        <p class="text-ezer-dark italic text-[15px]">Vous nous écrivez ou passez nous voir. Nous convenons d'un premier rendez-vous, sur place à Lomé ou en ligne.</p>
+                    </article>
+                    <article class="rounded-ezer border border-ezer-green-border bg-white p-6 lg:p-7 flex flex-col gap-4 shadow-sm hover:border-ezer-green transition-colors">
+                        <span class="w-12 h-12 rounded-full bg-ezer-green text-white inline-flex items-center justify-center font-bold text-xl">2</span>
+                        <h3 class="text-xl font-semibold text-ezer-dark">Écouter l'histoire</h3>
+                        <p class="text-ezer-muted text-sm">« De quoi vous entretenez-vous en marchant ? » — <strong>Luc 24:17</strong></p>
+                        <p class="text-ezer-dark italic text-[15px]">Entretien gratuit. Vous racontez votre situation sans jugement, nous vous écoutons. Rien n'est décidé à votre place.</p>
+                    </article>
+                    <article class="rounded-ezer border border-ezer-green-border bg-white p-6 lg:p-7 flex flex-col gap-4 shadow-sm hover:border-ezer-green transition-colors">
+                        <span class="w-12 h-12 rounded-full bg-ezer-green text-white inline-flex items-center justify-center font-bold text-xl">3</span>
+                        <h3 class="text-xl font-semibold text-ezer-dark">Éclairer</h3>
+                        <p class="text-ezer-muted text-sm">« Il leur expliqua dans toutes les Écritures. » — <strong>Luc 24:27</strong></p>
+                        <p class="text-ezer-dark italic text-[15px]">Séances d'accompagnement régulières. La Parole de Dieu et la prière y ont leur place, si vous le désirez.</p>
+                    </article>
+                    <article class="rounded-ezer border border-ezer-green-border bg-white p-6 lg:p-7 flex flex-col gap-4 shadow-sm hover:border-ezer-green transition-colors">
+                        <span class="w-12 h-12 rounded-full bg-ezer-green text-white inline-flex items-center justify-center font-bold text-xl">4</span>
+                        <h3 class="text-xl font-semibold text-ezer-dark">Repartir</h3>
+                        <p class="text-ezer-muted text-sm">« Se levant à l'heure même, ils retournèrent. » — <strong>Luc 24:33</strong></p>
+                        <p class="text-ezer-dark italic text-[15px]">Vous repartez fortifié(e) avec une vision plus claire de votre avenir. Les portes d'EZER HOME restent toujours ouvertes.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- CALL TO ACTION -->
+            <section class="bg-ezer-green-light rounded-ezer p-8 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex flex-col gap-2">
+                    <h2 class="font-cooper font-normal text-2xl lg:text-3xl text-ezer-dark">Prêt(e) à faire le premier pas ?</h2>
+                    <p class="text-ezer-muted text-base max-w-[600px]">N'attendez plus pour trouver une oreille attentive et bienveillante. Le premier contact est sans engagement.</p>
+                </div>
+                <div class="flex flex-wrap gap-4 shrink-0">
+                    <a href="ecoute.html" class="px-6 py-3 rounded-full bg-ezer-green text-white font-semibold hover:bg-ezer-green-dark transition-colors">Demander un entretien</a>
+                    <a href="contact-particulier.html" class="px-6 py-3 rounded-full border border-ezer-green text-ezer-green font-semibold hover:bg-white transition-colors">Nous contacter</a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div data-layout="footer" data-sobre="1"></div>
+
+    <script src="../../assets/js/layout.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
