@@ -26,8 +26,8 @@ module.exports = {
             border: '#f8b4b4',
           },
           brown: {
-            DEFAULT: '#a67c52',
-            light: '#faf6f2',
+            DEFAULT: '#187d50',
+            light: '#e9f7f0',
           },
         }
       },

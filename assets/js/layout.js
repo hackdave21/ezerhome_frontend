@@ -16,8 +16,6 @@
   var NAV = [
     { id: 'accueil', label: 'Accueil', href: 'pages/site/accueil.html' },
     { id: 'a-propos', label: 'À propos', href: 'pages/site/a-propos.html' },
-    { id: 'approche', label: 'Notre approche', href: 'pages/site/notre-approche.html' },
-    { id: 'parcours', label: 'Le Parcours', href: 'pages/site/le-parcours.html' },
     { id: 'ecoute', label: 'Écoute', href: 'pages/site/ecoute.html', badge: true },
     { id: 'formation', label: 'Formation', href: 'pages/site/formations.html' },
     { id: 'coaching', label: 'Coaching', href: 'pages/site/coaching.html' },
@@ -27,6 +25,8 @@
 
   var MOBILE_EXTRA = [
     { label: 'Notre équipe', href: 'pages/site/equipe.html' },
+    { label: 'Notre approche', href: 'pages/site/a-propos.html#notre-approche' },
+    { label: 'Le Parcours', href: 'pages/site/a-propos.html#le-parcours' },
     { label: 'Club EZER (Telegram et WhatsApp)', href: 'pages/site/accueil.html#club-ezer' },
     { label: 'Une parole pour aujourd\'hui', href: 'pages/site/accueil.html#parole-du-jour' },
     { label: 'Charte d\'accompagnement', href: 'pages/site/accueil.html#charte-accompagnement' }
@@ -53,8 +53,8 @@
     var navDesktop = NAV.map(function (n) {
       var on = (n.id === actif);
       return '<a href="' + B + n.href + '"' + (on ? ' aria-current="page"' : '') +
-        ' class="px-3 py-2 font-semibold text-[15px] ' +
-        (on ? 'text-ezer-green shadow-ezer-nav' : 'text-ezer-dark hover:text-ezer-green') + '">' +
+        ' class="px-3.5 py-2.5 font-semibold text-[15px] inline-flex items-center justify-center transition-colors ' +
+        (on ? 'nav-item-active' : 'text-ezer-dark hover:text-ezer-green') + '">' +
         n.label + '</a>';
     }).join('');
 
@@ -87,10 +87,10 @@
             '<img src="' + B + 'assets/images/Logo_Ezer-01.png" alt="Logo Ezer Home" class="h-16 lg:h-20 w-auto object-contain">' +
           '</a>' +
 
-          '<nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-1">' + navDesktop + '</nav>' +
+          '<nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-2">' + navDesktop + '</nav>' +
 
           '<div class="hidden lg:flex items-center gap-3">' +
-            (showDon ? '<a href="' + B + 'pages/dons/don.html" class="inline-flex items-center justify-center min-h-[44px] px-4 rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold text-[15px] hover:bg-ezer-green hover:text-white transition-colors">Faire un don</a>' : '') +
+            (showDon ? '<a href="' + B + 'pages/dons/don.html" class="btn-don-ezer inline-flex items-center justify-center min-h-[44px] px-6 font-semibold text-[15px]">Faire un don</a>' : '') +
             '<a href="https://wa.me/22898135757" target="_blank" rel="noopener" class="inline-flex items-center gap-2 min-h-[48px] px-4 rounded-ezer bg-ezer-green text-white font-semibold text-[15px] hover:bg-ezer-green-dark transition-colors">' + ICON.chat + 'WhatsApp</a>' +
           '</div>' +
 
@@ -108,7 +108,7 @@
             '<a href="' + B + 'pages/auth/connexion.html" class="inline-flex items-center justify-center min-h-[48px] rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold text-[15px]">Se connecter</a>' +
             '<a href="' + B + 'pages/auth/inscription.html" class="inline-flex items-center justify-center min-h-[48px] rounded-ezer bg-ezer-green text-white font-semibold text-[15px]">Créer un compte</a>' +
           '</div>' +
-          (showDon ? '<a href="' + B + 'pages/dons/don.html" class="w-full inline-flex items-center justify-center min-h-[48px] rounded-ezer border border-ezer-borderMuted text-ezer-dark font-semibold text-[15px]">Faire un don</a>' : '') +
+          (showDon ? '<a href="' + B + 'pages/dons/don.html" class="btn-don-ezer w-full inline-flex items-center justify-center min-h-[48px] font-semibold text-[15px]">Faire un don</a>' : '') +
         '</nav>' +
       '</header>';
   }
@@ -129,8 +129,6 @@
         titre: 'L\'association',
         liens: [
           { label: 'À propos', href: 'pages/site/a-propos.html' },
-          { label: 'Notre approche', href: 'pages/site/notre-approche.html' },
-          { label: 'Le Parcours', href: 'pages/site/le-parcours.html' },
           { label: 'Notre équipe', href: 'pages/site/equipe.html' },
           { label: 'Partenaires', href: 'pages/site/partenaires.html' },
           { label: 'Faire un don', href: 'pages/dons/don.html', commercial: true },
@@ -160,7 +158,7 @@
     }).join('');
 
     return '' +
-      '<footer class="bg-white border-t-4 border-t-ezer-brown mt-12">' +
+      '<footer class="bg-white border-t-4 border-t-ezer-green mt-12">' +
         '<div class="max-w-[1400px] mx-auto px-6 lg:px-12 py-10 lg:py-14 flex flex-col gap-8">' +
           '<div class="flex flex-wrap gap-8">' +
             '<div class="flex-1 min-w-[260px] max-w-[320px] flex flex-col gap-4">' +

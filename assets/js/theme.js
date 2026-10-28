@@ -13,7 +13,7 @@ window.ezerTheme = function () {
             muted: '#5b6656',
             borderMuted: '#6f8577',
             red: { DEFAULT: '#c1272d', light: '#fdf2f2', border: '#f8b4b4' },
-            brown: { DEFAULT: '#a67c52', light: '#faf6f2' }
+            brown: { DEFAULT: '#187d50', light: '#e9f7f0' }
           }
         },
         fontFamily: {

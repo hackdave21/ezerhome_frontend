@@ -156,7 +156,7 @@
     if (m.aStatut) {
       html += '<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 16px; border-radius: 12px; background: #e9f7f0">' +
         '<span style="font-size: 14px; color: #5b6656">Nouveau statut</span>' +
-        '<span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 12px; border: 2px solid #a67c52; background: #ffffff; font-size: 14px; font-weight: 600; color: #0e1c03">' + m.statut + '</span></div>';
+        '<span style="display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: 12px; border: 2px solid #187d50; background: #ffffff; font-size: 14px; font-weight: 600; color: #0e1c03">' + m.statut + '</span></div>';
     }
 
     if (m.aDetails) {
@@ -195,7 +195,7 @@
 
     var table =
       '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="width: 100%; max-width: 600px; margin: 0 auto; border-collapse: separate; border-spacing: 0; background: #ffffff; border: 1px solid #c8dccf; border-radius: 12px">' +
-        '<tr><td style="padding: ' + s.cellPad + '; border-bottom: 2px solid #a67c52">' + LOGO + '</td></tr>' +
+        '<tr><td style="padding: ' + s.cellPad + '; border-bottom: 2px solid #187d50">' + LOGO + '</td></tr>' +
         '<tr><td style="padding: ' + s.cellPad + '"><div style="display: flex; flex-direction: column; gap: 20px">' + corps(m, s) + '</div></td></tr>' +
         '<tr><td style="padding: ' + s.piedPad + '; background: #0e1c03; border-radius: 0 0 11px 11px; color: #ffffff; font-size: 13px; line-height: 20px">' +
           '<div style="display: flex; flex-direction: column; gap: 8px">' +
