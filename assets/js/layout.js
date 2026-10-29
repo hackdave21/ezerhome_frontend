@@ -51,7 +51,7 @@
     var navDesktop = NAV.map(function (n) {
       var on = (n.id === actif);
       return '<a href="' + B + n.href + '"' + (on ? ' aria-current="page"' : '') +
-        ' class="px-3.5 py-2.5 font-semibold text-[15px] inline-flex items-center justify-center transition-colors ' +
+        ' class="px-3 py-2.5 font-semibold text-[15px] whitespace-nowrap inline-flex items-center justify-center transition-colors ' +
         (on ? 'nav-item-active' : 'text-ezer-dark hover:text-ezer-green') + '">' +
         n.label + '</a>';
     }).join('');
@@ -85,14 +85,14 @@
             '<img src="' + B + 'assets/images/Logo_Ezer-01.png" alt="Logo Ezer Home" class="h-16 lg:h-20 w-auto object-contain">' +
           '</a>' +
 
-          '<nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-2">' + navDesktop + '</nav>' +
+          '<nav aria-label="Navigation principale" class="hidden xl:flex items-center gap-1">' + navDesktop + '</nav>' +
 
-          '<div class="hidden lg:flex items-center gap-3">' +
-            (showDon ? '<a href="' + B + 'pages/dons/don.html" class="btn-don-ezer inline-flex items-center justify-center min-h-[44px] px-6 font-semibold text-[15px]">Faire un don</a>' : '') +
+          '<div class="hidden xl:flex items-center gap-3">' +
+            (showDon ? '<a href="' + B + 'pages/dons/don.html" class="btn-don-ezer inline-flex items-center justify-center min-h-[44px] px-5 font-semibold text-[15px] whitespace-nowrap">Faire un don</a>' : '') +
             '<a href="https://wa.me/22898135757" target="_blank" rel="noopener" class="inline-flex items-center gap-2 min-h-[48px] px-4 rounded-ezer bg-ezer-green text-white font-semibold text-[15px] hover:bg-ezer-green-dark transition-colors">' + ICON.chat + 'WhatsApp</a>' +
           '</div>' +
 
-          '<div class="flex lg:hidden items-center gap-2">' +
+          '<div class="flex xl:hidden items-center gap-2">' +
             '<a href="https://wa.me/22898135757" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 min-h-[40px] px-3 rounded-ezer bg-ezer-green text-white font-semibold text-sm">' + ICON.chat + 'WhatsApp</a>' +
             '<button type="button" data-toggle-menu="menu-mobile" data-menu-toggle aria-expanded="' + ouvert + '" aria-controls="menu-mobile" ' +
               'class="w-11 h-11 inline-flex items-center justify-center border border-ezer-borderMuted rounded-ezer text-ezer-dark hover:bg-gray-100" ' +
@@ -100,7 +100,7 @@
           '</div>' +
         '</div>' +
 
-        '<nav id="menu-mobile" aria-label="Menu principal" class="' + (ouvert ? '' : 'hidden ') + 'lg:hidden border-t border-ezer-green-borderLight bg-white px-4 py-4 flex flex-col gap-4">' +
+        '<nav id="menu-mobile" aria-label="Menu principal" class="' + (ouvert ? '' : 'hidden ') + 'xl:hidden border-t border-ezer-green-borderLight bg-white px-4 py-4 flex flex-col gap-4">' +
           '<ul class="flex flex-col">' + navMobile + '</ul>' +
           '<div class="grid grid-cols-2 gap-3">' +
             '<a href="' + B + 'pages/auth/connexion.html" class="inline-flex items-center justify-center min-h-[48px] rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold text-[15px]">Se connecter</a>' +
