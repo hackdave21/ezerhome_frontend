@@ -100,7 +100,7 @@
           '</div>' +
         '</div>' +
 
-        '<nav id="menu-mobile" aria-label="Menu principal" class="' + (ouvert ? '' : 'hidden ') + 'xl:hidden border-t border-ezer-green-borderLight bg-white px-4 py-4 flex flex-col gap-4">' +
+        '<nav id="menu-mobile" aria-label="Menu principal" class="' + (ouvert ? '' : 'hidden ') + 'xl:hidden border-t border-ezer-green-borderLight bg-white px-4 py-4 flex flex-col gap-4 max-h-[calc(100dvh-5.5rem)] overflow-y-auto overscroll-contain">' +
           '<ul class="flex flex-col">' + navMobile + '</ul>' +
           '<div class="grid grid-cols-2 gap-3">' +
             '<a href="' + B + 'pages/auth/connexion.html" class="inline-flex items-center justify-center min-h-[48px] rounded-ezer border-2 border-ezer-green text-ezer-green font-semibold text-[15px]">Se connecter</a>' +

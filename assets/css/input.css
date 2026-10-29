@@ -30,9 +30,19 @@
   blockquote {
     text-align: justify;
     text-justify: inter-word;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-    overflow-wrap: break-word;
+    -webkit-hyphens: none;
+    hyphens: none;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  /* Aucune césure (trait d'union) sur tout le site : un mot qui ne tient
+     pas en fin de ligne passe en entier à la ligne suivante. */
+  html,
+  body,
+  * {
+    -webkit-hyphens: none;
+    hyphens: none;
   }
 }
 
