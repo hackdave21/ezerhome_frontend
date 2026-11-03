@@ -199,6 +199,8 @@ Raison donnée : c'est **à la demande**, donc **ne plus parler de tarif** sur l
 | **Accompagnants formés** | Des bénévoles formés à l'écoute et suivis en supervision. |
 | **Orientation si nécessaire** | Quand la situation le demande, nous vous orientons vers un médecin ou un professionnel de santé. |
 
+> ✅ **FAIT** — Les 4 engagements figurent dans la charte d'écoute (§ 9 « Ce que vous pouvez attendre de nous ») et « Accompagnants formés » apparaît dans le résumé de la page Écoute.
+
 ---
 
 ## 2. Demander une aide matérielle (Assistance) — PDF p. 2–5
@@ -327,6 +329,8 @@ Conséquences à traiter dans le code :
 
 > ❓ **Incohérence à signaler au client** : les pages Assistance (§ 2, § 3) et Espace thérapeute / Admin (§ 17, § 18) mentionnent encore le « comité d'assistance » / « comité de validation ». À confirmer : conserver ces mentions fonctionnelles ou les reformuler.
 
+> ✅ **FAIT** — La page publique `pages/site/equipe.html` ne présente plus que le **Bureau exécutif** et le **Conseil d'administration**. Les mentions « comité de validation » ont été retirées de l'espace intervenant. Les libellés « comité d'assistance » (texte client § 2/§ 3) et les rôles de l'organigramme admin restent à confirmer avec le client.
+
 ---
 
 ## 11. À quoi servent les dons — PDF p. 19
@@ -344,6 +348,8 @@ Conséquences à traiter dans le code :
 - **DS Consulting**
 
 > ❓ Logos (dans le dossiers C:\projets web\EZER_HOME\ezerhome_frontend\assets\images\partenaires) et liens externes non fournis(après). Les logos manquants seront ajoutés plutard
+
+> ✅ **FAIT** — Les 3 partenaires (**MCPRA**, **SSS Consulting and Training**, **DS Consulting**) et leurs logos sont affichés sur `pages/site/partenaires.html` et repris dans `pages/admin/partenaires.html`. Les liens externes restent à fournir par le client.
 
 ---
 
@@ -381,6 +387,8 @@ Conséquences à traiter dans le code :
    - … *(le client termine par « … », liste ouverte : prévoir de pouvoir en ajouter d'autres)*
 3. ✏️ **Disponibilités** : donner la possibilité **d'afficher les heures** (créneaux horaires précis, et pas seulement les jours).
 
+> ✅ **FAIT** — La mention « comité de validation » a été retirée de la candidature et des offres. Les domaines **Transition professionnelle**, **Orientation scolaire** et **Mariage & défis conjugaux** ont été ajoutés, et un champ « Créneaux horaires précis » permet d'afficher les heures de disponibilité.
+
 ---
 
 ## 18. Administration / gestion du site — PDF p. 45–64
@@ -405,24 +413,25 @@ Points techniques à prévoir :
 
 ### Priorité 1 — Modifications fermes
 
-- [ ] Accueil : remplacer le texte d'intro du hero (§ 1.3)
-- [ ] Accueil : supprimer le lien « Voir les tarifs… » (§ 1.3)
-- [ ] Accueil : bloc permanence + NB « service d'urgence » (§ 1.4)
-- [ ] Accueil : remplacer le CTA « Je veux me former… » par « Je veux m'équiper… » (§ 1.5)
+- [x] Accueil : remplacer le texte d'intro du hero (§ 1.3)
+- [x] Accueil : supprimer le lien « Voir les tarifs… » (§ 1.3)
+- [x] Accueil : bloc permanence + NB « service d'urgence » (§ 1.4)
+- [x] Accueil : remplacer le CTA « Je veux me former… » par « Je veux m'équiper… » (§ 1.5)
 - [ ] Accueil : section « Qui sommes-nous ? » avec explication d'EZER (§ 1.6)
 - [ ] Accueil : titre « Besoin d'assistance ? » (§ 1.10)
-- [ ] Ajouter les sections **Notre approche** et **Parcours** (§ 1.7, 1.8) et les entrées de menu
-- [ ] Ajouter **Club EZER**, **Parole pour aujourd'hui**, **Charte d'accompagnement** (§ 1.12 à 1.14)
+- [x] Ajouter les sections **Notre approche** et **Parcours** (§ 1.7, 1.8) et les entrées de menu
+- [x] Ajouter **Club EZER** et **Charte d'accompagnement** (§ 1.12, 1.14)
+- [ ] Ajouter **Parole pour aujourd'hui** (§ 1.13)
 - [x] Assistance : 3 blocs de réassurance réécrits (§ 2)
 - [x] Confirmation d'aide : textes (§ 3)
 - [x] Don : accroche « L'écoute gratuite… » (§ 4)
-- [ ] Coaching : « Sur évaluation, à partir de 25 000 FCFA / séance » (§ 7)
-- [ ] **Supprimer la page Tarifs** + routes + liens (§ 8)
-- [ ] À propos : nouveau texte (§ 9)
-- [ ] Notre équipe : Bureau exécutif + Conseil d'administration uniquement (§ 10)
-- [ ] Partenaires : liste (§ 12)
-- [ ] Espace thérapeute : suppression du bloc comité de validation, nouveaux domaines, heures de disponibilité (§ 17)
-- [ ] Admin : notification e-mail/SMS aux étapes de validation (§ 18)
+- [x] Coaching : « Sur évaluation, à partir de 25 000 FCFA / séance » (§ 7)
+- [x] **Supprimer la page Tarifs** + routes + liens (§ 8)
+- [x] À propos : nouveau texte (§ 9)
+- [x] Notre équipe : Bureau exécutif + Conseil d'administration uniquement (§ 10)
+- [x] Partenaires : liste (§ 12)
+- [x] Espace thérapeute : suppression du bloc comité de validation, nouveaux domaines, heures de disponibilité (§ 17)
+- [x] Admin : notification e-mail/SMS aux étapes de validation (§ 18)
 
 ### Priorité 2 — En attente du client (ne pas toucher)
 

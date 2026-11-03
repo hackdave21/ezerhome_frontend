@@ -50,9 +50,25 @@
 
     var navDesktop = NAV.map(function (n) {
       var on = (n.id === actif);
+      var cls = 'px-3 py-2.5 font-semibold text-[15px] whitespace-nowrap inline-flex items-center justify-center gap-1 transition-colors ' +
+        (on ? 'nav-item-active' : 'text-ezer-dark hover:text-ezer-green');
+      if (n.id === 'a-propos') {
+        return '<div class="relative group">' +
+          '<a href="' + B + n.href + '"' + (on ? ' aria-current="page"' : '') + ' aria-haspopup="true" class="' + cls + '">' +
+          n.label + ICON.chevron + '</a>' +
+          '<div class="hidden group-hover:block group-focus-within:block absolute left-0 top-full pt-1 z-50 min-w-[230px]">' +
+            '<div class="bg-white border border-ezer-green-border rounded-ezer shadow-lg py-1 flex flex-col">' +
+              '<a href="' + B + 'pages/site/a-propos.html" class="px-4 py-2.5 text-[15px] font-semibold text-ezer-dark hover:bg-ezer-green-light hover:text-ezer-green">À propos d\'Ezer Home</a>' +
+              '<a href="' + B + 'pages/site/a-propos.html#notre-approche" class="px-4 py-2.5 text-[15px] font-semibold text-ezer-dark hover:bg-ezer-green-light hover:text-ezer-green">Notre approche</a>' +
+              '<a href="' + B + 'pages/site/a-propos.html#le-parcours" class="px-4 py-2.5 text-[15px] font-semibold text-ezer-dark hover:bg-ezer-green-light hover:text-ezer-green">Le Parcours</a>' +
+              '<a href="' + B + 'pages/site/equipe.html" class="px-4 py-2.5 text-[15px] font-semibold text-ezer-dark hover:bg-ezer-green-light hover:text-ezer-green">Notre équipe</a>' +
+              '<a href="' + B + 'pages/site/partenaires.html" class="px-4 py-2.5 text-[15px] font-semibold text-ezer-dark hover:bg-ezer-green-light hover:text-ezer-green">Nos partenaires</a>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      }
       return '<a href="' + B + n.href + '"' + (on ? ' aria-current="page"' : '') +
-        ' class="px-3 py-2.5 font-semibold text-[15px] whitespace-nowrap inline-flex items-center justify-center transition-colors ' +
-        (on ? 'nav-item-active' : 'text-ezer-dark hover:text-ezer-green') + '">' +
+        ' class="' + cls + '">' +
         n.label + '</a>';
     }).join('');
 
